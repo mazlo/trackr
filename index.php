@@ -17,28 +17,6 @@
 
 </head>
 
-<?php
-	$link = mysql_connect('localhost', 'root', 'root');
-
-	if ( !$link ) 
-	{
-    	die( 'Verbindung nicht möglich : ' . mysql_error() );
-	}
-	
-	$db_selected = mysql_select_db( 'shorter', $link );
-	if ( !$db_selected ) 
-	{
-    	die ( 'Kann foo nicht benutzen : ' . mysql_error() );
-	}
-
-	$result = mysql_query( 'SELECT id,title,description FROM entry ORDER BY id DESC' );
-
-	if ( !$result ) 
-	{
-    	die( 'Ungültige Anfrage: ' . mysql_error() );
-	}
-?>
-
 	<body>
 		<div id="header" style="height: 70px;">
 			&nbsp;
