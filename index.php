@@ -146,6 +146,7 @@
 
 		});
 
+		// handler for clicking the add entry button
 		$jQ( ".entry_add_button" ).click( function() 
 		{
 			var title = $jQ( '#title' ).val();
@@ -163,14 +164,15 @@
 
 				success: function( data ) 
 				{
-					$jQ( "#entries" ).html( data );
 					$jQ( "#div_entry_add" ).hide();
+					getAllEntries();
 				}
 			});
 
 			return false;
 		});
 
+		// handler for clicking the delete entry button
 		$jQ( '.entry_delete_link' ).live( 'click', function() 
 		{
 			var elementId = $jQ(this).attr( 'eid' );
@@ -185,7 +187,7 @@
 
 						success: function( data ) 
 						{
-							$jQ( "#entries" ).html( data );
+							getAllEntries();
 						}
 					});
 				});
