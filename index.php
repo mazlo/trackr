@@ -107,8 +107,6 @@
 				{
 					$jQ( '#div_entry_add' ).hide();
 				} );
-
-			return false;
 		});
 
 		$jQ( '.div_entry_add, .entry_delete_link, .div_comment_add' ).live( 'hover', function()
@@ -128,10 +126,13 @@
 		});
 
 		// hides the div to add a new comment
-		$jQ( '.comment_add_cancel' ).click( function() 
+		$jQ( '.comment_add_cancel' ).live( 'click', function() 
 		{
 			var entryId = $jQ(this).attr('eid');
-			$jQ( '#div_comment_add_'+ entryId ).hide();
+			$jQ( '#div_comment_add_'+ entryId ).effect( 'fade', 100, function()
+				{
+					$jQ( '#div_comment_add_'+ entryId ).hide();
+				} );
 		});
 
 		// handler for clicking the add comment button
