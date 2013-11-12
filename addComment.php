@@ -1,8 +1,14 @@
 <?php
 
 	// read passed values
-	$entryId = $_GET["entry_id"];
+	$entryId = $_GET["eid"];
 	$comment = $_GET["comment"];
+
+	if ( empty( $entryId ) || empty( $comment ) ) 
+	{
+		echo "<div>eid or comment parameter not provided</div>";
+		exit;
+	}
 
 	// connect
 	$mysqli = new mysqli( "localhost", "root", "root", "shorter");
@@ -27,18 +33,5 @@
     $mysqli->query( "INSERT INTO comment (id,comment,entry_id) VALUES (".$next_id.", '".$comment."', '".$entryId."')" );
 
     $result->close();
-
-	// list all existing entries
-	if ( $result = $mysqli->query( 'SELECT * FROM comment WHERE entry_id =  '. $entryId .' ORDER BY id DESC' ) )
-	{
-		while( $comments = $result->fetch_assoc() ) { ?>		
-			<div class='comment' style='padding: 13px;'>
-				<? echo $comments['comment']; ?>
-			</div>
-	<? 	}
-
-		$result->free();
-	}
-
 	$mysqli->close();
 ?>

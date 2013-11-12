@@ -75,6 +75,20 @@
 			});
 		};
 
+		var getComments = function( eid )
+		{
+			$jQ.ajax( {
+				url: "getComments.php",
+				type: "get",
+				data: { eid: eid }, 
+
+				success: function( data ) 
+				{
+					$jQ( '#comments_'+ eid ).html( data );
+				}
+			});
+		};
+
 		// shows the div to add a new entry
 		$jQ(".div_entry_add").click( function() 
 		{
@@ -111,8 +125,6 @@
 				{
 					$jQ( '#div_comment_add_'+ entryId ).show();
 				});
-
-			return true;
 		});
 
 		// hides the div to add a new comment
@@ -123,7 +135,7 @@
 		});
 
 		// handler for clicking the add comment button
-		$jQ( '.comment_add_button' ).click( function()
+		$jQ( '.comment_add_button' ).live( 'click', function()
 		{
 			var entryId = $jQ(this).attr('eid');
 
@@ -135,12 +147,12 @@
 			$jQ.ajax( {
 				url: "addComment.php",
 				type: "get",
-				data: { entry_id: entryId, comment: comment },
+				data: { eid: entryId, comment: comment },
 
 				success: function( data ) 
 				{
-					$jQ( '#comments_'+ entryId ).html( data );
 					$jQ( '#div_comment_add_'+ entryId ).hide();
+					getComments( entryId );
 				}
 			});
 
