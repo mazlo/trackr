@@ -19,6 +19,10 @@ div.entry {
 	padding: 3px 13px;
 }
 
+div.entry {
+	padding-bottom: 13px;
+}
+
 div.wrapper_comments {
 	border: 1px dotted #000; 
 	margin: 8px; 
