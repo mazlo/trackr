@@ -141,7 +141,7 @@
 			var entryId = $jQ(this).attr('eid');
 
 			if ( $jQ( '#comment_new_content_'+ entryId ).val() == "" )
-				return false;
+				return;
 
 			var comment = $jQ( '#comment_new_content_'+ entryId ).val();
 
