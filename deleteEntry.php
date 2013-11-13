@@ -14,6 +14,7 @@
 
 	// delete
 	$mysqli->query( 'DELETE FROM entry WHERE id = '. $entry_id );
+	$mysqli->query( 'DELETE FROM comment WHERE entry_id = '. $entry_id );
 	
 	$result->close();
 	$mysqli->close();
