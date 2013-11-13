@@ -109,7 +109,7 @@
 				} );
 		});
 
-		$jQ( '.div_entry_add, .entry_delete_link, .div_comment_add' ).live( 'hover', function()
+		$jQ( '.div_entry_add, .entry_delete_link, .div_comment_add, .comment_delete_link' ).live( 'hover', function()
 		{
 			$jQ(this).toggleClass('hover');
 		});
@@ -201,6 +201,28 @@
 						success: function( data ) 
 						{
 							getAllEntries();
+						}
+					});
+				});
+		});
+
+		// handler for clicking the delete comment button
+		$jQ( '.comment_delete_link' ).live( 'click', function()
+		{
+			var entryId = $jQ(this).attr( 'eid' );
+			var commentId = $jQ(this).attr( 'cid' );
+
+			$jQ(this).closest( '#comment_'+ commentId ).effect( 'fade', 300, function()
+				{
+					$jQ.ajax( {
+						url: "deleteComment.php",
+						type: "get",
+						context: document.body,
+						data: { eid: entryId, cid: commentId },
+
+						success: function( data ) 
+						{
+							getComments( entryId );
 						}
 					});
 				});

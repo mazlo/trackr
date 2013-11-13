@@ -25,7 +25,7 @@
 			<a href="#" class="div_comment_add" eid="<? echo $row['id']; ?>">+</a>
 
 			<?
-			$result2 = $mysqli->query( 'SELECT comment, date FROM comment WHERE entry_id = '. $row['id'] .' ORDER BY id DESC' );
+			$result2 = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $row['id'] .' ORDER BY id DESC' );
 
 			if ( $result2 ) { ?>
 
@@ -47,8 +47,8 @@
 					<div id="comments_<? echo $row['id']; ?>">
 				<?
 				while( $comments = $result2->fetch_assoc() ) { ?>		
-						<p class='comment' style='margin: 0; padding: 6px 13px;'>
-							<? echo $comments['comment']; ?>
+						<p class='comment' id='comment_<? echo $comments['id']; ?>' style='margin: 0; padding: 6px 0px;'>
+							<a href='#' eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>' class='comment_delete_link' style='padding: 3px 13px; '>-</a> <? echo $comments['comment']; ?>
 						</p>
 			<? 	} 
 
