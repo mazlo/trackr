@@ -28,15 +28,15 @@
 			<a href="#" class="div_entry_add">+</a>
 
 			<!-- div entry add: is hidden after page load -->
-			<div id="div_entry_add" class="div_entry_add" style="display: none; padding: 13px;">
+			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 13px;">
 
 				<h4 class="entry_title">Title</h4>
-				<input type="text" name="title" id="title" value="qwertqasd" />
+				<input type="text" id="title" value="qwertqasd" class="textfield" />
 				
 				<h4 class="entry_description">Description</h4>
-				<textarea rows="4" cols="25" name="description" id="description">aflijqwea</textarea>
+				<textarea id="description">aflijqwea</textarea>
 
-				<div style="margin: 8px; 0">
+				<div style="padding: 8px;">
 					<input type="button" class="entry_add_button" value="Add" />
 					<input type="button" class="entry_add_cancel" value="Cancel" />
 				</div>
@@ -93,9 +93,9 @@
 		$jQ(".div_entry_add").click( function() 
 		{
 			$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
-				{
-					$jQ( '#div_entry_add' ).show();
-				} );
+			{
+				$jQ( '#div_entry_add' ).show();
+			} );
 
 			return true;
 		});
@@ -104,9 +104,11 @@
 		$jQ( '.entry_add_cancel' ).click( function()
 		{
 			$jQ( '#div_entry_add' ).effect( 'fade', 100, function()
-				{
-					$jQ( '#div_entry_add' ).hide();
-				} );
+			{
+				$jQ( '#div_entry_add' ).hide();
+			});
+
+			return false;
 		});
 
 		$jQ( '.div_entry_add, .entry_delete_link, .div_comment_add, .comment_delete_link' ).live( 'hover', function()
