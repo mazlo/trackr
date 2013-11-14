@@ -26,11 +26,13 @@
 		<div id="content" style="width: 500; margin: auto">
 			
 			<h2>Please log in</h2>
+			
+			<span class="credentials_error"></span>
 			<h4 class="normal">Username</h4>
-			<input type="text" value="" name="username" class="textfield" />
+			<input type="text" value="" id="username" class="textfield" />
 
 			<h4 class="normal">Password</h4>
-			<input type="text" value="" name="password" class="textfield" />
+			<input type="text" value="" id="password" class="textfield" />
 			<input type="button" id="login_button" class="login_button" value="Do it" />
 		</div>
 	</body>
@@ -39,10 +41,27 @@
 
 	$jQ( '#login_button' ).on( 'click', function()
 	{
-		$jQ( '#content' ).effect( 'fade', 250, function() 
-		{
-			document.location = "index.php";
-		} );
+		var username = $jQ( '#username' ).val();
+		var password = $jQ( '#password' ).val();
+
+		$jQ.ajax( {
+			url: "checkLogin.php",
+			type: "get",
+			data: { usr: username, pwd: password },
+
+			success: function( data ) 
+			{
+				if ( data == "true" ) 
+				{
+					$jQ( '#content' ).effect( 'fade', 250, function()
+					{
+						document.location = "index.php";
+					});
+				}
+				else
+					$jQ( '.credentials_error' ).html( 'Error. Please check your credentials.' );
+			}
+		});
 	});
 
 </script>

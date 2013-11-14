@@ -84,6 +84,10 @@ h4.normal {
 	 font-weight: normal;
 }
 
+.credentials_error {
+	color: red;
+}
+
 .login_button {
 	display: block; 
 	border: 1px solid #bbb; 
