@@ -89,32 +89,6 @@
 			});
 		};
 
-		$jQ( '.h4_entry_title_inactive' ).live( 'hover', function() 
-		{
-			$jQ(this).toggleClass( 'h4_entry_title' );
-			$jQ(this).removeAttr( 'disabled' );
-		});
-
-		// handler to change title of entry
-		$jQ( '.h4_entry_title_inactive' ).live( 'blur', function() 
-		{
-			var entryId = $jQ(this).attr( 'eid' );
-			var title = $jQ(this).val();
-
-			// ajax call to change title
-			$jQ.ajax( {
-				url: "changeEntryTitle.php",
-				type: "get",
-				data: { eid: entryId, tl: title },
-
-				success: function( data ) 
-				{
-					$jQ( '#entry_title_confirm_'+ entryId ).html( 'done' );
-					$jQ( '#entry_title_confirm_'+ entryId ).effect( 'fade', 2000 );
-				}
-			});
-		});
-
 		// shows the div to add a new entry
 		$jQ(".div_entry_add").click( function() 
 		{
@@ -137,6 +111,7 @@
 			return false;
 		});
 
+		// css manipulations on hover
 		$jQ( '.div_entry_add, .entry_delete_link, .div_comment_add, .comment_delete_link' ).live( 'hover', function()
 		{
 			$jQ(this).toggleClass('hover');
@@ -254,6 +229,33 @@
 						}
 					});
 				});
+		});
+
+		// handler to change title of entry
+		$jQ( '.h4_entry_title_inactive' ).live( 'blur', function() 
+		{
+			var entryId = $jQ(this).attr( 'eid' );
+			var title = $jQ(this).val();
+
+			// ajax call to change title
+			$jQ.ajax( {
+				url: "changeEntryTitle.php",
+				type: "get",
+				data: { eid: entryId, tl: title },
+
+				success: function( data ) 
+				{
+					$jQ( '#entry_title_confirm_'+ entryId ).html( 'done' );
+					$jQ( '#entry_title_confirm_'+ entryId ).effect( 'fade', 2000 );
+				}
+			});
+		});
+	
+		// css manipulations on hover
+		$jQ( '.h4_entry_title_inactive' ).live( 'hover', function() 
+		{
+			$jQ(this).toggleClass( 'h4_entry_title' );
+			$jQ(this).removeAttr( 'disabled' );
 		});
 
 	</script>
