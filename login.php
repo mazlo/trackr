@@ -37,7 +37,7 @@
 
 <script type="text/javascript">
 
-	$jQ( '#login_button' ).click( function()
+	$jQ( '#login_button' ).on( 'click', function()
 	{
 		$jQ( '#content' ).effect( 'fade', 250, function() 
 		{
