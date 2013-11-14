@@ -34,7 +34,7 @@
 				<input type="text" id="title" value="qwertqasd" class="textfield" />
 				
 				<h4 class="entry_description">Description</h4>
-				<textarea id="description" style="width: 400px; height: 80px; padding: 8px;">aflijqwea</textarea>
+				<textarea id="description" class="textarea">aflijqwea</textarea>
 
 				<div style="padding: 8px;">
 					<input type="button" class="entry_add_button" value="Add" />
@@ -88,6 +88,32 @@
 				}
 			});
 		};
+
+		$jQ( '.h4_entry_title_inactive' ).live( 'hover', function() 
+		{
+			$jQ(this).toggleClass( 'h4_entry_title' );
+			$jQ(this).removeAttr( 'disabled' );
+		});
+
+		// handler to change title of entry
+		$jQ( '.h4_entry_title_inactive' ).live( 'blur', function() 
+		{
+			var entryId = $jQ(this).attr( 'eid' );
+			var title = $jQ(this).val();
+
+			// ajax call to change title
+			$jQ.ajax( {
+				url: "changeEntryTitle.php",
+				type: "get",
+				data: { eid: entryId, tl: title },
+
+				success: function( data ) 
+				{
+					$jQ( '#entry_title_confirm_'+ entryId ).html( 'done' );
+					$jQ( '#entry_title_confirm_'+ entryId ).effect( 'fade', 2000 );
+				}
+			});
+		});
 
 		// shows the div to add a new entry
 		$jQ(".div_entry_add").click( function() 

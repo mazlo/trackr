@@ -19,7 +19,10 @@
 		<a href='#' class='entry_delete_link' eid='<? echo $row['id']; ?>' style='display: block; padding: 3px 13px'>-</a>
 
 		<div class='entry'>
-			<h4 class='entry_title'>#<? echo $row['id'] . " " . $row['title']; ?></h4>
+			<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
+			<input class="h4_entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+			<span id="entry_title_confirm_<? echo $row['id']; ?>" style="color: green"></span>
+
 			<h4 class='entry_description'><? echo $row['description']; ?></h4>
 			
 			<a href="#" class="div_comment_add" eid="<? echo $row['id']; ?>">+</a>
