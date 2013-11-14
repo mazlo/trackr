@@ -90,7 +90,7 @@
 		};
 
 		// shows the div to add a new entry
-		$jQ(".div_entry_add").click( function() 
+		$jQ( document ).on( 'click', '.div_entry_add', function() 
 		{
 			$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
 			{
@@ -101,7 +101,7 @@
 		});
 
 		// hides the div to add a new entry
-		$jQ( '.entry_add_cancel' ).click( function()
+		$jQ( document ).on( 'click', '.entry_add_cancel', function()
 		{
 			$jQ( '#div_entry_add' ).effect( 'fade', 100, function()
 			{
@@ -112,13 +112,13 @@
 		});
 
 		// css manipulations on hover
-		$jQ( '.div_entry_add, .entry_delete_link, .div_comment_add, .comment_delete_link' ).live( 'hover', function()
+		$jQ( document ).on( 'hover', '.div_entry_add, .entry_delete_link, .div_comment_add, .comment_delete_link', function()
 		{
 			$jQ(this).toggleClass('hover');
 		});
 
 		// shows the div to add a new comment
-		$jQ( '.div_comment_add' ).live( 'click', function()
+		$jQ( document ).on( 'click', '.div_comment_add', function()
 		{
 			var entryId = $jQ(this).attr('eid');
 
@@ -129,7 +129,7 @@
 		});
 
 		// hides the div to add a new comment
-		$jQ( '.comment_add_cancel' ).live( 'click', function() 
+		$jQ( document ).on( 'click', '.comment_add_cancel', function() 
 		{
 			var entryId = $jQ(this).attr('eid');
 			$jQ( '#div_comment_add_'+ entryId ).effect( 'fade', 100, function()
@@ -139,7 +139,7 @@
 		});
 
 		// handler for clicking the add comment button
-		$jQ( '.comment_add_button' ).live( 'click', function()
+		$jQ( document ).on( 'click', '.comment_add_button', function()
 		{
 			var entryId = $jQ(this).attr('eid');
 
@@ -163,7 +163,7 @@
 		});
 
 		// handler for clicking the add entry button
-		$jQ( ".entry_add_button" ).click( function() 
+		$jQ( document ).on( 'click', '.entry_add_button', function() 
 		{
 			var title = $jQ( '#title' ).val();
 			if ( title == "" )
@@ -189,7 +189,7 @@
 		});
 
 		// handler for clicking the delete entry button
-		$jQ( '.entry_delete_link' ).live( 'click', function() 
+		$jQ( document ).on( 'click', '.entry_delete_link', function() 
 		{
 			var elementId = $jQ(this).attr( 'eid' );
 
@@ -210,7 +210,7 @@
 		});
 
 		// handler for clicking the delete comment button
-		$jQ( '.comment_delete_link' ).live( 'click', function()
+		$jQ( document ).on( 'click', '.comment_delete_link', function()
 		{
 			var entryId = $jQ(this).attr( 'eid' );
 			var commentId = $jQ(this).attr( 'cid' );
@@ -232,7 +232,7 @@
 		});
 
 		// handler to change title of entry
-		$jQ( '.h4_entry_title_inactive' ).live( 'blur', function() 
+		$jQ( document ).on( 'blur', '.h4_entry_title_inactive', function() 
 		{
 			var entryId = $jQ(this).attr( 'eid' );
 			var title = $jQ(this).val();
@@ -250,9 +250,9 @@
 				}
 			});
 		});
-	
+
 		// css manipulations on hover
-		$jQ( '.h4_entry_title_inactive' ).live( 'hover', function() 
+		$jQ( document ).on( 'hover', '.h4_entry_title_inactive', function() 
 		{
 			$jQ(this).toggleClass( 'h4_entry_title' );
 			$jQ(this).removeAttr( 'disabled' );
