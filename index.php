@@ -34,7 +34,7 @@
 				<input type="text" id="title" value="qwertqasd" class="textfield" />
 				
 				<h4 class="entry_description">Description</h4>
-				<textarea id="description">aflijqwea</textarea>
+				<textarea id="description" style="width: 400px; height: 80px; padding: 8px;">aflijqwea</textarea>
 
 				<div style="padding: 8px;">
 					<input type="button" class="entry_add_button" value="Add" />
