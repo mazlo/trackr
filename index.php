@@ -71,6 +71,8 @@
 				success: function( data ) 
 				{
 					$jQ( '#entries' ).html( data );
+					$jQ( ".comments" ).sortable();
+					$jQ( ".comments" ).disableSelection();
 				}
 			});
 		};

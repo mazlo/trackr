@@ -84,6 +84,13 @@ h4.normal {
 	 font-weight: normal;
 }
 
+ul.comments {
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+}
+
 .credentials_error {
 	color: red;
 }

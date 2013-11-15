@@ -47,12 +47,12 @@
 					</div>
 					
 					<!--  wrapper for all comments of an entry -->
-					<div id="comments_<? echo $row['id']; ?>">
+					<ul id="comments_<? echo $row['id']; ?>" class="comments">
 				<?
 				while( $comments = $result2->fetch_assoc() ) { ?>		
-						<p class='comment' id='comment_<? echo $comments['id']; ?>' style='margin: 0; padding: 6px 0px;'>
+						<li class='comment' id='comment_<? echo $comments['id']; ?>' style='margin: 0; padding: 6px 0px;'>
 							<a href='#' eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>' class='comment_delete_link' style='padding: 3px 13px; '>-</a> <? echo $comments['comment']; ?>
-						</p>
+						</li>
 			<? 	} 
 
 				$result2->close(); ?>
