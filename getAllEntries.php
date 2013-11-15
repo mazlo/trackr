@@ -34,7 +34,7 @@
 
 				<!-- wrapper for comment dialog -->
 				<div class='wrapper_comments'>
-					<h4 class='entry_title' style='margin: 6px 0;'>Comments</h4>
+					<h4 class='comments_title'>Comments</h4>
 
 					<!-- div comment add: is hidden first -->
 					<div id="div_comment_add_<? echo $row['id']; ?>" style="display: none;">
