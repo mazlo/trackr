@@ -71,7 +71,11 @@
 				success: function( data ) 
 				{
 					$jQ( '#entries' ).html( data );
-					$jQ( ".comments" ).sortable();
+					$jQ( ".comments" ).sortable( {
+						update: function( event, ui ) {
+							alert("he");
+						}
+					});
 					$jQ( ".comments" ).disableSelection();
 				}
 			});
@@ -217,7 +221,7 @@
 			var entryId = $jQ(this).attr( 'eid' );
 			var commentId = $jQ(this).attr( 'cid' );
 
-			$jQ(this).closest( '#comment_'+ commentId ).effect( 'fade', 300, function()
+			$jQ(this).closest( '.comment' ).effect( 'fade', 300, function()
 				{
 					$jQ.ajax( {
 						url: "deleteComment.php",

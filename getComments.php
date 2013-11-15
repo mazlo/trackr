@@ -24,7 +24,7 @@
 	} 
 
 	while( $comments = $result->fetch_assoc() ) { ?>		
-		<li class='comment' id='comment_<? echo $comments['id']; ?>' style='margin: 0; padding: 6px 0px;'>
+		<li class='comment'>
 			<span style="display: table-cell;"><a href='#' eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>' class='comment_delete_link'>-</a></span>
 			<span style="display: table-cell;"><? echo $comments['comment']; ?></span>
 		</li>
