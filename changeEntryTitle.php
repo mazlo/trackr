@@ -22,7 +22,9 @@
 	$stmt = $mysqli->prepare( "UPDATE entry SET title = ? WHERE id = ?" ); 
 	$stmt->bind_param( 'si', $title, $entry_id );
 	$stmt->execute(); 
+	
 	$stmt->close();
+	$mysqli->close();
 
 	echo "done";
 ?>
