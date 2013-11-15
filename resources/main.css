@@ -91,6 +91,10 @@ ul.comments {
 	list-style-type: none;
 }
 
+.comment_delete_link {
+	padding: 3px 13px;
+}
+
 .credentials_error {
 	color: red;
 }
