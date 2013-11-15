@@ -260,8 +260,12 @@
 		// handler to change title of entry
 		$jQ( document ).on( 'blur', '.h4_entry_title_inactive', function() 
 		{
-			var entryId = $jQ(this).attr( 'eid' );
 			var title = $jQ(this).val();
+
+			if ( oldTitle == title )
+				return;
+
+			var entryId = $jQ(this).attr( 'eid' );
 
 			// ajax call to change title
 			$jQ.ajax( {
@@ -282,6 +286,11 @@
 		{
 			$jQ(this).toggleClass( 'h4_entry_title' );
 			$jQ(this).removeAttr( 'disabled' );
+		});
+
+		$jQ( document ).on( 'click', '.h4_entry_title_inactive', function() 
+		{
+			oldTitle = $jQ(this).val();
 		});
 
 	</script>
