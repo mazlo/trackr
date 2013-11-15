@@ -72,8 +72,9 @@
 				{
 					$jQ( '#entries' ).html( data );
 					$jQ( ".comments" ).sortable( {
-						update: function( event, ui ) {
-							alert("he");
+						update: function( event, ui ) 
+						{
+							return updateCommentPositions( this );
 						}
 					});
 					$jQ( ".comments" ).disableSelection();
@@ -92,6 +93,25 @@
 				{
 					$jQ( '#comments_'+ eid ).html( data );
 				}
+			});
+		};
+
+		var updateCommentPositions = function( object )
+		{
+			var counter = 0;
+			var cid = [];
+			var pos = [];
+
+			$jQ(object).find( '.comment' ).each( function()
+			{
+				cid.push( $jQ(this).attr( 'cid' ) );
+				pos.push( ++counter );
+			});
+
+			$jQ.ajax( {
+				url: "changeCommentPosition.php",
+				type: "get",
+				data: { cid: cid, pos: pos }
 			});
 		};
 

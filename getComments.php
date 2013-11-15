@@ -16,7 +16,7 @@
 	    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 
-	$result = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $entryId .' ORDER BY id DESC' );
+	$result = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $entryId .' ORDER BY position ASC' );
 
 	if ( !$result ) {
 		echo "<div>Could not get all comments</div>";  
@@ -24,7 +24,7 @@
 	} 
 
 	while( $comments = $result->fetch_assoc() ) { ?>		
-		<li class='comment'>
+		<li class='comment' cid='<? echo $comments['id']; ?>'>
 			<span style="display: table-cell;"><a href='#' eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>' class='comment_delete_link'>-</a></span>
 			<span style="display: table-cell;"><? echo $comments['comment']; ?></span>
 		</li>
