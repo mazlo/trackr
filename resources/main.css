@@ -51,7 +51,7 @@ div.wrapper_comments {
 	padding: 8px;
 }
 
-.h4_entry_title_inactive {
+.entry_title_inactive {
 	border: 1px solid #fff; 
 	padding: 6px;
 	width: 500px;
@@ -60,7 +60,7 @@ div.wrapper_comments {
 	font-family: Georgia
 }
 
-.h4_entry_title {
+.entry_title {
 	border: 1px dotted orange;
 	width: 500px;
 }

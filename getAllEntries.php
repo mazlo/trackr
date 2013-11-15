@@ -20,7 +20,7 @@
 
 		<div class='entry'>
 			<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
-			<input class="h4_entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+			<input class="entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
 			<span id="entry_title_confirm_<? echo $row['id']; ?>" style="color: green"></span>
 
 			<h4 class='entry_description'><? echo $row['description']; ?></h4>

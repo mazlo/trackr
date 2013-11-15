@@ -258,7 +258,7 @@
 		});
 
 		// handler to change title of entry
-		$jQ( document ).on( 'blur', '.h4_entry_title_inactive', function() 
+		$jQ( document ).on( 'blur', '.entry_title_inactive', function() 
 		{
 			var title = $jQ(this).val();
 
@@ -282,13 +282,13 @@
 		});
 
 		// css manipulations on hover
-		$jQ( document ).on( 'hover', '.h4_entry_title_inactive', function() 
+		$jQ( document ).on( 'hover', '.entry_title_inactive', function() 
 		{
-			$jQ(this).toggleClass( 'h4_entry_title' );
+			$jQ(this).toggleClass( 'entry_title' );
 			$jQ(this).removeAttr( 'disabled' );
 		});
 
-		$jQ( document ).on( 'click', '.h4_entry_title_inactive', function() 
+		$jQ( document ).on( 'click', '.entry_title_inactive', function() 
 		{
 			oldTitle = $jQ(this).val();
 		});
