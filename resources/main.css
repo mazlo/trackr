@@ -53,8 +53,8 @@ div.wrapper_comments {
 
 .entry_title_inactive {
 	border: 1px solid #fff; 
+	margin: 0;
 	padding: 6px;
-	width: 500px;
 	font-size: 16px; 
 	font-weight: bold; 
 	font-family: Georgia
@@ -63,6 +63,10 @@ div.wrapper_comments {
 .entry_title {
 	border: 1px dotted orange;
 	width: 500px;
+}
+
+.entry_title_confirm {
+	color: green;
 }
 
 span.title_span {
@@ -74,9 +78,19 @@ h4.comments_title {
 }
 
 h4.entry_description {
-	margin: 6px 0 6px 0; 
+	margin: 0; 
 	font-weight: 100; 
 	font-style: italic;
+}
+
+h4.entry_new_title {
+	margin-bottom: 6px;
+}
+
+h4.entry_new_description {
+	margin-bottom: 6px;
+	font-weight: 100;
+	font-style: italic;;
 }
 
 h4.normal {
@@ -116,12 +130,12 @@ li.comment {
 
 .textfield {
 	padding: 6px; 
-	width: 500px; 
+	width: 600px; 
 	height: 32px;
 }
 
 .textarea {
-	width: 500px; 
+	width: 600px; 
 	height: 80px; 
-	padding: 8px;
+	padding: 6px;
 }

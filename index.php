@@ -30,10 +30,10 @@
 			<!-- div entry add: is hidden after page load -->
 			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 13px;">
 
-				<h4 class="entry_title">Title</h4>
+				<h4 class="entry_new_title">Title</h4>
 				<input type="text" id="title" value="qwertqasd" class="textfield" />
 				
-				<h4 class="entry_description">Description</h4>
+				<h4 class="entry_new_description">Description</h4>
 				<textarea id="description" class="textarea">aflijqwea</textarea>
 
 				<div style="padding: 8px;">
@@ -267,6 +267,8 @@
 
 			var entryId = $jQ(this).attr( 'eid' );
 
+			$jQ(this).after( "<span id='entry_title_confirm_"+ entryId +"' class='entry_title_confirm'></span>" );
+
 			// ajax call to change title
 			$jQ.ajax( {
 				url: "changeEntryTitle.php",
@@ -276,7 +278,10 @@
 				success: function( data ) 
 				{
 					$jQ( '#entry_title_confirm_'+ entryId ).html( 'done' );
-					$jQ( '#entry_title_confirm_'+ entryId ).effect( 'fade', 2000 );
+					$jQ( '#entry_title_confirm_'+ entryId ).effect( 'fade', 2000, function() 
+					{
+						$jQ(this).remove();
+					} );
 				}
 			});
 		});
