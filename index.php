@@ -215,8 +215,21 @@
 		});
 
 		// handler for clicking the delete entry button
-		$jQ( document ).on( 'click', '.entry_delete_link', function() 
+		$jQ( document ).on( 'click', '.entry_delete_link', function( e ) 
 		{
+			var x = e.pageX - 65;
+			var y = e.target.offsetTop + 1;
+
+			var dialog = $jQ(this).next( '.entry_delete_confirmation' );
+			dialog.css( 'left', x );
+			dialog.css( 'top', y );
+			dialog.show();
+		});
+
+		$jQ( document ).on( 'click', '.entry_delete_confirmation', function()
+		{
+			$jQ(this).hide();
+
 			var elementId = $jQ(this).attr( 'eid' );
 
 			$jQ(this).closest( '.wrapper_entry' ).effect( 'fade', 300, function()

@@ -70,6 +70,15 @@ div.wrapper_comments {
 	color: green;
 }
 
+.entry_delete_confirmation {
+	display: none; 
+	z-index: 1000; 
+	position: absolute; 
+	border: 1px solid red; 
+	margin-left: 23px; 
+	padding: 2px 23px;
+}
+
 span.title_span {
 
 }
