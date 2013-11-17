@@ -328,19 +328,23 @@
 		});
 
 		// handling keypress event on new entry title
-		$jQ( document ).on( 'keypress', '#title', function( event )
+		$jQ( document ).on( 'keyup', '#title', function( event )
 		{
 			// on press of enter
 			if ( event.which == 13 )
 				$jQ( '#description' ).focus();
+			else if ( event.which == 27 )
+				$jQ( '.entry_add_cancel' ).click();
 		});
 
 		// handling keypress event on new entry description
-		$jQ( document ).on( 'keypress', '#description', function( event )
+		$jQ( document ).on( 'keyup', '#description', function( event )
 		{
 			// on press of enter
 			if ( event.which == 13 )
 				$jQ( '.entry_add_button' ).click();
+			else if ( event.which == 27 )
+				$jQ( '.entry_add_cancel' ).click();
 		});
 
 		// css manipulations on hover
