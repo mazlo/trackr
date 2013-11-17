@@ -220,10 +220,12 @@
 			var x = e.pageX - 65;
 			var y = e.target.offsetTop + 1;
 
-			var dialog = $jQ(this).next( '.entry_delete_confirmation' );
+			dialog = $jQ(this).next( '.entry_delete_confirmation' );
 			dialog.css( 'left', x );
 			dialog.css( 'top', y );
 			dialog.show();
+
+			setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
 		});
 
 		$jQ( document ).on( 'click', '.entry_delete_confirmation', function()
