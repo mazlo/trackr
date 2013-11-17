@@ -23,7 +23,7 @@
 		</div>
 		
 		<div id="content" style="width: 800; margin: auto">
-			<h2>Hot This Week</h2>
+			<h2>Trackr</h2>
 			
 			<a href="#" class="entry_add_link">+</a>
 
@@ -217,7 +217,7 @@
 		// handler for clicking the delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_link', function( e ) 
 		{
-			var x = 300;
+			var x = 150;
 			var y = e.target.offsetTop + 1;
 
 			dialog = $jQ(this).next( '.entry_delete_confirmation' );
@@ -228,6 +228,7 @@
 			setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
 		});
 
+		// handler for clicking the confirmation dialog for delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_confirmation', function()
 		{
 			$jQ(this).hide();
