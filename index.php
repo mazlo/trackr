@@ -319,6 +319,35 @@
 			});
 		});
 
+		// handler to change comment title of entry
+		$jQ( document ).on( 'blur', '.comments_title_inactive', function() 
+		{
+			var title = $jQ(this).val();
+
+			if ( commentsOldTitle == title )
+				return;
+
+			var entryId = $jQ(this).attr( 'eid' );
+
+			$jQ(this).after( "<span id='comments_title_confirm_"+ entryId +"' class='comments_title_confirm'></span>" );
+
+			// ajax call to change title
+			$jQ.ajax( {
+				url: "changeListTitle.php",
+				type: "get",
+				data: { eid: entryId, tl: title },
+
+				success: function( data ) 
+				{
+					$jQ( '#comments_title_confirm_'+ entryId ).html( 'done' );
+					$jQ( '#comments_title_confirm_'+ entryId ).effect( 'fade', 2000, function() 
+					{
+						$jQ(this).remove();
+					} );
+				}
+			});
+		});
+
 		// handling keypress event on title textfield
 		$jQ( document ).on('keypress', '.entry_title_inactive', function( event )
 		{
@@ -354,9 +383,29 @@
 			$jQ(this).removeAttr( 'disabled' );
 		});
 
+		$jQ( document ).on( 'hover', '.comments_title_inactive', function() 
+		{
+			$jQ(this).toggleClass( 'comments_title' );
+			$jQ(this).removeAttr( 'disabled' );
+		});
+
 		$jQ( document ).on( 'click', '.entry_title_inactive', function() 
 		{
 			oldTitle = $jQ(this).val();
+		});
+
+		// handler to change title of list
+		$jQ( document ).on( 'click', '.comments_title_inactive', function() 
+		{
+			commentsOldTitle = $jQ(this).val();
+		});
+
+		// handling keypress event on comment title textfield
+		$jQ( document ).on( 'keypress', '.comments_title_inactive', function( event )
+		{
+			// on press of enter
+			if ( event.which == 13 )
+				$jQ(this).blur();
 		});
 
 	</script>

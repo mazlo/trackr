@@ -9,7 +9,7 @@
 	}
 
 	// get all entries
-    $result = $mysqli->query( 'SELECT id,title,description FROM entry ORDER BY id DESC' );
+    $result = $mysqli->query( 'SELECT id, title, description, listTitle FROM entry ORDER BY id DESC' );
 
 	while( $row = $result->fetch_assoc() ) { ?>
 
@@ -23,7 +23,6 @@
 			<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
 			<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
 
-
 			<h4 class='entry_description'><? echo $row['description']; ?></h4>
 			
 			<a href="#" class="div_comment_add" eid="<? echo $row['id']; ?>">+</a>
@@ -35,7 +34,7 @@
 
 				<!-- wrapper for comment dialog -->
 				<div class='wrapper_comments'>
-					<h4 class='comments_title'>Comments</h4>
+					<input class="textfield comments_title_inactive" eid='<? echo $row['id']; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
 
 					<!-- div comment add: is hidden first -->
 					<div id="div_comment_add_<? echo $row['id']; ?>" style="display: none;">
