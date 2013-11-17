@@ -70,7 +70,8 @@ div.wrapper_comments {
 	color: green;
 }
 
-.entry_delete_confirmation {
+.entry_delete_confirmation,
+.comment_delete_confirmation {
 	display: none; 
 	z-index: 1000; 
 	position: absolute; 

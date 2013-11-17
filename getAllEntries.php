@@ -52,14 +52,16 @@
 				<?
 				while( $comments = $result2->fetch_assoc() ) { ?>		
 						<li class='comment' cid='<? echo $comments['id']; ?>'>
-							<span style="display: table-cell;"><a href='#' eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>' class='comment_delete_link'>-</a></span>
+							<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
 							<span style="display: table-cell;"><? echo $comments['comment']; ?></span>
+							<span id="comment_delete_confirmation<? echo $comments['id']; ?>" class="comment_delete_confirmation" eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>'><a href='#'>Sure?</a></span>
 						</li>
-			<? 	} 
+			 <?	} ?>
+					</ul> 
 
-				$result2->close(); ?>
-					</div>
+			 <? $result2->close(); ?>
 				</div>
+			</div>
 		<? 	} ?>
 		</div>
 	</div>

@@ -220,7 +220,7 @@
 			var x = 150;
 			var y = e.target.offsetTop + 1;
 
-			dialog = $jQ(this).next( '.entry_delete_confirmation' );
+			var dialog = $jQ(this).next( '.entry_delete_confirmation' );
 			dialog.css( 'left', x );
 			dialog.css( 'top', y );
 			dialog.show();
@@ -252,8 +252,24 @@
 		});
 
 		// handler for clicking the delete comment button
-		$jQ( document ).on( 'click', '.comment_delete_link', function()
+		$jQ( document ).on( 'click', '.comment_delete_link', function( e )
 		{
+			var x = 150;
+			var y = e.target.offsetTop + 1;
+
+			var cdialog = $jQ(this).parent().nextAll( '.comment_delete_confirmation' );
+			cdialog.css( 'left', x );
+			cdialog.css( 'top', y );
+			cdialog.show();
+
+			setTimeout( function() { $jQ( cdialog ).effect( 'fade', 1000 ); }, 2000 );
+		});
+
+		// handler for clicking the confirmation dialog for delete comment button
+		$jQ( document ).on( 'click', '.comment_delete_confirmation', function()
+		{
+			$jQ(this).hide();
+
 			var entryId = $jQ(this).attr( 'eid' );
 			var commentId = $jQ(this).attr( 'cid' );
 
