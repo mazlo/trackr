@@ -25,7 +25,7 @@
 		<div id="content" style="width: 800; margin: auto">
 			<h2>Hot This Week</h2>
 			
-			<a href="#" class="div_entry_add">+</a>
+			<a href="#" class="entry_add_link">+</a>
 
 			<!-- div entry add: is hidden after page load -->
 			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 13px;">
@@ -116,7 +116,7 @@
 		};
 
 		// shows the div to add a new entry
-		$jQ( document ).on( 'click', '.div_entry_add', function() 
+		$jQ( document ).on( 'click', '.entry_add_link', function() 
 		{
 			$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
 			{
@@ -138,7 +138,7 @@
 		});
 
 		// css manipulations on hover
-		$jQ( document ).on( 'hover', '.div_entry_add, .entry_delete_link, .div_comment_add, .comment_delete_link', function()
+		$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .div_comment_add, .comment_delete_link', function()
 		{
 			$jQ(this).toggleClass('hover');
 		});
