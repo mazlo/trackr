@@ -286,6 +286,14 @@
 			});
 		});
 
+		// handling keypress event on title textfield
+		$jQ( document ).on('keypress', '.entry_title_inactive', function( event )
+		{
+			// on press of enter
+			if ( event.which == 13 )
+				$jQ(this).blur();
+		});
+
 		// css manipulations on hover
 		$jQ( document ).on( 'hover', '.entry_title_inactive', function() 
 		{
