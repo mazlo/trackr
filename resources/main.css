@@ -70,8 +70,10 @@ div.wrapper_comments {
 
 .entry_title_confirm,
 .comments_title_confirm {
-	margin-left: 13px;
-	color: green;
+	position: absolute;
+	z-index: 1000;
+	border: 1px solid green; 
+	padding: 2px 23px;
 }
 
 .entry_delete_confirmation,
@@ -80,7 +82,6 @@ div.wrapper_comments {
 	z-index: 1000; 
 	position: absolute; 
 	border: 1px solid red; 
-	margin-left: 23px; 
 	padding: 2px 23px;
 }
 

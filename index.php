@@ -291,7 +291,7 @@
 		});
 
 		// handler to change title of entry
-		$jQ( document ).on( 'blur', '.entry_title_inactive', function() 
+		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) 
 		{
 			var title = $jQ(this).val();
 
@@ -310,8 +310,11 @@
 
 				success: function( data ) 
 				{
-					$jQ( '#entry_title_confirm_'+ entryId ).html( 'done' );
-					$jQ( '#entry_title_confirm_'+ entryId ).effect( 'fade', 2000, function() 
+					var dialog = $jQ( '#entry_title_confirm_'+ entryId )
+					dialog.html( 'done' );
+					dialog.css( 'top', e.target.offsetTop + 1 );
+					dialog.css( 'left', 150 );
+					dialog.effect( 'fade', 2000, function() 
 					{
 						$jQ(this).remove();
 					} );
@@ -320,7 +323,7 @@
 		});
 
 		// handler to change comment title of entry
-		$jQ( document ).on( 'blur', '.comments_title_inactive', function() 
+		$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) 
 		{
 			var title = $jQ(this).val();
 
@@ -339,8 +342,11 @@
 
 				success: function( data ) 
 				{
-					$jQ( '#comments_title_confirm_'+ entryId ).html( 'done' );
-					$jQ( '#comments_title_confirm_'+ entryId ).effect( 'fade', 2000, function() 
+					var dialog = $jQ( '#comments_title_confirm_'+ entryId )
+					dialog.html( 'done' );
+					dialog.css( 'top', e.target.offsetTop + 1 );
+					dialog.css( 'left', 150 );
+					dialog.effect( 'fade', 2000, function() 
 					{
 						$jQ(this).remove();
 					} );
