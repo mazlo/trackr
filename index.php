@@ -121,6 +121,7 @@
 			$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
 			{
 				$jQ( '#div_entry_add' ).show();
+				$jQ( '#title' ).focus();
 			} );
 
 			return true;
@@ -324,6 +325,22 @@
 			// on press of enter
 			if ( event.which == 13 )
 				$jQ(this).blur();
+		});
+
+		// handling keypress event on new entry title
+		$jQ( document ).on( 'keypress', '#title', function( event )
+		{
+			// on press of enter
+			if ( event.which == 13 )
+				$jQ( '#description' ).focus();
+		});
+
+		// handling keypress event on new entry description
+		$jQ( document ).on( 'keypress', '#description', function( event )
+		{
+			// on press of enter
+			if ( event.which == 13 )
+				$jQ( '.entry_add_button' ).click();
 		});
 
 		// css manipulations on hover
