@@ -217,7 +217,7 @@
 		// handler for clicking the delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_link', function( e ) 
 		{
-			var x = e.pageX - 65;
+			var x = 300;
 			var y = e.target.offsetTop + 1;
 
 			dialog = $jQ(this).next( '.entry_delete_confirmation' );
