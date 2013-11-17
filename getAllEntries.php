@@ -38,7 +38,7 @@
 
 					<!-- div comment add: is hidden first -->
 					<div id="div_comment_add_<? echo $row['id']; ?>" style="display: none;">
-						<textarea id="comment_new_content_<? echo $row['id']; ?>"></textarea>
+						<textarea id="comment_new_content_<? echo $row['id']; ?>" class="textarea_comment"></textarea>
 
 						<div style="margin: 8px; 0">
 							<input type="button" class="comment_add_button" eid="<? echo $row['id']; ?>" value="Add" />

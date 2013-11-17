@@ -134,7 +134,9 @@ li.comment {
 	height: 32px;
 }
 
-.textarea {
+.textarea,
+.textarea_comment
+ {
 	width: 600px; 
 	height: 80px; 
 	padding: 6px;
