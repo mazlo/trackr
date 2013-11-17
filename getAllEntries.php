@@ -16,7 +16,7 @@
 	<!-- wrapper for one entry -->
 	<div class="wrapper_entry">
 
-		<a href='#' class='entry_delete_link' eid='<? echo $row['id']; ?>' style='display: block; padding: 3px 13px'>-</a>
+		<a href='#' class='entry_delete_link' eid='<? echo $row['id']; ?>'>-</a>
 
 		<div class='entry'>
 			<span style='font-weight: bold'>#<? echo $row['id']; ?></span>

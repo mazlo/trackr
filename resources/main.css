@@ -111,6 +111,11 @@ li.comment {
 	padding: 6px 0px;
 }
 
+.entry_delete_link {
+	display: block; 
+	padding: 3px 13px
+}
+
 .comment_delete_link {
 	padding: 3px 13px;
 }
