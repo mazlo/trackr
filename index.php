@@ -21,6 +21,7 @@
 		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
 			<h2>Trackr</h2>
 			<input type="text" id="search" class="textfield" />
+			<span id="searchResults" style="margin-left: 13px; color: lightgray">&nbsp;</span>
 		</div>
 		
 		<div id="content" style="width: 800px; margin: auto">
@@ -399,27 +400,50 @@
 		// handling keyup event on search textfield
 		$jQ( document ).on( 'keyup', '#search', function( event )
 		{
+			// escape key pressed
 			if ( event.which == 27 )
 			{
-				$jQ(this).val("");
+				// reset field values
+				$jQ( this ).val( '' );
 				$jQ( '.searchable' ).each( function()
 				{
-					$jQ(this).css( 'background', 'none' );
+					$jQ( this ).css( 'background', 'transparent' );
 				})
+				$jQ( '#searchResults' ).text( '' );
+
 				return;
 			}
 
-			var searchText = $jQ(this).val();
-
-			$jQ( '.searchable' ).each( function()
+			var counter = 0;
+			var value = this.value.toLowerCase();
+					
+			$jQ( '.searchable' ).each( function() 
 			{
-				var text = $jQ(this).text();
-
-				if ( text == searchText )
+				// reset all search fields first
+				$jQ( this ).css( 'background-color', 'transparent' );
+						
+				// check if input is valid
+				if ( value.length <= 2 )
 				{
-					$jQ(this).css( 'background', 'green' );
+					$jQ( this ).css( 'background-color', 'transparent' );
+					return;
 				}
-			});
+				
+				// check if there are some results
+				var found = $jQ( this ).text().toLowerCase().search( value );
+				if ( found == -1 )
+					return;
+					
+				// highligh those results
+				$jQ( this ).css( 'background-color', '#c3d69b' );  
+				counter += 1;
+			} );
+					
+			// print number of results
+			if ( counter != 0 )
+				$jQ( "#searchResults").html( counter +' matches' );
+			else
+				$jQ( "#searchResults").html( '&nbsp' );
 		});
 
 		// css manipulations on hover

@@ -20,7 +20,7 @@
 		<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'><a href='#'>Sure?</a></span>
 
 		<div class='entry'>
-			<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
+			<span style='font-weight: bold'>#<? echo $row['id']; ?>&nbsp;</span>
 			<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
 
 			<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
