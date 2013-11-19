@@ -153,6 +153,8 @@
 				{
 					$jQ( '#div_comment_add_'+ entryId ).show();
 				});
+
+			return false;
 		});
 
 		// hides the div to add a new comment
@@ -163,6 +165,8 @@
 				{
 					$jQ( '#div_comment_add_'+ entryId ).hide();
 				} );
+
+			return false;
 		});
 
 		// handler for clicking the add comment button
@@ -187,6 +191,7 @@
 				}
 			});
 
+			return false;
 		});
 
 		// handler for clicking the add entry button
@@ -227,6 +232,8 @@
 			dialog.show();
 
 			setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
+
+			return false;
 		});
 
 		// handler for clicking the confirmation dialog for delete entry button
@@ -250,6 +257,8 @@
 						}
 					});
 				});
+			
+			return false;
 		});
 
 		// handler for clicking the delete comment button
@@ -264,6 +273,8 @@
 			cdialog.show();
 
 			setTimeout( function() { $jQ( cdialog ).effect( 'fade', 1000 ); }, 2000 );
+
+			return false;
 		});
 
 		// handler for clicking the confirmation dialog for delete comment button
@@ -288,6 +299,8 @@
 						}
 					});
 				});
+
+			return false;
 		});
 
 		// handler to change title of entry
