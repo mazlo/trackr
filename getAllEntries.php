@@ -23,7 +23,7 @@
 			<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
 			<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
 
-			<h4 class='entry_description'><? echo $row['description']; ?></h4>
+			<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
 			
 			<a href="#" class="comment_add_link" eid="<? echo $row['id']; ?>">+</a>
 
@@ -52,7 +52,7 @@
 				while( $comments = $result2->fetch_assoc() ) { ?>		
 						<li class='comment' cid='<? echo $comments['id']; ?>'>
 							<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
-							<span style="display: table-cell;"><? echo $comments['comment']; ?></span>
+							<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
 							<span id="comment_delete_confirmation<? echo $comments['id']; ?>" class="comment_delete_confirmation" eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>'><a href='#'>Sure?</a></span>
 						</li>
 			 <?	} ?>
