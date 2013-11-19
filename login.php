@@ -2,6 +2,7 @@
 
 	session_start();
 
+	// submit on form
 	if( $_SERVER[ 'REQUEST_METHOD' ] == "POST" )
 	{
 		// username and password sent from form 
@@ -24,13 +25,21 @@
 		if( $count == 1 )
 		{
 			session_register( 'username' );
-			$_SESSION[ 'userid'] = $username;
+			$_SESSION[ 'userid' ] = $username;
 
 			header( 'location: index.php' );
 		}
 		else 
 		{
 			$error = "Your username or password is invalid";
+		}
+	}
+	else 
+	{
+		// check if session variable exists
+		if ( isset( $_SESSION[ 'userid' ] ) )
+		{
+			header( 'location: index.php' );
 		}
 	}
 ?>
