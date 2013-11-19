@@ -420,12 +420,12 @@
 			$jQ( '.searchable' ).each( function() 
 			{
 				// reset all search fields first
-				$jQ( this ).css( 'background-color', 'transparent' );
+				$jQ( this ).css( 'background', 'transparent' );
 						
 				// check if input is valid
 				if ( value.length <= 2 )
 				{
-					$jQ( this ).css( 'background-color', 'transparent' );
+					$jQ( this ).css( 'background', 'transparent' );
 					return;
 				}
 				
@@ -435,7 +435,7 @@
 					return;
 					
 				// highligh those results
-				$jQ( this ).css( 'background-color', '#c3d69b' );  
+				$jQ( this ).css( 'background', '#c3d69b' );  
 				counter += 1;
 			} );
 					
