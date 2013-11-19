@@ -18,12 +18,12 @@
 </head>
 
 	<body>
-		<div id="header" style="height: 70px;">
-			&nbsp;
+		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
+			<h2>Trackr</h2>
+			<input type="text" id="search" class="textfield" />
 		</div>
 		
-		<div id="content" style="width: 800; margin: auto">
-			<h2>Trackr</h2>
+		<div id="content" style="width: 800px; margin: auto">
 			
 			<a href="#" class="entry_add_link">+</a>
 
@@ -60,6 +60,7 @@
 		$jQ( function()
 		{
 			getAllEntries();
+			$jQ( '#search' ).focus();
 		});
 
 		var getAllEntries = function()
@@ -257,7 +258,7 @@
 						}
 					});
 				});
-			
+
 			return false;
 		});
 
@@ -393,6 +394,32 @@
 				$jQ( '.entry_add_button' ).click();
 			else if ( event.which == 27 )
 				$jQ( '.entry_add_cancel' ).click();
+		});
+
+		// handling keyup event on search textfield
+		$jQ( document ).on( 'keyup', '#search', function( event )
+		{
+			if ( event.which == 27 )
+			{
+				$jQ(this).val("");
+				$jQ( '.searchable' ).each( function()
+				{
+					$jQ(this).css( 'background', 'none' );
+				})
+				return;
+			}
+
+			var searchText = $jQ(this).val();
+
+			$jQ( '.searchable' ).each( function()
+			{
+				var text = $jQ(this).text();
+
+				if ( text == searchText )
+				{
+					$jQ(this).css( 'background', 'green' );
+				}
+			});
 		});
 
 		// css manipulations on hover
