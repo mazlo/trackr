@@ -91,6 +91,7 @@ span.title_span {
 
 h4.entry_description {
 	margin: 0; 
+	padding: 3px;
 	font-weight: 100; 
 	font-style: italic;
 }
@@ -119,8 +120,11 @@ ul.comments {
 
 li.comment {
 	margin: 0; 
-	padding: 6px 0px;
 	cursor: hand;
+}
+
+li.comment > span.searchable {
+	padding: 4px;
 }
 
 .entry_delete_link {
