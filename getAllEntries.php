@@ -25,7 +25,7 @@
 
 			<h4 class='entry_description'><? echo $row['description']; ?></h4>
 			
-			<a href="#" class="div_comment_add" eid="<? echo $row['id']; ?>">+</a>
+			<a href="#" class="comment_add_link" eid="<? echo $row['id']; ?>">+</a>
 
 			<?
 			$result2 = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $row['id'] .' ORDER BY position ASC' );
@@ -37,7 +37,7 @@
 					<input class="textfield comments_title_inactive" eid='<? echo $row['id']; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
 
 					<!-- div comment add: is hidden first -->
-					<div id="div_comment_add_<? echo $row['id']; ?>" style="display: none;">
+					<div id="comment_add_link_<? echo $row['id']; ?>" style="display: none;">
 						<textarea id="comment_new_content_<? echo $row['id']; ?>" class="textarea_comment"></textarea>
 
 						<div style="margin: 8px; 0">

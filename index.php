@@ -139,19 +139,19 @@
 		});
 
 		// css manipulations on hover
-		$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .div_comment_add, .comment_delete_link', function()
+		$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
 		{
 			$jQ(this).toggleClass('hover');
 		});
 
 		// shows the div to add a new comment
-		$jQ( document ).on( 'click', '.div_comment_add', function()
+		$jQ( document ).on( 'click', '.comment_add_link', function()
 		{
 			var entryId = $jQ(this).attr('eid');
 
-			$jQ( '#div_comment_add_'+ entryId ).effect( 'fade', 200, function()
+			$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 200, function()
 				{
-					$jQ( '#div_comment_add_'+ entryId ).show();
+					$jQ( '#comment_add_link_'+ entryId ).show();
 				});
 
 			return false;
@@ -161,9 +161,9 @@
 		$jQ( document ).on( 'click', '.comment_add_cancel', function() 
 		{
 			var entryId = $jQ(this).attr('eid');
-			$jQ( '#div_comment_add_'+ entryId ).effect( 'fade', 100, function()
+			$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 100, function()
 				{
-					$jQ( '#div_comment_add_'+ entryId ).hide();
+					$jQ( '#comment_add_link_'+ entryId ).hide();
 				} );
 
 			return false;
@@ -186,7 +186,7 @@
 
 				success: function( data ) 
 				{
-					$jQ( '#div_comment_add_'+ entryId ).hide();
+					$jQ( '#comment_add_link_'+ entryId ).hide();
 					getComments( entryId );
 				}
 			});
