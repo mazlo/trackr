@@ -1,3 +1,6 @@
+<?php
+	include( 'authenticate.php' );
+?>
 
 <html>
 <head>
@@ -16,9 +19,12 @@
 	</script>
 
 </head>
-
 	<body>
 		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
+			<div style="text-align: right">
+				<a href="logout.php" style="font-size: 13px; color: lightgray">logout</a>
+			</div>
+
 			<h2>Trackr</h2>
 			<input type="text" id="search" class="textfield" />
 			<span id="searchResults" style="margin-left: 13px; color: lightgray">&nbsp;</span>
