@@ -66,6 +66,8 @@
 
 	<body>
 		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
+			<div style="height: 23px; text-align: right">&nbsp;</div>
+
 			<h2>Trackr</h2>
 		</div>
 		

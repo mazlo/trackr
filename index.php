@@ -21,8 +21,8 @@
 </head>
 	<body>
 		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
-			<div style="text-align: right">
-				<a href="logout.php" style="font-size: 13px; color: lightgray">logout</a>
+			<div style="height: 23px; text-align: right">
+				<span><? echo $_SESSION[ 'userid' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
 			</div>
 
 			<h2>Trackr</h2>
