@@ -19,18 +19,23 @@
 	</script>
 
 </head>
-	<body>
-		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
-			<div style="height: 23px; text-align: right">
-				<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
+	<body style="width: 1200px; margin: auto">
+		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
+			<div style="float: left;">
+				<h2>Trackr</h2>
 			</div>
 
-			<h2>Trackr</h2>
-			<input type="text" id="search" class="textfield" />
-			<span id="searchResults" style="margin-left: 13px; color: lightgray">&nbsp;</span>
+			<div style="float: right; text-align: right">
+				<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
+			</div>
+			
+			<div style="clear: both;">
+				<input type="text" id="search" class="textfield" style="width: 400px" />
+				<span id="searchResults" style="margin-left: 13px; color: lightgray">&nbsp;</span>
+			</div>
 		</div>
 
-		<div id="content" style="width: 800px; margin: auto">
+		<div id="content" style="width: 80%; margin: auto">
 			
 			<div style="text-align: right">
 				<a href="#">
@@ -235,7 +240,7 @@
 		// handler for clicking the delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_link', function( e ) 
 		{
-			var x = 150;
+			var x = 100;
 			var y = e.target.offsetTop + 1;
 
 			var dialog = $jQ(this).next( '.entry_delete_confirmation' );
@@ -276,7 +281,7 @@
 		// handler for clicking the delete comment button
 		$jQ( document ).on( 'click', '.comment_delete_link', function( e )
 		{
-			var x = 150;
+			var x = 100;
 			var y = e.target.offsetTop + 1;
 
 			var cdialog = $jQ(this).parent().nextAll( '.comment_delete_confirmation' );
