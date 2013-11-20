@@ -3,6 +3,8 @@ body {
 	margin: 0;
 	padding: 0;
 
+	width: 1200px;
+
 	font-family: Georgia;
 	letter-spacing: 0.2pt;
 }

@@ -19,7 +19,7 @@
 	</script>
 
 </head>
-	<body style="width: 1200px; margin: auto">
+	<body style="margin: auto">
 		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
 			<div style="float: left;">
 				<h2>Trackr</h2>
