@@ -16,14 +16,6 @@ a {
 	border: 1px dotted orange;
 }
 
-a.div_entry_add,
-a.entry_add_link {
-	display: block; 
-	padding: 3px 13px; 
-	text-align: right; 
-	cursor: hand;
-}
-
 a.comment_add_link {
 	display: block; 
 	margin: 6px 0;
@@ -33,7 +25,20 @@ a.comment_add_link {
 }
 
 div.div_entry_add {
-	border: 1px solid #fff;
+	padding: 13px;
+	-webkit-box-shadow: 0px 0px 2px #032946;
+	box-shadow: 0px 0px 2px #032946;
+}
+
+.entry_add_link {
+	box-shadow: 0px 2px 6px #bbb; 
+	background-image: url('bg_button_add.png'); 
+	background-repeat: repeat-x; 
+	border: 0;
+	width: 90px; 
+	height: 32px; 
+	cursor: hand;
+	color: #fff;
 }
 
 div.entry {
@@ -98,7 +103,7 @@ h4.entry_description {
 }
 
 h4.entry_new_title {
-	margin-bottom: 6px;
+	margin: 0 0 13px 0;
 }
 
 h4.entry_new_description {

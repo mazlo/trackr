@@ -32,10 +32,14 @@
 
 		<div id="content" style="width: 800px; margin: auto">
 			
-			<a href="#" class="entry_add_link">+</a>
+			<div style="text-align: right">
+				<a href="#">
+					<button class="entry_add_link">+</button>
+				</a>
+			</div>
 
 			<!-- div entry add: is hidden after page load -->
-			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 13px;">
+			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
 
 				<h4 class="entry_new_title">Title</h4>
 				<input type="text" id="title" value="qwertqasd" class="textfield" />
@@ -43,7 +47,7 @@
 				<h4 class="entry_new_description">Description</h4>
 				<textarea id="description" class="textarea">aflijqwea</textarea>
 
-				<div style="padding: 8px;">
+				<div style="padding: 8px 0;">
 					<input type="button" class="entry_add_button" value="Add" />
 					<input type="button" class="entry_add_cancel" value="Cancel" />
 				</div>
@@ -51,7 +55,7 @@
 			</div>
 
 			<!-- list of entries -->
-			<div id="entries">
+			<div id="entries" style="margin-top: 8px;">
 				<!-- ajax response here -->
 			</div>
 		</div>
