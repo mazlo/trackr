@@ -37,9 +37,10 @@ div.div_entry_add {
 }
 
 div.entry {
-	border-bottom: 1px #000 dotted; 
-	margin-bottom: 10px; 
+	margin-bottom: 13px; 
 	padding: 3px 13px;
+	-webkit-box-shadow: 0px 0px 2px #032946;
+	box-shadow: 0px 0px 2px #032946;
 }
 
 div.entry {
@@ -129,7 +130,8 @@ li.comment > span.searchable {
 
 .entry_delete_link {
 	display: block; 
-	padding: 3px 13px
+	margin-bottom: 3px;
+	padding: 3px 13px;
 }
 
 .comment_delete_link {
