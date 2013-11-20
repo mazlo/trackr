@@ -416,6 +416,7 @@
 					$jQ( this ).css( 'background', 'transparent' );
 				})
 				$jQ( '#searchResults' ).text( '' );
+				$jQ( this ).blur();
 
 				return;
 			}
