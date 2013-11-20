@@ -22,14 +22,14 @@
 	<body>
 		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
 			<div style="height: 23px; text-align: right">
-				<span><? echo $_SESSION[ 'userid' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
+				<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
 			</div>
 
 			<h2>Trackr</h2>
 			<input type="text" id="search" class="textfield" />
 			<span id="searchResults" style="margin-left: 13px; color: lightgray">&nbsp;</span>
 		</div>
-		
+
 		<div id="content" style="width: 800px; margin: auto">
 			
 			<a href="#" class="entry_add_link">+</a>

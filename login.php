@@ -2,7 +2,7 @@
 
 	session_start();
 
-	// submit on form
+	// submit on form via POST
 	if( $_SERVER[ 'REQUEST_METHOD' ] == "POST" )
 	{
 		// username and password sent from form 
@@ -17,29 +17,35 @@
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
 
-		// get all entries
-    	$result = $mysqli->query( "SELECT id FROM user WHERE username='$username' and password='$password'" );
+		$crypted = crypt( $password, '$2a$klo)e8-9129.c2)=1das?1$' );
+
+		// query database for username and password
+    	$result = $mysqli->query( "SELECT id, auth_string FROM user WHERE username = '$username' and password = '$crypted'" );
 		$row = $result->fetch_assoc();
 		$count = $result->num_rows;
 
+		// if one entry exists
 		if( $count == 1 )
 		{
-			session_register( 'username' );
-			$_SESSION[ 'userid' ] = $username;
+			// set session attributes and redirect
+			$_SESSION[ 'username' ] = $username;
+			$_SESSION[ 'auth_string' ] = $row['auth_string'];
 
 			header( 'location: index.php' );
 		}
 		else 
 		{
-			$error = "Your username or password is invalid";
+			$error = "Your username or password is not invalid";
 		}
 	}
+	// page load via GET
 	else 
 	{
-		// check if session variable exists
-		if ( isset( $_SESSION[ 'userid' ] ) )
+		// check if session attributes exist and redirect
+		if ( isset( $_SESSION[ 'username' ] ) )
 		{
-			header( 'location: index.php' );
+			if ( crypt( $_SESSION[ 'username' ], '$1tu8CWdqTf9.' ) == $_SESSION[ 'auth_string' ] )
+				header( 'location: index.php' );
 		}
 	}
 ?>
