@@ -44,6 +44,17 @@ div.div_entry_add {
 	color: #fff;
 }
 
+button.button {
+	box-shadow: 0px 2px 6px #bbb; 
+	background-image: url('bg_button_add.png'); 
+	background-repeat: repeat-x; 
+	border: 0;
+	width: 90px; 
+	height: 32px; 
+	cursor: hand;
+	color: #fff;
+}
+
 div.entry {
 	margin-bottom: 13px; 
 	padding: 3px 13px;
@@ -53,6 +64,11 @@ div.entry {
 
 div.entry {
 	padding-bottom: 13px;
+}
+
+div.entry_details {
+	margin-bottom: 13px; 
+	padding: 3px 13px;
 }
 
 div.wrapper_comments {
