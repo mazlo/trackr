@@ -60,6 +60,13 @@
 
 			 <? $result2->close(); ?>
 				</div>
+
+				<div style="text-align: right">
+					<a href="entry.php?eid=<? echo $row['id']; ?>">
+						<button class="entry_details_link">Details</button>
+					</a>
+				</div>
+
 			</div>
 		<? 	} ?>
 		</div>
