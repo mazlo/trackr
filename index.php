@@ -343,7 +343,7 @@
 					var dialog = $jQ( '#entry_title_confirm_'+ entryId )
 					dialog.html( 'done' );
 					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', 150 );
+					dialog.css( 'left', 100 );
 					dialog.effect( 'fade', 2000, function() 
 					{
 						$jQ(this).remove();
@@ -375,7 +375,7 @@
 					var dialog = $jQ( '#comments_title_confirm_'+ entryId )
 					dialog.html( 'done' );
 					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', 150 );
+					dialog.css( 'left', 100 );
 					dialog.effect( 'fade', 2000, function() 
 					{
 						$jQ(this).remove();
