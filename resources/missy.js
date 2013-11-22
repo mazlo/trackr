@@ -115,13 +115,13 @@ var addEntryAction = function()
 	return false;
 };
 
-var deleteEntry = function( object, callback )
+var deleteEntry = function( object, closestClass, callback )
 {
 	$jQ( object ).hide();
 
 	var elementId = $jQ( object ).attr( 'eid' );
 
-	$jQ( object ).closest( '.entry_details' ).effect( 'fade', 300, function()
+	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
 				url: "deleteEntry.php",

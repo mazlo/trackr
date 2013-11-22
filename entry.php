@@ -142,7 +142,7 @@
 		// handler for clicking the confirmation dialog for delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
 		{ 
-			return deleteEntry( this, function()
+			return deleteEntry( this, '.entry_details', function()
 			{
 				document.location = "index.php";
 			} ); 

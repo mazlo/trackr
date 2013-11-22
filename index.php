@@ -108,7 +108,7 @@
 		// handler for clicking the confirmation dialog for delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
 		{ 
-			return deleteEntry( this, function()
+			return deleteEntry( this, '.wrapper_entry', function()
 			{
 				getAllEntries();
 			} ); 
