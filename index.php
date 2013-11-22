@@ -39,9 +39,7 @@
 		<div id="content" style="width: 80%; margin: auto">
 			
 			<div style="text-align: right">
-				<a href="#">
-					<button class="entry_add_link">+</button>
-				</a>
+				<button class="entry_add_link button">+</button>
 			</div>
 
 			<!-- div entry add: is hidden after page load -->

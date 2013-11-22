@@ -87,7 +87,7 @@
 				if ( $result2 ) { ?>
 
 				<!-- wrapper for comment dialog -->
-				<div class='wrapper_comments' style="clear: both; margin-top: 80px; ">
+				<div class='wrapper_comments' style="clear: both; margin-top: 64px; ">
 					<input class="textfield comments_title_inactive" eid='<? echo $entry_id; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
 
 					<!-- div comment add: is hidden first -->
