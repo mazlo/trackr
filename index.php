@@ -274,7 +274,7 @@
 		});
 
 		// handling keypress event on comment title textfield
-		$jQ( document ).on( 'keypress', '.comments_title_inactive', function() { return confirmChangeWithEnter( e, this ); } );
+		$jQ( document ).on( 'keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 	</script>
 
