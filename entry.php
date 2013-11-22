@@ -140,7 +140,13 @@
 		$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
 
 		// handler for clicking the confirmation dialog for delete entry button
-		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() { return deleteEntry( this ); } );
+		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
+		{ 
+			return deleteEntry( this, function()
+			{
+				document.location = "index.php";
+			} ); 
+		} );
 
 		// shows the div to add a new comment
 		$jQ( document ).on( 'click', '.comment_add_link', function() { return showCommentAddDiv( this ); } );

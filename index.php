@@ -108,7 +108,13 @@
 		$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
 
 		// handler for clicking the confirmation dialog for delete entry button
-		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() { return deleteEntry( this ); } );
+		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
+		{ 
+			return deleteEntry( this, function()
+			{
+				getAllEntries();
+			} ); 
+		} );
 
 		// handler for clicking the delete comment button
 		$jQ( document ).on( 'click', '.comment_delete_link', function(e) { return deleteCommentConfirm( e, this ); } );

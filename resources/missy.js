@@ -115,7 +115,7 @@ var addEntryAction = function()
 	return false;
 };
 
-var deleteEntry = function( object )
+var deleteEntry = function( object, callback )
 {
 	$jQ( object ).hide();
 
@@ -131,7 +131,7 @@ var deleteEntry = function( object )
 
 				success: function( data ) 
 				{
-					document.location = "index.php";
+					callback();
 				}
 			});
 		});
@@ -164,7 +164,7 @@ var hideAddCommentDiv = function( object )
 
 var addCommentAction = function( object )
 {
-	var entryId = $jQ(this).attr('eid');
+	var entryId = $jQ( object ).attr('eid');
 
 	if ( $jQ( '#comment_new_content_'+ entryId ).val() == "" )
 		return;
