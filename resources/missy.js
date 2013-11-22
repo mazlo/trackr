@@ -237,10 +237,10 @@ var confirmChangeWithEnter = function( e, object )
 
 // ----- css manipulations -----
 
-var toggleDisabledElement = function( classToBeToggled ) 
+var toggleDisabledElement = function( object, classToBeToggled ) 
 {
-	$jQ(this).toggleClass( classToBeToggled );
-	$jQ(this).removeAttr( 'disabled' );
+	$jQ( object ).toggleClass( classToBeToggled );
+	$jQ( object ).removeAttr( 'disabled' );
 };
 
 

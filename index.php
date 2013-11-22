@@ -254,9 +254,9 @@
 		});
 
 		// css manipulations on hover
-		$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( 'entry_title_inactive' ); } );
+		$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
 
-		$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( 'comments_title' ); } );
+		$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( this, 'comments_title' ); } );
 
 		$jQ( document ).on( 'click', '.entry_title_inactive', function() 
 		{
