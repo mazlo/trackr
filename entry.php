@@ -149,10 +149,10 @@
 		} );
 
 		// shows the div to add a new comment
-		$jQ( document ).on( 'click', '.comment_add_link', function() { return showCommentAddDiv( this ); } );
+		$jQ( document ).on( 'click', '.comment_add_link', function() { return showAddCommentDiv( this ); } );
 
 		// hides the div to add a new comment
-		$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideCommentAddDiv( this ); } );
+		$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideAddCommentDiv( this ); } );
 
 		// handler for clicking the add comment button
 		$jQ( document ).on( 'click', '.comment_add_button', function() { return addCommentAction( this ); } );
