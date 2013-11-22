@@ -12,6 +12,7 @@
 	<script src="resources/prototype.js"></script>
 	<script src="resources/jquery-1.8.2.js"></script>
 	<script src="resources/jquery-ui-1.9.2.custom.js"></script>
+	<script src="resources/missy.js"></script>
 
 	<script type="text/javascript">
 		<!-- this is to prevent conflicts with prototype and jquerytools -->
@@ -135,171 +136,26 @@
 		});
 		$jQ( ".comments" ).disableSelection();
 
-		var getComments = function( eid )
-		{
-			$jQ.ajax( {
-				url: "getComments.php",
-				type: "get",
-				data: { eid: eid }, 
-
-				success: function( data ) 
-				{
-					$jQ( '#comments_'+ eid ).html( data );
-				}
-			});
-		};
-
-		var updateCommentPositions = function( object )
-		{
-			var counter = 0;
-			var cid = [];
-			var pos = [];
-
-			$jQ(object).find( '.comment' ).each( function()
-			{
-				cid.push( $jQ(this).attr( 'cid' ) );
-				pos.push( ++counter );
-			});
-
-			$jQ.ajax( {
-				url: "changeCommentPosition.php",
-				type: "get",
-				data: { cid: cid, pos: pos }
-			});
-		};
-
 		// handler for clicking the delete entry button
-		$jQ( document ).on( 'click', '.entry_delete_link', function( e ) 
-		{
-			var x = 100;
-			var y = e.target.offsetTop + 1;
-
-			var dialog = $jQ(this).next( '.entry_delete_confirmation' );
-			dialog.css( 'left', x );
-			dialog.css( 'top', y );
-			dialog.show();
-
-			setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
 
 		// handler for clicking the confirmation dialog for delete entry button
-		$jQ( document ).on( 'click', '.entry_delete_confirmation', function()
-		{
-			$jQ(this).hide();
-
-			var elementId = $jQ(this).attr( 'eid' );
-
-			$jQ(this).closest( '.entry_details' ).effect( 'fade', 300, function()
-				{
-					$jQ.ajax( {
-						url: "deleteEntry.php",
-						type: "get",
-						context: document.body,
-						data: { entry_id: elementId },
-
-						success: function( data ) 
-						{
-							document.location = "index.php";
-						}
-					});
-				});
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.entry_delete_confirmation', function() { return deleteEntry( this ); } );
 
 		// shows the div to add a new comment
-		$jQ( document ).on( 'click', '.comment_add_link', function()
-		{
-			var entryId = $jQ(this).attr('eid');
-
-			$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 200, function()
-				{
-					$jQ( '#comment_add_link_'+ entryId ).show();
-				});
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.comment_add_link', function() { return showCommentAddDiv( this ); } );
 
 		// hides the div to add a new comment
-		$jQ( document ).on( 'click', '.comment_add_cancel', function() 
-		{
-			var entryId = $jQ(this).attr('eid');
-			$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 100, function()
-				{
-					$jQ( '#comment_add_link_'+ entryId ).hide();
-				} );
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideCommentAddDiv( this ); } );
 
 		// handler for clicking the add comment button
-		$jQ( document ).on( 'click', '.comment_add_button', function()
-		{
-			var entryId = $jQ(this).attr('eid');
-
-			if ( $jQ( '#comment_new_content_'+ entryId ).val() == "" )
-				return;
-
-			var comment = $jQ( '#comment_new_content_'+ entryId ).val();
-
-			$jQ.ajax( {
-				url: "addComment.php",
-				type: "get",
-				data: { eid: entryId, comment: comment },
-
-				success: function( data ) 
-				{
-					$jQ( '#comment_add_link_'+ entryId ).hide();
-					getComments( entryId );
-				}
-			});
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.comment_add_button', function() { return addCommentAction( this ); } );
 
 		// handler for clicking the delete comment button
-		$jQ( document ).on( 'click', '.comment_delete_link', function( e )
-		{
-			var x = 100;
-			var y = e.target.offsetTop + 1;
-
-			var cdialog = $jQ(this).parent().nextAll( '.comment_delete_confirmation' );
-			cdialog.css( 'left', x );
-			cdialog.css( 'top', y );
-			cdialog.show();
-
-			setTimeout( function() { $jQ( cdialog ).effect( 'fade', 1000 ); }, 2000 );
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.comment_delete_link', function(e) { return deleteCommentConfirm( e, this ); } );
 
 		// handler for clicking the confirmation dialog for delete comment button
-		$jQ( document ).on( 'click', '.comment_delete_confirmation', function()
-		{
-			$jQ(this).hide();
-
-			var entryId = $jQ(this).attr( 'eid' );
-			var commentId = $jQ(this).attr( 'cid' );
-
-			$jQ(this).closest( '.comment' ).effect( 'fade', 300, function()
-				{
-					$jQ.ajax( {
-						url: "deleteComment.php",
-						type: "get",
-						context: document.body,
-						data: { eid: entryId, cid: commentId },
-
-						success: function( data ) 
-						{
-							getComments( entryId );
-						}
-					});
-				});
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.comment_delete_confirmation', function() { return deleteComment( this ); } );
 
 		// handler to change title of entry
 		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) 
