@@ -235,22 +235,13 @@
 
 
 		// css manipulations on hover
-		$jQ( document ).on( 'hover', '.entry_title_inactive', function() 
-		{
-			$jQ(this).toggleClass( 'entry_title' );
-			$jQ(this).removeAttr( 'disabled' );
-		});
+		$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
 
-		$jQ( document ).on( 'hover', '.comments_title_inactive', function() 
-		{
-			$jQ(this).toggleClass( 'comments_title' );
-			$jQ(this).removeAttr( 'disabled' );
-		});
+		$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
 
-		$jQ( document ).on( 'click', '.entry_title_inactive', function() 
-		{
-			oldTitle = $jQ(this).val();
-		});
+		$jQ( document ).on( 'click', '.entry_title_inactive', function() { oldTitle = $jQ(this).val(); });
+
+		$jQ( document ).on( 'hover', '.comment_delete_link', function()	{ $jQ(this).toggleClass('hover'); } );
 
 		// handler to change title of list
 		$jQ( document ).on( 'click', '.comments_title_inactive', function() 

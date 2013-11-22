@@ -12,6 +12,7 @@ body {
 a {
 	border: 1px solid #fff;
 	text-decoration: none;
+	color: #000;
 }
 
 a:visited {
