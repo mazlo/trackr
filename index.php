@@ -81,27 +81,10 @@
 		});
 
 		// shows the div to add a new entry
-		$jQ( document ).on( 'click', '.entry_add_link', function() 
-		{
-			$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
-			{
-				$jQ( '#div_entry_add' ).show();
-				$jQ( '#title' ).focus();
-			} );
-
-			return true;
-		});
+		$jQ( document ).on( 'click', '.entry_add_link', function() { return showAddEntryDiv(); } );
 
 		// hides the div to add a new entry
-		$jQ( document ).on( 'click', '.entry_add_cancel', function()
-		{
-			$jQ( '#div_entry_add' ).effect( 'fade', 100, function()
-			{
-				$jQ( '#div_entry_add' ).hide();
-			});
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.entry_add_cancel', function() { return hideAddEntryDiv(); } );
 
 		// css manipulations on hover
 		$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
@@ -110,39 +93,16 @@
 		});
 
 		// shows the div to add a new comment
-		$jQ( document ).on( 'click', '.comment_add_link', function() { return showCommentAddDiv( this ); } );
+		$jQ( document ).on( 'click', '.comment_add_link', function() { return showAddCommentDiv( this ); } );
 
 		// hides the div to add a new comment
-		$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideCommentAddDiv( this ); } );
+		$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideAddCommentDiv( this ); } );
 
 		// handler for clicking the add comment button
 		$jQ( document ).on( 'click', '.comment_add_button', function() { return addCommentAction( this ); } );
 
 		// handler for clicking the add entry button
-		$jQ( document ).on( 'click', '.entry_add_button', function() 
-		{
-			var title = $jQ( '#title' ).val();
-			if ( title == "" )
-				return false;
-
-			var description = $jQ( '#description' ).val();
-			if ( description  == "" )
-				return false;
-
-			$jQ.ajax( {
-				url: "addEntry.php",
-				type: "get",
-				data: { title: title, description: description },
-
-				success: function( data ) 
-				{
-					$jQ( "#div_entry_add" ).hide();
-					getAllEntries();
-				}
-			});
-
-			return false;
-		});
+		$jQ( document ).on( 'click', '.entry_add_button', function() { return addEntryAction(); } );
 
 		// handler for clicking the delete entry button
 		$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
@@ -221,12 +181,7 @@
 		});
 
 		// handling keypress event on title textfield
-		$jQ( document ).on('keypress', '.entry_title_inactive', function( event )
-		{
-			// on press of enter
-			if ( event.which == 13 )
-				$jQ(this).blur();
-		});
+		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 		// handling keypress event on new entry title
 		$jQ( document ).on( 'keyup', '#title', function( event )
@@ -299,17 +254,9 @@
 		});
 
 		// css manipulations on hover
-		$jQ( document ).on( 'hover', '.entry_title_inactive', function() 
-		{
-			$jQ(this).toggleClass( 'entry_title' );
-			$jQ(this).removeAttr( 'disabled' );
-		});
+		$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( 'entry_title_inactive' ); } );
 
-		$jQ( document ).on( 'hover', '.comments_title_inactive', function() 
-		{
-			$jQ(this).toggleClass( 'comments_title' );
-			$jQ(this).removeAttr( 'disabled' );
-		});
+		$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( 'comments_title' ); } );
 
 		$jQ( document ).on( 'click', '.entry_title_inactive', function() 
 		{
@@ -323,12 +270,7 @@
 		});
 
 		// handling keypress event on comment title textfield
-		$jQ( document ).on( 'keypress', '.comments_title_inactive', function( event )
-		{
-			// on press of enter
-			if ( event.which == 13 )
-				$jQ(this).blur();
-		});
+		$jQ( document ).on( 'keypress', '.comments_title_inactive', function() { return confirmChangeWithEnter( e, this ); } );
 
 	</script>
 

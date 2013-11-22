@@ -52,6 +52,8 @@ var updateCommentPositions = function( object )
 	});
 };
 
+
+
 var deleteEntryConfirm = function( e, object ) 
 {
 	var x = 100;
@@ -63,6 +65,52 @@ var deleteEntryConfirm = function( e, object )
 	dialog.show();
 
 	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
+
+	return false;
+};
+
+var showAddEntryDiv = function() 
+{
+	$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
+	{
+		$jQ( '#div_entry_add' ).show();
+		$jQ( '#title' ).focus();
+	} );
+
+	return true;
+};
+
+var hideAddEntryDiv = function()
+{
+	$jQ( '#div_entry_add' ).effect( 'fade', 100, function()
+	{
+		$jQ( '#div_entry_add' ).hide();
+	});
+
+	return false;
+};
+
+var addEntryAction = function() 
+{
+	var title = $jQ( '#title' ).val();
+	if ( title == "" )
+		return false;
+
+	var description = $jQ( '#description' ).val();
+	if ( description  == "" )
+		return false;
+
+	$jQ.ajax( {
+		url: "addEntry.php",
+		type: "get",
+		data: { title: title, description: description },
+
+		success: function( data ) 
+		{
+			$jQ( "#div_entry_add" ).hide();
+			getAllEntries();
+		}
+	});
 
 	return false;
 };
@@ -91,7 +139,7 @@ var deleteEntry = function( object )
 	return false;
 };
 
-var showCommentAddDiv = function( object )
+var showAddCommentDiv = function( object )
 {
 	var entryId = $jQ( object ).attr('eid');
 
@@ -103,7 +151,7 @@ var showCommentAddDiv = function( object )
 	return false;
 };
 
-var hideCommentAddDiv = function( object ) 
+var hideAddCommentDiv = function( object ) 
 {
 	var entryId = $jQ( object ).attr('eid');
 	$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 100, function()
@@ -177,4 +225,22 @@ var deleteComment = function( object )
 
 	return false;
 };
+
+// ----- keypress events -----
+
+var confirmChangeWithEnter = function( e, object )
+{
+	// on press of enter
+	if ( e.which == 13 )
+		$jQ( object ).blur();
+};
+
+// ----- css manipulations -----
+
+var toggleDisabledElement = function( classToBeToggled ) 
+{
+	$jQ(this).toggleClass( classToBeToggled );
+	$jQ(this).removeAttr( 'disabled' );
+};
+
 

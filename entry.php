@@ -222,12 +222,11 @@
 		});
 
 		// handling keypress event on title textfield
-		$jQ( document ).on('keypress', '.entry_title_inactive, .comments_title_inactive', function( event )
-		{
-			// on press of enter
-			if ( event.which == 13 )
-				$jQ(this).blur();
-		});
+		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+
+		// handling keypress event on title textfield
+		$jQ( document ).on('keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+
 
 		// css manipulations on hover
 		$jQ( document ).on( 'hover', '.entry_title_inactive', function() 
