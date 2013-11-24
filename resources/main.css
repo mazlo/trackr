@@ -198,3 +198,18 @@ input {
 	height: 80px; 
 	padding: 6px;
 }
+
+/* jQuery default style manipulations */
+
+.ui-button {
+	border: 1px solid #bbb;
+	min-width: 62px;
+	padding: 4px;
+}
+
+.ui-button-text {
+	padding: 0;
+	font-family: Georgia;
+	font-size: 13px;
+	color: #000;
+}

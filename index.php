@@ -38,9 +38,16 @@
 
 		<div id="content" style="width: 80%; margin: auto">
 			
-			<div style="text-align: right">
+			<div id="distinct_tags" style="float: left;">
+				<input type="checkbox" class="entry_tag" id="but1"><label for="but1">Tag1</label>
+				<input type="checkbox" class="entry_tag" id="but2"><label for="but2">Tag2 Habibi</label>
+			</div>
+
+			<div style="float: right; text-align: right">
 				<button class="entry_add_link button">+</button>
 			</div>
+
+			<div style="clear: both; height: 0px;">&nbsp;</div>
 
 			<!-- div entry add: is hidden after page load -->
 			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
@@ -76,6 +83,8 @@
 		{
 			getAllEntries();
 			$jQ( '#search' ).focus();
+
+			$jQ( '.entry_tag' ).button();
 		});
 
 		// shows the div to add a new entry
