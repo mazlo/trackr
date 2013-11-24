@@ -20,10 +20,10 @@
 	</script>
 
 </head>
-	<body style="margin: auto">
+	<body style="margin: auto; letter-spacing: 0.3pt">
 		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
 			<div style="float: left;">
-				<h2 style="color: #aa2a53">Mindstash</h2>
+				<h2>MindStash</h2>
 			</div>
 
 			<div style="float: right; text-align: right">
