@@ -157,6 +157,10 @@ li.comment > span.searchable {
 	padding: 4px;
 }
 
+input {
+	letter-spacing: 0.2pt;
+}
+
 .entry_delete_link {
 	display: block; 
 	margin-bottom: 3px;
