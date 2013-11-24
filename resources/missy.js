@@ -146,6 +146,7 @@ var showAddCommentDiv = function( object )
 	$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 200, function()
 		{
 			$jQ( '#comment_add_link_'+ entryId ).show();
+			$jQ( '#comment_new_content_'+ entryId ).focus();
 		});
 
 	return false;

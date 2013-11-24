@@ -23,7 +23,7 @@
 	<body style="margin: auto">
 		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
 			<div style="float: left;">
-				<h2>Trackr</h2>
+				<h2 style="color: #aa2a53">Mindstash</h2>
 			</div>
 
 			<div style="float: right; text-align: right">
