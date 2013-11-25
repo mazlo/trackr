@@ -70,6 +70,7 @@
 
 				$result->close();
 				$mysqli->close(); ?>
+				<button class="button" id="clearTags" style="width: 48px; height: 23px;">clear</button>
 			</div>
 
 			<div style="float: right; text-align: right">
@@ -153,6 +154,20 @@
 
 			//getAllEntries( tags );
 		} );
+
+		// clears all selection of tags
+		$jQ( document ).on( 'click', '#clearTags', function()
+		{
+			$jQ( '.ui-state-active' ).each( function()
+			{
+				$jQ(this).toggleClass('ui-state-active');
+			});
+
+			$jQ( '.filterableByTag' ).each( function()
+			{
+				$jQ(this).show();
+			});
+		});
 
 		// shows the div to add a new entry
 		$jQ( document ).on( 'click', '.entry_add_link', function() { return showAddEntryDiv(); } );
