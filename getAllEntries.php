@@ -9,6 +9,7 @@
 	}
 
 	$whereClauseWithTags = '';
+	$tags = '';
 
 	// check if tag was given
 	if ( !empty( $_GET['ts'] ) )
@@ -27,14 +28,14 @@
 		$whereClauseWithTags .= ' )';
 	}
 
-	$query = 'SELECT id, title, description, listTitle FROM entry'. $whereClauseWithTags .' ORDER BY id DESC';
+	$query = 'SELECT id, title, description, listTitle, tags FROM entry'. $whereClauseWithTags .' ORDER BY id DESC';
 
     $result = $mysqli->query( $query );
 
 	while( $row = $result->fetch_assoc() ) { ?>
 
 	<!-- wrapper for one entry -->
-	<div class="wrapper_entry">
+	<div class="wrapper_entry filterableByTag" tags="<? echo $row['tags']; ?>">
 
 		<a href='#' class='entry_delete_link' >-</a>
 		<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'><a href='#'>Sure?</a></span>

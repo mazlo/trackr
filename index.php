@@ -66,7 +66,10 @@
 				for ( $i=0; $i<count($my); $i++ )
 				{ ?>
 				<input type="checkbox" class="entry_tag" id="<? echo $i; ?>"><label for="<? echo $i; ?>"><? echo $my[$i]; ?></label>
-			<? 	} ?>
+			<? 	} 
+
+				$result->close();
+				$mysqli->close(); ?>
 			</div>
 
 			<div style="float: right; text-align: right">
@@ -121,7 +124,48 @@
 				tags.push( $jQ(this).text() );
 			});
 
-			getAllEntries( tags );
+			// for each element that is filterable by tag
+			$jQ( '.filterableByTag' ).each( function()
+			{
+				$jQ(this).show();
+
+				if ( tags.size() == 0 )
+					return;
+
+				var elementTags = $jQ(this).attr( 'tags' );
+				if ( elementTags == "" )
+					return;
+
+				elementTags = elementTags.split(',');
+
+				var show = false;
+				var first = true;
+				tags.forEach( function(tag) 
+				{
+				    if ( elementTags.indexOf( tag ) != -1 )
+				    {
+				    	if ( first )
+				    	{
+				    		show = true;
+				    		first = false;
+				    	}
+				    	else if ( !show )
+				    		show = false;
+				    	else
+				    		show = true;
+				    }
+				    else 
+				    {
+				    	show = false;
+				    	first = false;
+				    }
+				});
+
+				if ( !show )
+					$jQ(this).hide();
+			});
+
+			//getAllEntries( tags );
 		} );
 
 		// shows the div to add a new entry
