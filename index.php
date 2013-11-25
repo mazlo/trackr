@@ -77,7 +77,7 @@
 				<button class="entry_add_link button">+</button>
 			</div>
 
-			<div style="clear: both; height: 0px;">&nbsp;</div>
+			<div style="clear: both;"></div>
 
 			<!-- div entry add: is hidden after page load -->
 			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
@@ -278,6 +278,16 @@
 		// handling keypress event on title textfield
 		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
+		// handling keypress event on title textfield
+		$jQ( document ).on('keypress', '.tags_textfield_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+
+		// handler to change comment title of entry
+		$jQ( document ).on( 'blur', '.tags_textfield_inactive', function(e) 
+		{
+			var tags = $jQ(this);
+			alert(tags.val());
+		});
+
 		// handling keypress event on new entry title
 		$jQ( document ).on( 'keyup', '#title', function( event )
 		{
@@ -352,6 +362,8 @@
 		$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
 
 		$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( this, 'comments_title' ); } );
+
+		$jQ( document ).on( 'hover', '.tags_textfield_inactive', function() { return toggleDisabledElement( this, 'tags_textfield' ); } );
 
 		$jQ( document ).on( 'click', '.entry_title_inactive', function() 
 		{

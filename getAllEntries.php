@@ -82,11 +82,17 @@
 			 <? $result2->close(); ?>
 				</div>
 
-				<div style="text-align: right">
+				<div style="float: left">
+					<span style="color: #aaa;">Tags:</span> <input type="type" class="textfield tags_textfield_inactive" disabled="disabled" /> 
+				</div>
+
+				<div style="float: right; text-align: right">
 					<a href="entry.php?eid=<? echo $row['id']; ?>">
 						<button class="entry_details_link">Details</button>
 					</a>
 				</div>
+
+				<div style="clear: both;"></div>
 
 			</div>
 		<? 	} ?>

@@ -89,11 +89,22 @@ div.wrapper_comments {
 	padding: 6px;
 	font-size: 16px; 
 	font-weight: bold; 
-	font-family: Georgia
+	font-family: Georgia;
+}
+
+.tags_textfield_inactive {
+	border: 1px solid #fff; 
+	margin: 0;
+	padding: 6px;
+	font-size: 16px; 
+	font-style: italic;
+	font-family: Georgia;
+	color: #aaa;
 }
 
 .entry_title,
-.comments_title {
+.comments_title,
+.tags_textfield {
 	border: 1px dotted orange;
 	width: 500px;
 }
