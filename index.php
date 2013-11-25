@@ -138,27 +138,13 @@
 
 				elementTags = elementTags.split(',');
 
-				var show = false;
-				var first = true;
+				var show = true;
 				tags.forEach( function(tag) 
 				{
-				    if ( elementTags.indexOf( tag ) != -1 )
-				    {
-				    	if ( first )
-				    	{
-				    		show = true;
-				    		first = false;
-				    	}
-				    	else if ( !show )
-				    		show = false;
-				    	else
-				    		show = true;
-				    }
+				    if ( elementTags.indexOf( tag ) != -1 && show )
+			    		show = true;
 				    else 
-				    {
 				    	show = false;
-				    	first = false;
-				    }
 				});
 
 				if ( !show )
