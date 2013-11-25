@@ -1,9 +1,10 @@
 
-var getAllEntries = function()
+var getAllEntries = function( tags )
 {
 	$jQ.ajax( {
 		url: "getAllEntries.php",
 		type: "get",
+		data: { ts: tags },
 
 		success: function( data ) 
 		{

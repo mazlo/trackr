@@ -8,8 +8,28 @@
 	    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 
-	// get all entries
-    $result = $mysqli->query( 'SELECT id, title, description, listTitle FROM entry ORDER BY id DESC' );
+	$whereClauseWithTags = '';
+
+	// check if tag was given
+	if ( !empty( $_GET['ts'] ) )
+	{
+		// compose where clause to query tags
+		$tags = $_GET['ts'];
+
+		$whereClauseWithTags = ' WHERE ( ';
+		for ( $i=0; $i<count( $tags ); $i++ )
+		{
+			if ( $i != 0 )
+				$whereClauseWithTags .= " AND ";
+
+			$whereClauseWithTags .= "tags LIKE '%$tags[$i]%'";
+		}
+		$whereClauseWithTags .= ' )';
+	}
+
+	$query = 'SELECT id, title, description, listTitle FROM entry'. $whereClauseWithTags .' ORDER BY id DESC';
+
+    $result = $mysqli->query( $query );
 
 	while( $row = $result->fetch_assoc() ) { ?>
 

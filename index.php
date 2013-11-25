@@ -19,11 +19,27 @@
 		$jQ = jQuery.noConflict();
 	</script>
 
+<?php
+
+	// connect
+	$mysqli = new mysqli( "localhost", "root", "root", "shorter");
+
+	if ( $mysqli->connect_errno ) 
+	{
+	    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+	}
+
+	// get all entries
+    $result = $mysqli->query( "SELECT GROUP_CONCAT(DISTINCT tags SEPARATOR ',') AS tags FROM entry " );
+    $row = $result->fetch_assoc();
+
+?>
+
 </head>
 	<body style="margin: auto; letter-spacing: 0.3pt">
 		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
 			<div style="float: left;">
-				<h2>MindStash</h2>
+				<h2><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
 			</div>
 
 			<div style="float: right; text-align: right">
@@ -39,8 +55,18 @@
 		<div id="content" style="width: 80%; margin: auto">
 			
 			<div id="distinct_tags" style="float: left;">
-				<input type="checkbox" class="entry_tag" id="but1"><label for="but1">Tag1</label>
-				<input type="checkbox" class="entry_tag" id="but2"><label for="but2">Tag2 Habibi</label>
+				<?
+				$my = array();
+				for( $i=0, $tags=split( ',', $row['tags'] ); $i<count( $tags ); $i++ )
+				{
+					if ( !in_array( $tags[$i], $my ) )
+						$my[] = $tags[$i];
+				}
+
+				for ( $i=0; $i<count($my); $i++ )
+				{ ?>
+				<input type="checkbox" class="entry_tag" id="<? echo $i; ?>"><label for="<? echo $i; ?>"><? echo $my[$i]; ?></label>
+			<? 	} ?>
 			</div>
 
 			<div style="float: right; text-align: right">
@@ -86,6 +112,17 @@
 
 			$jQ( '.entry_tag' ).button();
 		});
+
+		$jQ( document ).on( 'click', '.entry_tag', function()
+		{
+			var tags = [];
+			$jQ( '.ui-state-active' ).each( function()
+			{
+				tags.push( $jQ(this).text() );
+			});
+
+			getAllEntries( tags );
+		} );
 
 		// shows the div to add a new entry
 		$jQ( document ).on( 'click', '.entry_add_link', function() { return showAddEntryDiv(); } );
