@@ -256,17 +256,19 @@
 			// on press of enter
 			if ( e.which == 13 )
 			{
+				// replace trailing white space and comma
+				$jQ(this).val( $jQ(this).val().replace( /^,|, $/g, '' ) );
+
 				$jQ(this).blur();
+
 				return;
 			} else if ( e.which == 32 )	// on press of space
 			{
 				// replace space by comma space
-				var value = $jQ(this).val().replace( / /g, ', ' );
-				$jQ(this).val(value);
+				$jQ(this).val( $jQ(this).val().replace( / /g, ', ' ) );
 
 				// replace double comma by comma
-				value = $jQ(this).val().replace( /,,/g, ',' );
-				$jQ(this).val(value);
+				$jQ(this).val( $jQ(this).val().replace( /,,/g, ',' ) );
 
 				return;
 			} else if ( e.which == 188 )	// on press of comma
