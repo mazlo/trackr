@@ -279,13 +279,38 @@
 		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 		// handling keypress event on title textfield
-		$jQ( document ).on('keypress', '.tags_textfield_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+		$jQ( document ).on('keyup', '.tags_textfield_inactive', function(e) 
+		{  
+			// on press of enter
+			if ( e.which == 13 )
+			{
+				$jQ(this).blur();
+				return;
+			} else if ( e.which == 32 )	// on press of space
+			{
+				// replace space by comma
+				var value = $jQ(this).val().replace( ' ', ',' );
+				$jQ(this).val(value);
+
+				// replace double comma by comma
+				value = $jQ(this).val().replace( ',,', ',' );
+				$jQ(this).val(value);
+
+				return;
+			} else if ( e.which == 188 )	// on press of comma
+			{
+				// replace double comma by comma
+				var value = $jQ(this).val().replace( ',,', ',' );
+				$jQ(this).val(value);
+			}
+
+
+		} );
 
 		// handler to change comment title of entry
 		$jQ( document ).on( 'blur', '.tags_textfield_inactive', function(e) 
 		{
 			var tags = $jQ(this);
-			alert(tags.val());
 		});
 
 		// handling keypress event on new entry title
