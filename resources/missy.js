@@ -69,7 +69,24 @@ var updateCommentPositions = function( object )
 	});
 };
 
+var updateTags = function ( object )
+{
+	var entryId = $jQ(object).attr( 'eid' );
+	var tags = $jQ(object).val();
 
+	// ajax call to change tags
+	$jQ.ajax( {
+		url: "changeEntryTags.php",
+		type: "get",
+		data: { eid: entryId, ts: tags },
+
+		success: function( data ) 
+		{
+			getAllEntries();
+			getDistinctEntriesTagList();
+		}
+	});
+};
 
 var deleteEntryConfirm = function( e, object ) 
 {
@@ -251,6 +268,40 @@ var confirmChangeWithEnter = function( e, object )
 	// on press of enter
 	if ( e.which == 13 )
 		$jQ( object ).blur();
+};
+
+var confirmChangeOfTags = function( e, object )
+{
+	// on press of enter
+	if ( e.which == 13 )
+	{
+		// replace trailing white space and comma
+		$jQ(object).val( $jQ(object).val().replace( /^,|, ?$/g, '' ) );
+
+		$jQ(object).blur();
+
+		return;
+	} 
+
+	// on press of space
+	else if ( e.which == 32 )
+	{
+		// replace space by comma space
+		$jQ(object).val( $jQ(object).val().replace( / /g, ', ' ) );
+
+		// replace double comma by comma
+		$jQ(object).val( $jQ(object).val().replace( /,,/g, ',' ) );
+
+		return;
+	} 
+
+	// on press of comma
+	else if ( e.which == 188 )
+	{
+		// replace double comma by comma
+		var value = $jQ(object).val().replace( /,,/g, ',' );
+		$jQ(object).val(value);
+	}
 };
 
 // ----- css manipulations -----

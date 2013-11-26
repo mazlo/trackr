@@ -61,7 +61,7 @@
 			<?php
 				
 			// get all entries
-		    $result = $mysqli->query( 'SELECT title, description, listTitle FROM entry WHERE id = '. $entry_id .'' );
+		    $result = $mysqli->query( 'SELECT title, description, listTitle, tags FROM entry WHERE id = '. $entry_id .'' );
 			$row = $result->fetch_assoc(); ?>
 
 			<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
@@ -111,12 +111,16 @@
 						</li>
 			 	<?} ?>
 					</ul> 
+				</div>
 
+				<div>
+					<span style="color: #aaa;">Tags:</span> 
+					<input type="type" class="textfield tags_textfield_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['tags']; ?>" disabled="disabled" /> 
+				</div>
 				<?}
 
 				$result->close();
 			 	$mysqli->close(); ?>
-				</div>
 			</div>
 
 		</div>

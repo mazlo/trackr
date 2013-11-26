@@ -251,54 +251,10 @@
 		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 		// handling keypress event on tags textfield
-		$jQ( document ).on( 'keyup', '.tags_textfield_inactive', function(e) 
-		{  
-			// on press of enter
-			if ( e.which == 13 )
-			{
-				// replace trailing white space and comma
-				$jQ(this).val( $jQ(this).val().replace( /^,|, ?$/g, '' ) );
-
-				$jQ(this).blur();
-
-				return;
-			} else if ( e.which == 32 )	// on press of space
-			{
-				// replace space by comma space
-				$jQ(this).val( $jQ(this).val().replace( / /g, ', ' ) );
-
-				// replace double comma by comma
-				$jQ(this).val( $jQ(this).val().replace( /,,/g, ',' ) );
-
-				return;
-			} else if ( e.which == 188 )	// on press of comma
-			{
-				// replace double comma by comma
-				var value = $jQ(this).val().replace( /,,/g, ',' );
-				$jQ(this).val(value);
-			}
-
-		} );
+		$jQ( document ).on( 'keyup', '.tags_textfield_inactive', function(e) { return confirmChangeOfTags( e, this ); } );
 
 		// handler to change comment title of entry
-		$jQ( document ).on( 'blur', '.tags_textfield_inactive', function(e) 
-		{
-			var entryId = $jQ(this).attr( 'eid' );
-			var tags = $jQ(this).val();
-
-			// ajax call to change tags
-			$jQ.ajax( {
-				url: "changeEntryTags.php",
-				type: "get",
-				data: { eid: entryId, ts: tags },
-
-				success: function( data ) 
-				{
-					getAllEntries();
-					getDistinctEntriesTagList();
-				}
-			});
-		});
+		$jQ( document ).on( 'blur', '.tags_textfield_inactive', function() { return updateTags( this ); } );
 
 		// handling keypress event on new entry title
 		$jQ( document ).on( 'keyup', '#title', function( event )
