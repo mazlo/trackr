@@ -257,7 +257,7 @@
 			if ( e.which == 13 )
 			{
 				// replace trailing white space and comma
-				$jQ(this).val( $jQ(this).val().replace( /^,|, $/g, '' ) );
+				$jQ(this).val( $jQ(this).val().replace( /^,|, ?$/g, '' ) );
 
 				$jQ(this).blur();
 
