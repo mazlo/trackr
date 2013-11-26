@@ -20,6 +20,22 @@ var getAllEntries = function( tags )
 	});
 };
 
+var getDistinctEntriesTagList = function( )
+{
+	$jQ.ajax( {
+		url: "getDistinctEntriesTagList.php",
+		type: "get",
+
+		success: function( data )
+		{
+			$jQ( '#distinctEntriesTagList' ).html( data );
+
+			// transform to jquery button
+			$jQ( '.entry_tag' ).button();
+		}
+	});
+}
+
 var getComments = function( eid )
 {
 	$jQ.ajax( {

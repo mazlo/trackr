@@ -19,22 +19,6 @@
 		$jQ = jQuery.noConflict();
 	</script>
 
-<?php
-
-	// connect
-	$mysqli = new mysqli( "localhost", "root", "root", "shorter");
-
-	if ( $mysqli->connect_errno ) 
-	{
-	    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
-
-	// get all entries
-    $result = $mysqli->query( "SELECT GROUP_CONCAT(DISTINCT tags SEPARATOR ',') AS tags FROM entry " );
-    $row = $result->fetch_assoc();
-
-?>
-
 </head>
 	<body style="margin: auto; letter-spacing: 0.3pt">
 		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
@@ -54,22 +38,10 @@
 
 		<div id="content" style="width: 80%; margin: auto">
 			
-			<div id="distinct_tags" style="float: left;">
-				<?
-				$my = array();
-				for( $i=0, $tags=split( ',', $row['tags'] ); $i<count( $tags ); $i++ )
-				{
-					if ( !in_array( $tags[$i], $my ) )
-						$my[] = $tags[$i];
-				}
-
-				for ( $i=0; $i<count($my); $i++ )
-				{ ?>
-				<input type="checkbox" class="entry_tag" id="<? echo $i; ?>"><label for="<? echo $i; ?>"><? echo $my[$i]; ?></label>
-			<? 	} 
-
-				$result->close();
-				$mysqli->close(); ?>
+			<div style="float: left;">
+				<div id="distinctEntriesTagList" style="display: inline;">
+					<!-- ajax response here -->
+				</div>
 				<button class="button" id="clearTags" style="width: 48px; height: 23px;">clear</button>
 			</div>
 
@@ -112,9 +84,9 @@
 		$jQ( function()
 		{
 			getAllEntries();
-			$jQ( '#search' ).focus();
+			getDistinctEntriesTagList();
 
-			$jQ( '.entry_tag' ).button();
+			$jQ( '#search' ).focus();
 		});
 
 		$jQ( document ).on( 'click', '.entry_tag', function()
@@ -137,7 +109,7 @@
 				if ( elementTags == "" )
 					return;
 
-				elementTags = elementTags.split(',');
+				elementTags = elementTags.split(', ');
 
 				var show = true;
 				tags.forEach( function(tag) 
@@ -278,8 +250,8 @@
 		// handling keypress event on title textfield
 		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
-		// handling keypress event on title textfield
-		$jQ( document ).on('keyup', '.tags_textfield_inactive', function(e) 
+		// handling keypress event on tags textfield
+		$jQ( document ).on( 'keyup', '.tags_textfield_inactive', function(e) 
 		{  
 			// on press of enter
 			if ( e.which == 13 )
@@ -288,29 +260,42 @@
 				return;
 			} else if ( e.which == 32 )	// on press of space
 			{
-				// replace space by comma
-				var value = $jQ(this).val().replace( ' ', ',' );
+				// replace space by comma space
+				var value = $jQ(this).val().replace( / /g, ', ' );
 				$jQ(this).val(value);
 
 				// replace double comma by comma
-				value = $jQ(this).val().replace( ',,', ',' );
+				value = $jQ(this).val().replace( /,,/g, ',' );
 				$jQ(this).val(value);
 
 				return;
 			} else if ( e.which == 188 )	// on press of comma
 			{
 				// replace double comma by comma
-				var value = $jQ(this).val().replace( ',,', ',' );
+				var value = $jQ(this).val().replace( /,,/g, ',' );
 				$jQ(this).val(value);
 			}
-
 
 		} );
 
 		// handler to change comment title of entry
 		$jQ( document ).on( 'blur', '.tags_textfield_inactive', function(e) 
 		{
-			var tags = $jQ(this);
+			var entryId = $jQ(this).attr( 'eid' );
+			var tags = $jQ(this).val();
+
+			// ajax call to change tags
+			$jQ.ajax( {
+				url: "changeEntryTags.php",
+				type: "get",
+				data: { eid: entryId, ts: tags },
+
+				success: function( data ) 
+				{
+					getAllEntries();
+					getDistinctEntriesTagList();
+				}
+			});
 		});
 
 		// handling keypress event on new entry title

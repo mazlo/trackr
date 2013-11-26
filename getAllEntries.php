@@ -83,7 +83,8 @@
 				</div>
 
 				<div style="float: left">
-					<span style="color: #aaa;">Tags:</span> <input type="type" class="textfield tags_textfield_inactive" disabled="disabled" /> 
+					<span style="color: #aaa;">Tags:</span> 
+					<input type="type" class="textfield tags_textfield_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['tags']; ?>" disabled="disabled" /> 
 				</div>
 
 				<div style="float: right; text-align: right">
