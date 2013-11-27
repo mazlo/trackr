@@ -21,23 +21,25 @@
 
 </head>
 	<body style="margin: auto; letter-spacing: 0.3pt">
-		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
-			<div style="float: left;">
-				<h2><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
-			</div>
-
-			<div style="float: right; text-align: right">
-				<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
-			</div>
+		<div id="header">
 			
-			<div style="clear: both;">
-				<input type="text" id="search" class="textfield" style="width: 400px" />
-				<span id="searchResults" style="margin-left: 13px; color: lightgray">&nbsp;</span>
+			<div style="width: 1000px; margin: auto;">
+				<div style="float: left;">
+					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
+				</div>
+
+				<div style="float: right; text-align: right">
+					<span id="searchResults" class="infotext">&nbsp;</span>
+					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 48px;" />
+					<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
+				</div>
+
+				<div style="clear: both; height: 0"></div>
 			</div>
 		</div>
 
-		<div id="content" style="width: 80%; margin: auto">
-			
+		<div id="content">
+
 			<div style="float: left;">
 				<div id="distinctEntriesTagList" style="display: inline;">
 					<!-- ajax response here -->
@@ -73,7 +75,7 @@
 			</div>
 		</div>
 
-		<div id="footer">
+		<div id="footer" style="margin-top: 48px">
 			&nbsp;
 		</div>
 	</body>
