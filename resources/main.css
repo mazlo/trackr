@@ -3,10 +3,18 @@ body {
 	margin: 0;
 	padding: 0;
 
-	width: 1200px;
-
 	font-family: Georgia;
 	letter-spacing: 0.2pt;
+}
+
+#header {
+	padding: 23px 0; 
+	box-shadow: 0 4px 6px #ccc
+}
+
+#content {
+	width: 954px; 
+	margin: 32px auto
 }
 
 a {
@@ -202,12 +210,24 @@ input {
 	height: 32px;
 }
 
+.textfield_smaller {
+	padding: 2px; 
+	width: 300px; 
+	height: 26px;
+}
+
 .textarea,
 .textarea_comment
  {
 	width: 600px; 
 	height: 80px; 
 	padding: 6px;
+}
+
+.infotext {
+	margin: 0 13px; 
+	vertical-align: middle; 
+	color: #ddd;
 }
 
 /* jQuery default style manipulations */
