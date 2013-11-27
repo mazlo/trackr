@@ -2,7 +2,7 @@
 
 	session_start();
 
-	if ( empty( $_SESSION[ 'username' ] ) )
+	if ( empty( $_SESSION[ 'username' ] ) || empty( $_SESSION[ 'auth_string' ] ))
 	{
 		header( "Location: login.php" );
 	}
