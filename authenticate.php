@@ -10,6 +10,11 @@
 	    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 
+	if ( empty( $_SESSION[ 'username' ] ) )
+	{
+		header( "Location: login.php" );
+	}
+
 	$username = $_SESSION[ 'username' ];
 	$auth_string = crypt( $username, '$1tu8CWdqTf9.' );
 
