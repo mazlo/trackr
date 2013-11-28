@@ -20,7 +20,7 @@
 	</script>
 
 </head>
-	<body style="margin: auto; letter-spacing: 0.3pt">
+	<body style="margin: auto">
 		<div id="header">
 			
 			<div style="width: 1000px; margin: auto;">

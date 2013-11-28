@@ -4,7 +4,7 @@ body {
 	padding: 0;
 
 	font-family: Georgia;
-	letter-spacing: 0.2pt;
+	letter-spacing: 0.3pt;
 }
 
 #header {
@@ -81,7 +81,7 @@ div.entry {
 
 div.entry_details {
 	margin-bottom: 13px; 
-	padding: 3px 13px;
+	padding: 3px 0;
 }
 
 div.wrapper_comments {

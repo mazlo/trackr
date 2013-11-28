@@ -35,28 +35,35 @@
 
 </head>
 	<body style="margin: auto">
-		<div id="header" style="width: 80%; margin: auto; padding: 23px 0;">
-			
-			<div style="position: absolute; top: 42px; margin-left: -103px; text-align: right">
+		<div id="header">
+
+			<div style="width: 1000px; margin: auto;">
+				<div style="float: left;">
+					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
+				</div>
+
+				<div style="float: right; text-align: right">
+					<span id="searchResults" class="infotext">&nbsp;</span>
+					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
+					<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; color: lightgray">logout</a>
+				</div>
+
+				<div style="clear: both; height: 0"></div>
+			</div>
+
+		</div>
+
+		<div id="content">
+
+			<div style="position: absolute; top: 112px; margin-left: -103px; text-align: right">
 				<a href="index.php">
 					<img src="resources/back_arrow.png" alt="back" style="width: 63px;" />
 				</a>
 			</div>
 
-			<div style="float: left;">
-				<h2>Trackr</h2>
-			</div>
-
-			<div style="float: right; text-align: right">
-				<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
-			</div>
-
 			<div style="clear: both; height: 32px;">
-				<h3>Showing You Details for Trackr</h3>
+				<h3>Showing You Details for Stash</h3>
 			</div>
-		</div>
-
-		<div id="content" style="width: 80%; margin: auto">
 
 			<?php
 				
