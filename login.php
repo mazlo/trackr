@@ -71,13 +71,22 @@
 </head>
 
 	<body>
-		<div id="header" style="width: 800px; margin: auto; padding: 13px 0;">
-			<div style="height: 23px; text-align: right">&nbsp;</div>
+		<div id="header">
+			
+			<div style="width: 1000px; margin: auto;">
+				<div style="float: left;">
+					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
+				</div>
 
-			<h2>Trackr</h2>
+				<div style="float: right; padding-top: 6px; text-align: right">
+					<a href="register.php">Register</a>
+				</div>
+
+				<div style="clear: both; height: 0"></div>
+			</div>
 		</div>
 		
-		<div id="content" style="width: 800px; margin: auto; padding-top: 120px;">
+		<div id="content" style="padding-top: 120px;">
 			
 			<h3>Please log in</h3>
 			
