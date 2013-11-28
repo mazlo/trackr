@@ -30,8 +30,8 @@
 
 				<div style="float: right; text-align: right">
 					<span id="searchResults" class="infotext">&nbsp;</span>
-					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 48px;" />
-					<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; font-size: 13px; color: lightgray">logout</a>
+					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
+					<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; color: lightgray">logout</a>
 				</div>
 
 				<div style="clear: both; height: 0"></div>
