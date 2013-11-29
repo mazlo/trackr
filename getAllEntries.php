@@ -41,10 +41,17 @@
 		<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'><a href='#'>Sure?</a></span>
 
 		<div class='entry'>
-			<span style='font-weight: bold'>#<? echo $row['id']; ?>&nbsp;</span>
-			<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+			
+			<div style="float: left;">
+				<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
+				<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+			</div>
 
-			<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
+			<div style="float: right; padding: 4px 12px 0 0">
+				<input type="checkbox" />
+			</div>
+
+			<h4 class='entry_description searchable' style="clear: both"><? echo $row['description']; ?></h4>
 			
 			<a href="#" class="comment_add_link" eid="<? echo $row['id']; ?>">+</a>
 
