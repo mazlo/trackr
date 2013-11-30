@@ -349,6 +349,21 @@
 		// handling keypress event on comment title textfield
 		$jQ( document ).on( 'keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
+		// handles clicks on favored icon
+		$jQ( document ).on( 'click', '.favoredIcon', function()
+		{
+			var type = $jQ(this).attr( 'alt' );
+			if ( type == 'no' ) 
+			{
+				$jQ(this).attr( 'src', 'resources/favored_yes.png' );
+				$jQ(this).attr( 'alt', 'yes' );
+			} else 
+			{
+				$jQ(this).attr( 'src', 'resources/favored_no.png' );
+				$jQ(this).attr( 'alt', 'no' );
+			}
+		});
+
 	</script>
 
 </html>

@@ -47,8 +47,8 @@
 				<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
 			</div>
 
-			<div style="float: right; padding: 4px 12px 0 0">
-				<input type="checkbox" />
+			<div style="float: right; padding: 6px 4px 0 0">
+				<img src="resources/favored_no.png" class="favoredIcon" alt="no" width="28px" />
 			</div>
 
 			<h4 class='entry_description searchable' style="clear: both"><? echo $row['description']; ?></h4>
