@@ -92,7 +92,7 @@ var updateEntryFavored = function ( object )
 {
 	var type = $jQ(object).attr( 'alt' );
 
-	$jQ(object).attr( 'src', 'resources/favored_'+ inverseFavored(type) +'.png' );
+	$jQ(object).attr( 'src', 'resources/pinIt_'+ inverseFavored(type) +'.png' );
 	$jQ(object).attr( 'alt', inverseFavored(type) );
 
 	var entryId = $jQ(object).attr( 'eid' );

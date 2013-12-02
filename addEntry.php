@@ -14,6 +14,6 @@
 	}
 
 	// insert new entry
-    $mysqli->query( "INSERT INTO entry (id,title,description) VALUES (default, '".$title."', '".$desc."')" );
+    $mysqli->query( "INSERT INTO entry (id,title,description,favored) VALUES (default, '".$title."', '".$desc."', 1)" );
 	$mysqli->close();
 ?>
