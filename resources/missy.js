@@ -64,7 +64,7 @@ var updateCommentPositions = function( object )
 
 	$jQ.ajax( {
 		url: "changeCommentPosition.php",
-		type: "get",
+		type: "post",
 		data: { cid: cid, pos: pos }
 	});
 };
@@ -77,7 +77,7 @@ var updateTags = function ( object )
 	// ajax call to change tags
 	$jQ.ajax( {
 		url: "changeEntryTags.php",
-		type: "get",
+		type: "post",
 		data: { eid: entryId, ts: tags },
 
 		success: function( data ) 
@@ -153,7 +153,7 @@ var addEntryAction = function()
 
 	$jQ.ajax( {
 		url: "addEntry.php",
-		type: "get",
+		type: "post",
 		data: { title: title, description: description },
 
 		success: function( data ) 
@@ -176,7 +176,7 @@ var deleteEntry = function( object, closestClass, callback )
 		{
 			$jQ.ajax( {
 				url: "deleteEntry.php",
-				type: "get",
+				type: "post",
 				context: document.body,
 				data: { entry_id: elementId },
 
@@ -225,7 +225,7 @@ var addCommentAction = function( object )
 
 	$jQ.ajax( {
 		url: "addComment.php",
-		type: "get",
+		type: "post",
 		data: { eid: entryId, comment: comment },
 
 		success: function( data ) 
@@ -264,7 +264,7 @@ var deleteComment = function( object )
 		{
 			$jQ.ajax( {
 				url: "deleteComment.php",
-				type: "get",
+				type: "post",
 				context: document.body,
 				data: { eid: entryId, cid: commentId },
 

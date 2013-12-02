@@ -1,8 +1,8 @@
 <?php
 
 	// read passed values
-	$entryId = $_GET["eid"];
-	$comment = $_GET["comment"];
+	$entryId = $_REQUEST["eid"];
+	$comment = $_REQUEST["comment"];
 
 	if ( empty( $entryId ) || empty( $comment ) ) 
 	{

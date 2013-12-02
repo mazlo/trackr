@@ -2,8 +2,8 @@
 <?php
 
 	// read passed values
-	$entry_id = $_GET['eid'];
-	$comment_id = $_GET['cid'];
+	$entry_id = $_REQUEST['eid'];
+	$comment_id = $_REQUEST['cid'];
 
 	// connect
 	$mysqli = new mysqli( "localhost", "root", "root", "shorter");

@@ -1,8 +1,8 @@
 <?php
 
 	// read passed values
-	$cids = $_GET["cid"];
-	$poss = $_GET["pos"];
+	$cids = $_REQUEST["cid"];
+	$poss = $_REQUEST["pos"];
 
 	if ( empty( $cids ) || empty( $poss ) )
 	{

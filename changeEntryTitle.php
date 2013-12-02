@@ -1,8 +1,8 @@
 <?php
 
 	// read passed values
-	$entry_id = $_GET["eid"];
-	$title = $_GET["tl"];
+	$entry_id = $_REQUEST["eid"];
+	$title = $_REQUEST["tl"];
 
 	if ( empty( $entry_id ) || empty( $title ) )
 	{

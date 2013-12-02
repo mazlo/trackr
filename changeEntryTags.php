@@ -1,8 +1,8 @@
 <?php
 
 	// read passed values
-	$entry_id = $_GET["eid"];
-	$tags = $_GET["ts"];
+	$entry_id = $_REQUEST["eid"];
+	$tags = $_REQUEST["ts"];
 
 	if ( empty( $entry_id ) || empty( $tags ) )
 	{

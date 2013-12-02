@@ -2,8 +2,8 @@
 <?php
 
 	// read passed values
-	$title = $_GET["title"];
-	$desc = $_GET["description"];
+	$title = $_REQUEST["title"];
+	$desc = $_REQUEST["description"];
 
 	// connect
 	$mysqli = new mysqli( "localhost", "root", "root", "shorter");

@@ -2,7 +2,7 @@
 <?php
 
 	// read passed values
-	$entry_id = $_GET["entry_id"];
+	$entry_id = $_REQUEST["entry_id"];
 
 	// connect
 	$mysqli = new mysqli( "localhost", "root", "root", "shorter");
@@ -16,6 +16,5 @@
 	$mysqli->query( 'DELETE FROM entry WHERE id = '. $entry_id );
 	$mysqli->query( 'DELETE FROM comment WHERE entry_id = '. $entry_id );
 	
-	$result->close();
 	$mysqli->close();
 ?>
