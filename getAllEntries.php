@@ -28,7 +28,7 @@
 		$whereClauseWithTags .= ' )';
 	}
 
-	$query = 'SELECT id, title, description, listTitle, tags, favored FROM entry'. $whereClauseWithTags .' ORDER BY id DESC';
+	$query = 'SELECT id, title, description, listTitle, tags, favored FROM entry'. $whereClauseWithTags .' ORDER BY favored DESC, id DESC';
 
     $result = $mysqli->query( $query );
 
