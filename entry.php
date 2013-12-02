@@ -39,7 +39,7 @@
 
 			<div style="width: 1000px; margin: auto;">
 				<div style="float: left;">
-					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
+					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
 				</div>
 
 				<div style="float: right; text-align: right">
@@ -62,7 +62,7 @@
 			</div>
 
 			<div style="clear: both; height: 32px;">
-				<h3>Showing You Details for Stash</h3>
+				<h3>Showing You Details for Stack</h3>
 			</div>
 
 			<?php

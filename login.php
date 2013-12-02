@@ -75,7 +75,7 @@
 			
 			<div style="width: 1000px; margin: auto;">
 				<div style="float: left;">
-					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tash</h2>
+					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
 				</div>
 
 				<div style="float: right; padding-top: 6px; text-align: right">
