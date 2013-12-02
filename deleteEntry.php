@@ -2,7 +2,7 @@
 <?php
 
 	// read passed values
-	$entry_id = $_REQUEST["entry_id"];
+	$entry_id = $_REQUEST["eid"];
 
 	// connect
 	$mysqli = new mysqli( "localhost", "root", "root", "shorter");

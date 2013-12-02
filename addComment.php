@@ -2,7 +2,7 @@
 
 	// read passed values
 	$entryId = $_REQUEST["eid"];
-	$comment = $_REQUEST["comment"];
+	$comment = $_REQUEST["cm"];
 
 	if ( empty( $entryId ) || empty( $comment ) ) 
 	{

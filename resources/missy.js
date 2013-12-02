@@ -154,7 +154,7 @@ var addEntryAction = function()
 	$jQ.ajax( {
 		url: "addEntry.php",
 		type: "post",
-		data: { title: title, description: description },
+		data: { tl: title, ds: description },
 
 		success: function( data ) 
 		{
@@ -178,7 +178,7 @@ var deleteEntry = function( object, closestClass, callback )
 				url: "deleteEntry.php",
 				type: "post",
 				context: document.body,
-				data: { entry_id: elementId },
+				data: { eid: elementId },
 
 				success: function( data ) 
 				{
@@ -226,7 +226,7 @@ var addCommentAction = function( object )
 	$jQ.ajax( {
 		url: "addComment.php",
 		type: "post",
-		data: { eid: entryId, comment: comment },
+		data: { eid: entryId, cm: comment },
 
 		success: function( data ) 
 		{
