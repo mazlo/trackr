@@ -68,7 +68,7 @@
 			<?php
 				
 			// get all entries
-		    $result = $mysqli->query( 'SELECT title, description, listTitle, tags FROM entry WHERE id = '. $entry_id .'' );
+		    $result = $mysqli->query( 'SELECT title, description, listTitle, tags, favored FROM entry WHERE id = '. $entry_id .'' );
 			$row = $result->fetch_assoc(); ?>
 
 			<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
@@ -286,6 +286,9 @@
 			else if ( event.which == 27 )
 				$jQ( '.entry_add_cancel' ).click();
 		});
+
+		// handles clicks on favored icon
+		$jQ( document ).on( 'click', '.favoredIcon', function() { return updateEntryFavored( this ); } );
 
 
 	</script>

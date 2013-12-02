@@ -350,30 +350,7 @@
 		$jQ( document ).on( 'keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 		// handles clicks on favored icon
-		$jQ( document ).on( 'click', '.favoredIcon', function()
-		{
-			var booleanMap = function( key )
-			{
-				if ( key == 0 )
-					return 1;
-				if ( key == 1 )
-					return 0;
-			};
-
-			var type = $jQ(this).attr( 'alt' );
-
-			$jQ(this).attr( 'src', 'resources/favored_'+ booleanMap(type) +'.png' );
-			$jQ(this).attr( 'alt', booleanMap(type) );
-
-			var entryId = $jQ(this).attr( 'eid' );
-
-			// ajax call to change favored status
-			$jQ.ajax( {
-				url: "changeEntryFavored.php",
-				type: "post",
-				data: { eid: entryId, fv: booleanMap(type) }
-			});			
-		});
+		$jQ( document ).on( 'click', '.favoredIcon', function() { return updateEntryFavored( this ); } );
 
 	</script>
 

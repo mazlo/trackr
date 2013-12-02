@@ -88,6 +88,23 @@ var updateTags = function ( object )
 	});
 };
 
+var updateEntryFavored = function ( object )
+{
+	var type = $jQ(object).attr( 'alt' );
+
+	$jQ(object).attr( 'src', 'resources/favored_'+ inverseFavored(type) +'.png' );
+	$jQ(object).attr( 'alt', inverseFavored(type) );
+
+	var entryId = $jQ(object).attr( 'eid' );
+
+	// ajax call to change favored status
+	$jQ.ajax( {
+		url: "changeEntryFavored.php",
+		type: "post",
+		data: { eid: entryId, fv: inverseFavored(type) }
+	});			
+};
+
 var deleteEntryConfirm = function( e, object ) 
 {
 	var x = 100;
@@ -312,4 +329,13 @@ var toggleDisabledElement = function( object, classToBeToggled )
 	$jQ( object ).removeAttr( 'disabled' );
 };
 
+// ----- global functions -----
+
+var inverseFavored = function( key )
+{
+	if ( key == 0 )
+		return 1;
+	if ( key == 1 )
+		return 0;
+};
 
