@@ -1,10 +1,10 @@
 <?php
 
 	// read passed values
-	$entry_id = $_POST["eid"];
-	$favored = $_POST["fv"];
+	$entry_id = $_REQUEST["eid"];
+	$favored = $_REQUEST["fv"];
 
-	if ( empty( $entry_id ) || empty( $favored ) )
+	if ( empty( $entry_id ) || is_null( $favored ) )
 	{
 		echo "<div>eid or favored parameter not provided</div>";
 		exit;
