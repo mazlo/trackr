@@ -1,6 +1,6 @@
 /*
 	USED COLORS
-	
+
 	blue1: 064580;
 	blue2: 0c5aaa;
 
@@ -149,6 +149,7 @@ span.title_span {
 }
 
 h4.entry_description {
+	clear: both;
 	margin: 0; 
 	padding: 3px;
 	font-weight: 100; 

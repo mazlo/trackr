@@ -51,7 +51,7 @@
 				<img src="resources/favored_<? echo $row['favored']; ?>.png" class="favoredIcon" alt="<? echo $row['favored']; ?>" width="28px" eid="<? echo $row['id']; ?>" />
 			</div>
 
-			<h4 class='entry_description searchable' style="clear: both"><? echo $row['description']; ?></h4>
+			<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
 			
 			<a href="#" class="comment_add_link" eid="<? echo $row['id']; ?>">+</a>
 

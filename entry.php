@@ -74,8 +74,15 @@
 			<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
 
 			<div class='entry_details'>
-				<span style='font-weight: bold'>#<? echo $entry_id; ?></span>
-				<input class="textfield entry_title_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+
+				<div style="float: left;">
+					<span style='font-weight: bold'>#<? echo $entry_id; ?></span>
+					<input class="textfield entry_title_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+				</div>
+
+				<div style="float: right; padding: 6px 4px 0 0">
+					<img src="resources/favored_<? echo $row['favored']; ?>.png" class="favoredIcon" alt="<? echo $row['favored']; ?>" width="28px" eid="<? echo $row['id']; ?>" />
+				</div>
 
 				<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
 				
