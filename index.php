@@ -57,10 +57,10 @@
 			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
 
 				<h4 class="entry_new_title">Title</h4>
-				<input type="text" id="title" value="qwertqasd" class="textfield" />
+				<input type="text" id="title" value="" class="textfield" />
 				
 				<h4 class="entry_new_description">Description</h4>
-				<textarea id="description" class="textarea">aflijqwea</textarea>
+				<textarea id="description" class="textarea"></textarea>
 
 				<div style="padding: 8px 0;">
 					<input type="button" class="entry_add_button" value="Add" />
@@ -263,7 +263,8 @@
 		{
 			// on press of enter
 			if ( event.which == 13 )
-				$jQ( '#description' ).focus();
+				if ( $jQ(this).val() != "" )
+					$jQ( '#description' ).focus();
 			else if ( event.which == 27 )
 				$jQ( '.entry_add_cancel' ).click();
 		});

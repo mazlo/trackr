@@ -148,8 +148,6 @@ var addEntryAction = function()
 		return false;
 
 	var description = $jQ( '#description' ).val();
-	if ( description  == "" )
-		return false;
 
 	$jQ.ajax( {
 		url: "addEntry.php",
