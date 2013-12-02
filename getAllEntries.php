@@ -28,7 +28,7 @@
 		$whereClauseWithTags .= ' )';
 	}
 
-	$query = 'SELECT id, title, description, listTitle, tags FROM entry'. $whereClauseWithTags .' ORDER BY id DESC';
+	$query = 'SELECT id, title, description, listTitle, tags, favored FROM entry'. $whereClauseWithTags .' ORDER BY id DESC';
 
     $result = $mysqli->query( $query );
 
@@ -48,7 +48,7 @@
 			</div>
 
 			<div style="float: right; padding: 6px 4px 0 0">
-				<img src="resources/favored_no.png" class="favoredIcon" alt="no" width="28px" />
+				<img src="resources/favored_<? echo $row['favored']; ?>.png" class="favoredIcon" alt="<? echo $row['favored']; ?>" width="28px" eid="<? echo $row['id']; ?>" />
 			</div>
 
 			<h4 class='entry_description searchable' style="clear: both"><? echo $row['description']; ?></h4>

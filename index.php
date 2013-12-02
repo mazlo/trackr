@@ -352,16 +352,27 @@
 		// handles clicks on favored icon
 		$jQ( document ).on( 'click', '.favoredIcon', function()
 		{
+			var booleanMap = function( key )
+			{
+				if ( key == 0 )
+					return 1;
+				if ( key == 1 )
+					return 0;
+			};
+
 			var type = $jQ(this).attr( 'alt' );
-			if ( type == 'no' ) 
-			{
-				$jQ(this).attr( 'src', 'resources/favored_yes.png' );
-				$jQ(this).attr( 'alt', 'yes' );
-			} else 
-			{
-				$jQ(this).attr( 'src', 'resources/favored_no.png' );
-				$jQ(this).attr( 'alt', 'no' );
-			}
+
+			$jQ(this).attr( 'src', 'resources/favored_'+ booleanMap(type) +'.png' );
+			$jQ(this).attr( 'alt', booleanMap(type) );
+
+			var entryId = $jQ(this).attr( 'eid' );
+
+			// ajax call to change favored status
+			$jQ.ajax( {
+				url: "changeEntryFavored.php",
+				type: "post",
+				data: { eid: entryId, fv: booleanMap(type) }
+			});			
 		});
 
 	</script>
