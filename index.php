@@ -21,9 +21,11 @@
 
 </head>
 	<body>
-		<div id="header">
-			
-			<div style="width: 1000px; margin: auto;">
+		<div id="container">
+
+			<!-- header contains logo and login -->
+			<div id="header">
+				
 				<div style="float: left;">
 					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
 				</div>
@@ -36,47 +38,50 @@
 
 				<div style="clear: both; height: 0"></div>
 			</div>
-		</div>
 
-		<div id="content">
+			<!-- navigation contains tag list -->
+			<div id="navi">
 
-			<div style="float: left;">
-				<div id="distinctEntriesTagList" style="display: inline;">
+				<div style="float: left;">
+					<div id="distinctEntriesTagList" style="display: inline;">
+						<!-- ajax response here -->
+					</div>
+					<button class="button" id="clearTags" style="width: 48px; height: 23px;">clear</button>
+				</div>
+
+				<div style="float: right; text-align: right">
+					<button class="entry_add_link button">+</button>
+				</div>
+			</div>
+
+			<!-- content contains list of entries -->
+			<div id="content" style="clear: both">
+
+				<!-- div entry add: is hidden after page load -->
+				<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
+
+					<h4 class="entry_new_title">Title</h4>
+					<input type="text" id="title" value="" class="textfield" />
+					
+					<h4 class="entry_new_description">Description</h4>
+					<textarea id="description" class="textarea"></textarea>
+
+					<div style="padding: 8px 0;">
+						<input type="button" class="entry_add_button" value="Add" />
+						<input type="button" class="entry_add_cancel" value="Cancel" />
+					</div>
+
+				</div>
+
+				<!-- list of entries -->
+				<div id="entries" style="margin-top: 8px;">
 					<!-- ajax response here -->
 				</div>
-				<button class="button" id="clearTags" style="width: 48px; height: 23px;">clear</button>
 			</div>
 
-			<div style="float: right; text-align: right">
-				<button class="entry_add_link button">+</button>
+			<div id="footer" style="margin-top: 48px">
+				&nbsp;
 			</div>
-
-			<div style="clear: both;"></div>
-
-			<!-- div entry add: is hidden after page load -->
-			<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
-
-				<h4 class="entry_new_title">Title</h4>
-				<input type="text" id="title" value="" class="textfield" />
-				
-				<h4 class="entry_new_description">Description</h4>
-				<textarea id="description" class="textarea"></textarea>
-
-				<div style="padding: 8px 0;">
-					<input type="button" class="entry_add_button" value="Add" />
-					<input type="button" class="entry_add_cancel" value="Cancel" />
-				</div>
-
-			</div>
-
-			<!-- list of entries -->
-			<div id="entries" style="margin-top: 8px;">
-				<!-- ajax response here -->
-			</div>
-		</div>
-
-		<div id="footer" style="margin-top: 48px">
-			&nbsp;
 		</div>
 	</body>
 

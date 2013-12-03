@@ -10,6 +10,7 @@
 
 body {
 	overflow-y: scroll;
+	background: #eee;
 	margin: 0;
 	padding: 0;
 
@@ -17,14 +18,24 @@ body {
 	letter-spacing: 0.3pt;
 }
 
+#container {
+	background: #fff;
+	box-shadow: 0px 4px 6px 4px #bbb;
+
+	width: 932px;
+	margin: 0 auto;
+	padding: 0 46px;
+}
+
 #header {
-	padding: 23px 0; 
-	box-shadow: 0 4px 6px #ccc
+	background: #fff;
+	margin: 0 auto;
+	padding: 23px 0 36px 0; 
 }
 
 #content {
-	width: 954px; 
-	margin: 32px auto
+	background: #fff;
+	margin: 0 auto;
 }
 
 a {
