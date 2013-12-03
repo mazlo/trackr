@@ -37,51 +37,60 @@
 	<!-- wrapper for one entry -->
 	<div class="wrapper_entry filterableByTag" tags="<? echo $row['tags']; ?>">
 
-		<a href='#' class='entry_delete_link' >-</a>
-		<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'><a href='#'>Sure?</a></span>
-
 		<div class='entry'>
 			
-			<div style="float: left;">
+			<div class='entryIcon'>
 				<span style='font-weight: bold'>#<? echo $row['id']; ?></span>
-				<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
 			</div>
 
-			<div style="float: right; padding: 6px 4px 0 0">
+			<div class='entryDetails'>
+				<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+				<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
+			</div>
+
+			<div class='entryOperations'>
+				<button class="entry_delete_link operatorButton" eid="<? echo $row['id']; ?>">Delete</button>
+				<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'>
+					<button class='operatorButton confirmationButton'>Sure?</button>
+				</span>
+
+				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">Comment</button>
+			</div>
+
+			<div class='entryButtons'>
 				<img src="resources/pinIt_<? echo $row['favored']; ?>.png" class="favoredIcon" alt="<? echo $row['favored']; ?>" width="28px" eid="<? echo $row['id']; ?>" />
 			</div>
 
-			<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
-			
-			<a href="#" class="comment_add_link" eid="<? echo $row['id']; ?>">+</a>
+			<div style="clear: both; height: 0px"></div>
 
 			<?
 			$result2 = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $row['id'] .' ORDER BY position ASC' );
 
 			if ( $result2 ) { ?>
 
-				<!-- wrapper for comment dialog -->
+				<!-- wrapper for all comments -->
 				<div class='wrapper_comments'>
 					<input class="textfield comments_title_inactive" eid='<? echo $row['id']; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
 
-					<!-- div comment add: is hidden first -->
-					<div id="comment_add_link_<? echo $row['id']; ?>" style="display: none;">
+					<div class='comment_add_div' id="comment_add_link_<? echo $row['id']; ?>" style="display: none;">
+						<!-- div comment add: is hidden first -->
 						<textarea id="comment_new_content_<? echo $row['id']; ?>" class="textarea_comment"></textarea>
 
-						<div style="margin: 8px; 0">
-							<input type="button" class="comment_add_button" eid="<? echo $row['id']; ?>" value="Add" />
-							<input type="button" class="comment_add_cancel" eid="<? echo $row['id']; ?>" value="Cancel" />
+						<div style="padding: 8px 0;">
+							<button class="comment_add_button operatorButton" eid="<? echo $row['id']; ?>">Add</button>
+							<button class="comment_add_cancel operatorButton" eid="<? echo $row['id']; ?>">Cancel</button>
 						</div>
 					</div>
 					
-					<!--  wrapper for all comments of an entry -->
 					<ul id="comments_<? echo $row['id']; ?>" class="comments">
 				<?
 				while( $comments = $result2->fetch_assoc() ) { ?>		
 						<li class='comment' cid='<? echo $comments['id']; ?>'>
 							<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
 							<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
-							<span id="comment_delete_confirmation<? echo $comments['id']; ?>" class="comment_delete_confirmation" eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>'><a href='#'>Sure?</a></span>
+							<span class="comment_delete_confirmation" eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>'>
+								<button class='operatorButton confirmationButton'>Sure?</button>
+							</span>
 						</li>
 			 <?	} ?>
 					</ul> 
@@ -89,18 +98,21 @@
 			 <? $result2->close(); ?>
 				</div>
 
-				<div style="float: left">
-					<span style="color: #aaa;">Tags:</span> 
-					<input type="type" class="textfield tags_textfield_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['tags']; ?>" disabled="disabled" /> 
-				</div>
+				<div class='entryFooter'>
 
-				<div style="float: right; text-align: right">
-					<a href="entry.php?eid=<? echo $row['id']; ?>">
-						<button class="entry_details_link">Details</button>
-					</a>
-				</div>
+					<div style="float: left">
+						<span style="color: #aaa;">Tags:</span> 
+						<input type="type" class="textfield tags_textfield_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['tags']; ?>" disabled="disabled" /> 
+					</div>
 
-				<div style="clear: both;"></div>
+					<div style="float: right; text-align: right">
+						<a href="entry.php?eid=<? echo $row['id']; ?>">
+							<button class="entry_details_link operatorButton">Details</button>
+						</a>
+					</div>
+
+					<div style="clear: both;"></div>
+				</div>
 
 			</div>
 		<? 	} ?>

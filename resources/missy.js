@@ -107,7 +107,7 @@ var updateEntryFavored = function ( object )
 
 var deleteEntryConfirm = function( e, object ) 
 {
-	var x = 100;
+	var x = e.target.offsetLeft - 100;
 	var y = e.target.offsetTop + 1;
 
 	var dialog = $jQ( object ).next( '.entry_delete_confirmation' );
@@ -238,7 +238,7 @@ var addCommentAction = function( object )
 
 var deleteCommentConfirm = function( e, object )
 {
-	var x = 100;
+	var x = e.target.offsetLeft - 88;
 	var y = e.target.offsetTop + 1;
 
 	var cdialog = $jQ( object ).parent().nextAll( '.comment_delete_confirmation' );

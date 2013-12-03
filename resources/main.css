@@ -20,22 +20,22 @@ body {
 
 #container {
 	background: #fff;
-	box-shadow: 0px 4px 6px 4px #bbb;
+	box-shadow: 0px 4px 4px 2px #bbb;
 
-	width: 932px;
+	width: 960px;
 	margin: 0 auto;
-	padding: 0 46px;
+	padding: 0 32px;
 }
 
 #header {
 	background: #fff;
 	margin: 0 auto;
-	padding: 23px 0 36px 0; 
+	padding: 32px 0; 
 }
 
 #content {
 	background: #fff;
-	margin: 0 auto;
+	margin: 23px auto;
 }
 
 a {
@@ -66,6 +66,29 @@ div.div_entry_add {
 	box-shadow: 0px 0px 2px #032946;
 }
 
+.entryIcon {
+	float: left;
+	width: 46px;
+	padding: 6px 0;
+}
+
+.entryDetails {
+	float: left;
+	width: 620px;
+	padding: 0 4px;
+}
+
+.entryOperations {
+	float: left; 
+	width: 150px; 
+	padding: 6px 4px 0;
+}
+
+.entryButtons {
+	float: right;
+	padding: 6px 4px;
+}
+
 .entry_add_link,
 .entry_details_link {
 	box-shadow: 0px 2px 6px #bbb; 
@@ -84,20 +107,35 @@ button.button {
 	background-repeat: repeat-x; 
 	border: 0;
 	width: 90px; 
-	height: 32px; 
+	height: 32px;
+	margin: 8px; 
 	cursor: hand;
 	color: #fff;
+}
+
+button.operatorButton {
+	background: #fff;
+	box-shadow: 0px 0px 1px #ccc; 
+	border: 1px solid #ccc;
+	height: 23px; 
+	cursor: hand;
+	color: #aaa;
+}
+
+button.confirmationButton {
+	border: 1px solid red; 
+	width: 82px; 
+	color: #000;
 }
 
 div.entry {
 	margin-bottom: 13px; 
 	padding: 3px 13px;
-	-webkit-box-shadow: 0px 0px 2px #032946;
-	box-shadow: 0px 0px 2px #032946;
 }
 
 div.entry {
-	padding-bottom: 13px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 23px;
 }
 
 div.entry_details {
@@ -105,10 +143,12 @@ div.entry_details {
 	padding: 3px 0;
 }
 
-div.wrapper_comments {
-	border: 1px dotted #000; 
-	margin: 8px 0; 
-	padding: 8px;
+div.wrapper_comments { 
+	padding: 13px 50px;
+}
+
+div.comment_add_div {
+	margin: 8px 38px;
 }
 
 .entry_title_inactive,
@@ -151,8 +191,6 @@ div.wrapper_comments {
 	display: none; 
 	z-index: 1000; 
 	position: absolute; 
-	border: 1px solid red; 
-	padding: 2px 23px;
 }
 
 span.title_span {
@@ -162,7 +200,7 @@ span.title_span {
 h4.entry_description {
 	clear: both;
 	margin: 0; 
-	padding: 3px;
+	padding: 4px 8px;
 	font-weight: 100; 
 	font-style: italic;
 }
@@ -203,9 +241,6 @@ input {
 }
 
 .entry_delete_link {
-	display: block; 
-	margin-bottom: 3px;
-	padding: 3px 13px;
 }
 
 .comment_delete_link {
@@ -250,6 +285,10 @@ input {
 	margin: 0 13px; 
 	vertical-align: middle; 
 	color: #ddd;
+}
+
+.favoredIcon {
+	cursor: hand;
 }
 
 /* jQuery default style manipulations */

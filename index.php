@@ -52,10 +52,12 @@
 				<div style="float: right; text-align: right">
 					<button class="entry_add_link button">+</button>
 				</div>
+
+				<div style="clear: both; height: 1px;"></div>
 			</div>
 
 			<!-- content contains list of entries -->
-			<div id="content" style="clear: both">
+			<div id="content">
 
 				<!-- div entry add: is hidden after page load -->
 				<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
