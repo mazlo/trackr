@@ -39,7 +39,7 @@ body {
 
 #content {
 	background: #fff;
-	margin: 23px 32px;
+	margin: 32px;
 }
 
 a {
@@ -79,7 +79,6 @@ div.div_entry_add {
 .entryDetails {
 	float: left;
 	width: 620px;
-	padding: 0 4px;
 }
 
 .entryOperations {
@@ -112,7 +111,6 @@ div.div_entry_add {
 	border: 0;
 	width: 90px; 
 	height: 32px;
-	margin: 8px; 
 	cursor: hand;
 	color: #fff;
 }
@@ -140,12 +138,8 @@ button.confirmationButton {
 }
 
 div.entry {
-	margin-bottom: 13px; 
-	padding: 3px 13px;
-}
-
-div.entry {
 	border-bottom: 1px solid #ccc;
+	margin-bottom: 13px; 
 	padding-bottom: 23px;
 }
 
@@ -155,7 +149,7 @@ div.entry_details {
 }
 
 div.wrapper_comments { 
-	padding: 13px 50px;
+	padding: 13px 46px;
 }
 
 div.comment_add_div {
