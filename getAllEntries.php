@@ -45,6 +45,9 @@
 
 			<div class='entryDetails'>
 				<input class="textfield entry_title_inactive" eid='<? echo $row['id']; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+				<span class='entry_title_confirm'>
+					<button class='operatorButton doneButton'>Done</button>
+				</span>
 				<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
 			</div>
 

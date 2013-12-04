@@ -122,6 +122,12 @@ button.operatorButton {
 	color: #aaa;
 }
 
+button.doneButton {
+	border: 1px solid green; 
+	width: 82px; 
+	color: #000;
+}
+
 button.confirmationButton {
 	border: 1px solid red; 
 	width: 82px; 
@@ -180,13 +186,9 @@ div.comment_add_div {
 
 .entry_title_confirm,
 .comments_title_confirm {
+	display: none;
 	position: absolute;
 	z-index: 1000;
-	border: 1px solid green; 
-	padding: 2px 23px;
-
-	background: #fff;
-	font-size: 12px;
 }
 
 .entry_delete_confirmation,

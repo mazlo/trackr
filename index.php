@@ -194,35 +194,7 @@
 		$jQ( document ).on( 'click', '.comment_delete_confirmation', function() { return deleteComment( this ); } );
 
 		// handler to change title of entry
-		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) 
-		{
-			var title = $jQ(this).val();
-
-			if ( oldTitle == title )
-				return;
-
-			var entryId = $jQ(this).attr( 'eid' );
-
-			$jQ(this).after( "<span id='entry_title_confirm_"+ entryId +"' class='entry_title_confirm'>Done</span>" );
-
-			// ajax call to change title
-			$jQ.ajax( {
-				url: "changeEntryTitle.php",
-				type: "get",
-				data: { eid: entryId, tl: title },
-
-				success: function( data ) 
-				{
-					var dialog = $jQ( '#entry_title_confirm_'+ entryId )
-					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', e.target.offsetLeft - 183 );
-					dialog.effect( 'fade', 2000, function() 
-					{
-						$jQ(this).remove();
-					} );
-				}
-			});
-		});
+		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) { return updateEntryTitle( e, this ); } );
 
 		// handler to change comment title of entry
 		$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) 

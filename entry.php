@@ -34,10 +34,12 @@
 	?>
 
 </head>
-	<body style="margin: auto">
-		<div id="header">
+	<body>
+		<div id="container">
 
-			<div style="width: 1000px; margin: auto;">
+			<!-- header contains logo and login -->
+			<div id="header">
+				
 				<div style="float: left;">
 					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
 				</div>
@@ -51,92 +53,94 @@
 				<div style="clear: both; height: 0"></div>
 			</div>
 
-		</div>
+			<div id="content">
 
-		<div id="content">
-
-			<div style="position: absolute; top: 112px; margin-left: -103px; text-align: right">
-				<a href="index.php">
-					<img src="resources/back_arrow.png" alt="back" style="width: 63px;" />
-				</a>
-			</div>
-
-			<div style="clear: both; height: 32px;">
-				<h3>Showing You Details for Stack</h3>
-			</div>
-
-			<?php
-				
-			// get all entries
-		    $result = $mysqli->query( 'SELECT title, description, listTitle, tags, favored FROM entry WHERE id = '. $entry_id .'' );
-			$row = $result->fetch_assoc(); ?>
-
-			<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
-
-			<div class='entry_details'>
-
-				<div style="float: left;">
-					<span style='font-weight: bold'>#<? echo $entry_id; ?></span>
-					<input class="textfield entry_title_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+				<div style="clear: both; height: 32px;">
+					<h3>Showing You Details for Stack</h3>
 				</div>
 
-				<div style="float: right; padding: 6px 4px 0 0">
-					<img src="resources/favored_<? echo $row['favored']; ?>.png" class="favoredIcon" alt="<? echo $row['favored']; ?>" width="28px" eid="<? echo $entry_id; ?>" />
-				</div>
-
-				<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
-				
-				<div style="float: left; margin-top: 23px; text-align: right">
-					<button class="entry_delete_link button">delete</button>
-					<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
-				</div>
-
-				<div style="float: right; margin-top: 23px; text-align: right">
-					<button class="comment_add_link button" eid="<? echo $entry_id; ?>">+</button>
-				</div>
-
-				<?
-				$result2 = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $entry_id .' ORDER BY position ASC' );
-
-				if ( $result2 ) { ?>
-
-				<!-- wrapper for comment dialog -->
-				<div class='wrapper_comments' style="clear: both; margin-top: 64px; ">
-					<input class="textfield comments_title_inactive" eid='<? echo $entry_id; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
-
-					<!-- div comment add: is hidden first -->
-					<div id="comment_add_link_<? echo $entry_id; ?>" style="display: none;">
-						<textarea id="comment_new_content_<? echo $entry_id; ?>" class="textarea_comment"></textarea>
-
-						<div style="margin: 8px; 0">
-							<input type="button" class="comment_add_button" eid="<? echo $entry_id; ?>" value="Add" />
-							<input type="button" class="comment_add_cancel" eid="<? echo $entry_id; ?>" value="Cancel" />
-						</div>
-					</div>
+				<?php
 					
-					<!--  wrapper for all comments of an entry -->
-					<ul id="comments_<? echo $entry_id; ?>" class="comments">
+				// get all entries
+			    $result = $mysqli->query( 'SELECT title, description, listTitle, tags, favored FROM entry WHERE id = '. $entry_id .'' );
+				$row = $result->fetch_assoc(); ?>
+
+				<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
+
+				<div class='entry_details'>
+
+					<div class='entryIcon'>
+						<span style='font-weight: bold'>#<? echo $entry_id; ?></span>
+					</div>
+
+					<div class='entryDetails'>
+						<input class="textfield entry_title_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['title']; ?>" disabled="disabled" />
+						<span class='entry_title_confirm'>
+							<button class='operatorButton doneButton'>Done</button>
+						</span>
+						<h4 class='entry_description searchable'><? echo $row['description']; ?></h4>
+					</div>
+
+					<div class='entryOperations'>
+						<button class="entry_delete_link operatorButton" eid="<? echo $entry_id; ?>">Delete</button>
+						<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'>
+							<button class='operatorButton confirmationButton'>Sure?</button>
+						</span>
+
+						<button class="comment_add_link operatorButton" eid="<? echo $entry_id; ?>">Comment</button>
+					</div>
+
+					<div class='entryButtons'>
+						<img src="resources/pinIt_<? echo $row['favored']; ?>.png" class="favoredIcon" alt="<? echo $row['favored']; ?>" width="28px" eid="<? echo $entry_id; ?>" />
+					</div>
+
+					<div style="clear: both; height: 0px"></div>
+
 					<?
-					while( $comments = $result2->fetch_assoc() ) { ?>		
-						<li class='comment' cid='<? echo $comments['id']; ?>'>
-							<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
-							<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
-							<span id="comment_delete_confirmation<? echo $comments['id']; ?>" class="comment_delete_confirmation" eid='<? echo $entry_id; ?>' cid='<? echo $comments['id']; ?>'><a href='#'>Sure?</a></span>
-						</li>
-			 	<?} ?>
-					</ul> 
+					$result2 = $mysqli->query( 'SELECT id, comment, date FROM comment WHERE entry_id = '. $entry_id .' ORDER BY position ASC' );
+
+					if ( $result2 ) { ?>
+
+					<!-- wrapper for comment dialog -->
+					<div class='wrapper_comments'>
+						<input class="textfield comments_title_inactive" eid='<? echo $entry_id; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
+
+						<div class='comment_add_div' id="comment_add_link_<? echo $entry_id; ?>" style="display: none;">
+							<!-- div comment add: is hidden first -->
+							<textarea id="comment_new_content_<? echo $entry_id; ?>" class="textarea_comment"></textarea>
+
+							<div style="padding: 8px 0;">
+								<button class="comment_add_button operatorButton" eid="<? echo $entry_id; ?>">Add</button>
+								<button class="comment_add_cancel operatorButton" eid="<? echo $entry_id; ?>">Cancel</button>
+							</div>
+						</div>
+						
+						<!--  wrapper for all comments of an entry -->
+						<ul id="comments_<? echo $entry_id; ?>" class="comments">
+						<?
+						while( $comments = $result2->fetch_assoc() ) { ?>		
+							<li class='comment' cid='<? echo $comments['id']; ?>'>
+								<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
+								<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
+								<span class="comment_delete_confirmation" eid='<? echo $entry_id; ?>' cid='<? echo $comments['id']; ?>'>
+									<button class='operatorButton confirmationButton'>Sure?</button>
+								</span>
+							</li>
+				 	<?} ?>
+						</ul> 
+					</div>
+
+					<div class='entryFooter'>
+						<span style="color: #aaa;">Tags:</span> 
+						<input type="type" class="textfield tags_textfield_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['tags']; ?>" disabled="disabled" /> 
+					</div>
+					<?}
+
+					$result->close();
+				 	$mysqli->close(); ?>
 				</div>
 
-				<div>
-					<span style="color: #aaa;">Tags:</span> 
-					<input type="type" class="textfield tags_textfield_inactive" eid='<? echo $entry_id; ?>' value="<? echo $row['tags']; ?>" disabled="disabled" /> 
-				</div>
-				<?}
-
-				$result->close();
-			 	$mysqli->close(); ?>
 			</div>
-
 		</div>
 
 		<div id="footer">
@@ -182,36 +186,7 @@
 		$jQ( document ).on( 'click', '.comment_delete_confirmation', function() { return deleteComment( this ); } );
 
 		// handler to change title of entry
-		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) 
-		{
-			var title = $jQ(this).val();
-
-			if ( oldTitle == title )
-				return;
-
-			var entryId = $jQ(this).attr( 'eid' );
-
-			$jQ(this).after( "<span id='entry_title_confirm_"+ entryId +"' class='entry_title_confirm'></span>" );
-
-			// ajax call to change title
-			$jQ.ajax( {
-				url: "changeEntryTitle.php",
-				type: "get",
-				data: { eid: entryId, tl: title },
-
-				success: function( data ) 
-				{
-					var dialog = $jQ( '#entry_title_confirm_'+ entryId )
-					dialog.html( 'done' );
-					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', 100 );
-					dialog.effect( 'fade', 2000, function() 
-					{
-						$jQ(this).remove();
-					} );
-				}
-			});
-		});
+		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) { return updateEntryTitle( e, this ); } );
 
 		// handler to change comment title of entry
 		$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) 

@@ -50,6 +50,8 @@ var getComments = function( eid )
 	});
 };
 
+// ##### UPDATE FUNCTIONS #####
+
 var updateCommentPositions = function( object )
 {
 	var counter = 0;
@@ -66,6 +68,40 @@ var updateCommentPositions = function( object )
 		url: "changeCommentPosition.php",
 		type: "post",
 		data: { cid: cid, pos: pos }
+	});
+};
+
+var updateEntryTitle = function( e, object )
+{
+	var title = $jQ(object).val();
+
+	if ( oldTitle == title )
+		return;
+
+	var entryId = $jQ(object).attr( 'eid' );
+
+	// prepare confirmation dialog
+	var x = e.target.offsetLeft - 187;
+	var y = e.target.offsetTop + 1;
+
+	var dialog = $jQ(object).next( '.entry_title_confirm' );
+	dialog.css( 'left', x );
+	dialog.css( 'top', y );
+
+	// ajax call to change title
+	$jQ.ajax( {
+		url: "changeEntryTitle.php",
+		type: "get",
+		data: { eid: entryId, tl: title },
+
+		success: function( data ) 
+		{
+			dialog.show();
+			dialog.effect( 'fade', 2000, function() 
+			{
+				$jQ(this).hide();
+			} );
+		}
 	});
 };
 
