@@ -104,6 +104,9 @@
 					<!-- wrapper for comment dialog -->
 					<div class='wrapper_comments'>
 						<input class="textfield comments_title_inactive" eid='<? echo $entry_id; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
+						<span class='comments_title_confirm'>
+							<button class='operatorButton doneButton'>Done</button>
+						</span>
 
 						<div class='comment_add_div' id="comment_add_link_<? echo $entry_id; ?>" style="display: none;">
 							<!-- div comment add: is hidden first -->
@@ -189,36 +192,7 @@
 		$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) { return updateEntryTitle( e, this ); } );
 
 		// handler to change comment title of entry
-		$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) 
-		{
-			var title = $jQ(this).val();
-
-			if ( commentsOldTitle == title )
-				return;
-
-			var entryId = $jQ(this).attr( 'eid' );
-
-			$jQ(this).after( "<span id='comments_title_confirm_"+ entryId +"' class='comments_title_confirm'></span>" );
-
-			// ajax call to change title
-			$jQ.ajax( {
-				url: "changeListTitle.php",
-				type: "get",
-				data: { eid: entryId, tl: title },
-
-				success: function( data ) 
-				{
-					var dialog = $jQ( '#comments_title_confirm_'+ entryId )
-					dialog.html( 'done' );
-					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', 100 );
-					dialog.effect( 'fade', 2000, function() 
-					{
-						$jQ(this).remove();
-					} );
-				}
-			});
-		});
+		$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) { return updateCommentsTitle( e, this ); } );
 
 		// handling keypress event on title textfield
 		$jQ( document ).on('keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );

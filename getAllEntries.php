@@ -74,7 +74,10 @@
 				<!-- wrapper for all comments -->
 				<div class='wrapper_comments'>
 					<input class="textfield comments_title_inactive" eid='<? echo $row['id']; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
-
+					<span class='comments_title_confirm'>
+						<button class='operatorButton doneButton'>Done</button>
+					</span>
+						
 					<div class='comment_add_div' id="comment_add_link_<? echo $row['id']; ?>" style="display: none;">
 						<!-- div comment add: is hidden first -->
 						<textarea id="comment_new_content_<? echo $row['id']; ?>" class="textarea_comment"></textarea>
