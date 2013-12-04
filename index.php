@@ -50,7 +50,7 @@
 					<div id="distinctEntriesTagList" style="display: inline;">
 						<!-- ajax response here -->
 					</div>
-					<button class="button" id="clearTags" style="width: 48px; height: 23px;">clear</button>
+					<button class="operatorButton" id="clearTags">clear selection</button>
 				</div>
 
 				<div style="clear: both; height: 1px;"></div>
