@@ -202,7 +202,7 @@
 
 			var entryId = $jQ(this).attr( 'eid' );
 
-			$jQ(this).after( "<span id='entry_title_confirm_"+ entryId +"' class='entry_title_confirm'></span>" );
+			$jQ(this).after( "<span id='entry_title_confirm_"+ entryId +"' class='entry_title_confirm'>Done</span>" );
 
 			// ajax call to change title
 			$jQ.ajax( {
@@ -213,9 +213,8 @@
 				success: function( data ) 
 				{
 					var dialog = $jQ( '#entry_title_confirm_'+ entryId )
-					dialog.html( 'done' );
 					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', 100 );
+					dialog.css( 'left', e.target.offsetLeft - 183 );
 					dialog.effect( 'fade', 2000, function() 
 					{
 						$jQ(this).remove();
@@ -234,7 +233,7 @@
 
 			var entryId = $jQ(this).attr( 'eid' );
 
-			$jQ(this).after( "<span id='comments_title_confirm_"+ entryId +"' class='comments_title_confirm'></span>" );
+			$jQ(this).after( "<span id='comments_title_confirm_"+ entryId +"' class='comments_title_confirm'>Done</span>" );
 
 			// ajax call to change title
 			$jQ.ajax( {
@@ -245,9 +244,8 @@
 				success: function( data ) 
 				{
 					var dialog = $jQ( '#comments_title_confirm_'+ entryId )
-					dialog.html( 'done' );
 					dialog.css( 'top', e.target.offsetTop + 1 );
-					dialog.css( 'left', 100 );
+					dialog.css( 'left', e.target.offsetLeft - 183 );
 					dialog.effect( 'fade', 2000, function() 
 					{
 						$jQ(this).remove();

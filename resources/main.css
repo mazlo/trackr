@@ -184,6 +184,9 @@ div.comment_add_div {
 	z-index: 1000;
 	border: 1px solid green; 
 	padding: 2px 23px;
+
+	background: #fff;
+	font-size: 12px;
 }
 
 .entry_delete_confirmation,
@@ -191,6 +194,7 @@ div.comment_add_div {
 	display: none; 
 	z-index: 1000; 
 	position: absolute; 
+	font-family: Georgia;
 }
 
 span.title_span {
