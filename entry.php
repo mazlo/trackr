@@ -55,7 +55,7 @@
 
 			<div id="content">
 
-				<h3>Showing You Details for Stack</h3>
+				<h3>Showing You Details for Stackr</h3>
 
 				<?php
 					
