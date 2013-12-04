@@ -80,7 +80,7 @@
 					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
 				</div>
 
-				<div style="float: right; padding-top: 6px; text-align: right">
+				<div style="float: right; padding-top: 8px; text-align: right">
 					<a href="register.php">Register</a>
 				</div>
 
@@ -99,7 +99,7 @@
 
 					<h4 class="normal">Password</h4>
 					<input type="password" value="" id="password" name="password" class="textfield" />
-					<input type="submit" id="login_button" class="login_button" value="Do it" />
+					<input type="submit" id="login_button" class="button" value="Login" style="display: block; margin: 23px 0 0" />
 				</form>
 			</div>
 		</div>

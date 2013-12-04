@@ -55,9 +55,7 @@
 
 			<div id="content">
 
-				<div style="clear: both; height: 32px;">
-					<h3>Showing You Details for Stack</h3>
-				</div>
+				<h3>Showing You Details for Stack</h3>
 
 				<?php
 					
