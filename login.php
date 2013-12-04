@@ -71,9 +71,11 @@
 </head>
 
 	<body>
-		<div id="header">
-			
-			<div style="width: 1000px; margin: auto;">
+		<div id="container">
+
+			<!-- header contains logo and login -->
+			<div id="header">
+				
 				<div style="float: left;">
 					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
 				</div>
@@ -84,22 +86,22 @@
 
 				<div style="clear: both; height: 0"></div>
 			</div>
-		</div>
 		
-		<div id="content" style="padding-top: 120px;">
-			
-			<h3>Please log in</h3>
-			
-			<span class="credentials_error"></span>
-			
-			<form method="POST">
-				<h4 class="normal">Username</h4>
-				<input type="text" value="" id="username" name="username" class="textfield" />
+			<div id="content" style="padding: 120px 13px 80px;">
+				
+				<h3>Please log in</h3>
+				
+				<span class="credentials_error"></span>
+				
+				<form method="POST">
+					<h4 class="normal">Username</h4>
+					<input type="text" value="" id="username" name="username" class="textfield" />
 
-				<h4 class="normal">Password</h4>
-				<input type="password" value="" id="password" name="password" class="textfield" />
-				<input type="submit" id="login_button" class="login_button" value="Do it" />
-			</form>
+					<h4 class="normal">Password</h4>
+					<input type="password" value="" id="password" name="password" class="textfield" />
+					<input type="submit" id="login_button" class="login_button" value="Do it" />
+				</form>
+			</div>
 		</div>
 	</body>
 
