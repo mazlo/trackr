@@ -27,6 +27,10 @@ body {
 	padding: 0 32px;
 }
 
+#navi {
+	margin-top: 32px;
+}
+
 #header {
 	background: #fff;
 	margin: 0 auto;

@@ -31,9 +31,9 @@
 				</div>
 
 				<div style="float: right; text-align: right">
-					<span id="searchResults" class="infotext">&nbsp;</span>
+					<span id="searchResults" class="infotext"></span>
 					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
-					<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; color: lightgray">logout</a>
+					<span><? echo $_SESSION[ 'username' ] ?></span><button class='operatorButton' style="margin-left: 23px; color: lightgray">logout</button>
 				</div>
 
 				<div style="clear: both; height: 0"></div>
@@ -42,15 +42,15 @@
 			<!-- navigation contains tag list -->
 			<div id="navi">
 
-				<div style="float: left;">
+				<div style="float: left">
+					<button class="entry_add_link button">+ Stackr</button>
+				</div>
+
+				<div style="float: right; text-align: right; width: 700px">
 					<div id="distinctEntriesTagList" style="display: inline;">
 						<!-- ajax response here -->
 					</div>
 					<button class="button" id="clearTags" style="width: 48px; height: 23px;">clear</button>
-				</div>
-
-				<div style="float: right; text-align: right">
-					<button class="entry_add_link button">+</button>
 				</div>
 
 				<div style="clear: both; height: 1px;"></div>
