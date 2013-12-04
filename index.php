@@ -183,6 +183,7 @@
 			return deleteEntry( this, '.wrapper_entry', function()
 			{
 				getAllEntries();
+				getDistinctEntriesTagList();
 			} ); 
 		} );
 
