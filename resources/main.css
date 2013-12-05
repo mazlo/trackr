@@ -279,7 +279,7 @@ input {
 }
 
 .textarea,
-.textarea_comment
+.comment_textarea
  {
 	width: 600px; 
 	height: 80px; 

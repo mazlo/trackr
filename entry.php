@@ -45,9 +45,9 @@
 				</div>
 
 				<div style="float: right; text-align: right">
-					<span id="searchResults" class="infotext">&nbsp;</span>
+					<span id="searchResults" class="infotext"></span>
 					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
-					<span><? echo $_SESSION[ 'username' ] ?></span><a href="logout.php" style="margin-left: 23px; color: lightgray">logout</a>
+					<span><? echo $_SESSION[ 'username' ] ?></span><button class='operatorButton' style="margin-left: 23px; color: lightgray">logout</button>
 				</div>
 
 				<div style="clear: both; height: 0"></div>
@@ -63,9 +63,9 @@
 			    $result = $mysqli->query( 'SELECT title, description, listTitle, tags, favored FROM entry WHERE id = '. $entry_id .'' );
 				$row = $result->fetch_assoc(); ?>
 
-				<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>Sure?</a></span>
+				<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'><a href='#'>sure?</a></span>
 
-				<div class='entry_details'>
+				<div class='entry' style='margin-top: 44px'>
 
 					<div class='entryIcon'>
 						<span style='font-weight: bold'>#<? echo $entry_id; ?></span>
@@ -80,12 +80,15 @@
 					</div>
 
 					<div class='entryOperations'>
-						<button class="entry_delete_link operatorButton" eid="<? echo $entry_id; ?>">Delete</button>
+						<button class="comment_add_link operatorButton" eid="<? echo $entry_id; ?>">add
+							<span id="comment_add_button_text_<? echo $entry_id; ?>">
+								<? if ( substr( $row['listTitle'], -1 ) == 's' ) echo substr( $row['listTitle'], 0, -1 ); else echo $row['listTitle']; ?>
+							</span>
+						</button>
+						<button class="entry_delete_link operatorButton" eid="<? echo $entry_id; ?>">delete Stackr</button>
 						<span class="entry_delete_confirmation" eid='<? echo $entry_id; ?>'>
-							<button class='operatorButton confirmationButton'>Sure?</button>
+							<button class='operatorButton confirmationButton'>sure?</button>
 						</span>
-
-						<button class="comment_add_link operatorButton" eid="<? echo $entry_id; ?>">Comment</button>
 					</div>
 
 					<div class='entryButtons'>
@@ -103,16 +106,16 @@
 					<div class='wrapper_comments'>
 						<input class="textfield comments_title_inactive" eid='<? echo $entry_id; ?>' value="<?php echo $row['listTitle']; ?>" disabled="disabled" />
 						<span class='comments_title_confirm'>
-							<button class='operatorButton doneButton'>Done</button>
+							<button class='operatorButton doneButton'>done</button>
 						</span>
 
 						<div class='comment_add_div' id="comment_add_link_<? echo $entry_id; ?>" style="display: none;">
 							<!-- div comment add: is hidden first -->
-							<textarea id="comment_new_content_<? echo $entry_id; ?>" class="textarea_comment"></textarea>
+							<textarea id="comment_new_content_<? echo $entry_id; ?>" class="comment_textarea"></textarea>
 
 							<div style="padding: 8px 0;">
-								<button class="comment_add_button operatorButton" eid="<? echo $entry_id; ?>">Add</button>
-								<button class="comment_add_cancel operatorButton" eid="<? echo $entry_id; ?>">Cancel</button>
+								<button class="comment_add_button operatorButton" eid="<? echo $entry_id; ?>">add</button>
+								<button class="comment_add_cancel operatorButton" eid="<? echo $entry_id; ?>">cancel</button>
 							</div>
 						</div>
 						
@@ -124,7 +127,7 @@
 								<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
 								<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
 								<span class="comment_delete_confirmation" eid='<? echo $entry_id; ?>' cid='<? echo $comments['id']; ?>'>
-									<button class='operatorButton confirmationButton'>Sure?</button>
+									<button class='operatorButton confirmationButton'>sure?</button>
 								</span>
 							</li>
 				 	<?} ?>
