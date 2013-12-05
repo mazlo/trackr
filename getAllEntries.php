@@ -57,7 +57,7 @@
 					<button class='operatorButton confirmationButton'>Sure?</button>
 				</span>
 
-				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">Add Comment</button>
+				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">Add <span id="comment_add_button_text_<? echo $row['id']; ?>">Comment</span></button>
 			</div>
 
 			<div class='entryButtons'>

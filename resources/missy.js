@@ -130,6 +130,10 @@ var updateCommentsTitle = function( e, object )
 
 		success: function( data ) 
 		{
+			// change button label
+			$jQ( '#comment_add_button_text_'+ entryId ).text( title );
+
+			// show confirmation dialog
 			dialog.show();
 			dialog.effect( 'fade', 2000, function() 
 			{
