@@ -27,4 +27,18 @@
 	{
 		header( "Location: login.php" );
 	}
+
+	function myFunction( $result2, $entry_id ) 
+	{
+		while( $comments = $result2->fetch_assoc() ) 
+		{ ?>		
+			<li class='comment' cid='<? echo $comments['id']; ?>'>
+				<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
+				<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
+				<span class="comment_delete_confirmation" eid='<? echo $entry_id; ?>' cid='<? echo $comments['id']; ?>'>
+					<button class='operatorButton confirmationButton'>sure?</button>
+				</span>
+			</li> <?
+ 		}
+	}
 ?>

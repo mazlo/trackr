@@ -121,16 +121,7 @@
 						
 						<!--  wrapper for all comments of an entry -->
 						<ul id="comments_<? echo $entry_id; ?>" class="comments">
-						<?
-						while( $comments = $result2->fetch_assoc() ) { ?>		
-							<li class='comment' cid='<? echo $comments['id']; ?>'>
-								<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
-								<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
-								<span class="comment_delete_confirmation" eid='<? echo $entry_id; ?>' cid='<? echo $comments['id']; ?>'>
-									<button class='operatorButton confirmationButton'>sure?</button>
-								</span>
-							</li>
-				 	<?} ?>
+						<? myFunction( $result2, $entry_id ); ?>
 						</ul> 
 					</div>
 
