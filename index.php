@@ -209,24 +209,40 @@
 		$jQ( document ).on( 'blur', '.tags_textfield_inactive', function() { return updateTags( this ); } );
 
 		// handling keypress event on new entry title
-		$jQ( document ).on( 'keyup', '#title', function( event )
-		{
-			// on press of enter
-			if ( event.which == 13 )
-				if ( $jQ(this).val() != "" )
-					$jQ( '#description' ).focus();
-			else if ( event.which == 27 )
-				$jQ( '.entry_add_cancel' ).click();
-		});
+		$jQ( document ).on( 'keyup', '#title', function( event ) 
+		{ 
+			var value = $jQ(this).val();
+
+			confirmChange( event, 
+			{
+				onEnter : function() 
+				{
+					if ( value != "" )
+						$jQ( '#description' ).focus();
+				},
+				onEscape : function()
+				{
+					$jQ( '.entry_add_cancel' ).click();
+				}
+			});
+
+		} );
 
 		// handling keypress event on new entry description
 		$jQ( document ).on( 'keyup', '#description', function( event )
 		{
-			// on press of enter
-			if ( event.which == 13 )
-				$jQ( '.entry_add_button' ).click();
-			else if ( event.which == 27 )
-				$jQ( '.entry_add_cancel' ).click();
+			confirmChange( event, 
+			{
+				onEnter : function() 
+				{
+					$jQ( '.entry_add_button' ).click();
+				},
+				onEscape : function()
+				{
+					$jQ( '.entry_add_cancel' ).click();
+				}
+			});
+
 		});
 
 		// handling keyup event on search textfield
