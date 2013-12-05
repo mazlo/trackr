@@ -357,10 +357,16 @@ var confirmChange = function( event, handler )
 	if ( event == undefined || handler == undefined )
 		return;
 
-	if ( event.which == 13 )
-		handler.onEnter();
-	else if ( event.which == 27 )
-		handler.onEscape();
+	if ( event.which == 13 ) 
+	{
+		if ( handler.onEnter != undefined )
+			handler.onEnter();
+	}
+	else if ( event.which == 27 ) 
+	{
+		if ( handler.onEscape != undefined )
+			handler.onEscape();
+	}
 };
 
 var confirmChangeWithEnter = function( e, object )
