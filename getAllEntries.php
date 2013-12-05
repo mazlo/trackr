@@ -52,12 +52,12 @@
 			</div>
 
 			<div class='entryOperations'>
-				<button class="entry_delete_link operatorButton" eid="<? echo $row['id']; ?>">Delete Stackr</button>
+				<button class="entry_delete_link operatorButton" eid="<? echo $row['id']; ?>">delete Stackr</button>
 				<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'>
 					<button class='operatorButton confirmationButton'>Sure?</button>
 				</span>
 
-				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">Add <span id="comment_add_button_text_<? echo $row['id']; ?>">Comment</span></button>
+				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">add <span id="comment_add_button_text_<? echo $row['id']; ?>"><? echo $row['listTitle'];?></span></button>
 			</div>
 
 			<div class='entryButtons'>
@@ -83,8 +83,8 @@
 						<textarea id="comment_new_content_<? echo $row['id']; ?>" class="textarea_comment"></textarea>
 
 						<div style="padding: 8px 0;">
-							<button class="comment_add_button operatorButton" eid="<? echo $row['id']; ?>">Add</button>
-							<button class="comment_add_cancel operatorButton" eid="<? echo $row['id']; ?>">Cancel</button>
+							<button class="comment_add_button operatorButton" eid="<? echo $row['id']; ?>">add</button>
+							<button class="comment_add_cancel operatorButton" eid="<? echo $row['id']; ?>">cancel</button>
 						</div>
 					</div>
 					
@@ -95,7 +95,7 @@
 							<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
 							<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
 							<span class="comment_delete_confirmation" eid='<? echo $row['id']; ?>' cid='<? echo $comments['id']; ?>'>
-								<button class='operatorButton confirmationButton'>Sure?</button>
+								<button class='operatorButton confirmationButton'>sure?</button>
 							</span>
 						</li>
 			 <?	} ?>
@@ -113,7 +113,7 @@
 
 					<div style="float: right; text-align: right">
 						<a href="entry.php?eid=<? echo $row['id']; ?>">
-							<button class="entry_details_link operatorButton">Details</button>
+							<button class="entry_details_link operatorButton">details</button>
 						</a>
 					</div>
 
