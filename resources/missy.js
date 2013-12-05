@@ -181,7 +181,7 @@ var updateEntryFavored = function ( object )
 
 var deleteEntryConfirm = function( e, object ) 
 {
-	var x = e.target.offsetLeft - 100;
+	var x = e.target.offsetLeft + 100;
 	var y = e.target.offsetTop + 1;
 
 	var dialog = $jQ( object ).next( '.entry_delete_confirmation' );

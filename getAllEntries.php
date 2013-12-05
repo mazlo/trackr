@@ -52,12 +52,11 @@
 			</div>
 
 			<div class='entryOperations'>
+				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">add <span id="comment_add_button_text_<? echo $row['id']; ?>"><? echo $row['listTitle'];?></span></button>
 				<button class="entry_delete_link operatorButton" eid="<? echo $row['id']; ?>">delete Stackr</button>
 				<span class="entry_delete_confirmation" eid='<? echo $row['id']; ?>'>
 					<button class='operatorButton confirmationButton'>Sure?</button>
 				</span>
-
-				<button class="comment_add_link operatorButton" eid="<? echo $row['id']; ?>">add <span id="comment_add_button_text_<? echo $row['id']; ?>"><? echo $row['listTitle'];?></span></button>
 			</div>
 
 			<div class='entryButtons'>
