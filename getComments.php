@@ -1,7 +1,7 @@
 
 <?php
 	// read passed values
-	$entryId = $_GET["eid"];
+	$entryId = $_REQUEST["eid"];
 
 	if ( empty( $entryId) ) {
 		echo "<div>eid not provided</div>";
@@ -27,7 +27,9 @@
 		<li class='comment' cid='<? echo $comments['id']; ?>'>
 			<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='<? echo $comments['id']; ?>'>-</a></span>
 			<span style="display: table-cell;" class="searchable"><? echo $comments['comment']; ?></span>
-			<span id="comment_delete_confirmation<? echo $comments['id']; ?>" class="comment_delete_confirmation" eid='<? echo $entryId; ?>' cid='<? echo $comments['id']; ?>'><a href='#'>Sure?</a></span>
+			<span class="comment_delete_confirmation" eid='<? echo $entryId; ?>' cid='<? echo $comments['id']; ?>'>
+				<button class='operatorButton confirmationButton'>sure?</button>
+			</span>
 		</li>
 <? 	} 
 
