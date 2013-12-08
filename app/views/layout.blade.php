@@ -22,8 +22,9 @@
 			<!-- header contains logo and login -->
 			<div id="header">
 				
-				<div style="float: left;">
-					<h2 style="margin: 0"><span style="font-size: 36px">M</span>ind<span style="font-size: 36px">S</span>tackr</h2>
+				<div style="float: left; vertical-align: middle;">
+					<img src='resources/stack.png' style='width: 40px; margin-bottom: -6px;' />
+					<h2 style="display: inline; margin: 0px"><span style="font-size: 40px">M</span>ind<span style="font-size: 40px">S</span>tackr</h2>
 				</div>
 
 				<div style="float: right; text-align: right">
