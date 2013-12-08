@@ -6,6 +6,6 @@ class TagController extends BaseController
 	{
 		$tagList = Stackr::distinctTagList();
 
-		return View::make( 'ajax_distinctTagList' )->with( 'tagList', $tagList );
+		return View::make( 'ajax.distinctTagList' )->with( 'tagList', $tagList );
 	}
 }
