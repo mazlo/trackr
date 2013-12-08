@@ -1,14 +1,19 @@
 <?php
 
-	$my = array();
-	for( $i=0, $tags=explode( ', ', $tagList[0]->tags ); $i<count( $tags ); $i++ )
+	$tagsCS = $tagList[0]->tags; 	// comma separated list of tags
+	$tagsDistinct = array();		// contains the distinct list of tags
+
+	// creates the distinct list of tags
+	for( $i=0, $tags=explode( ', ', $tagsCS ); $i<count( $tags ); $i++ )
 	{
-		if ( !in_array( $tags[$i], $my ) )
-			$my[] = $tags[$i];
+		// check if it already in list
+		if ( !in_array( $tags[$i], $tagsDistinct ) )
+			$tagsDistinct[] = $tags[$i];	// adds the tag to the list
 	}
 
-	for ( $i=0; $i<count($my); $i++ )
+	// print the distinct list of tags
+	for ( $i=0; $i<count($tagsDistinct); $i++ )
 	{ ?>
-		<input type='checkbox' class='entry_tag' id='{{ $i }}'><label for='{{ $i }}'>{{ $my[$i] }}</label>
+		<input type='checkbox' class='entry_tag' id='{{ $i }}'><label for='{{ $i }}'>{{ $tagsDistinct[$i] }}</label>
 <?	}
  
