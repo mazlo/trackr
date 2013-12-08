@@ -40,6 +40,7 @@ body {
 #content {
 	background: #fff;
 	margin: 32px;
+	padding-bottom: 32px;
 }
 
 a {
@@ -253,6 +254,8 @@ input {
 }
 
 .credentials_error {
+	padding: 13px 0;
+	font-size: 13px;
 	color: red;
 }
 

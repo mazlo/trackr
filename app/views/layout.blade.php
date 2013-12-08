@@ -27,9 +27,17 @@
 				</div>
 
 				<div style="float: right; text-align: right">
-					<span id="searchResults" class="infotext"></span>
-					<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
-					<span><? if ( isset( $_SESSION[ 'username' ] ) ) echo 'username'; else echo 'username'; ?></span><button class='operatorButton' style="margin-left: 23px; color: lightgray">logout</button>
+	 				@if ( Auth::check() )
+	 					<!-- print search field -->
+		 				<span id="searchResults" class="infotext"></span>
+						<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
+
+						<!-- print user specific information -->
+	 					<span>{{ Auth::user()->username }}</span>
+						<a href='{{ URL::route( 'user/logout' ) }}'>
+							<button class='operatorButton' style="margin-left: 23px; color: lightgray">logout</button>
+						</a>
+					@endif
 				</div>
 
 				<div style="clear: both; height: 0"></div>
@@ -45,26 +53,7 @@
 			<!-- content contains list of entries -->
 			<div id="content">
 
-				<!-- div entry add: is hidden after page load -->
-				<div id="div_entry_add" class="div_entry_add" style="display: none; margin: 8px 0;">
-
-					<h4 class="entry_new_title">Title</h4>
-					<input type="text" id="title" value="" class="textfield" />
-					
-					<h4 class="entry_new_description">Description</h4>
-					<textarea id="description" class="textarea"></textarea>
-
-					<div style="padding: 8px 0;">
-						<input type="button" class="entry_add_button" value="Add" />
-						<input type="button" class="entry_add_cancel" value="Cancel" />
-					</div>
-
-				</div>
-
-				<!-- list of entries -->
-				<div id="entries" style="margin-top: 8px;">
-					@yield( 'stackrs' )
-				</div>
+				@yield( 'content' )
 
 			</div>
 

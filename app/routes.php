@@ -11,13 +11,28 @@
 |
 */
 
-Route::get('/', function()
+Route::any( '/', [
+    'as' => 'user/login',
+    'uses' => 'UserController@loginAction'
+]);
+
+Route::any( '/login', 'UserController@loginAction' );
+
+/*
+	Authentication neccessary
+*/
+Route::group( [ 'before' => 'auth' ], function()
 {
-	return View::make('hello');
+	Route::get( '/stackr', 'StackrController@getAll' );
+
+	/* 
+		change this to ContextController in future
+		that this becomes /context/{id}/tagsDistinct
+	*/
+	Route::get( '/tagsDistinct', 'TagController@getDistinctTagList' );
+
+    Route::any( '/logout', [
+        'as'   => 'user/logout',
+        'uses' => 'UserController@logoutAction'
+    ]);
 });
-
-Route::get( 'stackr', 'StackrController@getAll' );
-
-// change this to ContextController in future
-// that this becomes /context/{id}/tagsDistinct
-Route::get( 'tagsDistinct', 'TagController@getDistinctTagList' );
