@@ -2,63 +2,63 @@
 <head>
 	<!-- external -->
 	<!-- simplifies javascript programming -->
-	<link rel="stylesheet" type="text/css" href="resources/jquery-ui.css" />
-	<link rel="stylesheet" type="text/css" href="resources/main.css"></link>
+	<link rel='stylesheet' type='text/css' href='resources/jquery-ui.css' />
+	<link rel='stylesheet' type='text/css' href='resources/main.css'></link>
 
-	<script src="resources/prototype.js"></script>
-	<script src="resources/jquery-1.8.2.js"></script>
-	<script src="resources/jquery-ui-1.9.2.custom.js"></script>
-	<script src="resources/missy.js"></script>
+	<script src='resources/prototype.js'></script>
+	<script src='resources/jquery-1.8.2.js'></script>
+	<script src='resources/jquery-ui-1.9.2.custom.js'></script>
+	<script src='resources/missy.js'></script>
 
-	<script type="text/javascript">
+	<script type='text/javascript'>
 		<!-- this is to prevent conflicts with prototype and jquerytools -->
 		$jQ = jQuery.noConflict();
 	</script>
 
 </head>
 	<body>
-		<div id="container">
+		<div id='container'>
 
 			<!-- header contains logo and login -->
-			<div id="header">
+			<div id='header'>
 				
-				<div style="float: left; vertical-align: middle;">
-					<img src='resources/stack.png' style='width: 40px; margin-bottom: -6px;' />
-					<h2 style="display: inline; margin: 0px"><span style="font-size: 40px">M</span>ind<span style="font-size: 40px">S</span>tackr</h2>
+				<div style='float: left; vertical-align: middle;'>
+					<img src='resources/stack.png' style='width: 32px; margin-bottom: -4px;' />
+					<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
 				</div>
 
-				<div style="float: right; text-align: right">
+				<div style='float: right; text-align: right'>
 	 				@if ( Auth::check() )
 	 					<!-- print search field -->
-		 				<span id="searchResults" class="infotext"></span>
-						<input type="text" id="search" class="textfield_smaller" style="width: 200px; margin-top: 6px; margin-right: 23px;" />
+		 				<span id='searchResults' class='infotext'></span>
+						<input type='text' id='search' class='textfield_smaller' style='width: 200px; margin-top: 6px; margin-right: 23px;' />
 
 						<!-- print user specific information -->
 	 					<span>{{ Auth::user()->username }}</span>
 						<a href='{{ URL::route( 'user/logout' ) }}'>
-							<button class='operatorButton' style="margin-left: 23px; color: lightgray">logout</button>
+							<button class='operatorButton' style='margin-left: 23px; color: lightgray'>logout</button>
 						</a>
 					@endif
 				</div>
 
-				<div style="clear: both; height: 0"></div>
+				<div style='clear: both; height: 0'></div>
 			</div>
 
 			<!-- navigation contains tag list -->
-			<div id="beforeContent">
+			<div id='beforeContent'>
 
 				@yield( 'beforeContent' )
 
 			</div>
 
 			<!-- content contains list of entries -->
-			<div id="content">
+			<div id='content'>
 
 				@yield( 'content' )
 
 			</div>
 
-			<div id="footer" style="margin-top: 48px">
+			<div id='footer' style='margin-top: 48px'>
 				
 				@yield( 'footer' )
 
@@ -73,5 +73,15 @@
 	{
 		getDistinctEntriesTagList();
 	});
+
+
+	$jQ( window ).scroll( function() 
+	{
+		if ( window.pageYOffset > 20 )
+			$jQ( '#header' ).css( 'box-shadow', '0px 2px 2px #eee' );
+		else
+			$jQ( '#header' ).css( 'box-shadow', 'none' );
+	});
+		
 
 </script>

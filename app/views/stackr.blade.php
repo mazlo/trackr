@@ -38,24 +38,79 @@
 	<!-- list of entries -->
 	<div id="entries" style="margin-top: 8px;">
 
-		<ul>
 		@foreach( $stackrs as $stackr )
-			<li>{{ $stackr->title }}
+		<div class="wrapper_entry filterableByTag" tags="{{ $stackr->tags }}">
 
-			<ul id="comments_{{ $stackr->id }}" class="comments">
-			@foreach( $stackr->comments as $comment )
-				<li class='comment' cid='{{ $comment->id }}'>
-					<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
-					<span style="display: table-cell;" class="searchable">{{ $comment->comment }}</span>
-					<span class="comment_delete_confirmation" eid='{{ $stackr->id }}' cid='{{ $comment->id }}'>
-						<button class='operatorButton confirmationButton'>sure?</button>
+			<div class='entry'>
+				
+				<div class='entryIcon'>
+					<span style='font-weight: bold'>#{{ $stackr->id }}</span>
+				</div>
+
+				<div class='entryDetails'>
+					<input class="textfield entry_title_inactive" eid='{{ $stackr->id }}' value="{{ $stackr->title }}" disabled="disabled" />
+					<span class='entry_title_confirm'>
+						<button class='operatorButton doneButton'>Done</button>
 					</span>
-				</li>
-			@endforeach
-			</ul> 
-		@endforeach
-		</ul>
-		
+					<h4 class='entry_description searchable'>{{ $stackr->description }}</h4>
+				</div>
+
+				<div class='entryOperations'>
+					<button class="comment_add_link operatorButton" eid="{{ $stackr->id }}">add
+						<span id="comment_add_button_text_{{ $stackr->id }}">
+							@if( substr( $stackr->listTitle, -1 ) == 's' ) 
+								{{ substr( $stackr->listTitle, 0, -1 ) }} 
+							@else 
+								{{ $stackr->listTitle }}
+							@endif
+						</span>
+					</button>
+					<button class="entry_delete_link operatorButton" eid="{{ $stackr->id }}">delete Stackr</button>
+					<span class="entry_delete_confirmation" eid='{{ $stackr->id }}'>
+						<button class='operatorButton confirmationButton'>Sure?</button>
+					</span>
+				</div>
+
+				<div class='entryButtons'>
+					<img src="resources/pinIt_{{ $stackr->favored }}.png" class="favoredIcon" alt="{{ $stackr->favored }}" width="28px" eid="{{ $stackr->id }}" />
+				</div>
+
+				<div style="clear: both; height: 0px"></div>
+
+				<!-- wrapper for all comments -->
+				<div class='wrapper_comments'>
+					<input class="textfield comments_title_inactive" eid='{{ $stackr->id }}' value="{{ $stackr->listTitle }}" disabled="disabled" />
+					<span class='comments_title_confirm'>
+						<button class='operatorButton doneButton'>Done</button>
+					</span>
+						
+					<div class='comment_add_div' id="comment_add_link_{{ $stackr->id }}" style="display: none;">
+						<!-- div comment add: is hidden first -->
+						<textarea id="comment_new_content_{{ $stackr->id }}" class="comment_textarea"></textarea>
+
+						<div style="padding: 8px 0;">
+							<button class="comment_add_button operatorButton" eid="{{ $stackr->id }}">add</button>
+							<button class="comment_add_cancel operatorButton" eid="{{ $stackr->id }}">cancel</button>
+						</div>
+					</div>
+
+					<ul id="comments_{{ $stackr->id }}" class="comments">
+					@foreach( $stackr->comments as $comment )
+						<li class='comment' cid='{{ $comment->id }}'>
+							<span style="display: table-cell;"><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
+							<span style="display: table-cell;" class="searchable">{{ $comment->comment }}</span>
+							<span class="comment_delete_confirmation" eid='{{ $stackr->id }}' cid='{{ $comment->id }}'>
+								<button class='operatorButton confirmationButton'>sure?</button>
+							</span>
+						</li>
+					@endforeach
+					</ul> 
+				</div>
+			</div>
+		</div>
+	@endforeach
+	</ul>
+
 	</div>
 
 @stop
