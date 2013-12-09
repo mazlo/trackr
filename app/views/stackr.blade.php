@@ -41,13 +41,13 @@
 		@foreach( $stackrs as $stackr )
 		<div class='wrapper_entry filterableByTag' tags='{{ $stackr->tags }}'>
 
-			<div class='entry'>
+			<div class='entry_header'>
 				
-				<div class='entryIcon'>
+				<div class='entry_icon'>
 					<span style='font-weight: bold'>#{{ $stackr->id }}</span>
 				</div>
 
-				<div class='entryDetails'>
+				<div class='entry_description'>
 					<input class='textfield entry_title_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->title }}' disabled='disabled' />
 					<span class='entry_title_confirm'>
 						<button class='operatorButton doneButton'>Done</button>
@@ -55,7 +55,7 @@
 					<h4 class='entry_description searchable'>{{ $stackr->description }}</h4>
 				</div>
 
-				<div class='entryOperations'>
+				<div class='entry_operations'>
 					<button class='comment_add_link operatorButton' eid='{{ $stackr->id }}'>add
 						<span id='comment_add_button_text_{{ $stackr->id }}'>
 							@if( substr( $stackr->listTitle, -1 ) == 's' ) 
@@ -71,11 +71,14 @@
 					</span>
 				</div>
 
-				<div class='entryButtons'>
+				<div class='entry_buttons'>
 					<img src='resources/pinIt_{{ $stackr->favored }}.png' class='favoredIcon' alt='{{ $stackr->favored }}' width='28px' eid='{{ $stackr->id }}' />
 				</div>
 
 				<div style='clear: both; height: 0px'></div>
+
+			</div>
+			<div class='entry_content'>
 
 				<!-- wrapper for all comments -->
 				<div class='wrapper_comments'>
@@ -107,24 +110,25 @@
 					</ul> 
 				</div>
 
-				<div class='entryFooter'>
+			</div>
 
-					<div style='float: left'>
-						<span style='color: #aaa;'>Tags:</span> 
-						<input type='type' class='textfield tags_textfield_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->tags }}' disabled='disabled' /> 
-					</div>
+			<div class='entry_footer'>
 
-					<div style='float: right; text-align: right'>
-						<a href='entry.php?eid={{ $stackr->id }}'>
-							<button class='entry_details_link operatorButton'>details</button>
-						</a>
-					</div>
-
-					<div style='clear: both;'></div>
+				<div style='float: left'>
+					<span style='color: #aaa;'>Tags:</span> 
+					<input type='type' class='textfield tags_textfield_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->tags }}' disabled='disabled' /> 
 				</div>
 
+				<div style='float: right; text-align: right'>
+					<a href='entry.php?eid={{ $stackr->id }}'>
+						<button class='entry_details_link operatorButton'>details</button>
+					</a>
+				</div>
+
+				<div style='clear: both;'></div>
 			</div>
-		</div>
+
+		</div> {{-- end of wrapper entry --}}
 	@endforeach
 	</ul>
 
