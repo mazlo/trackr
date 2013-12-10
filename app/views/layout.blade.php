@@ -72,6 +72,8 @@
 	$jQ( function()
 	{
 		getDistinctEntriesTagList();
+
+		$jQ( '#search' ).focus();
 	});
 
 // GLOBAL EVENTS
