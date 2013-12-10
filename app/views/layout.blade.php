@@ -274,6 +274,9 @@
 
 // EVENTS REGARDING CHANGES TO COMMENT PROPERTIES
 
+	// handle hover on textfield 'comments title'
+	$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( this, 'comments_title' ); } );
+
 	// handle click on textfield 'comments title'
 	$jQ( document ).on( 'click', '.comments_title_inactive', function() 
 	{
@@ -282,5 +285,8 @@
 
 	// handle keypress on textfield 'comment title'
 	$jQ( document ).on( 'keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+
+	// handle blur on textfield 'comment title'
+	$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) { return updateCommentsTitle( e, this ); } );
 
 </script>
