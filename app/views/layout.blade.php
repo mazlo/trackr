@@ -81,7 +81,7 @@
 	// css manipulations on hover
 	$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
 	{
-		$jQ(this).toggleClass('hover');
+		$jQ(this).toggleClass( 'hover' );
 	});
 
 	// handle scroll on window
@@ -172,22 +172,22 @@
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
 
 // TITLE
-	// css manipulations on hover
+	// handle hover on textfield 'entry title'
 	$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
 
-	// handle click on title textfield 
+	// handle click on textfield 'entry title'
 	$jQ( document ).on( 'click', '.entry_title_inactive', function() 
 	{
 		oldTitle = $jQ(this).val();
 	});
 
-	// handle keypress on title textfield
+	// handle keypress on textfield 'entry title'
 	$jQ( document ).on( 'keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
 
-	// handle blur on title textfield
+	// handle blur on textfield 'entry title'
 	$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) { return updateEntryTitle( e, this ); } );
 
-// TAGS
+// TAG BUTTONS
 	// handle click on tag button
 	$jQ( document ).on( 'click', '.entry_tag', function()
 	{
@@ -244,6 +244,16 @@
 			$jQ(this).show();
 		});
 	});
+
+// TAGS TEXTFIELD
+	// handle hover on textfield 'tags'
+	$jQ( document ).on( 'hover', '.tags_textfield_inactive', function() { return toggleDisabledElement( this, 'tags_textfield' ); } );
+
+	// handle keypress on textfield 'tags'
+	$jQ( document ).on( 'keyup', '.tags_textfield_inactive', function(e) { return confirmChangeOfTags( e, this ); } );
+
+	// handle blur on textfield 'tags'
+	$jQ( document ).on( 'blur', '.tags_textfield_inactive', function() { return updateTags( this ); } );
 
 // EVENTS REGARDING ADDING OR DELETING COMMENTS
 
