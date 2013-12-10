@@ -74,13 +74,119 @@
 		getDistinctEntriesTagList();
 	});
 
-
+	// handle scroll on window
 	$jQ( window ).scroll( function() 
 	{
 		if ( window.pageYOffset > 20 )
 			$jQ( '#header' ).css( 'box-shadow', '0px 2px 2px #eee' );
 		else
 			$jQ( '#header' ).css( 'box-shadow', 'none' );
+	});
+
+// EVENTS REGARDING ADDING OR DELETING AN ENTRY
+
+	// shows the div to add a new entry
+	$jQ( document ).on( 'click', '.entry_add_link', function() { return showAddEntryDiv(); } );
+
+	// hides the div to add a new entry
+	$jQ( document ).on( 'click', '.entry_add_cancel', function() { return hideAddEntryDiv(); } );
+
+	// handle click on add entry button
+	$jQ( document ).on( 'click', '.entry_add_button', function() { return addEntryAction(); } );
+
+	// handle click on delete entry button
+	$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
+
+	// handle click on confirmation dialog for delete entry button
+	$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
+	{ 
+		return deleteEntry( this, '.wrapper_entry', function()
+		{
+			getAllEntries();
+			getDistinctEntriesTagList();
+		} ); 
+	} );
+
+// EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
+
+// TITLE
+	// css manipulations on hover
+	$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
+
+	// handle click on title textfield 
+	$jQ( document ).on( 'click', '.entry_title_inactive', function() 
+	{
+		oldTitle = $jQ(this).val();
+	});
+
+	// handle keypress on title textfield
+	$jQ( document ).on( 'keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+
+	// handle blur on title textfield
+	$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) { return updateEntryTitle( e, this ); } );
+
+// TAGS
+	// handle click on tag button
+	$jQ( document ).on( 'click', '.entry_tag', function()
+	{
+		var selectedTags = [];
+
+		// collect all selected tag buttons
+		$jQ( '.ui-state-active' ).each( function()
+		{
+			selectedTags.push( $jQ(this).text() );
+		});
+
+		// for each element that is filterable by tag
+		$jQ( '.filterableByTag' ).each( function()
+		{
+			// show element first
+			$jQ(this).show();
+
+			// now decide if element should be disabled
+
+			if ( selectedTags.size() == 0 )
+				return;
+
+			var elementTags = $jQ(this).attr( 'tags' );
+			if ( elementTags.length == 0 )
+				return;
+
+			elementTags = elementTags.split(', ');
+
+			var show = true;
+			selectedTags.forEach( function(tag) 
+			{
+			    if ( elementTags.indexOf( tag ) != -1 && show )
+		    		show = true;
+			    else 
+			    	show = false;
+			});
+
+			if ( !show )
+				$jQ(this).hide();
+		});
+
+	} );
+
+	// handle click on clear selection button
+	$jQ( document ).on( 'click', '#clearTags', function()
+	{
+		$jQ( '.ui-state-active' ).each( function()
+		{
+			$jQ(this).toggleClass('ui-state-active');
+		});
+
+		$jQ( '.filterableByTag' ).each( function()
+		{
+			$jQ(this).show();
+		});
+	});
+
+	// css manipulations on hover
+	$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
+	{
+		$jQ(this).toggleClass('hover');
 	});
 		
 
