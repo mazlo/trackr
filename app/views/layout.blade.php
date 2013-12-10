@@ -74,6 +74,14 @@
 		getDistinctEntriesTagList();
 	});
 
+// GLOBAL EVENTS
+
+	// css manipulations on hover
+	$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
+	{
+		$jQ(this).toggleClass('hover');
+	});
+
 	// handle scroll on window
 	$jQ( window ).scroll( function() 
 	{
@@ -81,6 +89,58 @@
 			$jQ( '#header' ).css( 'box-shadow', '0px 2px 2px #eee' );
 		else
 			$jQ( '#header' ).css( 'box-shadow', 'none' );
+	});
+
+	// handle keyup on search textfield
+	$jQ( document ).on( 'keyup', '#search', function( event )
+	{
+		// escape key pressed -> reset field values
+		if ( event.which == 27 )
+		{
+			$jQ( this ).val( '' );
+			$jQ( '.searchable' ).each( function()
+			{
+				$jQ( this ).css( 'background', 'transparent' );
+			})
+			$jQ( '#searchResults' ).text( '' );
+			$jQ( this ).blur();
+
+			return;
+		}
+
+		// for any other key
+
+		var counter = 0;
+		var value = this.value.toLowerCase();
+
+		// iterate all searchable elements
+		$jQ( '.searchable' ).each( function() 
+		{
+			// reset all search fields first
+			$jQ( this ).css( 'background', 'transparent' );
+					
+			// check if input is valid
+			if ( value.length <= 2 )
+			{
+				$jQ( this ).css( 'background', 'transparent' );
+				return;
+			}
+			
+			// check if there are some results
+			var found = $jQ( this ).text().toLowerCase().search( value );
+			if ( found == -1 )
+				return;
+				
+			// highligh those results
+			$jQ( this ).css( 'background', '#c3d69b' );  
+			counter += 1;
+		} );
+				
+		// print number of results
+		if ( counter != 0 )
+			$jQ( "#searchResults").text( counter +' matches' );
+		else
+			$jQ( "#searchResults").text( '&nbsp' );
 	});
 
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
@@ -183,11 +243,21 @@
 		});
 	});
 
-	// css manipulations on hover
-	$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
-	{
-		$jQ(this).toggleClass('hover');
-	});
-		
+// EVENTS REGARDING ADDING OR DELETING COMMENTS
+
+	// show div to add a new comment
+	$jQ( document ).on( 'click', '.comment_add_link', function() { return showAddCommentDiv( this ); } );
+
+	// hide div to add a new comment
+	$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideAddCommentDiv( this ); } );
+
+	// handle click on comment add button
+	$jQ( document ).on( 'click', '.comment_add_button', function() { return addCommentAction( this ); } );
+
+	// handle click on comment delete button
+	$jQ( document ).on( 'click', '.comment_delete_link', function(e) { return deleteCommentConfirm( e, this ); } );
+
+	// handle click on confirmation dialog for comment delete button
+	$jQ( document ).on( 'click', '.comment_delete_confirmation', function() { return deleteComment( this ); } );
 
 </script>
