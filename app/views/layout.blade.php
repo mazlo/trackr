@@ -272,4 +272,15 @@
 	// handle click on confirmation dialog for comment delete button
 	$jQ( document ).on( 'click', '.comment_delete_confirmation', function() { return deleteComment( this ); } );
 
+// EVENTS REGARDING CHANGES TO COMMENT PROPERTIES
+
+	// handle click on textfield 'comments title'
+	$jQ( document ).on( 'click', '.comments_title_inactive', function() 
+	{
+		commentsOldTitle = $jQ(this).val();
+	});
+
+	// handle keypress on textfield 'comment title'
+	$jQ( document ).on( 'keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+
 </script>
