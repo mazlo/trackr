@@ -25,6 +25,8 @@ Route::group( [ 'before' => 'auth' ], function()
 {
 	Route::get( '/stackr', 'StackrController@getAll' );
 
+	Route::get( '/stackr/add', 'StackrController@add' );
+
 	/* 
 		change this to ContextController in future
 		that this becomes /context/{id}/tagsDistinct

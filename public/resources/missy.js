@@ -218,19 +218,19 @@ var hideAddEntryDiv = function()
 var addEntryAction = function() 
 {
 	var title = $jQ( '#title' ).val();
-	if ( title == "" )
+	if ( title == '' )
 		return false;
 
 	var description = $jQ( '#description' ).val();
 
 	$jQ.ajax( {
-		url: "addEntry.php",
-		type: "post",
+		url: '/mindstackr/public/stackr/add',
+		type: 'post',
 		data: { tl: title, ds: description },
 
 		success: function( data ) 
 		{
-			$jQ( "#div_entry_add" ).hide();
+			$jQ( '#div_entry_add' ).hide();
 			getAllEntries();
 		}
 	});
