@@ -16,6 +16,19 @@ class StackrController extends BaseController {
 		$stackr->save();
 	}
 
+	public function changeTitle()
+	{
+		$eid = Input::get( 'eid' );
+		$title = Input::get( 'tl' );
+
+		if ( empty( $eid ) || empty( $title ) )
+			return;
+
+		$stackr = Stackr::find( $eid );
+		$stackr->title = $title;
+		$stackr->save();
+	}
+
 	public function getAll()
 	{
 		$stackrs = Stackr::all();

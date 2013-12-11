@@ -27,6 +27,8 @@ Route::group( [ 'before' => 'auth' ], function()
 
 	Route::post( '/stackr/add', 'StackrController@add' );
 
+	Route::post( '/stackr/changeTitle', 'StackrController@changeTitle' );
+
 	/* 
 		change this to ContextController in future
 		that this becomes /context/{id}/tagsDistinct

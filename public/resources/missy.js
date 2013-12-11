@@ -1,4 +1,18 @@
 
+var getContextPath = function()
+{
+	var contextPathArr = window.location.pathname.split( '/' );
+	
+	if ( contextPathArr == undefined )
+		return '';
+	
+	if ( contextPathArr.length > 2 )
+		return '/' + contextPathArr[1] + '/' + contextPathArr[2];
+
+	if ( contextPathArr.length > 1 )
+		return '/' + contextPathArr[1];
+};
+
 var getAllEntries = function( tags )
 {
 	$jQ.ajax( {
@@ -90,8 +104,8 @@ var updateEntryTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: "changeEntryTitle.php",
-		type: "get",
+		url: getContextPath() + '/stackr/changeTitle',
+		type: 'post',
 		data: { eid: entryId, tl: title },
 
 		success: function( data ) 
