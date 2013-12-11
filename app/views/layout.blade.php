@@ -142,7 +142,7 @@
 		if ( counter != 0 )
 			$jQ( "#searchResults").text( counter +' matches' );
 		else
-			$jQ( "#searchResults").text( '&nbsp' );
+			$jQ( "#searchResults").text( '&nbsp;' );
 	});
 
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
