@@ -63,4 +63,18 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
+	public function changeListTitle( $eid )
+	{
+		$title = Input::get( 'tl' );
+
+		if ( empty( $eid ) || empty( $title ) )
+			return;
+
+		$stackr = Stackr::find( $eid );
+		$stackr->listTitle = $title;
+		$stackr->save();
+
+		// the reload is done by ajax.success()
+	}	
+
 }

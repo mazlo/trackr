@@ -42,4 +42,5 @@ class CommentController extends BaseController
 
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}
+
 }

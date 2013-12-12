@@ -139,9 +139,9 @@ var updateCommentsTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: "changeListTitle.php",
-		type: "get",
-		data: { eid: entryId, tl: title },
+		url: getContextPath() +'/stackr/'+ entryId +'/changeListTitle',
+		type: 'post',
+		data: { tl: title },
 
 		success: function( data ) 
 		{

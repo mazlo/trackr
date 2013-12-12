@@ -36,6 +36,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/stackr/{eid}/changeTitle', 'StackrController@changeTitle' );
 
+	Route::post( '/stackr/{eid}/changeListTitle', 'StackrController@changeListTitle' );
+
 	/*
 		Routes concerning stackr comments
 	*/
