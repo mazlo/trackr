@@ -11,17 +11,17 @@
 |
 */
 
-Route::any( '/', [
+Route::any( '/', array(
     'as' => 'user/login',
     'uses' => 'UserController@loginAction'
-]);
+));
 
 Route::any( '/login', 'UserController@loginAction' );
 
 /*
 	Authentication neccessary
 */
-Route::group( [ 'before' => 'auth' ], function()
+Route::group( array( 'before' => 'auth' ), function()
 {
 	/*
 		Routes concerning stackrs
@@ -47,8 +47,8 @@ Route::group( [ 'before' => 'auth' ], function()
 	*/
 	Route::get( '/tagsDistinct', 'TagController@getDistinctTagList' );
 
-    Route::any( '/logout', [
+    Route::any( '/logout', array(
         'as'   => 'user/logout',
         'uses' => 'UserController@logoutAction'
-    ]);
+    ));
 });

@@ -6,7 +6,7 @@ class UserController extends Controller
 {
 	public function loginAction()
     {
-    	$data = [];
+    	$data = array();
 
     	// check if user is logged in
     	if ( Auth::check() )
@@ -17,17 +17,17 @@ class UserController extends Controller
     	// check if data was postet
     	if ( Input::server( 'REQUEST_METHOD') == 'POST' )
         {
-            $validator = Validator::make( Input::all(), [
+            $validator = Validator::make( Input::all(), array(
                 'username' => 'required',
                 'password' => 'required'
-            ]);
+            ));
 
             if ( $validator->passes() )
             {
-                $credentials = [
+                $credentials = array(
                     'username' => Input::get( 'username' ),
                     'password' => Input::get( 'password' )
-                ];
+                );
 
                 // successful login redirects
                 if ( Auth::attempt( $credentials ) )
@@ -37,10 +37,9 @@ class UserController extends Controller
             }
 
             // validation does not pass or wrong credentials
-        	$data[ 'errors' ] = new MessageBag( 
-        	[	
-        		'password' => [ 'Username and/or password invalid.' ]
-            ]);
+        	$data[ 'errors' ] = new MessageBag( array(
+        		'password' => 'Username and/or password invalid.'
+            ));
 
             $data[ 'username' ] = Input::get( 'username' );
 
