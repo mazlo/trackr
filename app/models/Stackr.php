@@ -5,7 +5,7 @@ class Stackr extends Eloquent
 
 	public function comments()
 	{
-		return $this->hasMany( 'Comment', 'entry_id' );
+		return $this->hasMany( 'Comment', 'stackr_id' );
 	}
 
 	public static function distinctTagList()
