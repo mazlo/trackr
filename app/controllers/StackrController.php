@@ -30,9 +30,8 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
-	public function changeTitle()
+	public function changeTitle( $eid )
 	{
-		$eid = Input::get( 'eid' );
 		$title = Input::get( 'tl' );
 
 		if ( empty( $eid ) || empty( $title ) )
@@ -41,6 +40,8 @@ class StackrController extends BaseController {
 		$stackr = Stackr::find( $eid );
 		$stackr->title = $title;
 		$stackr->save();
+
+		// the reload is done by ajax.success()
 	}
 
 }

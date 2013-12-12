@@ -105,9 +105,9 @@ var updateEntryTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() + '/stackr/changeTitle',
+		url: getContextPath() +'/stackr/'+ entryId +'/changeTitle',
 		type: 'post',
-		data: { eid: entryId, tl: title },
+		data: { tl: title },
 
 		success: function( data ) 
 		{

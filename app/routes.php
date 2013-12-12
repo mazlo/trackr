@@ -32,7 +32,7 @@ Route::group( [ 'before' => 'auth' ], function()
 
 	Route::post( '/stackr/add', 'StackrController@add' );
 
-	Route::post( '/stackr/changeTitle', 'StackrController@changeTitle' );
+	Route::post( '/stackr/{eid}/changeTitle', 'StackrController@changeTitle' );
 
 	/*
 		Routes concerning stackr comments
