@@ -157,6 +157,43 @@
 	// handle click on add entry button
 	$jQ( document ).on( 'click', '.entry_add_button', function() { return addEntryAction(); } );
 
+	// handle keypress on textfield entry title
+	$jQ( document ).on( 'keyup', '#title', function( event ) 
+	{ 
+		var value = $jQ(this).val();
+
+		confirmChange( event, 
+		{
+			onEnter : function() 
+			{
+				if ( value != '' )
+					$jQ( '#description' ).focus();
+			},
+			onEscape : function()
+			{
+				$jQ( '.entry_add_cancel' ).click();
+			}
+		});
+
+	} );
+
+	// handle keypress on textfield entry description
+	$jQ( document ).on( 'keyup', '#description', function( event )
+	{
+		confirmChange( event, 
+		{
+			onEnter : function() 
+			{
+				$jQ( '.entry_add_button' ).click();
+			},
+			onEscape : function()
+			{
+				$jQ( '.entry_add_cancel' ).click();
+			}
+		});
+
+	});
+
 	// handle click on delete entry button
 	$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
 
