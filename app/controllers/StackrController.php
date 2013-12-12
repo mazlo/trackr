@@ -30,6 +30,25 @@ class StackrController extends BaseController {
 		return View::make( 'ajax.stackr' )->with( 'stackrs', Stackr::all() );
 	}
 
+	public function delete( $eid )
+	{
+		if ( empty( $eid ) )
+			return;
+
+		$stackr = Stackr::find( $eid );
+
+		// delete all related Comments
+        foreach( $stackr->comments as $comment )
+        {
+            $comment->delete();
+        }
+
+        // delete the Stackr
+        $stackr->delete();
+
+        return View::make( 'ajax.stackr' )->with( 'stackrs', Stackr::all() );
+	}
+
 	public function changeTitle( $eid )
 	{
 		$title = Input::get( 'tl' );

@@ -194,21 +194,6 @@ var updateEntryFavored = function ( object )
 	});			
 };
 
-var deleteEntryConfirm = function( e, object ) 
-{
-	var x = e.target.offsetLeft + 100;
-	var y = e.target.offsetTop + 1;
-
-	var dialog = $jQ( object ).next( '.entry_delete_confirmation' );
-	dialog.css( 'left', x );
-	dialog.css( 'top', y );
-	dialog.show();
-
-	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
-
-	return false;
-};
-
 var showAddEntryDiv = function() 
 {
 	$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
@@ -253,19 +238,33 @@ var addEntryAction = function()
 	return false;
 };
 
+
+var deleteEntryConfirm = function( e, object ) 
+{
+	var x = e.target.offsetLeft + 100;
+	var y = e.target.offsetTop + 1;
+
+	var dialog = $jQ( object ).next( '.entry_delete_confirmation' );
+	dialog.css( 'left', x );
+	dialog.css( 'top', y );
+	dialog.show();
+
+	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
+
+	return false;
+};
+
 var deleteEntry = function( object, closestClass, callback )
 {
 	$jQ( object ).hide();
 
-	var elementId = $jQ( object ).attr( 'eid' );
+	var entryId = $jQ( object ).attr( 'eid' );
 
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: "deleteEntry.php",
-				type: "post",
-				context: document.body,
-				data: { eid: elementId },
+				url: getContextPath() +'/stackr/'+ entryId +'/delete',
+				type: 'post',
 
 				success: function( data ) 
 				{
