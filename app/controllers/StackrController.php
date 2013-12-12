@@ -9,7 +9,7 @@ class StackrController extends BaseController {
 
 	public function all()
 	{
-		$stackrs = Stackr::all();
+		$stackrs = Stackr::orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
 		return View::make( 'ajax.stackr' )->with( 'stackrs', $stackrs );
 	}
@@ -27,7 +27,7 @@ class StackrController extends BaseController {
 		$stackr->description = $desc;
 		$stackr->save();
 
-		return View::make( 'ajax.stackr' )->with( 'stackrs', Stackr::all() );
+		return $this->all();
 	}
 
 	public function delete( $eid )
@@ -46,7 +46,7 @@ class StackrController extends BaseController {
         // delete the Stackr
         $stackr->delete();
 
-        return View::make( 'ajax.stackr' )->with( 'stackrs', Stackr::all() );
+        return $this->all();
 	}
 
 	public function changeTitle( $eid )
