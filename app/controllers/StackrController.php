@@ -27,7 +27,7 @@ class StackrController extends BaseController {
 		$stackr->description = $desc;
 		$stackr->save();
 
-		// the reload is done by ajax.success()
+		return View::make( 'ajax.stackr' )->with( 'stackrs', Stackr::all() );
 	}
 
 	public function changeTitle( $eid )

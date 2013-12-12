@@ -246,7 +246,7 @@ var addEntryAction = function()
 		success: function( data ) 
 		{
 			$jQ( '#div_entry_add' ).hide();
-			getAllEntries();
+			$jQ( '#entries' ).html( data );
 		}
 	});
 
