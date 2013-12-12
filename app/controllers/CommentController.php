@@ -26,7 +26,7 @@ class CommentController extends BaseController
 		$stackr = Stackr::find( $eid );
 		$stackr->comments()->save( $comment );
 
-		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
+		return $this->getAll( $eid );
 	}
 
 	public function delete( $eid, $cid )
@@ -40,7 +40,7 @@ class CommentController extends BaseController
 		// load current stackr
 		$stackr = Stackr::find( $eid );
 
-		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
+		return $this->getAll( $eid );
 	}
 
 }
