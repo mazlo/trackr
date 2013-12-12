@@ -88,4 +88,18 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
+	public function changeTags( $eid )
+	{
+		$tags = Input::get( 'ts' );
+
+		if ( empty( $tags ) )
+			return;
+
+		$stackr = Stackr::find( $eid );
+		$stackr->tags = $tags;
+		$stackr->save();
+
+		// the reload is done by ajax.success()
+	}
+
 }

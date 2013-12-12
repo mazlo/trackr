@@ -167,13 +167,16 @@ var updateTags = function ( object )
 
 	// ajax call to change tags
 	$jQ.ajax( {
-		url: "changeEntryTags.php",
-		type: "post",
-		data: { eid: entryId, ts: tags },
+		url: getContextPath() +'/stackr/'+ entryId +'/changeTags',
+		type: 'post',
+		data: { ts: tags },
 
 		success: function( data ) 
 		{
-			getAllEntries();
+			// update tags attribute on wrapper_entry
+			$jQ(object).closest( '.wrapper_entry' ).attr( 'tags', tags );
+
+			// compute distinct tag list anew
 			getDistinctEntriesTagList();
 		}
 	});
