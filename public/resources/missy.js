@@ -16,20 +16,20 @@ var getContextPath = function()
 var getAllEntries = function( tags )
 {
 	$jQ.ajax( {
-		url: "getAllEntries.php",
-		type: "get",
+		url: getContextPath() + '/stackr/all',
+		type: 'get',
 		data: { ts: tags },
 
 		success: function( data ) 
 		{
 			$jQ( '#entries' ).html( data );
-			$jQ( ".comments" ).sortable( {
+			$jQ( '.comments' ).sortable( {
 				update: function( event, ui ) 
 				{
 					return updateCommentPositions( this );
 				}
 			});
-			$jQ( ".comments" ).disableSelection();
+			$jQ( '.comments' ).disableSelection();
 		}
 	});
 };
@@ -238,7 +238,7 @@ var addEntryAction = function()
 	var description = $jQ( '#description' ).val();
 
 	$jQ.ajax( {
-		url: '/mindstackr/public/stackr/add',
+		url: getContextPath() + '/stackr/add',
 		type: 'post',
 		data: { tl: title, ds: description },
 

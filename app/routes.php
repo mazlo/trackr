@@ -23,7 +23,9 @@ Route::any( '/login', 'UserController@loginAction' );
 */
 Route::group( [ 'before' => 'auth' ], function()
 {
-	Route::get( '/stackr', 'StackrController@getAll' );
+	Route::get( '/stackr', 'StackrController@show' );
+
+	Route::get( '/stackr/all', 'StackrController@all' );
 
 	Route::post( '/stackr/add', 'StackrController@add' );
 

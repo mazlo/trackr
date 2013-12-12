@@ -2,6 +2,18 @@
 
 class StackrController extends BaseController {
 
+	public function show()
+	{
+		return View::make( 'stackr' );
+	}
+
+	public function all()
+	{
+		$stackrs = Stackr::all();
+
+		return View::make( 'ajax.stackr' )->with( 'stackrs', $stackrs );
+	}
+
 	public function add()
 	{
 		$title = Input::get( 'tl' );
@@ -27,13 +39,6 @@ class StackrController extends BaseController {
 		$stackr = Stackr::find( $eid );
 		$stackr->title = $title;
 		$stackr->save();
-	}
-
-	public function getAll()
-	{
-		$stackrs = Stackr::all();
-
-		return View::make( 'stackr' )->with( 'stackrs', $stackrs );
 	}
 
 }
