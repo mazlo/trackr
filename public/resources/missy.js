@@ -39,8 +39,8 @@ var getAllEntries = function( tags )
 var getDistinctEntriesTagList = function( )
 {
 	$jQ.ajax( {
-		url: "/mindstackr/public/tagsDistinct",
-		type: "get",
+		url: '/mindstackr/public/tagsDistinct',
+		type: 'get',
 
 		success: function( data )
 		{
@@ -73,7 +73,7 @@ var updateCommentPositions = function( object )
 	var cid = [];
 	var pos = [];
 
-	$jQ(object).find( '.comment' ).each( function()
+	$jQ( object ).find( '.comment' ).each( function()
 	{
 		cid.push( $jQ(this).attr( 'cid' ) );
 		pos.push( ++counter );
@@ -90,18 +90,18 @@ var updateCommentPositions = function( object )
 
 var updateEntryTitle = function( e, object )
 {
-	var title = $jQ(object).val();
+	var title = $jQ( object ).val();
 
 	if ( oldTitle == title )
 		return;
 
-	var entryId = $jQ(object).attr( 'eid' );
+	var entryId = $jQ( object ).attr( 'eid' );
 
 	// prepare confirmation dialog
 	var x = e.target.offsetLeft - 187;
 	var y = e.target.offsetTop + 1;
 
-	var dialog = $jQ(object).next( '.entry_title_confirm' );
+	var dialog = $jQ( object ).next( '.entry_title_confirm' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
@@ -124,18 +124,18 @@ var updateEntryTitle = function( e, object )
 
 var updateCommentsTitle = function( e, object )
 {
-	var title = $jQ(object).val();
+	var title = $jQ( object ).val();
 
 	if ( commentsOldTitle == title )
 		return;
 
-	var entryId = $jQ(object).attr( 'eid' );
+	var entryId = $jQ( object ).attr( 'eid' );
 
 	// prepare confirmation dialog
 	var x = e.target.offsetLeft - 187;
 	var y = e.target.offsetTop + 1;
 
-	var dialog = $jQ(object).next( '.comments_title_confirm' );
+	var dialog = $jQ( object ).next( '.comments_title_confirm' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
@@ -162,8 +162,8 @@ var updateCommentsTitle = function( e, object )
 
 var updateTags = function ( object )
 {
-	var entryId = $jQ(object).attr( 'eid' );
-	var tags = $jQ(object).val();
+	var entryId = $jQ( object ).attr( 'eid' );
+	var tags = $jQ( object ).val();
 
 	// ajax call to change tags
 	$jQ.ajax( {
@@ -174,7 +174,7 @@ var updateTags = function ( object )
 		success: function( data ) 
 		{
 			// update tags attribute on wrapper_entry
-			$jQ(object).closest( '.wrapper_entry' ).attr( 'tags', tags );
+			$jQ( object ).closest( '.wrapper_entry' ).attr( 'tags', tags );
 
 			// compute distinct tag list anew
 			getDistinctEntriesTagList();
@@ -184,12 +184,12 @@ var updateTags = function ( object )
 
 var updateEntryFavored = function ( object )
 {
-	var type = $jQ(object).attr( 'alt' );
+	var type = $jQ( object ).attr( 'alt' );
 
-	$jQ(object).attr( 'src', 'resources/pinIt_'+ inverseFavored(type) +'.png' );
-	$jQ(object).attr( 'alt', inverseFavored(type) );
+	$jQ( object ).attr( 'src', 'resources/pinIt_'+ inverseFavored(type) +'.png' );
+	$jQ( object ).attr( 'alt', inverseFavored(type) );
 
-	var entryId = $jQ(object).attr( 'eid' );
+	var entryId = $jQ( object ).attr( 'eid' );
 
 	// ajax call to change favored status
 	$jQ.ajax( {
@@ -309,7 +309,7 @@ var addCommentAction = function( object )
 {
 	var entryId = $jQ( object ).attr( 'eid' );
 
-	if ( $jQ( '#comment_new_content_'+ entryId ).val() == "" )
+	if ( $jQ( '#comment_new_content_'+ entryId ).val() == '' )
 		return;
 
 	var comment = $jQ( '#comment_new_content_'+ entryId ).val();
@@ -399,9 +399,9 @@ var confirmChangeOfTags = function( e, object )
 	if ( e.which == 13 )
 	{
 		// replace trailing white space and comma
-		$jQ(object).val( $jQ(object).val().replace( /^,|, ?$/g, '' ) );
+		$jQ( object ).val( $jQ( object ).val().replace( /^,|, ?$/g, '' ) );
 
-		$jQ(object).blur();
+		$jQ( object ).blur();
 
 		return;
 	} 
@@ -410,10 +410,10 @@ var confirmChangeOfTags = function( e, object )
 	else if ( e.which == 32 )
 	{
 		// replace space by comma space
-		$jQ(object).val( $jQ(object).val().replace( / /g, ', ' ) );
+		$jQ( object ).val( $jQ( object ).val().replace( / /g, ', ' ) );
 
 		// replace double comma by comma
-		$jQ(object).val( $jQ(object).val().replace( /,,/g, ',' ) );
+		$jQ( object ).val( $jQ( object ).val().replace( /,,/g, ',' ) );
 
 		return;
 	} 
@@ -422,8 +422,8 @@ var confirmChangeOfTags = function( e, object )
 	else if ( e.which == 188 )
 	{
 		// replace double comma by comma
-		var value = $jQ(object).val().replace( /,,/g, ',' );
-		$jQ(object).val(value);
+		var value = $jQ( object ).val().replace( /,,/g, ',' );
+		$jQ( object ).val(value);
 	}
 };
 
@@ -447,6 +447,6 @@ var inverseFavored = function( key )
 
 var getClosestEntryId = function( object )
 {
-	return $jQ(object).closest( '.wrapper_entry' ).attr( 'eid' );
+	return $jQ( object ).closest( '.wrapper_entry' ).attr( 'eid' );
 };
 
