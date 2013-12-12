@@ -23,6 +23,9 @@ Route::any( '/login', 'UserController@loginAction' );
 */
 Route::group( [ 'before' => 'auth' ], function()
 {
+	/*
+		Routes concerning stackrs
+	*/
 	Route::get( '/stackr', 'StackrController@show' );
 
 	Route::get( '/stackr/all', 'StackrController@all' );
@@ -30,6 +33,13 @@ Route::group( [ 'before' => 'auth' ], function()
 	Route::post( '/stackr/add', 'StackrController@add' );
 
 	Route::post( '/stackr/changeTitle', 'StackrController@changeTitle' );
+
+	/*
+		Routes concerning stackr comments
+	*/
+	Route::get( '/stackr/{eid}/comments', 'CommentController@getAll' );
+
+	Route::post( '/stackr/{eid}/comments/add', 'CommentController@add' );
 
 	/* 
 		change this to ContextController in future

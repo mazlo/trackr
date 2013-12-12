@@ -23,12 +23,14 @@ var getAllEntries = function( tags )
 		success: function( data ) 
 		{
 			$jQ( '#entries' ).html( data );
-			$jQ( '.comments' ).sortable( {
+			$jQ( '.comments' ).sortable( 
+			{
 				update: function( event, ui ) 
 				{
 					return updateCommentPositions( this );
 				}
 			});
+
 			$jQ( '.comments' ).disableSelection();
 		}
 	});
@@ -53,9 +55,8 @@ var getDistinctEntriesTagList = function( )
 var getComments = function( eid )
 {
 	$jQ.ajax( {
-		url: "getComments.php",
-		type: "get",
-		data: { eid: eid }, 
+		url: getContextPath() +'/stackr/'+ eid +'/comments',
+		type: 'get',
 
 		success: function( data ) 
 		{
@@ -302,7 +303,7 @@ var hideAddCommentDiv = function( object )
 
 var addCommentAction = function( object )
 {
-	var entryId = $jQ( object ).attr('eid');
+	var entryId = $jQ( object ).attr( 'eid' );
 
 	if ( $jQ( '#comment_new_content_'+ entryId ).val() == "" )
 		return;
@@ -310,14 +311,14 @@ var addCommentAction = function( object )
 	var comment = $jQ( '#comment_new_content_'+ entryId ).val();
 
 	$jQ.ajax( {
-		url: "addComment.php",
-		type: "post",
-		data: { eid: entryId, cm: comment },
+		url: getContextPath() +'/stackr/'+ entryId +'/comments/add',
+		type: 'post',
+		data: { cmt: comment },
 
 		success: function( data ) 
 		{
 			$jQ( '#comment_add_link_'+ entryId ).hide();
-			getComments( entryId );
+			$jQ( '#comments_'+ entryId ).html( data );
 		}
 	});
 

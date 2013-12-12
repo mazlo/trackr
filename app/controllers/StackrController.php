@@ -26,6 +26,8 @@ class StackrController extends BaseController {
 		$stackr->title = $title;
 		$stackr->description = $desc;
 		$stackr->save();
+
+		// the reload is done by ajax.success()
 	}
 
 	public function changeTitle()
