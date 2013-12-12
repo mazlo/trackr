@@ -350,14 +350,12 @@ var deleteComment = function( object )
 	$jQ( object ).closest( '.comment' ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: "deleteComment.php",
-				type: "post",
-				context: document.body,
-				data: { eid: entryId, cid: commentId },
+				url: getContextPath() +'/stackr/'+ entryId +'/comments/'+ commentId +'/delete',
+				type: 'post',
 
 				success: function( data ) 
 				{
-					getComments( entryId );
+					$jQ( '#comments_'+ entryId ).html( data );
 				}
 			});
 		});

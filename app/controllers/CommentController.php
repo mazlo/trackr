@@ -28,4 +28,18 @@ class CommentController extends BaseController
 
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}
+
+	public function delete( $eid, $cid )
+	{
+		if ( empty( $eid ) || empty( $cid ) )
+			return;
+
+		// delete Comment
+		Comment::find( $cid )->delete();
+
+		// load current stackr
+		$stackr = Stackr::find( $eid );
+
+		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
+	}
 }
