@@ -246,6 +246,9 @@
 		});
 	});
 
+	// handle click on favored icon
+	$jQ( document ).on( 'click', '.favoredIcon', function() { return updateEntryFavored( this ); } );
+
 // TAGS TEXTFIELD
 	// handle hover on textfield 'tags'
 	$jQ( document ).on( 'hover', '.tags_textfield_inactive', function() { return toggleDisabledElement( this, 'tags_textfield' ); } );

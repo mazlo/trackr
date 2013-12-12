@@ -77,4 +77,15 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}	
 
+	public function changePinStatus( $eid )
+	{
+		$pinned = Input::get( 'fv', 0 );
+
+		$stackr = Stackr::find( $eid );
+		$stackr->favored = $pinned;
+		$stackr->save();
+
+		// the reload is done by ajax.success()
+	}
+
 }

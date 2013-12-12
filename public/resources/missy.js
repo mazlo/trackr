@@ -188,9 +188,9 @@ var updateEntryFavored = function ( object )
 
 	// ajax call to change favored status
 	$jQ.ajax( {
-		url: "changeEntryFavored.php",
-		type: "post",
-		data: { eid: entryId, fv: inverseFavored(type) }
+		url: getContextPath() +'/stackr/'+ entryId +'/changePinStatus',
+		type: 'post',
+		data: { fv: inverseFavored(type) }
 	});			
 };
 
