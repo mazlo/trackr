@@ -49,6 +49,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/stackr/{eid}/comments/{cid}/delete', 'CommentController@delete' );
 
+	Route::post( '/stackr/{eid}/comments/reorder', 'CommentController@reorder' );
+
 	/* 
 		change this to ContextController in future
 		that this becomes /context/{id}/tagsDistinct

@@ -79,9 +79,11 @@ var updateCommentPositions = function( object )
 		pos.push( ++counter );
 	});
 
+	var entryId = getClosestEntryId();
+
 	$jQ.ajax( {
-		url: "changeCommentPosition.php",
-		type: "post",
+		url: getContextPath() +'/stackr/'+ entryId +'/comments/reorder',
+		type: 'post',
 		data: { cid: cid, pos: pos }
 	});
 };
@@ -438,5 +440,10 @@ var inverseFavored = function( key )
 		return 1;
 	if ( key == 1 )
 		return 0;
+};
+
+var getClosestEntryId = function( object )
+{
+	return $jQ(object).closest( '.wrapper_entry' ).attr( 'eid' );
 };
 

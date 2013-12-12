@@ -43,4 +43,22 @@ class CommentController extends BaseController
 		return $this->getAll( $eid );
 	}
 
+	public function reorder()
+	{
+		$cids = Input::get( 'cid' );
+		$poss = Input::get( 'pos' );
+
+		if ( empty( $cids ) || empty( $poss) )
+			return;
+
+		for( $i = 0; $i < sizeof( $cids ); $i++ ) 
+		{
+			$comment = Comment::find( $cids[$i] );
+			$comment->position = $poss[$i];
+			$comment->save();
+		}
+
+		// reloading is done by ajax.success
+	}
+
 }
