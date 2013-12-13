@@ -26,32 +26,32 @@ Route::group( array( 'before' => 'auth' ), function()
 	/*
 		Routes concerning stackrs
 	*/
-	Route::get( '/stackr', 'StackrController@show' );
+	Route::get( '/stackrs', 'StackrController@show' );
 
-	Route::get( '/stackr/all', 'StackrController@all' );
+	Route::get( '/stackrs/all', 'StackrController@all' );
 
-	Route::post( '/stackr/add', 'StackrController@add' );
+	Route::post( '/stackrs/add', 'StackrController@add' );
 
-	Route::post( '/stackr/{eid}/delete', 'StackrController@delete' );
+	Route::post( '/stackrs/{eid}/delete', 'StackrController@delete' );
 
-	Route::post( '/stackr/{eid}/changeTitle', 'StackrController@changeTitle' );
+	Route::post( '/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
 
-	Route::post( '/stackr/{eid}/changeListTitle', 'StackrController@changeListTitle' );
+	Route::post( '/stackrs/{eid}/changeListTitle', 'StackrController@changeListTitle' );
 
-	Route::post( '/stackr/{eid}/changePinStatus', 'StackrController@changePinStatus' );
+	Route::post( '/stackrs/{eid}/changePinStatus', 'StackrController@changePinStatus' );
 
-	Route::post( '/stackr/{eid}/changeTags', 'StackrController@changeTags' );
+	Route::post( '/stackrs/{eid}/changeTags', 'StackrController@changeTags' );
 
 	/*
 		Routes concerning stackr comments
 	*/
-	Route::get( '/stackr/{eid}/comments', 'CommentController@getAll' );
+	Route::get( '/stackrs/{eid}/comments', 'CommentController@getAll' );
 
-	Route::post( '/stackr/{eid}/comments/add', 'CommentController@add' );
+	Route::post( '/stackrs/{eid}/comments/add', 'CommentController@add' );
 
-	Route::post( '/stackr/{eid}/comments/{cid}/delete', 'CommentController@delete' );
+	Route::post( '/stackrs/{eid}/comments/{cid}/delete', 'CommentController@delete' );
 
-	Route::post( '/stackr/{eid}/comments/reorder', 'CommentController@reorder' );
+	Route::post( '/stackrs/{eid}/comments/reorder', 'CommentController@reorder' );
 
 	/* 
 		change this to ContextController in future

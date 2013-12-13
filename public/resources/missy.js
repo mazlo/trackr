@@ -16,7 +16,7 @@ var getContextPath = function()
 var getAllEntries = function( tags )
 {
 	$jQ.ajax( {
-		url: getContextPath() + '/stackr/all',
+		url: getContextPath() + '/stackrs/all',
 		type: 'get',
 		data: { ts: tags },
 
@@ -39,7 +39,7 @@ var getAllEntries = function( tags )
 var getDistinctEntriesTagList = function( )
 {
 	$jQ.ajax( {
-		url: '/mindstackr/public/tagsDistinct',
+		url: getContextPath() +'/tagsDistinct',
 		type: 'get',
 
 		success: function( data )
@@ -55,7 +55,7 @@ var getDistinctEntriesTagList = function( )
 var getComments = function( eid )
 {
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ eid +'/comments',
+		url: getContextPath() +'/stackrs/'+ eid +'/comments',
 		type: 'get',
 
 		success: function( data ) 
@@ -82,7 +82,7 @@ var updateCommentPositions = function( object )
 	var entryId = getClosestEntryId();
 
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ entryId +'/comments/reorder',
+		url: getContextPath() +'/stackrs/'+ entryId +'/comments/reorder',
 		type: 'post',
 		data: { cid: cid, pos: pos }
 	});
@@ -107,7 +107,7 @@ var updateEntryTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ entryId +'/changeTitle',
+		url: getContextPath() +'/stackrs/'+ entryId +'/changeTitle',
 		type: 'post',
 		data: { tl: title },
 
@@ -141,7 +141,7 @@ var updateCommentsTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ entryId +'/changeListTitle',
+		url: getContextPath() +'/stackrs/'+ entryId +'/changeListTitle',
 		type: 'post',
 		data: { tl: title },
 
@@ -167,7 +167,7 @@ var updateTags = function ( object )
 
 	// ajax call to change tags
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ entryId +'/changeTags',
+		url: getContextPath() +'/stackrs/'+ entryId +'/changeTags',
 		type: 'post',
 		data: { ts: tags },
 
@@ -193,7 +193,7 @@ var updateEntryFavored = function ( object )
 
 	// ajax call to change favored status
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ entryId +'/changePinStatus',
+		url: getContextPath() +'/stackrs/'+ entryId +'/changePinStatus',
 		type: 'post',
 		data: { fv: inverseFavored(type) }
 	});			
@@ -229,7 +229,7 @@ var addEntryAction = function()
 	var description = $jQ( '#description' ).val();
 
 	$jQ.ajax( {
-		url: getContextPath() + '/stackr/add',
+		url: getContextPath() + '/stackrs/add',
 		type: 'post',
 		data: { tl: title, ds: description },
 
@@ -268,7 +268,7 @@ var deleteEntry = function( object, closestClass, callback )
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/stackr/'+ entryId +'/delete',
+				url: getContextPath() +'/stackrs/'+ entryId +'/delete',
 				type: 'post',
 
 				success: function( data ) 
@@ -315,7 +315,7 @@ var addCommentAction = function( object )
 	var comment = $jQ( '#comment_new_content_'+ entryId ).val();
 
 	$jQ.ajax( {
-		url: getContextPath() +'/stackr/'+ entryId +'/comments/add',
+		url: getContextPath() +'/stackrs/'+ entryId +'/comments/add',
 		type: 'post',
 		data: { cmt: comment },
 
@@ -354,7 +354,7 @@ var deleteComment = function( object )
 	$jQ( object ).closest( '.comment' ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/stackr/'+ entryId +'/comments/'+ commentId +'/delete',
+				url: getContextPath() +'/stackrs/'+ entryId +'/comments/'+ commentId +'/delete',
 				type: 'post',
 
 				success: function( data ) 
