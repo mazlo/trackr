@@ -48,8 +48,9 @@
 
 			<!-- navigation contains tag list -->
 			<div id='beforeContent'>
-
-				@yield( 'beforeContent' )
+				<div style='height: 32px'>
+					@yield( 'beforeContent' )
+				</div>
 
 			</div>
 
