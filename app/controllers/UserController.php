@@ -11,7 +11,7 @@ class UserController extends Controller
     	// check if user is logged in
     	if ( Auth::check() )
     	{
-    		return Redirect::to( 'stackr' );
+    		return Redirect::route( 'showStackrs' );
     	}
 
     	// check if data was postet
@@ -32,7 +32,7 @@ class UserController extends Controller
                 // successful login redirects
                 if ( Auth::attempt( $credentials ) )
                 {
-                    return Redirect::to( 'stackr' );
+                    return Redirect::route( 'showStackrs' );
                 }
             }
 

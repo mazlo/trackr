@@ -26,7 +26,10 @@ Route::group( array( 'before' => 'auth' ), function()
 	/*
 		Routes concerning stackrs
 	*/
-	Route::get( '/stackrs', 'StackrController@show' );
+	Route::get( '/stackrs', array(
+		'as' => 'showStackrs',
+		'uses' => 'StackrController@show'
+	));
 
 	Route::get( '/stackrs/all', 'StackrController@all' );
 

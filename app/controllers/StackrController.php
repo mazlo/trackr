@@ -4,14 +4,14 @@ class StackrController extends BaseController {
 
 	public function show()
 	{
-		return View::make( 'stackr' );
+		return View::make( 'stackrs' );
 	}
 
 	public function all()
 	{
 		$stackrs = Stackr::orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
-		return View::make( 'ajax.stackr' )->with( 'stackrs', $stackrs );
+		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
 	}
 
 	public function add()
