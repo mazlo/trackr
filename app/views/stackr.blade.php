@@ -2,7 +2,7 @@
 
 @section( 'beforeContent' )
 
-	<h3 style='margin: 0'>{{ $stackr->title }}</h3>
+	<h3 style='margin: 0'>Showing You Details for Stackr</h3>
 
 @stop
 
