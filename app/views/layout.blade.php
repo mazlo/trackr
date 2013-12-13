@@ -23,8 +23,10 @@
 			<div id='header'>
 				
 				<div style='float: left; vertical-align: middle;'>
-					<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
-					<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
+					<a href='{{ URL::route( "showStackrs" ) }}'>
+						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
+						<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
+					</a>
 				</div>
 
 				<div style='float: right; text-align: right'>
