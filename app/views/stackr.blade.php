@@ -1,4 +1,13 @@
-@foreach( $stackrs as $stackr )
+@extends( 'layout' )
+
+@section( 'beforeContent' )
+
+	<h3>{{ $stackr->title }}</h3>
+
+@stop
+
+@section( 'content' )
+
 	<div class='wrapper_entry filterableByTag' tags='{{ $stackr->tags }}' eid='{{ $stackr->id }}'>
 
 		<div class='entry_header'>
@@ -73,7 +82,7 @@
 			</div>
 
 			<div style='float: right; text-align: right'>
-				<a href='{{ URL::to( "/stackrs/$stackr->id" ) }}' target='_self'>
+				<a href='entry.php?eid={{ $stackr->id }}'>
 					<button class='entry_details_link operatorButton'>details</button>
 				</a>
 			</div>
@@ -82,4 +91,4 @@
 		</div>
 
 	</div> {{-- end of wrapper entry --}}
-@endforeach
+@stop

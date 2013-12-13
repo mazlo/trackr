@@ -30,6 +30,13 @@ class StackrController extends BaseController {
 		return $this->all();
 	}
 
+	public function details( $eid )
+	{
+		$stackr = Stackr::find( $eid );
+
+		return View::make( 'stackr' )->with( 'stackr', $stackr );
+	}
+
 	public function delete( $eid )
 	{
 		if ( empty( $eid ) )

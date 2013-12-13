@@ -2,13 +2,13 @@
 <head>
 	<!-- external -->
 	<!-- simplifies javascript programming -->
-	<link rel='stylesheet' type='text/css' href='resources/jquery-ui.css' />
-	<link rel='stylesheet' type='text/css' href='resources/main.css'></link>
+	<link rel='stylesheet' type='text/css' href='{{ url( "resources/jquery-ui.css" ) }}' />
+	<link rel='stylesheet' type='text/css' href='{{ url( "resources/main.css" ) }}'></link>
 
-	<script src='resources/prototype.js'></script>
-	<script src='resources/jquery-1.8.2.js'></script>
-	<script src='resources/jquery-ui-1.9.2.custom.js'></script>
-	<script src='resources/missy.js'></script>
+	<script src='{{ url( "resources/prototype.js" ) }}'></script>
+	<script src='{{ url( "resources/jquery-1.8.2.js" ) }}'></script>
+	<script src='{{ url( "resources/jquery-ui-1.9.2.custom.js" ) }}'></script>
+	<script src='{{ url( "resources/missy.js" ) }}'></script>
 
 	<script type='text/javascript'>
 		<!-- this is to prevent conflicts with prototype and jquerytools -->
@@ -23,7 +23,7 @@
 			<div id='header'>
 				
 				<div style='float: left; vertical-align: middle;'>
-					<img src='resources/stack.png' style='width: 32px; margin-bottom: -4px;' />
+					<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
 					<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
 				</div>
 

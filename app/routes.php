@@ -35,6 +35,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/stackrs/add', 'StackrController@add' );
 
+	Route::get( '/stackrs/{eid}', 'StackrController@details' );
+
 	Route::post( '/stackrs/{eid}/delete', 'StackrController@delete' );
 
 	Route::post( '/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
