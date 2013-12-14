@@ -21,7 +21,7 @@ class UserController extends Controller
             // messages for validation errors
             $messages = array(
                 'required' => 'You forgot to fill this in!',
-                'min' => 'Please give at least 8 characters!',
+                'min' => 'Please give at least 6 characters!',
                 'email.unique' => 'This email address has already been registered!',
                 'password.confirmed' => 'The passwords given do not match!'
             );
