@@ -16,6 +16,11 @@ Route::any( '/', array(
     'uses' => 'UserController@loginAction'
 ));
 
+Route::any( '/users/register', array(
+	'as' => 'users/register',
+	'uses' => 'UserController@registerAction'
+));
+
 Route::any( '/login', 'UserController@loginAction' );
 
 /*
@@ -27,7 +32,7 @@ Route::group( array( 'before' => 'auth' ), function()
 		Routes concerning stackrs
 	*/
 	Route::get( '/stackrs', array(
-		'as' => 'showStackrs',
+		'as' => 'landingPage',
 		'uses' => 'StackrController@show'
 	));
 

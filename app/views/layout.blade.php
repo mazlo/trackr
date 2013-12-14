@@ -23,7 +23,7 @@
 			<div id='header'>
 				
 				<div style='float: left; vertical-align: middle;'>
-					<a href='{{ URL::route( "showStackrs" ) }}'>
+					<a href='{{ URL::route( "landingPage" ) }}'>
 						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
 						<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
 					</a>
@@ -39,6 +39,10 @@
 	 					<span>{{ Auth::user()->username }}</span>
 						<a href='{{ URL::route( 'user/logout' ) }}'>
 							<button class='operatorButton' style='margin-left: 23px; color: lightgray'>logout</button>
+						</a>
+					@else
+						<a href='{{ URL::route( 'users/register' ) }}'>
+							<button class='operatorButton' style='margin-left: 23px; color: lightgray'>Register</button>
 						</a>
 					@endif
 				</div>
@@ -74,10 +78,12 @@
 	// on document ready load all entries
 	$jQ( function()
 	{
-		getAllEntries();
-		getDistinctEntriesTagList();
+		@if( Auth::check() )
+			getAllEntries();
+			getDistinctEntriesTagList();
 
-		$jQ( '#search' ).focus();
+			$jQ( '#search' ).focus();
+		@endif
 	});
 
 // GLOBAL EVENTS
