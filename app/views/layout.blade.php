@@ -41,9 +41,7 @@
 							<button class='operatorButton' style='margin-left: 23px; color: lightgray'>logout</button>
 						</a>
 					@else
-						<a href='{{ URL::route( 'users/register' ) }}'>
-							<button class='operatorButton' style='margin-left: 23px; color: lightgray'>Register</button>
-						</a>
+						<a class='dotted' href='{{ URL::route( 'users/register' ) }}'>Register</a>
 					@endif
 				</div>
 

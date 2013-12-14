@@ -20,25 +20,25 @@
         	<span class='credentials_error'>{{ $errors->get( 'username' )[0] }}</span>
         @endif
 
-        <input placeholder='john.smith' name='username' type='text' id='username' class='textfield' style='width: 300px; margin: 3px 0' value='{{ Input::old( "username" ) }}'>
+        <input placeholder='john.smith' name='username' type='text' id='username' class='textfield form' value='{{ Input::old( "username" ) }}'>
         
         <h4 class='normal'>E-Mail Address</h4>
         @if( $errors->has( 'email' ) )
         	<span class='credentials_error'>{{ $errors->get( 'email' )[0] }}</span>
         @endif
 
-        <input placeholder='john.smith@email.com' name='email' type='text' id='email' class='textfield' style='width: 300px; margin: 3px 0' value='{{ Input::old( "email" ) }}'>
+        <input placeholder='john.smith@email.com' name='email' type='text' id='email' class='textfield form' value='{{ Input::old( "email" ) }}'>
 
 		<h4 class='normal'>Password</h4>
 		@if( $errors->has( 'password' ) )
 	    	<span class='credentials_error'>{{ $errors->get( 'password' )[0] }}</span>
         @endif
 
-        <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield' style='width: 300px; margin: 3px 0'>
+        <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form' >
 
         <h4 class='normal'>Confirm Password</h4>
         
-        <input placeholder='●●●●●●●●' name='password_confirmation' type='password' value='' id='password_confirmation' class='textfield' style='width: 300px; margin: 3px 0'>
+        <input placeholder='●●●●●●●●' name='password_confirmation' type='password' value='' id='password_confirmation' class='textfield form'>
         <input type='submit' value='create account' id='login_button' class='button' style='display: block; width: auto; margin: 23px 0 0'>
 
     </form>
