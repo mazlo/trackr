@@ -238,7 +238,7 @@ h4.entry_new_description {
 }
 
 h4.normal {
-	 margin: 8px 0px; 
+	 margin: 8px 0px 4px; 
 	 font-weight: normal;
 }
 
@@ -277,6 +277,15 @@ input {
 	letter-spacing: 0.2pt;
 }
 
+form.register {
+	background: #f8f8f8; 
+	border: 1px #bbb solid;
+	
+	margin-top: 23px; 
+	padding: 23px; 
+	width: 300px;
+}
+
 .entry_delete_link {
 }
 
@@ -285,7 +294,7 @@ input {
 }
 
 .credentials_error {
-	padding: 13px 0 3px;
+	padding: 13px 0 8px;
 	font-size: 13px;
 	color: red;
 }
