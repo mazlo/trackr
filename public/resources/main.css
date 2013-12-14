@@ -107,9 +107,6 @@ div.entry_buttons {
 
 .entry_add_link,
 .entry_details_link {
-	box-shadow: 0px 2px 6px #bbb; 
-	background-image: url('bg_button_add.png'); 
-	background-repeat: repeat-x; 
 	border: 0;
 	width: 90px; 
 	height: 32px; 
