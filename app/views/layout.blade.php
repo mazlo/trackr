@@ -22,30 +22,29 @@
 			<!-- header contains logo and login -->
 			<div id='header'>
 				
-				<div style='float: left; vertical-align: middle;'>
+				<div style='width: 30%'>
 					<a href='{{ URL::route( "landingPage" ) }}'>
 						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
 						<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
 					</a>
 				</div>
 
-				<div style='float: right; text-align: right'>
+				<div style='width: 70%; text-align: right'>
 	 				@if ( Auth::check() )
 	 					<!-- print search field -->
 		 				<span id='searchResults' class='infotext'></span>
-						<input type='text' id='search' class='textfield_smaller' style='width: 200px; margin-top: 6px; margin-right: 23px;' />
+						<input type='text' id='search' class='textfield_smaller' style='width: 200px; margin-right: 26px;' />
 
 						<!-- print user specific information -->
 	 					<span>{{ Auth::user()->username }}</span>
-						<a href='{{ URL::route( 'user/logout' ) }}'>
-							<button class='operatorButton' style='margin-left: 23px; color: lightgray'>logout</button>
+						<a class='dotted' style='margin-left: 23px;' href='{{ URL::route( 'user/logout' ) }}'>
+							logout
 						</a>
 					@else
 						<a class='dotted' href='{{ URL::route( 'users/register' ) }}'>Register</a>
 					@endif
 				</div>
 
-				<div style='clear: both; height: 0'></div>
 			</div>
 
 			<!-- navigation contains tag list -->

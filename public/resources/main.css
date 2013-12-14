@@ -35,11 +35,19 @@ h3 {
 	position: fixed; 
 	top: 0;
 
+	display: table;
 	background: #fff;
 	border-bottom: 1px solid #ccc;
 	/*box-shadow: 0px 2px 4px #bbb;*/
 	padding: 13px 32px;
 	width: 960px;
+}
+
+#header > div {
+	display: table-cell;
+	vertical-align: middle;
+
+	font-size: 14px;
 }
 
 #beforeContent {
@@ -328,7 +336,7 @@ form.login {
 .textfield_smaller {
 	padding: 2px; 
 	width: 300px; 
-	height: 26px;
+	height: 23px;
 }
 
 .textarea,
@@ -341,7 +349,6 @@ form.login {
 
 .infotext {
 	margin: 0 13px; 
-	vertical-align: middle; 
 	color: #ddd;
 }
 
