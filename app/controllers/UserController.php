@@ -39,7 +39,7 @@ class UserController extends Controller
             $user->password = Hash::make( Input::get( 'password' ) );
             $user->save();
 
-            return Redirect::route( 'user/login' )->with( 'registration_successfull', 'Yeah! Thank\'s for registering! You can now log in.' );
+            return Redirect::route( 'user/login' )->with( 'registration_successfull', 'Yeah! Thank\'s for registering! You can now sign in.' );
         }
 
         // someone wants to register

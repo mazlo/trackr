@@ -8,7 +8,7 @@
 
 @section( 'content' )
 
-    <h4 class='normal'>Please login to gain access. Have you already <a class='dotted' href='{{ URL::route("users/register") }}'>registered</a>?</h4>
+    <h4 class='normal'>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/register") }}'>registered</a>?</h4>
 
     @if( $error = $errors->first( 'password' ) )
         <div class='credentials_error'>
@@ -28,7 +28,7 @@
         <h4 class='normal'>Password</h4>
         <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form'>
 
-        <input type='submit' value='login' id='login_button' class='button' style='display: block; margin: 23px 0 0'>
+        <input type='submit' value='sign in' id='login_button' class='button' style='display: block; margin: 23px 0 0'>
 
     </form>
 

@@ -38,7 +38,7 @@
 						<!-- print user specific information -->
 	 					<span>{{ Auth::user()->username }}</span>
 						<a class='dotted' style='margin-left: 23px;' href='{{ URL::route( 'user/logout' ) }}'>
-							logout
+							sign out
 						</a>
 					@else
 						<a class='dotted' href='{{ URL::route( 'users/register' ) }}'>Register</a>
