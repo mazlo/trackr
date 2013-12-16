@@ -9,7 +9,7 @@ class StackrController extends BaseController {
 
 	public function all()
 	{
-		$stackrs = Stackr::orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+		$stackrs = Stackr::where( 'user_id', Auth::user()->id )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
 		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
 	}
@@ -25,6 +25,7 @@ class StackrController extends BaseController {
 		$stackr = new Stackr();
 		$stackr->title = $title;
 		$stackr->description = $desc;
+		$stackr->user()->associate( Auth::user() );
 		$stackr->save();
 
 		return $this->all();

@@ -8,6 +8,11 @@ class Stackr extends Eloquent
 		return $this->hasMany( 'Comment', 'stackr_id' );
 	}
 
+	public function user()
+	{
+		return $this->belongsTo( 'User', 'user_id' );
+	}
+
 	public static function distinctTagList()
 	{
 		return DB::table( 'Stackrs' )->select( DB::raw( "group_concat( distinct tags separator ', ' ) as tags" ))->get();

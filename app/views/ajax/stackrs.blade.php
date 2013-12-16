@@ -1,3 +1,10 @@
+@if ( count( $stackrs ) == 0 )
+	<div class='wrapper_entry' style='padding: 13px 0;'>
+		<p>Looks like you have no stackrs created yet.</p>
+		<p>Click on the button above to create your first stackr!</p>
+	</div>
+@endif
+
 @foreach( $stackrs as $stackr )
 	<div class='wrapper_entry filterableByTag' tags='{{ $stackr->tags }}' eid='{{ $stackr->id }}'>
 
