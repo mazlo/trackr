@@ -15,6 +15,6 @@ class Stackr extends Eloquent
 
 	public static function distinctTagList()
 	{
-		return DB::table( 'Stackrs' )->select( DB::raw( "group_concat( distinct tags separator ', ' ) as tags" ))->get();
+		return DB::table( 'Stackrs' )->select( DB::raw( "group_concat( distinct tags separator ', ' ) as tags" ))->where( 'user_id', Auth::user()->id )->get();
 	}
 }
