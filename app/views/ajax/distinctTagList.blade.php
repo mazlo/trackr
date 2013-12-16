@@ -11,9 +11,18 @@
 			$tagsDistinct[] = $tags[$i];	// adds the tag to the list
 	}
 
+	$tagsAvailable = false;
 	// print the distinct list of tags
-	for ( $i=0; $i<count($tagsDistinct); $i++ )
-	{ ?>
-		<input type='checkbox' class='entry_tag' id='{{ $i }}'><label for='{{ $i }}'>{{ $tagsDistinct[$i] }}</label>
-<?	}
+	for ( $i=0; $i<count( $tagsDistinct ); $i++ )
+	{
+		if ( empty( $tagsDistinct[$i] ) )
+			continue;
+		
+		$tagsAvailable = true; ?>
+		<input type='checkbox' class='entry_tag' id='tag_{{ $i }}'><label for='tag_{{ $i }}'>{{ $tagsDistinct[$i] }}</label>
+<?	} ?>
+
+	@if ( $tagsAvailable )
+		<button class='operatorButton' id='clearTags'>clear selection</button>
+	@endif
  

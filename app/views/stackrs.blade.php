@@ -7,11 +7,12 @@
 	</div>
 
 	<div style='float: right; text-align: right; width: 700px'>
+
 		<div id='distinctEntriesTagList' style='display: inline;'>
 			<!-- ajax response here -->
 			<img src='resources/loader.gif' style='width: 35px' />
 		</div>
-		<button class='operatorButton' id='clearTags'>clear selection</button>
+		
 	</div>
 
 	<div style='clear: both; height: 1px;'></div>
