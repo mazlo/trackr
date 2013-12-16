@@ -2,7 +2,7 @@
 
 @section( 'beforeContent' )
 
-    <h3>Please log in</h3>
+    <h3>Please Sign In</h3>
 
 @stop
 
