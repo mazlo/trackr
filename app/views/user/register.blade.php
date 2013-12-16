@@ -9,7 +9,7 @@
 @section( 'content' )
 
 	<h4 class='normal'>Create a new user account here.</h4>
-	<h4 class='normal'>All it takes is a username, an email, and a password. Then you can start right away!</h4>
+	<h4 class='normal'>All it takes is a username, an email, and a password. Then you can <a class='dotted' href='{{ URL::route( "user/login" ) }}'>start right away</a>!</h4>
 
 	<form method='POST' action='{{ URL::route("users/register") }}' accept-charset='UTF-8' autocomplete='off' class='register'>
 
