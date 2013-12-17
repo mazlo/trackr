@@ -22,7 +22,7 @@
 @section( 'content' )
 
 	<!-- div entry add: is hidden after page load -->
-	<div id='div_entry_add' class='div_entry_add' style='display: none; margin: 8px 0;'>
+	<div id='div_entry_add' class='div_entry_add' style='display: none;'>
 
 		<h4 class='entry_new_title'>Title</h4>
 		<input type='text' id='title' value='' class='textfield' />
