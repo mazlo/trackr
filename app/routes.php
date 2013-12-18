@@ -41,7 +41,9 @@ Route::group( array( 'before' => 'auth' ), function()
 		'uses' => 'StackrController@show'
 	));
 
-	Route::get( '/stackrs/all', 'StackrController@all' );
+	Route::get( '/contexts/{pcid}/stackrs', 'StackrController@showAll' );
+
+	Route::get( '/contexts/{pcid}/stackrs/all', 'StackrController@all' );
 
 	Route::post( '/stackrs/add', 'StackrController@add' );
 
