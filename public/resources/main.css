@@ -76,7 +76,6 @@ h3 {
 	padding-bottom: 32px;
 
 	font-family: AleoLight;
-	letter-spacing: 0.1pt;
 }
 
 #content p {
@@ -395,7 +394,13 @@ form.login {
 .ui-button-text,
 .ui-button-text-only {
 	padding: 0;
-	font-family: Georgia;
+	font-family: AleoLight;
 	font-size: 13px;
+	letter-spacing: 0.1pt;
 	color: #000;
+}
+
+.ui-state-active {
+	font-weight: normal;
+	letter-spacing: 0pt;
 }
