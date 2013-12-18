@@ -7,9 +7,19 @@ class StackrController extends BaseController {
 		return View::make( 'stackrs' );
 	}
 
-	public function all()
+	/*
+		Just create the view and pass the current context id
+	*/
+	public function showAll( $cnid )
 	{
-		$stackrs = Stackr::where( 'user_id', Auth::user()->id )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+		// TODO check here if cnid exist and redirect if not
+		
+		return View::make( 'stackrs' )->with( 'cnid', $cnid );
+	}
+
+	public function all( $cnid )
+	{
+		$stackrs = Auth::user()->stackrs( $cnid )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
 		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
 	}
