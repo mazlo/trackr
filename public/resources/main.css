@@ -330,15 +330,15 @@ form.login {
 	width: 300px;
 }
 
-input.form {
-	margin: 3px 0;
-	width: 300px;
-}
-
 input.textfield {
 	padding: 6px; 
 	width: 560px; 
 	height: 32px;
+}
+
+input.form {
+	margin: 3px 0;
+	width: 300px;
 }
 
 input.textfield_smaller {
