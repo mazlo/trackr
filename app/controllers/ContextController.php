@@ -2,9 +2,9 @@
 
 class ContextController extends BaseController {
 
-	public function getAll()
+	public function showAll()
 	{
-		return View::make('hello');
+		return View::make( 'contexts' );
 	}
 
 }

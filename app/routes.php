@@ -29,6 +29,11 @@ Route::any( '/login', 'UserController@loginAction' );
 Route::group( array( 'before' => 'auth' ), function()
 {
 	/*
+		Routes concerning contexts
+	*/
+	Route::get( '/contexts', 'ContextController@showAll' );
+
+	/*
 		Routes concerning stackrs
 	*/
 	Route::get( '/stackrs', array(
