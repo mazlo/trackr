@@ -15,8 +15,10 @@ var getContextPath = function()
 
 var getAllEntries = function( tags )
 {
+	var cnid = $jQ( '#entries' ).attr( 'cnid' );
+
 	$jQ.ajax( {
-		url: getContextPath() + '/stackrs/all',
+		url: getContextPath() +'/contexts/'+ cnid +'/stackrs/all',
 		type: 'get',
 		data: { ts: tags },
 
