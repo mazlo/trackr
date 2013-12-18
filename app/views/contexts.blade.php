@@ -9,9 +9,11 @@
 	<div style='padding: 23px;'>
 	@foreach( $contexts as $context )
 		
-		<div class='context'>
-			{{ $context->name }}
-		</div>
+		<a href='{{ url( "contexts/$context->pid/stackrs" ) }}'>
+			<div class='context'>
+				{{ $context->name }}
+			</div>
+		</a>
 
 	@endforeach
 	</div>
