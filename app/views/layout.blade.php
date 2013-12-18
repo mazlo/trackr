@@ -336,4 +336,17 @@
 	// handle blur on textfield 'comment title'
 	$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) { return updateCommentsTitle( e, this ); } );
 
+		// handle keypress on textfield entry title
+	$jQ( document ).on( 'keyup', '.comment_textarea', function( event ) 
+	{ 
+		confirmChange( event, 
+		{
+			onEscape : function()
+			{
+				$jQ( '.comment_add_cancel' ).click();
+			}
+		});
+
+	} );
+
 </script>
