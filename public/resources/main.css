@@ -21,6 +21,10 @@
     font-weight: normal;
 }
 
+/*
+	global styles on standard html elements
+*/
+
 body {
 	overflow-y: scroll;
 	background: #eee;
@@ -34,6 +38,37 @@ body {
 h3 {
 	margin: 0 0 13px;
 }
+
+a {
+	border: 1px solid #fff;
+	text-decoration: none;
+	color: #000;
+}
+
+a:visited {
+	color: #000;
+}
+
+a.dotted {
+	border-bottom: 1px dotted #ba0000;
+}
+
+a.comment_add_link {
+	display: block; 
+	margin: 6px 0;
+	padding: 3px 13px; 
+	text-align: right; 
+	cursor: hand;
+}
+
+input {
+	letter-spacing: 0.2pt;
+	font-weight: normal;
+}
+
+/*
+	global html elements identified by id
+*/
 
 #container {
 	background: #fff;
@@ -82,41 +117,84 @@ h3 {
 	margin: 8px 0;
 }
 
-a {
-	border: 1px solid #fff;
-	text-decoration: none;
+/*
+	global individual classes to specific html elements
+*/
+
+button.operatorButton {
+	background: #fff;
+	/*box-shadow: 0px 0px 1px #ccc; */
+	border: 1px solid #ccc;
+	min-width: 68px;
+	height: 23px; 
+	cursor: hand;
+	color: #aaa;
+}
+
+button.doneButton {
+	border: 1px solid green; 
+	width: 82px; 
 	color: #000;
 }
 
-a.dotted {
-	border-bottom: 1px dotted #ba0000;
-}
-
-a:visited {
+button.confirmationButton {
+	border: 1px solid red; 
+	width: 82px; 
 	color: #000;
 }
 
-.hover {
-	border: 1px dotted orange;
+h4.entry_description {
+	clear: both;
+	margin: 0; 
+	padding: 4px 8px;
+	font-weight: 100; 
+	font-style: italic;
 }
 
-.box_shadow {
-	box-shadow: 0px 2px 2px #ccc;
+h4.normal {
+	 margin: 8px 0px 4px; 
+	 font-weight: normal;
 }
 
-a.comment_add_link {
-	display: block; 
-	margin: 6px 0;
-	padding: 3px 13px; 
-	text-align: right; 
+h4.subheadline {
+	clear: both;
+	margin: 0; 
+	padding: 2px 0;
+	font-weight: 100; 
+	font-style: italic;
+}
+
+h4.entry_new_title {
+	margin: 0 0 13px 0;
+}
+
+h4.entry_new_description {
+	margin-bottom: 6px;
+	font-weight: 100;
+	font-style: italic;;
+}
+
+h4.message_success {
+	margin: 0;
+	padding: 13px 0 3px; 
+	font-weight: normal;
+	color: #67ab2b;
+}
+
+ul.comments {
+	margin: 3px 0;
+	padding: 0;
+
+	list-style-type: none;
+}
+
+li.comment {
+	margin: 0; 
 	cursor: hand;
 }
 
-div.div_entry_add {
-	margin: 23px 0 8px;
-	padding: 13px;
-	-webkit-box-shadow: 0px 0px 2px #032946;
-	box-shadow: 0px 0px 2px #032946;
+li.comment > span.searchable {
+	padding: 4px;
 }
 
 /* entry_header > */
@@ -147,6 +225,13 @@ div.entry_buttons {
 	padding: 6px 4px;
 }
 
+div.div_entry_add {
+	margin: 23px 0 8px;
+	padding: 13px;
+	-webkit-box-shadow: 0px 0px 2px #032946;
+	box-shadow: 0px 0px 2px #032946;
+}
+
 .entry_add_link,
 .entry_details_link {
 	border: 0;
@@ -165,28 +250,6 @@ div.entry_buttons {
 	height: 32px;
 	cursor: hand;
 	color: #fff;
-}
-
-button.operatorButton {
-	background: #fff;
-	/*box-shadow: 0px 0px 1px #ccc; */
-	border: 1px solid #ccc;
-	min-width: 68px;
-	height: 23px; 
-	cursor: hand;
-	color: #aaa;
-}
-
-button.doneButton {
-	border: 1px solid green; 
-	width: 82px; 
-	color: #000;
-}
-
-button.confirmationButton {
-	border: 1px solid red; 
-	width: 82px; 
-	color: #000;
 }
 
 div.wrapper_entry {
@@ -253,73 +316,9 @@ div.comment_add_div {
 	font-family: Georgia;
 }
 
-span.title_span {
-
-}
-
-h4.entry_description {
-	clear: both;
-	margin: 0; 
-	padding: 4px 8px;
-	font-weight: 100; 
-	font-style: italic;
-}
-
-h4.entry_new_title {
-	margin: 0 0 13px 0;
-}
-
-h4.entry_new_description {
-	margin-bottom: 6px;
-	font-weight: 100;
-	font-style: italic;;
-}
-
-h4.normal {
-	 margin: 8px 0px 4px; 
-	 font-weight: normal;
-}
-
-h4.subheadline {
-	clear: both;
-	margin: 0; 
-	padding: 2px 0;
-	font-weight: 100; 
-	font-style: italic;
-}
-
-h4.message_success {
-	margin: 0;
-	padding: 13px 0 3px; 
-	font-weight: normal;
-	color: #67ab2b;
-}
-
-ul.comments {
-	margin: 3px 0;
-	padding: 0;
-
-	list-style-type: none;
-}
-
-li.comment {
-	margin: 0; 
-	cursor: hand;
-}
-
-li.comment > span.searchable {
-	padding: 4px;
-}
-
-input {
-	letter-spacing: 0.2pt;
-	font-weight: normal;
-}
-
-input.form {
-	margin: 3px 0;
-	width: 300px;
-}
+/* 
+	form elements
+*/
 
 form.register,
 form.login {
@@ -329,6 +328,23 @@ form.login {
 	margin-top: 23px; 
 	padding: 23px; 
 	width: 300px;
+}
+
+input.form {
+	margin: 3px 0;
+	width: 300px;
+}
+
+input.textfield {
+	padding: 6px; 
+	width: 560px; 
+	height: 32px;
+}
+
+input.textfield_smaller {
+	padding: 2px; 
+	width: 300px; 
+	height: 23px;
 }
 
 div.context {
@@ -350,6 +366,18 @@ div.context {
 	padding: 3px 13px;
 }
 
+/*
+	classes that can be used to any html element
+*/
+
+.hover {
+	border: 1px dotted orange;
+}
+
+.box_shadow {
+	box-shadow: 0px 2px 2px #ccc;
+}
+
 .credentials_error {
 	padding: 13px 0 8px;
 	font-size: 13px;
@@ -364,18 +392,6 @@ div.context {
 	margin-top: 23px; 
 	width: 80px; 
 	height: 27px
-}
-
-.textfield {
-	padding: 6px; 
-	width: 560px; 
-	height: 32px;
-}
-
-.textfield_smaller {
-	padding: 2px; 
-	width: 300px; 
-	height: 23px;
 }
 
 .textarea,
