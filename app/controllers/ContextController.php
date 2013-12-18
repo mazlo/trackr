@@ -4,7 +4,9 @@ class ContextController extends BaseController {
 
 	public function showAll()
 	{
-		return View::make( 'contexts' );
+		$contexts = Context::all();
+
+		return View::make( 'contexts' )->with( 'contexts', $contexts );
 	}
 
 }
