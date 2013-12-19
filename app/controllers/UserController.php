@@ -74,7 +74,7 @@ class UserController extends Controller
                 // successful login redirects
                 if ( Auth::attempt( $credentials ) )
                 {
-                    return Redirect::intended( 'stackrs' );
+                    return Redirect::intended( 'contexts' );
                 }
             }
 

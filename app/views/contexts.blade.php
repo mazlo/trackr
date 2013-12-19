@@ -1,7 +1,7 @@
 @extends( 'layout' )
 
 @section( 'beforeContent' )
-	<h3>List of your Contexts</h3>
+	<h3>Contexts</h3>
 @stop
 
 @section( 'content' )
