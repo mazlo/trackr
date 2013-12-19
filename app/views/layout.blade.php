@@ -73,6 +73,7 @@
 	$jQ( function()
 	{
 		@if( Auth::check() )
+			getContexts();
 			getAllEntries();
 			getDistinctEntriesTagList();
 

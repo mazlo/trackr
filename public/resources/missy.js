@@ -13,6 +13,19 @@ var getContextPath = function()
 		return '/' + contextPathArr[1];
 };
 
+var getContexts = function()
+{
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/all',
+		type: 'get',
+
+		success: function( data ) 
+		{
+			$jQ( '#contexts' ).html( data );
+		}
+	});
+}
+
 var getAllEntries = function( tags )
 {
 	var cnid = $jQ( '#entries' ).attr( 'cnid' );
@@ -200,6 +213,31 @@ var updateEntryFavored = function ( object )
 		data: { fv: inverseFavored(type) }
 	});			
 };
+
+// ----- functions regarding contexts -----
+
+var addContextAction = function()
+{
+	var title = $jQ( '#title' ).val();
+	if ( title == '' )
+		return false;
+
+	var description = $jQ( '#description' ).val();
+
+	$jQ.ajax( {
+		url: getContextPath() + '/contexts/add',
+		type: 'post',
+		data: { tl: title, ds: description },
+
+		success: function( data ) 
+		{
+			$jQ( '#div_context_add' ).hide();
+			$jQ( '#contexts' ).html( data );
+		}
+	});
+
+	return false;
+}
 
 // ----- functions regarding entries -----
 

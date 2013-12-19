@@ -23,21 +23,8 @@
 	</div>
 
 	<div id='contexts'>
-	@foreach( $contexts as $context )
-		
-		<a href='{{ url( "contexts/$context->name/stackrs" ) }}'>
-			<div class='context'>
-				{{ $context->name }}
-			</div>
-		</a>
-
-	@endforeach
-
-		<a href='' class='context_add_link'>
-			<div class='context'>
-				New Context
-			</div>
-		</a>
+		<!-- ajax response here -->
+		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>
 
 @stop
