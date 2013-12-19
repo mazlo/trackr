@@ -28,3 +28,9 @@
 	</div>
 
 @stop
+
+@section( 'onDocumentLoad' )
+	getContexts();
+
+	$jQ( '#search' ).focus();
+@stop

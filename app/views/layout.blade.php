@@ -73,11 +73,7 @@
 	$jQ( function()
 	{
 		@if( Auth::check() )
-			getContexts();
-			getAllEntries();
-			getDistinctEntriesTagList();
-
-			$jQ( '#search' ).focus();
+			@yield( 'onDocumentLoad' )
 		@endif
 	});
 

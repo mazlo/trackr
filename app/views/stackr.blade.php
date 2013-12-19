@@ -86,3 +86,7 @@
 
 	</div> {{-- end of wrapper entry --}}
 @stop
+
+@section( 'onDocumentLoad' )
+	$jQ( '#search' ).focus();
+@stop
