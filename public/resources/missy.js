@@ -201,27 +201,6 @@ var updateEntryFavored = function ( object )
 	});			
 };
 
-var showDiv = function( element ) 
-{
-	$jQ( element ).effect( 'fade', 200, function() 
-	{
-		$jQ( element ).show();
-		$jQ( '#title' ).focus();
-	} );
-
-	return false;
-};
-
-var hideDiv = function( element )
-{
-	$jQ( element ).effect( 'fade', 100, function()
-	{
-		$jQ( element ).hide();
-	});
-
-	return false;	
-}
-
 var addEntryAction = function() 
 {
 	var title = $jQ( '#title' ).val();
@@ -438,6 +417,27 @@ var toggleDisabledElement = function( object, classToBeToggled )
 };
 
 // ----- global functions -----
+
+var showDiv = function( element ) 
+{
+	$jQ( element ).effect( 'fade', 200, function() 
+	{
+		$jQ( element ).show();
+		$jQ( '#title' ).focus();
+	} );
+
+	return false;
+};
+
+var hideDiv = function( element )
+{
+	$jQ( element ).effect( 'fade', 100, function()
+	{
+		$jQ( element ).hide();
+	});
+
+	return false;	
+}
 
 var inverseFavored = function( key )
 {
