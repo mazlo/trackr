@@ -67,7 +67,7 @@ var getComments = function( eid )
 	});
 };
 
-// ##### UPDATE FUNCTIONS #####
+// ----- update functions for entries and comments -----
 
 var updateCommentPositions = function( object )
 {
@@ -201,6 +201,8 @@ var updateEntryFavored = function ( object )
 	});			
 };
 
+// ----- functions regarding entries -----
+
 var addEntryAction = function() 
 {
 	var title = $jQ( '#title' ).val();
@@ -261,6 +263,8 @@ var deleteEntry = function( object, closestClass, callback )
 
 	return false;
 };
+
+// ----- functions regarding comments -----
 
 var showAddCommentDiv = function( object )
 {
