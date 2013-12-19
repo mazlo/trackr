@@ -201,15 +201,15 @@ var updateEntryFavored = function ( object )
 	});			
 };
 
-var showAddEntryDiv = function() 
+var showDiv = function( element ) 
 {
-	$jQ( '#div_entry_add' ).effect( 'fade', 200, function() 
+	$jQ( element ).effect( 'fade', 200, function() 
 	{
-		$jQ( '#div_entry_add' ).show();
+		$jQ( element ).show();
 		$jQ( '#title' ).focus();
 	} );
 
-	return true;
+	return false;
 };
 
 var hideAddEntryDiv = function()

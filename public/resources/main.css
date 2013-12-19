@@ -103,6 +103,7 @@ input {
 #beforeContent {
 	margin: 0 32px;
 	padding: 90px 0 0;
+	height: 32px;
 }
 
 #content {
@@ -225,7 +226,8 @@ div.entry_buttons {
 	padding: 6px 4px;
 }
 
-div.div_entry_add {
+div.div_entry_add,
+div.div_context_add {
 	margin: 23px 0 8px;
 	padding: 13px;
 	-webkit-box-shadow: 0px 0px 2px #032946;
@@ -353,10 +355,14 @@ div.context {
 	
 	width: 200px; 
 	height: 152px; 
-	margin: 0px 32px 32px 0; 
+	margin: 13px 32px 13px 0; 
 	padding-top: 48px; 
 	
 	text-align: center;
+}
+
+div.context:hover {
+	background: #eee;
 }
 
 .entry_delete_link {

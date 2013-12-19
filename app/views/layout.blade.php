@@ -49,10 +49,7 @@
 
 			<!-- navigation contains tag list -->
 			<div id='beforeContent'>
-				<div style='height: 32px'>
-					@yield( 'beforeContent' )
-				</div>
-
+				@yield( 'beforeContent' )
 			</div>
 
 			<!-- content contains list of entries -->
@@ -152,10 +149,15 @@
 			$jQ( "#searchResults").html( '&nbsp;' );
 	});
 
+// EVENTS REGARDING ADDING OR DELETING A CONTEXT
+
+	// shows the div to add a new entry
+	$jQ( document ).on( 'click', '.context_add_link', function() { return showDiv( '#div_context_add' ); } );
+
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
 	// shows the div to add a new entry
-	$jQ( document ).on( 'click', '.entry_add_link', function() { return showAddEntryDiv(); } );
+	$jQ( document ).on( 'click', '.entry_add_link', function() { return showDiv( '#div_entry_add' ); } );
 
 	// hides the div to add a new entry
 	$jQ( document ).on( 'click', '.entry_add_cancel', function() { return hideAddEntryDiv(); } );
