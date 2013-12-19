@@ -3,21 +3,25 @@
 class StackrController extends BaseController {
 
 	/**
-	*	Create the view and pass the current context id
+	*	Create the view and pass the given Context
 	*/
-	public function view( $cnid )
+	public function view( $contextName )
 	{
-		// TODO check here if cnid exist and redirect if not
+		$context = Auth::user()->contexts()->where( 'name', $contextName )->first();
 
-		return View::make( 'stackrs' )->with( 'cnid', $cnid );
+		if ( isset( $context ) )
+			return View::make( 'stackrs' )->with( 'cnid', $context->id );
+		else
+			// TODO create view with error
+			return View::make( 'stackrs' )->with( 'cnid', 'null' );
 	}
 
 	/**
-	*	Get all Stackrs for User for the given Context.id
+	*	Get all Stackrs for User for the given Context
 	*/
-	public function all( $cnid )
+	public function all( $contextName )
 	{
-		$stackrs = Auth::user()->stackrs( $cnid )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+		$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
 		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
 	}
