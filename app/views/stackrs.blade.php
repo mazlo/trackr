@@ -40,7 +40,7 @@
 	<!-- list of entries -->
 	<div id='entries' cnid='{{ $cnid }}'>
 		<!-- ajax response here -->
-		<img src='resources/loader.gif' style='width: 35px' />
+		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>
 
 @stop

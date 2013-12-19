@@ -23,7 +23,7 @@
 			<div id='header'>
 				
 				<div style='width: 30%'>
-					<a href='{{ URL::route( "landingPage" ) }}'>
+					<a href='{{ URL::to( "contexts" ) }}'>
 						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
 						<h2 style='display: inline; margin: 0px'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
 					</a>
