@@ -35,6 +35,13 @@ body {
 
 }
 
+h2.applicationTitle {
+	display: inline; 
+	margin: 0px;
+
+	font-weight: normal;
+}
+
 h3 {
 	margin: 0 0 13px;
 	font-weight: normal;
@@ -88,8 +95,10 @@ input {
 	background: #fff;
 	border-bottom: 1px solid #ccc;
 	/*box-shadow: 0px 2px 4px #bbb;*/
-	padding: 13px 32px;
+
 	width: 960px;
+	padding: 13px 32px;
+	height: 39px;
 
 	font-family: AleoLight;
 }
