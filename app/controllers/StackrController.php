@@ -2,21 +2,19 @@
 
 class StackrController extends BaseController {
 
-	public function show()
-	{
-		return View::make( 'stackrs' );
-	}
-
-	/*
-		Just create the view and pass the current context id
+	/**
+	*	Create the view and pass the current context id
 	*/
-	public function showAll( $cnid )
+	public function view( $cnid )
 	{
 		// TODO check here if cnid exist and redirect if not
-		
+
 		return View::make( 'stackrs' )->with( 'cnid', $cnid );
 	}
 
+	/**
+	*	Get all Stackrs for User for the given Context.id
+	*/
 	public function all( $cnid )
 	{
 		$stackrs = Auth::user()->stackrs( $cnid )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();

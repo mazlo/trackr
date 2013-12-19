@@ -31,17 +31,13 @@ Route::group( array( 'before' => 'auth' ), function()
 	/*
 		Routes concerning contexts
 	*/
-	Route::get( '/contexts', 'ContextController@showAll' );
+	Route::get( '/contexts', 'ContextController@all' );
 
 	/*
 		Routes concerning stackrs
 	*/
-	Route::get( '/stackrs', array(
-		'as' => 'landingPage',
-		'uses' => 'StackrController@show'
-	));
 
-	Route::get( '/contexts/{pcid}/stackrs', 'StackrController@showAll' );
+	Route::get( '/contexts/{pcid}/stackrs', 'StackrController@view' );
 
 	Route::get( '/contexts/{pcid}/stackrs/all', 'StackrController@all' );
 

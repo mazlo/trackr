@@ -53,7 +53,7 @@ class UserController extends Controller
     	// check if user is logged in
     	if ( Auth::check() )
     	{
-    		return Redirect::route( 'landingPage' );
+    		return Redirect::intended( 'contexts' );
     	}
 
     	// check if data was postet

@@ -5,7 +5,7 @@ class ContextController extends BaseController {
 	/*
 		Loads all contexts for current user
 	*/
-	public function showAll()
+	public function all()
 	{
 		$contexts = User::find( Auth::user()->id )->contexts()->get();
 
