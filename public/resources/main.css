@@ -37,6 +37,7 @@ body {
 
 h3 {
 	margin: 0 0 13px;
+	font-weight: normal;
 }
 
 a {
@@ -165,11 +166,15 @@ h4.subheadline {
 	font-style: italic;
 }
 
-h4.entry_new_title {
+h4.entry_new_title,
+h4.context_new_title {
 	margin: 0 0 13px 0;
+	font-family: Georgia;
+	font-weight: normal;
 }
 
-h4.entry_new_description {
+h4.entry_new_description,
+h4.context_new_description {
 	margin-bottom: 6px;
 	font-weight: 100;
 	font-style: italic;;
