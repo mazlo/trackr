@@ -212,15 +212,15 @@ var showDiv = function( element )
 	return false;
 };
 
-var hideAddEntryDiv = function()
+var hideDiv = function( element )
 {
-	$jQ( '#div_entry_add' ).effect( 'fade', 100, function()
+	$jQ( element ).effect( 'fade', 100, function()
 	{
-		$jQ( '#div_entry_add' ).hide();
+		$jQ( element ).hide();
 	});
 
-	return false;
-};
+	return false;	
+}
 
 var addEntryAction = function() 
 {
