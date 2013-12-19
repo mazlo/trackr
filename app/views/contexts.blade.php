@@ -16,8 +16,8 @@
 		<textarea id='description' class='textarea'></textarea>
 
 		<div style='padding: 8px 0;'>
-			<input type='button' class='context_add_button' value='Add' />
-			<input type='button' class='context_add_cancel' value='Cancel' />
+			<button class='context_add_button operatorButton'>Add</button>
+			<button class='context_add_cancel operatorButton'>Cancel</button>
 		</div>
 
 	</div>
