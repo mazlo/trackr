@@ -19,9 +19,9 @@ class StackrController extends BaseController {
 	/**
 	*	Get all Stackrs for User for the given Context
 	*/
-	public function all( $contextName )
+	public function all( $cnid )
 	{
-		$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+		$stackrs = Auth::user()->stackrs( $cnid )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
 		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
 	}
@@ -53,12 +53,12 @@ class StackrController extends BaseController {
 		return View::make( 'stackr' )->with( 'stackr', $stackr );
 	}
 
-	public function delete( $eid )
+	public function delete( $cnid, $eid )
 	{
-		if ( empty( $eid ) )
+		if ( !isset( $cnid ) || !isset( $eid ) )
 			return;
 
-		$stackr = Stackr::find( $eid );
+		$stackr = Auth::user()->stackr( $eid )->first();
 
 		// delete all related Comments
         foreach( $stackr->comments as $comment )
@@ -69,7 +69,7 @@ class StackrController extends BaseController {
         // delete the Stackr
         $stackr->delete();
 
-        return $this->all();
+        return $this->all( $cnid );
 	}
 
 	public function changeTitle( $eid )

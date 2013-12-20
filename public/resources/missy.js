@@ -305,12 +305,13 @@ var deleteEntry = function( object, closestClass, callback )
 {
 	$jQ( object ).hide();
 
+	var cnid = $jQ( '#entries' ).attr( 'cnid' );
 	var entryId = $jQ( object ).attr( 'eid' );
 
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/stackrs/'+ entryId +'/delete',
+				url: getContextPath() +'/contexts/'+ cnid +'/stackrs/'+ entryId +'/delete',
 				type: 'post',
 
 				success: function( data ) 

@@ -49,7 +49,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::get( '/stackrs/{eid}', 'StackrController@details' );
 
-	Route::post( '/stackrs/{eid}/delete', 'StackrController@delete' );
+	Route::post( '/contexts/{contextName}/stackrs/{eid}/delete', 'StackrController@delete' );
 
 	Route::post( '/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
 
