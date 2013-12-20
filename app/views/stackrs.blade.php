@@ -10,7 +10,7 @@
 
 		<div id='distinctEntriesTagList' style='display: inline;'>
 			<!-- ajax response here -->
-			<img src='resources/loader.gif' style='width: 35px' />
+			<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px' />
 		</div>
 		
 	</div>
