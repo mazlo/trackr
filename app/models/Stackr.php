@@ -13,6 +13,11 @@ class Stackr extends Eloquent
 		return $this->belongsTo( 'User', 'user_id' );
 	}
 
+	public function context()
+	{
+		return $this->belongsTo( 'Context', 'context_id' );
+	}
+
 	public static function distinctTagList()
 	{
 		return DB::table( 'Stackrs' )->select( DB::raw( "group_concat( distinct tags separator ', ' ) as tags" ))->where( 'user_id', Auth::user()->id )->get();

@@ -22,9 +22,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	/**
 	* Properties
 	*/
+	
 	public function contexts()
     {
         return $this->hasMany( 'Context', 'user_id' );
+    }
+
+    public function context( $cnid )
+    {
+    	return $this->hasMany( 'Context', 'user_id' )->where( 'id', $cnid );
     }
 
     public function stackrs( $cnid )
