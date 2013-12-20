@@ -21,7 +21,11 @@ var getContexts = function()
 
 		success: function( data ) 
 		{
-			$jQ( '#contexts' ).html( data );
+			var contextsContainer = $jQ( '#contexts' );
+
+			contextsContainer.hide();
+			contextsContainer.html( data );
+			contextsContainer.fadeIn( 200 );
 		}
 	});
 }
@@ -37,7 +41,12 @@ var getAllEntries = function( tags )
 
 		success: function( data ) 
 		{
-			$jQ( '#entries' ).html( data );
+			var entriesContainer = $jQ( '#entries' );
+
+			entriesContainer.hide();
+			entriesContainer.html( data );
+			entriesContainer.fadeIn( 200 );
+
 			$jQ( '.comments' ).sortable( 
 			{
 				update: function( event, ui ) 
@@ -236,7 +245,12 @@ var addContextAction = function()
 		success: function( data ) 
 		{
 			$jQ( '#div_context_add' ).hide();
-			$jQ( '#contexts' ).html( data );
+
+			var contextsContainer = $jQ( '#contexts' );
+			
+			contextsContainer.hide();
+			contextsContainer.html( data );
+			contextsContainer.fadeIn( 200 );
 		}
 	});
 
@@ -261,7 +275,12 @@ var addEntryAction = function()
 		success: function( data ) 
 		{
 			$jQ( '#div_entry_add' ).hide();
-			$jQ( '#entries' ).html( data );
+
+			var entriesContainer = $jQ( '#entries' );
+			
+			entriesContainer.hide();
+			entriesContainer.html( data );
+			entriesContainer.fade( 200 );
 		}
 	});
 

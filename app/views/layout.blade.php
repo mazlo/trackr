@@ -182,7 +182,11 @@
 			},
 			onEscape : function()
 			{
-				$jQ( '.entry_add_cancel' ).click();
+				if ( $jQ( '#div_context_add' ).length > 0 )
+					$jQ( '.context_add_cancel' ).click();
+
+				else if ( $jQ( '#div_entry_add' ).length > 0 )
+					$jQ( '.entry_add_cancel' ).click();
 			}
 		});
 
