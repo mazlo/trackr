@@ -7,14 +7,34 @@ class ContextController extends BaseController {
 		return View::make( 'contexts' );
 	}
 
-	/*
-		Loads all contexts for current user
+	/**
+	*	Loads all contexts for current user
 	*/
 	public function all()
 	{
 		$contexts = User::find( Auth::user()->id )->contexts()->get();
 
 		return View::make( 'ajax.contexts' )->with( 'contexts', $contexts );
+	}
+
+	/**
+	*	Adds a new Context
+	*/
+	public function add()
+	{
+		$title = Input::get( 'tl' );
+		$desc = Input::get( 'ds' );
+
+		if ( empty( $title ) || empty( $desc ))
+			return;
+
+		$context = new Context();
+		$context->name = $title;
+		$context->description = $desc;
+		$context->user()->associate( Auth::user() );
+		$context->save();
+
+		return $this->all();
 	}
 
 }

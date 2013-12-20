@@ -222,6 +222,10 @@ var addContextAction = function()
 	if ( title == '' )
 		return false;
 
+	// 1. replace all characters that are not allowed
+	// 2. replace all subsequent not allowed characters with min-length 2
+	title = title.replace( /[^a-zA-z0-9]+/g, '-' ).replace( /([^a-zA-Z0-9]){2}/g, '' )
+
 	var description = $jQ( '#description' ).val();
 
 	$jQ.ajax( {

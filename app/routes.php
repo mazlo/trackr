@@ -35,6 +35,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::get( '/contexts/all', 'ContextController@all' );
 
+	Route::post( '/contexts/add', 'ContextController@add' );
+
 	/*
 		Routes concerning stackrs
 	*/
