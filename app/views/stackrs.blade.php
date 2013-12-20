@@ -24,11 +24,11 @@
 	<!-- div entry add: is hidden after page load -->
 	<div id='div_entry_add' class='div_entry_add' style='display: none;'>
 
-		<h4 class='entry_new_title'>Title</h4>
-		<input type='text' id='title' value='' class='textfield' />
+		<h4 class='georgia'>Title</h4>
+		<input type='text' id='title' value='' class='textfield form' />
 		
-		<h4 class='entry_new_description'>Description</h4>
-		<textarea id='description' class='textarea'></textarea>
+		<h4 class='italic'>Description</h4>
+		<textarea id='description' class='textarea form'></textarea>
 
 		<div style='padding: 8px 0;'>
 			<button class='entry_add_button operatorButton'>Add</button>

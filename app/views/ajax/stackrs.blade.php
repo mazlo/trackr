@@ -19,7 +19,7 @@
 				<span class='entry_title_confirm'>
 					<button class='operatorButton doneButton'>Done</button>
 				</span>
-				<h4 class='entry_description searchable'>{{ $stackr->description }}</h4>
+				<h4 class='italic more_padding searchable'>{{ $stackr->description }}</h4>
 			</div>
 
 			<div class='entry_operations'>

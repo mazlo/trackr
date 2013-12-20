@@ -15,28 +15,28 @@
 
         <input name='_token' type='hidden' value='TbVUNXU82jmVLLrSGHT360dEYlhRmX5ca0E1iPxv'>
 
-        <h4 class='normal'>Username</h4>
+        <h4>Username</h4>
         @if( $errors->has( 'username' ) )
         	<span class='credentials_error'>{{ $errors->get( 'username' )[0] }}</span>
         @endif
 
         <input placeholder='john.smith' name='username' type='text' id='username' class='textfield form' value='{{ Input::old( "username" ) }}'>
         
-        <h4 class='normal'>E-Mail Address</h4>
+        <h4>E-Mail Address</h4>
         @if( $errors->has( 'email' ) )
         	<span class='credentials_error'>{{ $errors->get( 'email' )[0] }}</span>
         @endif
 
         <input placeholder='john.smith@email.com' name='email' type='text' id='email' class='textfield form' value='{{ Input::old( "email" ) }}'>
 
-		<h4 class='normal'>Password</h4>
+		<h4>Password</h4>
 		@if( $errors->has( 'password' ) )
 	    	<span class='credentials_error'>{{ $errors->get( 'password' )[0] }}</span>
         @endif
 
         <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form' >
 
-        <h4 class='normal'>Confirm Password</h4>
+        <h4>Confirm Password</h4>
         
         <input placeholder='●●●●●●●●' name='password_confirmation' type='password' value='' id='password_confirmation' class='textfield form'>
         <input type='submit' value='create account' id='login_button' class='button' style='display: block; width: auto; margin: 23px 0 0'>

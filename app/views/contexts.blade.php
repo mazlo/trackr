@@ -9,11 +9,11 @@
 	<!-- div entry add: is hidden after page load -->
 	<div id='div_context_add' class='div_context_add' style='display: none;'>
 
-		<h4 class='context_new_title'>Name</h4>
-		<input type='text' id='title' value='' class='textfield' />
+		<h4 class='georgia'>Name</h4>
+		<input type='text' id='title' value='' class='textfield form' />
 		
-		<h4 class='context_new_description'>Description</h4>
-		<textarea id='description' class='textarea'></textarea>
+		<h4 class='italic'>Description</h4>
+		<textarea id='description' class='textarea form'></textarea>
 
 		<div style='padding: 8px 0;'>
 			<button class='context_add_button operatorButton'>Add</button>

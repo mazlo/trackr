@@ -162,9 +162,22 @@ h4.entry_description {
 	font-style: italic;
 }
 
-h4.normal {
+h4 {
 	 margin: 8px 0px 4px; 
-	 font-weight: normal;
+	 font-weight: 100;
+}
+
+h4.georgia {
+	 font-family: Georgia;
+}
+
+h4.italic {
+	 font-style: italic;
+}
+
+h4.more_padding {
+	margin: 0; 
+	padding: 2px 6px;
 }
 
 h4.subheadline {
@@ -242,10 +255,14 @@ div.entry_buttons {
 
 div.div_entry_add,
 div.div_context_add {
+	background: #f8f8f8;
+	border: 1px #bbb solid;
+	/* -webkit-box-shadow: 0px 0px 2px #032946;
+	box-shadow: 0px 0px 2px #032946; */
+
 	margin: 23px 0 8px;
-	padding: 13px;
-	-webkit-box-shadow: 0px 0px 2px #032946;
-	box-shadow: 0px 0px 2px #032946;
+	padding: 23px;
+	width: 640px;
 }
 
 .entry_add_link,
@@ -343,7 +360,7 @@ form.login {
 	
 	margin-top: 23px; 
 	padding: 23px; 
-	width: 300px;
+	width: 320px;
 }
 
 input.textfield {
@@ -354,12 +371,12 @@ input.textfield {
 
 input.form {
 	margin: 3px 0;
-	width: 300px;
+	width: 100%;
 }
 
 input.textfield_smaller {
 	padding: 2px; 
-	width: 300px; 
+	width: 320px; 
 	height: 23px;
 }
 
@@ -414,12 +431,18 @@ div.context:hover {
 	height: 27px
 }
 
-.textarea,
-.comment_textarea
+textarea.textarea,
+textarea.comment_textarea
  {
 	width: 600px; 
 	height: 80px; 
 	padding: 6px;
+}
+
+textarea.form
+{
+	margin: 3px 0;
+	width: 100%;
 }
 
 .infotext {

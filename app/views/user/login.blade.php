@@ -22,10 +22,10 @@
 
         <input name='_token' type='hidden' value='TbVUNXU82jmVLLrSGHT360dEYlhRmX5ca0E1iPxv'>
 
-        <h4 class='normal'>Username</h4>
+        <h4>Username</h4>
         <input placeholder='john.smith' name='username' type='text' id='username' class='textfield form'>
         
-        <h4 class='normal'>Password</h4>
+        <h4>Password</h4>
         <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form'>
 
         <input type='submit' value='sign in' id='login_button' class='button' style='display: block; margin: 23px 0 0'>
