@@ -26,21 +26,24 @@ class StackrController extends BaseController {
 		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
 	}
 
-	public function add()
+	public function add( $cnid )
 	{
 		$title = Input::get( 'tl' );
 		$desc = Input::get( 'ds' );
 
-		if ( empty( $title ) || empty( $desc ))
+		if ( empty( $cnid ) || empty( $title ) || empty( $desc ))
 			return;
+
+		$context = Auth::user()->context( $cnid )->first();
 
 		$stackr = new Stackr();
 		$stackr->title = $title;
 		$stackr->description = $desc;
 		$stackr->user()->associate( Auth::user() );
+		$stackr->context()->associate( $context );
 		$stackr->save();
 
-		return $this->all();
+		return $this->all( $cnid );
 	}
 
 	public function details( $eid )

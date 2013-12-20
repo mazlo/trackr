@@ -41,11 +41,7 @@ var getAllEntries = function( tags )
 
 		success: function( data ) 
 		{
-			var entriesContainer = $jQ( '#entries' );
-
-			entriesContainer.hide();
-			entriesContainer.html( data );
-			entriesContainer.fadeIn( 200 );
+			$jQ( '#entries' ).html( data );
 
 			$jQ( '.comments' ).sortable( 
 			{
@@ -267,8 +263,10 @@ var addEntryAction = function()
 
 	var description = $jQ( '#description' ).val();
 
+	var cnid = $jQ( '#entries' ).attr( 'cnid' );
+
 	$jQ.ajax( {
-		url: getContextPath() + '/stackrs/add',
+		url: getContextPath() + '/contexts/'+ cnid +'/stackrs/add',
 		type: 'post',
 		data: { tl: title, ds: description },
 
@@ -280,7 +278,7 @@ var addEntryAction = function()
 			
 			entriesContainer.hide();
 			entriesContainer.html( data );
-			entriesContainer.fade( 200 );
+			entriesContainer.fadeIn( 200 );
 		}
 	});
 
