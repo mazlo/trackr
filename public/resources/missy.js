@@ -32,10 +32,10 @@ var getContexts = function()
 
 var getAllEntries = function( tags )
 {
-	var cnid = $jQ( '#entries' ).attr( 'cnid' );
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cnid +'/stackrs/all',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/all',
 		type: 'get',
 		data: { ts: tags },
 

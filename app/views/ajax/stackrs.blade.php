@@ -80,7 +80,7 @@
 			</div>
 
 			<div style='float: right; text-align: right'>
-				<a href='{{ URL::to( "/stackrs/$stackr->id" ) }}' target='_self'>
+				<a href='{{ URL::to( "/contexts/$cname/stackrs/$stackr->id" ) }}' target='_self'>
 					<button class='entry_details_link operatorButton'>details</button>
 				</a>
 			</div>

@@ -28,19 +28,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany( 'Context', 'user_id' );
     }
 
-    public function context( $cnid )
+    public function context( $cname )
     {
-    	return $this->hasMany( 'Context', 'user_id' )->where( 'id', $cnid );
+    	return $this->hasMany( 'Context', 'user_id' )->where( 'name', $cname );
     }
 
-    public function stackrs( $cnid )
+    public function stackrs( $cname )
     {
-    	return $this->hasMany( 'Stackr', 'user_id' )->where( 'context_id', $cnid );
+    	return $this->context( $cname )->first()->stackrs();
     }
 
-    public function stackr( $sid )
+    public function stackr( $cname, $sid )
     {
-    	return $this->hasMany( 'Stackr', 'user_id' )->where( 'id', $sid );
+    	return $this->stackrs( $cname )->where( 'id', $sid );
     }
 
 	/**

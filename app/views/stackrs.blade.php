@@ -38,7 +38,7 @@
 	</div>
 
 	<!-- list of entries -->
-	<div id='entries' cnid='{{ $cnid }}'>
+	<div id='entries' cname='{{ $context->name }}'>
 		<!-- ajax response here -->
 		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>

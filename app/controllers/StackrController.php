@@ -10,20 +10,20 @@ class StackrController extends BaseController {
 		$context = Auth::user()->contexts()->where( 'name', $contextName )->first();
 
 		if ( isset( $context ) )
-			return View::make( 'stackrs' )->with( 'cnid', $context->id );
+			return View::make( 'stackrs' )->with( 'context', $context );
 		else
 			// TODO create view with error
-			return View::make( 'stackrs' )->with( 'cnid', 'null' );
+			return View::make( 'stackrs' )->with( 'context', 'null' );
 	}
 
 	/**
 	*	Get all Stackrs for User for the given Context
 	*/
-	public function all( $cnid )
+	public function all( $cname )
 	{
-		$stackrs = Auth::user()->stackrs( $cnid )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+		$stackrs = Auth::user()->stackrs( $cname )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
-		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs );
+		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs )->with( 'cname', $cname );
 	}
 
 	public function add( $cnid )
@@ -46,9 +46,9 @@ class StackrController extends BaseController {
 		return $this->all( $cnid );
 	}
 
-	public function details( $cnid, $eid )
+	public function details( $cname, $sid )
 	{
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $cname, $sid )->first();
 
 		return View::make( 'stackr' )->with( 'stackr', $stackr );
 	}
