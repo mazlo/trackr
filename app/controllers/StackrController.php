@@ -46,9 +46,9 @@ class StackrController extends BaseController {
 		return $this->all( $cnid );
 	}
 
-	public function details( $eid )
+	public function details( $cnid, $eid )
 	{
-		$stackr = Stackr::find( $eid );
+		$stackr = Auth::user()->stackr( $eid )->first();
 
 		return View::make( 'stackr' )->with( 'stackr', $stackr );
 	}
