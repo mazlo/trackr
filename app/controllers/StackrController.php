@@ -26,15 +26,17 @@ class StackrController extends BaseController {
 		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs )->with( 'cname', $cname );
 	}
 
-	public function add( $cnid )
+	public function add( $cname )
 	{
 		$title = Input::get( 'tl' );
 		$desc = Input::get( 'ds' );
 
-		if ( empty( $cnid ) || empty( $title ) || empty( $desc ))
+		if ( empty( $cname ) || empty( $title ) || empty( $desc ))
 			return;
 
-		$context = Auth::user()->context( $cnid )->first();
+		$context = Auth::user()->context( $cname )->first();
+
+		// TODO check if context exists
 
 		$stackr = new Stackr();
 		$stackr->title = $title;
@@ -43,7 +45,7 @@ class StackrController extends BaseController {
 		$stackr->context()->associate( $context );
 		$stackr->save();
 
-		return $this->all( $cnid );
+		return $this->all( $cname );
 	}
 
 	public function details( $cname, $sid )

@@ -263,10 +263,10 @@ var addEntryAction = function()
 
 	var description = $jQ( '#description' ).val();
 
-	var cnid = $jQ( '#entries' ).attr( 'cnid' );
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 
 	$jQ.ajax( {
-		url: getContextPath() + '/contexts/'+ cnid +'/stackrs/add',
+		url: getContextPath() + '/contexts/'+ cname +'/stackrs/add',
 		type: 'post',
 		data: { tl: title, ds: description },
 
