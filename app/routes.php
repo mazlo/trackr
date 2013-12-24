@@ -51,7 +51,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/delete', 'StackrController@delete' );
 
-	Route::post( '/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
+	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
 
 	Route::post( '/stackrs/{eid}/changeListTitle', 'StackrController@changeListTitle' );
 

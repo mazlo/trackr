@@ -74,14 +74,14 @@ class StackrController extends BaseController {
         return $this->all( $cnid );
 	}
 
-	public function changeTitle( $eid )
+	public function changeTitle( $cname, $eid )
 	{
 		$title = Input::get( 'tl' );
 
 		if ( empty( $eid ) || empty( $title ) )
 			return;
 
-		$stackr = Stackr::find( $eid );
+		$stackr = Auth::user()->stackr( $cname, $eid )->first();
 		$stackr->title = $title;
 		$stackr->save();
 
