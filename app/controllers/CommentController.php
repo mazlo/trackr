@@ -3,12 +3,12 @@
 class CommentController extends BaseController
 {
 	
-	public function getAll( $eid )
+	public function all( $cname, $eid )
 	{
-		if ( empty( $eid ) )
+		if ( empty( $cname ) || empty( $eid ) )
 			return;
 
-		$stackr = Stackr::find( $eid );
+		$stackr = Auth::user()->stackr( $eid )->first();
 
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}

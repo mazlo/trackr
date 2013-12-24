@@ -74,8 +74,10 @@ var getDistinctEntriesTagList = function( cname )
 
 var getComments = function( eid )
 {
+	var cname = $jQ( '#entries' ).attr( 'cname' );
+
 	$jQ.ajax( {
-		url: getContextPath() +'/stackrs/'+ eid +'/comments',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ eid +'/comments',
 		type: 'get',
 
 		success: function( data ) 
