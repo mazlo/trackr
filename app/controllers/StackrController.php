@@ -113,14 +113,14 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
-	public function changeTags( $eid )
+	public function changeTags( $cname, $eid )
 	{
 		$tags = Input::get( 'ts' );
 
 		if ( empty( $tags ) )
 			return;
 
-		$stackr = Stackr::find( $eid );
+		$stackr = Auth::user()->stackr( $cname, $eid )->first();
 		$stackr->tags = $tags;
 		$stackr->save();
 

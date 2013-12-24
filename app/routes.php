@@ -57,7 +57,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/changePinStatus', 'StackrController@changePinStatus' );
 
-	Route::post( '/stackrs/{eid}/changeTags', 'StackrController@changeTags' );
+	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeTags', 'StackrController@changeTags' );
 
 	/*
 		Routes concerning stackr comments

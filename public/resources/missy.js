@@ -186,12 +186,14 @@ var updateCommentsTitle = function( e, object )
 
 var updateTags = function ( object )
 {
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
+	
 	var tags = $jQ( object ).val();
 
 	// ajax call to change tags
 	$jQ.ajax( {
-		url: getContextPath() +'/stackrs/'+ entryId +'/changeTags',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changeTags',
 		type: 'post',
 		data: { ts: tags },
 
