@@ -56,10 +56,10 @@ var getAllEntries = function( tags )
 	});
 };
 
-var getDistinctEntriesTagList = function( )
+var getDistinctEntriesTagList = function( cname )
 {
 	$jQ.ajax( {
-		url: getContextPath() +'/tagsDistinct',
+		url: getContextPath() +'/contexts/'+ cname +'/distinctTagList',
 		type: 'get',
 
 		success: function( data )
@@ -188,7 +188,7 @@ var updateTags = function ( object )
 {
 	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
-	
+
 	var tags = $jQ( object ).val();
 
 	// ajax call to change tags

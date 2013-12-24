@@ -18,8 +18,13 @@ class Stackr extends Eloquent
 		return $this->belongsTo( 'Context', 'context_id' );
 	}
 
-	public static function distinctTagList()
+	public static function distinctTagList( $cname )
 	{
-		return DB::table( 'Stackrs' )->select( DB::raw( "group_concat( distinct tags separator ', ' ) as tags" ))->where( 'user_id', Auth::user()->id )->get();
+		return DB::table( 'Stackrs' )
+			->select( DB::raw( 'group_concat( distinct tags separator ", " ) as tags' ))
+			->join( 'Contexts', 'Stackrs.context_id', '=', 'Contexts.id' )
+			->where( 'Stackrs.user_id', Auth::user()->id )
+			->where( 'Contexts.name', $cname )
+			->get();
 	}
 }

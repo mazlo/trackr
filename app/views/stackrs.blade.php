@@ -47,7 +47,7 @@
 
 @section( 'onDocumentLoad' )
 	getAllEntries();
-	getDistinctEntriesTagList();
+	getDistinctEntriesTagList( '{{ $context->name }}' );
 
 	$jQ( '#search' ).focus();
 @stop

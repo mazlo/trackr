@@ -35,6 +35,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::get( '/contexts/all', 'ContextController@all' );
 
+	Route::get( '/contexts/{contextName}/distinctTagList', 'ContextController@distinctTagList' );
+
 	Route::post( '/contexts/add', 'ContextController@add' );
 
 	/*
@@ -69,12 +71,6 @@ Route::group( array( 'before' => 'auth' ), function()
 	Route::post( '/stackrs/{eid}/comments/{cid}/delete', 'CommentController@delete' );
 
 	Route::post( '/stackrs/{eid}/comments/reorder', 'CommentController@reorder' );
-
-	/* 
-		change this to ContextController in future
-		that this becomes /context/{id}/tagsDistinct
-	*/
-	Route::get( '/tagsDistinct', 'TagController@getDistinctTagList' );
 
     Route::any( '/logout', array(
         'as'   => 'user/logout',

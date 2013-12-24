@@ -18,6 +18,16 @@ class ContextController extends BaseController {
 	}
 
 	/**
+	*	
+	*/
+	function distinctTagList( $cname )
+	{
+		$tagList = Stackr::distinctTagList( $cname );
+
+		return View::make( 'ajax.distinctTagList' )->with( 'tagList', $tagList );
+	}
+
+	/**
 	*	Adds a new Context
 	*/
 	public function add()
