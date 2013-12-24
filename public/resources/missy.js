@@ -210,14 +210,15 @@ var updateEntryFavored = function ( object )
 {
 	var type = $jQ( object ).attr( 'alt' );
 
-	$jQ( object ).attr( 'src', 'resources/pinIt_'+ inverseFavored(type) +'.png' );
+	$jQ( object ).attr( 'src', getContextPath() + '/resources/pinIt_'+ inverseFavored(type) +'.png' );
 	$jQ( object ).attr( 'alt', inverseFavored(type) );
 
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
 
 	// ajax call to change favored status
 	$jQ.ajax( {
-		url: getContextPath() +'/stackrs/'+ entryId +'/changePinStatus',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changePinStatus',
 		type: 'post',
 		data: { fv: inverseFavored(type) }
 	});			
