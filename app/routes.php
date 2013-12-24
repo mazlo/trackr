@@ -66,7 +66,7 @@ Route::group( array( 'before' => 'auth' ), function()
 	*/
 	Route::get( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@all' );
 
-	Route::post( '/stackrs/{eid}/comments/add', 'CommentController@add' );
+	Route::post( '/contexts/{contextName}/stackrs/{eid}/comments/add', 'CommentController@add' );
 
 	Route::post( '/stackrs/{eid}/comments/{cid}/delete', 'CommentController@delete' );
 

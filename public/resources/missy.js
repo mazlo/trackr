@@ -369,6 +369,7 @@ var hideAddCommentDiv = function( object )
 
 var addCommentAction = function( object )
 {
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
 
 	if ( $jQ( '#comment_new_content_'+ entryId ).val() == '' )
@@ -377,7 +378,7 @@ var addCommentAction = function( object )
 	var comment = $jQ( '#comment_new_content_'+ entryId ).val();
 
 	$jQ.ajax( {
-		url: getContextPath() +'/stackrs/'+ entryId +'/comments/add',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/add',
 		type: 'post',
 		data: { cmt: comment },
 
