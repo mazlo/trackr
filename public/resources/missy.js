@@ -123,7 +123,6 @@ var updateEntryTitle = function( e, object )
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
 
 	// ajax call to change title
@@ -150,8 +149,6 @@ var updateCommentsTitle = function( e, object )
 	if ( commentsOldTitle == title )
 		return;
 
-	var entryId = $jQ( object ).attr( 'eid' );
-
 	// prepare confirmation dialog
 	var x = e.target.offsetLeft - 187;
 	var y = e.target.offsetTop + 1;
@@ -160,15 +157,21 @@ var updateCommentsTitle = function( e, object )
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
+	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var entryId = $jQ( object ).attr( 'eid' );
+
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/stackrs/'+ entryId +'/changeListTitle',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changeListTitle',
 		type: 'post',
 		data: { tl: title },
 
 		success: function( data ) 
 		{
 			// change button label
+			if ( title.charAt( title.length-1 ) == 's' ) 
+  				title = title.slice( 0, -1 );
+
 			$jQ( '#comment_add_button_text_'+ entryId ).text( title );
 
 			// show confirmation dialog

@@ -88,14 +88,14 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
-	public function changeListTitle( $eid )
+	public function changeListTitle( $cname, $eid )
 	{
 		$title = Input::get( 'tl' );
 
 		if ( empty( $eid ) || empty( $title ) )
 			return;
 
-		$stackr = Stackr::find( $eid );
+		$stackr = Auth::user()->stackr( $cname, $eid )->first();
 		$stackr->listTitle = $title;
 		$stackr->save();
 

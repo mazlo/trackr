@@ -53,7 +53,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
 
-	Route::post( '/stackrs/{eid}/changeListTitle', 'StackrController@changeListTitle' );
+	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeListTitle', 'StackrController@changeListTitle' );
 
 	Route::post( '/stackrs/{eid}/changePinStatus', 'StackrController@changePinStatus' );
 
