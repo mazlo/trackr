@@ -225,13 +225,21 @@ var addContextAction = function()
 {
 	var title = $jQ( '#title' ).val();
 	if ( title == '' )
+	{
+		$jQ( '#title_error' ).text( 'You forgot to fill this in!' );
 		return false;
+	}
 
 	// 1. replace all characters that are not allowed
 	// 2. replace all subsequent not allowed characters with min-length 2
 	title = title.replace( /[^a-zA-z0-9]+/g, '-' ).replace( /([^a-zA-Z0-9]){2}/g, '' )
 
 	var description = $jQ( '#description' ).val();
+	if ( description == '' )
+	{
+		$jQ( '#description_error' ).text( 'You forgot to fill this in!' );
+		return false;
+	}
 
 	$jQ.ajax( {
 		url: getContextPath() + '/contexts/add',
@@ -484,6 +492,9 @@ var toggleDisabledElement = function( object, classToBeToggled )
 
 var showDiv = function( element ) 
 {
+	$jQ( '#title_error' ).text( '' );
+	$jQ( '#description_error' ).text( '' );
+
 	$jQ( element ).effect( 'fade', 200, function() 
 	{
 		$jQ( element ).show();

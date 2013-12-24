@@ -10,9 +10,11 @@
 	<div id='div_context_add' class='div_context_add' style='display: none;'>
 
 		<h4 class='georgia'>Name</h4>
+		<span id='title_error' class='credentials_error'></span>
 		<input type='text' id='title' value='' class='textfield form' />
 		
 		<h4 class='italic'>Description</h4>
+		<span id='description_error' class='credentials_error'></span>
 		<textarea id='description' class='textarea form'></textarea>
 
 		<div style='padding: 8px 0;'>
