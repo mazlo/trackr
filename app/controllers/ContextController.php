@@ -12,7 +12,7 @@ class ContextController extends BaseController {
 	*/
 	public function all()
 	{
-		$contexts = User::find( Auth::user()->id )->contexts()->get();
+		$contexts = Auth::user()->contexts()->get();
 
 		return View::make( 'ajax.contexts' )->with( 'contexts', $contexts );
 	}
