@@ -125,6 +125,7 @@ var updateEntryTitle = function( e, object )
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
 
 	// ajax call to change title
