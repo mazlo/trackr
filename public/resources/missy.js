@@ -56,8 +56,10 @@ var getAllEntries = function( tags )
 	});
 };
 
-var getDistinctEntriesTagList = function( cname )
+var getDistinctEntriesTagList = function()
 {
+	var cname = $jQ( '#entries' ).attr( 'cname' );
+
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/distinctTagList',
 		type: 'get',
@@ -206,7 +208,7 @@ var updateTags = function ( object )
 			$jQ( object ).closest( '.wrapper_entry' ).attr( 'tags', tags );
 
 			// compute distinct tag list anew
-			getDistinctEntriesTagList();
+			getDistinctEntriesTagList( cname );
 		}
 	});
 };
