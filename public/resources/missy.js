@@ -208,7 +208,7 @@ var updateTags = function ( object )
 			$jQ( object ).closest( '.wrapper_entry' ).attr( 'tags', tags );
 
 			// compute distinct tag list anew
-			getDistinctEntriesTagList( cname );
+			getDistinctEntriesTagList();
 		}
 	});
 };
@@ -414,13 +414,14 @@ var deleteComment = function( object )
 {
 	$jQ( object ).hide();
 
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
 	var commentId = $jQ( object ).attr( 'cid' );
 
 	$jQ( object ).closest( '.comment' ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/stackrs/'+ entryId +'/comments/'+ commentId +'/delete',
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId +'/delete',
 				type: 'post',
 
 				success: function( data ) 

@@ -5,7 +5,7 @@ class CommentController extends BaseController
 	
 	public function all( $cname, $eid )
 	{
-		if ( empty( $cname ) || empty( $eid ) )
+		if ( empty( $eid ) )
 			return;
 
 		$stackr = Auth::user()->stackr( $eid )->first();
@@ -17,7 +17,7 @@ class CommentController extends BaseController
 	{
 		$cmt = Input::get( 'cmt' );
 
-		if ( empty( $cname ) || empty( $eid ) || empty( $cmt ) )
+		if ( empty( $eid ) || empty( $cmt ) )
 			return;
 
 		$comment = new Comment();
@@ -30,18 +30,15 @@ class CommentController extends BaseController
 		return $this->all( $cname, $eid );
 	}
 
-	public function delete( $eid, $cid )
+	public function delete( $cname, $eid, $cid )
 	{
 		if ( empty( $eid ) || empty( $cid ) )
 			return;
 
 		// delete Comment
-		Comment::find( $cid )->delete();
+		Auth::user()->comment( $cid )->delete();
 
-		// load current stackr
-		$stackr = Stackr::find( $eid );
-
-		return $this->getAll( $eid );
+		return $this->all( $cname, $eid );
 	}
 
 	public function reorder()
@@ -54,7 +51,7 @@ class CommentController extends BaseController
 
 		for( $i = 0; $i < sizeof( $cids ); $i++ ) 
 		{
-			$comment = Comment::find( $cids[$i] );
+			$comment = Auth::user()->comment( $cids[$i] );
 			$comment->position = $poss[$i];
 			$comment->save();
 		}
