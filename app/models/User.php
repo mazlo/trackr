@@ -43,6 +43,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     	return $this->stackrs( $cname )->where( 'id', $sid );
     }
 
+    public function comments( $cname, $sid )
+    {
+    	return $this->stackr( $cname, $sid )->comments();
+    }
+
+    public function comment( $cid )
+    {
+    	return $this->hasMany( 'Comment', 'user_id' )->where( 'id', $cid );
+    }
+
 	/**
 	 * Get the unique identifier for the user.
 	 *
