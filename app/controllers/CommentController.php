@@ -8,7 +8,7 @@ class CommentController extends BaseController
 		if ( empty( $cname ) || empty( $eid ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $cname, $eid )->first();
+		$stackr = Auth::user()->stackr( $eid )->first();
 
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}
@@ -24,7 +24,7 @@ class CommentController extends BaseController
 		$comment->comment = $cmt;
 		$comment->user()->associate( Auth::user() );
 
-		$stackr = Auth::user()->stackr( $cname, $eid )->first();
+		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->comments()->save( $comment );
 
 		return $this->all( $cname, $eid );

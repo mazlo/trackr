@@ -50,7 +50,7 @@ class StackrController extends BaseController {
 
 	public function details( $cname, $sid )
 	{
-		$stackr = Auth::user()->stackr( $cname, $sid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 
 		return View::make( 'stackr' )->with( 'stackr', $stackr );
 	}
@@ -81,7 +81,7 @@ class StackrController extends BaseController {
 		if ( empty( $eid ) || empty( $title ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $cname, $eid )->first();
+		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->title = $title;
 		$stackr->save();
 
@@ -95,7 +95,7 @@ class StackrController extends BaseController {
 		if ( empty( $eid ) || empty( $title ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $cname, $eid )->first();
+		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->listTitle = $title;
 		$stackr->save();
 
@@ -106,7 +106,7 @@ class StackrController extends BaseController {
 	{
 		$pinned = Input::get( 'fv', 0 );
 
-		$stackr = Auth::user()->stackr( $cname, $eid )->first();
+		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->favored = $pinned;
 		$stackr->save();
 
@@ -120,7 +120,7 @@ class StackrController extends BaseController {
 		if ( empty( $tags ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $cname, $eid )->first();
+		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->tags = $tags;
 		$stackr->save();
 
