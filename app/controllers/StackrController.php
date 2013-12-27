@@ -7,7 +7,7 @@ class StackrController extends BaseController {
 	*/
 	public function view( $contextName )
 	{
-		$context = Auth::user()->contexts()->where( 'name', $contextName )->first();
+		$context = Auth::user()->context( $contextName )->first();
 
 		if ( isset( $context ) )
 			return View::make( 'stackrs' )->with( 'context', $context );
@@ -19,22 +19,22 @@ class StackrController extends BaseController {
 	/**
 	*	Get all Stackrs for User for the given Context
 	*/
-	public function all( $cname )
+	public function all( $contextName )
 	{
-		$stackrs = Auth::user()->stackrs( $cname )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+		$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
-		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs )->with( 'cname', $cname );
+		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs )->with( 'cname', $contextName );
 	}
 
-	public function add( $cname )
+	public function add( $contextName )
 	{
 		$title = Input::get( 'tl' );
 		$desc = Input::get( 'ds' );
 
-		if ( empty( $cname ) || empty( $title ) || empty( $desc ))
+		if ( empty( $contextName ) || empty( $title ) || empty( $desc ))
 			return;
 
-		$context = Auth::user()->context( $cname )->first();
+		$context = Auth::user()->context( $contextName )->first();
 
 		// TODO check if context exists
 
@@ -45,10 +45,10 @@ class StackrController extends BaseController {
 		$stackr->context()->associate( $context );
 		$stackr->save();
 
-		return $this->all( $cname );
+		return $this->all( $contextName );
 	}
 
-	public function details( $cname, $sid )
+	public function details( $contextName, $sid )
 	{
 		$stackr = Auth::user()->stackr( $sid )->first();
 
@@ -74,7 +74,7 @@ class StackrController extends BaseController {
         return $this->all( $cnid );
 	}
 
-	public function changeTitle( $cname, $eid )
+	public function changeTitle( $contextName, $eid )
 	{
 		$title = Input::get( 'tl' );
 
@@ -88,7 +88,7 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
-	public function changeListTitle( $cname, $eid )
+	public function changeListTitle( $contextName, $eid )
 	{
 		$title = Input::get( 'tl' );
 
@@ -102,7 +102,7 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}	
 
-	public function changePinStatus( $cname, $eid )
+	public function changePinStatus( $contextName, $eid )
 	{
 		$pinned = Input::get( 'fv', 0 );
 
@@ -113,7 +113,7 @@ class StackrController extends BaseController {
 		// the reload is done by ajax.success()
 	}
 
-	public function changeTags( $cname, $eid )
+	public function changeTags( $contextName, $eid )
 	{
 		$tags = Input::get( 'ts' );
 
