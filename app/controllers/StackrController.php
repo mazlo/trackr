@@ -55,12 +55,12 @@ class StackrController extends BaseController {
 		return View::make( 'stackr' )->with( 'stackr', $stackr );
 	}
 
-	public function delete( $cnid, $eid )
+	public function delete( $contextName, $sid )
 	{
-		if ( !isset( $cnid ) || !isset( $eid ) )
+		if ( !isset( $contextName ) || !isset( $sid ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 
 		// delete all related Comments
         foreach( $stackr->comments as $comment )
@@ -71,56 +71,56 @@ class StackrController extends BaseController {
         // delete the Stackr
         $stackr->delete();
 
-        return $this->all( $cnid );
+        return $this->all( $contextName );
 	}
 
-	public function changeTitle( $contextName, $eid )
+	public function changeTitle( $contextName, $sid )
 	{
 		$title = Input::get( 'tl' );
 
-		if ( empty( $eid ) || empty( $title ) )
+		if ( empty( $sid ) || empty( $title ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 		$stackr->title = $title;
 		$stackr->save();
 
 		// the reload is done by ajax.success()
 	}
 
-	public function changeListTitle( $contextName, $eid )
+	public function changeListTitle( $contextName, $sid )
 	{
 		$title = Input::get( 'tl' );
 
-		if ( empty( $eid ) || empty( $title ) )
+		if ( empty( $sid ) || empty( $title ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 		$stackr->listTitle = $title;
 		$stackr->save();
 
 		// the reload is done by ajax.success()
 	}	
 
-	public function changePinStatus( $contextName, $eid )
+	public function changePinStatus( $contextName, $sid )
 	{
 		$pinned = Input::get( 'fv', 0 );
 
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 		$stackr->favored = $pinned;
 		$stackr->save();
 
 		// the reload is done by ajax.success()
 	}
 
-	public function changeTags( $contextName, $eid )
+	public function changeTags( $contextName, $sid )
 	{
 		$tags = Input::get( 'ts' );
 
 		if ( empty( $tags ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 		$stackr->tags = $tags;
 		$stackr->save();
 

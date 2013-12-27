@@ -20,9 +20,9 @@ class ContextController extends BaseController {
 	/**
 	*	
 	*/
-	function distinctTagList( $cname )
+	function distinctTagList( $contextName )
 	{
-		$tagList = Stackr::distinctTagList( $cname );
+		$tagList = Stackr::distinctTagList( $contextName );
 
 		return View::make( 'ajax.distinctTagList' )->with( 'tagList', $tagList );
 	}

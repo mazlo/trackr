@@ -3,21 +3,21 @@
 class CommentController extends BaseController
 {
 	
-	public function all( $contextName, $eid )
+	public function all( $contextName, $sid )
 	{
-		if ( empty( $eid ) )
+		if ( empty( $sid ) )
 			return;
 
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}
 
-	public function add( $contextName, $eid )
+	public function add( $contextName, $sid )
 	{
 		$cmt = Input::get( 'cmt' );
 
-		if ( empty( $eid ) || empty( $cmt ) )
+		if ( empty( $sid ) || empty( $cmt ) )
 			return;
 
 		$comment = new Comment();
@@ -25,24 +25,24 @@ class CommentController extends BaseController
 		$comment->user()->associate( Auth::user() );
 
 		// add new Comment to existing Stackr
-		$stackr = Auth::user()->stackr( $eid )->first();
+		$stackr = Auth::user()->stackr( $sid )->first();
 		$stackr->comments()->save( $comment );
 
-		return $this->all( $contextName, $eid );
+		return $this->all( $contextName, $sid );
 	}
 
-	public function delete( $contextName, $eid, $cid )
+	public function delete( $contextName, $sid, $cid )
 	{
-		if ( empty( $eid ) || empty( $cid ) )
+		if ( empty( $sid ) || empty( $cid ) )
 			return;
 
 		// delete Comment
 		Auth::user()->comment( $cid )->delete();
 
-		return $this->all( $contextName, $eid );
+		return $this->all( $contextName, $sid );
 	}
 
-	public function reorder( $contextName, $eid )
+	public function reorder( $contextName, $sid )
 	{
 		$cids = Input::get( 'cid' );
 		$poss = Input::get( 'pos' );
