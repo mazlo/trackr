@@ -3,7 +3,7 @@
 class CommentController extends BaseController
 {
 	
-	public function all( $cname, $eid )
+	public function all( $contextName, $eid )
 	{
 		if ( empty( $eid ) )
 			return;
@@ -13,7 +13,7 @@ class CommentController extends BaseController
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}
 
-	public function add( $cname, $eid )
+	public function add( $contextName, $eid )
 	{
 		$cmt = Input::get( 'cmt' );
 
@@ -28,10 +28,10 @@ class CommentController extends BaseController
 		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->comments()->save( $comment );
 
-		return $this->all( $cname, $eid );
+		return $this->all( $contextName, $eid );
 	}
 
-	public function delete( $cname, $eid, $cid )
+	public function delete( $contextName, $eid, $cid )
 	{
 		if ( empty( $eid ) || empty( $cid ) )
 			return;
@@ -39,10 +39,10 @@ class CommentController extends BaseController
 		// delete Comment
 		Auth::user()->comment( $cid )->delete();
 
-		return $this->all( $cname, $eid );
+		return $this->all( $contextName, $eid );
 	}
 
-	public function reorder( $cname, $eid )
+	public function reorder( $contextName, $eid )
 	{
 		$cids = Input::get( 'cid' );
 		$poss = Input::get( 'pos' );
