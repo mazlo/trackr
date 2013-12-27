@@ -24,6 +24,7 @@ class CommentController extends BaseController
 		$comment->comment = $cmt;
 		$comment->user()->associate( Auth::user() );
 
+		// add new Comment to existing Stackr
 		$stackr = Auth::user()->stackr( $eid )->first();
 		$stackr->comments()->save( $comment );
 
@@ -51,7 +52,13 @@ class CommentController extends BaseController
 
 		for( $i = 0; $i < sizeof( $cids ); $i++ ) 
 		{
-			$comment = Auth::user()->comment( $cids[$i] );
+			// get comment for user
+			$comment = Auth::user()->comment( $cids[$i] )->first();
+			
+			if ( !isset( $comment ) )
+				continue;
+
+			// update position only
 			$comment->position = $poss[$i];
 			$comment->save();
 		}
