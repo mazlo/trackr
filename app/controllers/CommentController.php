@@ -41,7 +41,7 @@ class CommentController extends BaseController
 		return $this->all( $cname, $eid );
 	}
 
-	public function reorder()
+	public function reorder( $cname, $eid )
 	{
 		$cids = Input::get( 'cid' );
 		$poss = Input::get( 'pos' );

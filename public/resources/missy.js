@@ -103,10 +103,11 @@ var updateCommentPositions = function( object )
 		pos.push( ++counter );
 	});
 
-	var entryId = getClosestEntryId();
+	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var entryId = getClosestEntryId( object );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/stackrs/'+ entryId +'/comments/reorder',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/reorder',
 		type: 'post',
 		data: { cid: cid, pos: pos }
 	});
