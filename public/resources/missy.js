@@ -309,8 +309,8 @@ var addEntryAction = function()
 
 var deleteEntryConfirm = function( e, object ) 
 {
-	var x = e.target.offsetLeft + 100;
-	var y = e.target.offsetTop + 1;
+	var x = e.target.offsetLeft + 1;
+	var y = e.target.offsetTop + 42;
 
 	var dialog = $jQ( object ).next( '.entry_delete_confirmation' );
 	dialog.css( 'left', x );
