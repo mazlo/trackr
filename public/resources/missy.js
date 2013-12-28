@@ -345,6 +345,39 @@ var deleteEntry = function( object, closestClass, callback )
 	return false;
 };
 
+var makeContextConfirm = function( e, object )
+{
+	var x = e.target.offsetLeft + 1;
+	var y = e.target.offsetTop + 42;
+
+	var dialog = $jQ( object ).next( '.entry_make_context_confirmation' );
+	dialog.css( 'left', x );
+	dialog.css( 'top', y );
+	dialog.show();
+
+	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
+
+	return false;
+};
+
+var makeContext = function( object, callback )
+{
+	var sid = $jQ( object ).attr('eid');
+
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/make',
+		type: 'post',
+		data: { sid: sid },
+
+		success: function( data ) 
+		{
+			callback();
+		}
+	});
+
+	return false;
+};
+
 // ----- functions regarding comments -----
 
 var showAddCommentDiv = function( object )

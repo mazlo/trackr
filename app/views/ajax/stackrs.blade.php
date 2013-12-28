@@ -23,6 +23,7 @@
 			</div>
 
 			<div class='entry_operations'>
+				
 				<button class='comment_add_link operatorButton' eid='{{ $stackr->id }}'>add
 					<span id='comment_add_button_text_{{ $stackr->id }}'>
 						@if( substr( $stackr->listTitle, -1 ) == 's' ) 
@@ -32,10 +33,17 @@
 						@endif
 					</span>
 				</button>
+
 				<button class='entry_delete_link operatorButton' eid='{{ $stackr->id }}'>delete Stackr</button>
 				<span class='entry_delete_confirmation' eid='{{ $stackr->id }}'>
 					<button class='operatorButton confirmationButton'>Sure?</button>
 				</span>
+
+				<button class='entry_make_context_link operatorButton' eid='{{ $stackr->id }}'>make Context</button>
+				<span class='entry_make_context_confirmation' eid='{{ $stackr->id }}'>
+					<button class='operatorButton confirmationButton'>Sure?</button>
+				</span>
+
 			</div>
 
 			<div class='entry_buttons'>

@@ -39,6 +39,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/add', 'ContextController@add' );
 
+	Route::post( '/contexts/make', 'ContextController@make' );
+
 	/*
 		Routes concerning stackrs
 	*/

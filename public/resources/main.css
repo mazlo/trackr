@@ -237,14 +237,15 @@ div.entry_icon {
 
 div.entry_description {
 	float: left;
-	width: 580px;
+	width: 527px;
+	padding-right: 23px;
 
 	font-family: AleoLight;
 }
 
 div.entry_operations {
 	float: left; 
-	width: 280px; 
+	width: 310px; 
 	padding: 6px 0;
 }
 
@@ -331,7 +332,7 @@ div.comment_add_div {
 .comments_title,
 .tags_textfield {
 	border: 1px dotted orange;
-	width: 500px;
+	width: 100%;
 }
 
 .entry_title_confirm,
@@ -342,7 +343,8 @@ div.comment_add_div {
 }
 
 .entry_delete_confirmation,
-.comment_delete_confirmation {
+.comment_delete_confirmation,
+.entry_make_context_confirmation {
 	display: none; 
 	z-index: 1000; 
 	position: absolute; 
@@ -365,7 +367,8 @@ form.login {
 
 input.textfield {
 	padding: 6px; 
-	width: 560px; 
+	width: 100%; 
+	max-width: 525px;
 	height: 32px;
 }
 

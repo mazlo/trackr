@@ -35,7 +35,7 @@ class ContextController extends BaseController {
 		$title = Input::get( 'tl' );
 		$desc = Input::get( 'ds' );
 
-		if ( empty( $title ) || empty( $desc ))
+		if ( empty( $title ) || empty( $desc ) )
 			return;
 
 		$context = new Context();
@@ -45,6 +45,30 @@ class ContextController extends BaseController {
 		$context->save();
 
 		return $this->all();
+	}
+
+	/**
+	*	Creates a Context from an existing Stackr.
+	*/
+	public function make()
+	{
+		$sid = Input::get( 'sid' );
+
+		if ( empty( $sid ) )
+			return;
+
+		$stackr = Auth::user()->stackr( $sid )->first();
+
+		if ( !isset( $stackr ) )
+			return;
+
+		$context = new Context();
+		$context->name = $stackr->title;
+		$context->description = $stackr->description;
+		$context->user()->associate( Auth::user() );
+		$context->save();
+
+		$this->all();
 	}
 
 }
