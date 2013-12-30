@@ -148,6 +148,12 @@
 
 // EVENTS REGARDING ADDING OR DELETING A CONTEXT
 
+	// toggled options for contexts
+	$jQ( document ).on( 'hover', '.wrapper_context', function() 
+	{ 
+		$jQ( this ).children( '.context_add_options' ).toggleClass( 'context_add_options_active' );
+	} );
+
 	// shows the div to add a context
 	$jQ( document ).on( 'click', '.context_add_link', function() { return showDiv( '#div_context_add' ); } );
 

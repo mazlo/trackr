@@ -407,6 +407,17 @@ div.context:hover {
 	background: #eee;
 }
 
+div.context_add_options {
+	display: table-cell; 
+	visibility: hidden;
+
+	vertical-align: top;
+}
+
+div.context_add_options_active {
+	visibility: visible;
+}
+
 .entry_delete_link {
 }
 

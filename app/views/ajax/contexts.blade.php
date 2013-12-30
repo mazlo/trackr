@@ -8,10 +8,10 @@
 			</a>
 		</div>
 
-		<div style='display: table-cell; vertical-align: top'>
+		<div class='context_add_options'>
 			<button class='operatorButton context_delete_link' style='min-width: 32px'>x</button>
 			<span class='context_delete_confirmation'>
-				<button class='operatorButton confirmationButton'>Sure?</button>
+				<button class='operatorButton confirmationButton' style='width: auto'>Sure?</button>
 			</span>
 		</div>
 	</div>
