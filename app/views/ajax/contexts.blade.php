@@ -1,7 +1,7 @@
 
 @foreach( $contexts as $context )
 	
-	<div class='wrapper_context'>
+	<div class='wrapper_context' cname='{{ $context->name }}'>
 		<div class='context'>
 			<a href='{{ url( "contexts/$context->name/stackrs" ) }}' style='border: 0'>
 					{{ $context->name }}
@@ -9,7 +9,10 @@
 		</div>
 
 		<div style='display: table-cell; vertical-align: top'>
-			
+			<button class='operatorButton context_delete_link' style='min-width: 32px'>x</button>
+			<span class='context_delete_confirmation'>
+				<button class='operatorButton confirmationButton'>Sure?</button>
+			</span>
 		</div>
 	</div>
 

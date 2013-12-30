@@ -342,6 +342,7 @@ div.comment_add_div {
 	z-index: 1000;
 }
 
+.context_delete_confirmation,
 .entry_delete_confirmation,
 .comment_delete_confirmation,
 .entry_make_context_confirmation {
@@ -386,7 +387,7 @@ input.textfield_smaller {
 div.wrapper_context 
 {
 	display: inline-block; 
-	margin: 13px 43px 13px 0;
+	margin: 23px 43px 13px 0;
 }
 
 div.context {
@@ -395,7 +396,7 @@ div.context {
 	
 	width: 232px; 
 	height: 160px;
-	 
+
 	margin: 13px 32px 13px 0; 
 	padding-top: 48px; 
 	

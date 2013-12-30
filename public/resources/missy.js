@@ -274,6 +274,44 @@ var addContextAction = function()
 	return false;
 }
 
+var deleteContextConfirm = function( e, object )
+{
+	var x = e.target.offsetLeft + 1;
+	var y = e.target.offsetTop - 32;
+
+	var dialog = $jQ( object ).next( '.context_delete_confirmation' );
+	dialog.css( 'left', x );
+	dialog.css( 'top', y );
+	dialog.show();
+
+	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
+
+	return false;
+};
+
+var deleteContext = function( object, closestClass, callback )
+{
+	$jQ( object ).hide();
+
+	var cname = $jQ( object ).closest( closestClass ).attr( 'cname' );
+
+	/*
+	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
+		{
+			$jQ.ajax( {
+				url: getContextPath() +'/contexts/'+ cnid +'/delete',
+				type: 'post',
+
+				success: function( data ) 
+				{
+					callback();
+				}
+			});
+		});
+	*/
+	return false;
+};
+
 // ----- functions regarding entries -----
 
 var addEntryAction = function() 

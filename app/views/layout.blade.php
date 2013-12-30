@@ -148,14 +148,26 @@
 
 // EVENTS REGARDING ADDING OR DELETING A CONTEXT
 
-	// shows the div to add a new entry
+	// shows the div to add a context
 	$jQ( document ).on( 'click', '.context_add_link', function() { return showDiv( '#div_context_add' ); } );
 
-	// hides the div to add a new entry
+	// hides the div to add a context
 	$jQ( document ).on( 'click', '.context_add_cancel', function() { return hideDiv( '#div_context_add' ); } );
 
-	// handle click on add entry button
+	// handle click on add context button
 	$jQ( document ).on( 'click', '.context_add_button', function() { return addContextAction(); } );
+
+	// handle click on delete context button
+	$jQ( document ).on( 'click', '.context_delete_link', function(e) { return deleteContextConfirm( e, this ); } );
+
+	// handle click on confirmation dialog for delete context button
+	$jQ( document ).on( 'click', '.context_delete_confirmation', function() 
+	{ 
+		return deleteContext( this, '.wrapper_context', function()
+		{
+			getContexts();
+		} ); 
+	} );
 
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
