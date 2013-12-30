@@ -1,16 +1,24 @@
 
 @foreach( $contexts as $context )
-		
-	<a href='{{ url( "contexts/$context->name/stackrs" ) }}'>
+	
+	<div class='wrapper_context'>
 		<div class='context'>
-			{{ $context->name }}
+			<a href='{{ url( "contexts/$context->name/stackrs" ) }}' style='border: 0'>
+					{{ $context->name }}
+			</a>
 		</div>
-	</a>
+
+		<div style='display: table-cell; vertical-align: top'>
+			
+		</div>
+	</div>
 
 @endforeach
 
-	<a href='' class='context_add_link'>
-		<div class='context'>
+	<hr style='background: #bbb; border: 0; height: 1px; margin: 23px 0 32px' />
+
+	<div class='context'>
+		<a href='' class='context_add_link'>
 			New Context
-		</div>
-	</a>
+		</a>
+	</div>

@@ -383,12 +383,19 @@ input.textfield_smaller {
 	height: 23px;
 }
 
-div.context {
+div.wrapper_context 
+{
 	display: inline-block; 
+	margin: 13px 43px 13px 0;
+}
+
+div.context {
+	display: table-cell;
 	border: 1px #bbb solid; 
 	
-	width: 200px; 
-	height: 152px; 
+	width: 232px; 
+	height: 160px;
+	 
 	margin: 13px 32px 13px 0; 
 	padding-top: 48px; 
 	
