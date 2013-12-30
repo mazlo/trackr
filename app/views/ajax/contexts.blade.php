@@ -4,7 +4,7 @@
 	<div class='wrapper_context' cname='{{ $context->name }}'>
 		<div class='context'>
 			<a href='{{ url( "contexts/$context->name/stackrs" ) }}' style='border: 0'>
-					{{ $context->name }}
+				{{ $context->name }}
 			</a>
 		</div>
 
@@ -21,7 +21,7 @@
 	<hr style='background: #bbb; border: 0; height: 1px; margin: 23px 0 32px' />
 
 	<div class='context'>
-		<a href='' class='context_add_link'>
+		<a href='' class='context_add_link' style='border: 0'>
 			New Context
 		</a>
 	</div>
