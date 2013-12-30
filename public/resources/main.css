@@ -493,7 +493,19 @@ textarea.form
 	color: #000;
 }
 
+.ui-state-default {
+	background: #fff;
+	border: 1px #bbb solid;
+	border-radius: 0;
+	
+	padding: 0;
+}
+
 .ui-state-active {
 	font-weight: normal;
 	letter-spacing: 0pt;
+}
+
+.buttonSubmit-dialog {
+	
 }

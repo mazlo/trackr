@@ -379,6 +379,7 @@ var deleteEntry = function( object, closestClass, callback )
 
 var makeContextConfirm = function( e, object )
 {
+	/*
 	var x = e.target.offsetLeft + 1;
 	var y = e.target.offsetTop + 42;
 
@@ -390,6 +391,30 @@ var makeContextConfirm = function( e, object )
 	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
 
 	return false;
+	*/
+
+	$jQ( '#context-make-confirm-dialog' ).dialog(
+	{
+		title: "Simply Create Context?",
+		resizable: false,
+		height: 320,
+		width: 480,
+		modal: true,
+		buttons: 
+		{
+			"Create Context" : function() {
+				$jQ( this ).dialog( "close" );
+			},
+			"Create Context and copy Stackr": function() 
+			{
+				$jQ( this ).dialog( "close" );
+			},
+			"Cancel": function()
+			{
+				$jQ( this ).dialog( "close" );	
+			}
+		}
+	});
 };
 
 var makeContext = function( object, callback )

@@ -43,6 +43,20 @@
 		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>
 
+	<!-- dialog box -->
+	<div id='context-make-confirm-dialog' style='display: none; font-family: AleoLight'>
+
+		<h4>At this point you might want to</h4>
+
+		<ul style='padding-left: 23px'>
+			<li style='margin-bottom: 13px'><i>create Context</i> <br />
+				which will create a new Context and use the title and description from selected Stackr.</li>
+			<li style='margin-bottom: 13px'><i>create Context and copy Stackr</i> <br />
+				which will also <i>copy</i> the selected Stackr to the new Context.</li>
+		</ul>
+		
+	</div>
+
 @stop
 
 @section( 'onDocumentLoad' )
