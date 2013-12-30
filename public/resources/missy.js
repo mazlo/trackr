@@ -289,26 +289,20 @@ var deleteContextConfirm = function( e, object )
 	return false;
 };
 
-var deleteContext = function( object, closestClass, callback )
+var deleteContext = function( object, closestClass )
 {
 	$jQ( object ).hide();
 
 	var cname = $jQ( object ).closest( closestClass ).attr( 'cname' );
 
-	/*
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cnid +'/delete',
-				type: 'post',
-
-				success: function( data ) 
-				{
-					callback();
-				}
+				url: getContextPath() +'/contexts/'+ cname +'/delete',
+				type: 'post'
 			});
 		});
-	*/
+
 	return false;
 };
 

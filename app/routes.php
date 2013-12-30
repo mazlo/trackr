@@ -41,6 +41,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/make', 'ContextController@make' );
 
+	Route::post( '/contexts/{contextName}/delete', 'ContextController@delete' );
+
 	/*
 		Routes concerning stackrs
 	*/

@@ -161,13 +161,7 @@
 	$jQ( document ).on( 'click', '.context_delete_link', function(e) { return deleteContextConfirm( e, this ); } );
 
 	// handle click on confirmation dialog for delete context button
-	$jQ( document ).on( 'click', '.context_delete_confirmation', function() 
-	{ 
-		return deleteContext( this, '.wrapper_context', function()
-		{
-			getContexts();
-		} ); 
-	} );
+	$jQ( document ).on( 'click', '.context_delete_confirmation', function() { return deleteContext( this, '.wrapper_context' ); } );
 
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 

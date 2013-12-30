@@ -71,4 +71,35 @@ class ContextController extends BaseController {
 		$this->all();
 	}
 
+	/**
+	*	Delete a Context
+	*/
+	public function delete( $cname )
+	{
+		// get Context
+		$context = Auth::user()->context( $cname )->first();
+
+		// get all Stackrs and delete Comments
+		$stackrs = $context->stackrs()->get();
+
+		foreach ( $stackrs as $stackr ) 
+		{
+			$comments = $stackr->comments()->get();
+
+			// delete all Comments
+			foreach ( $comments as $comment ) 
+			{
+				$comment->delete();
+			}
+
+			// finally, delete Stackr
+			$stackr->delete();
+		}
+
+		// finally, delete Context
+		$context->delete();
+
+		return $this->all();
+	}
+
 }
