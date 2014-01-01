@@ -379,20 +379,6 @@ var deleteEntry = function( object, closestClass, callback )
 
 var makeContextConfirm = function( e, object )
 {
-	/*
-	var x = e.target.offsetLeft + 1;
-	var y = e.target.offsetTop + 42;
-
-	var dialog = $jQ( object ).next( '.entry_make_context_confirmation' );
-	dialog.css( 'left', x );
-	dialog.css( 'top', y );
-	dialog.show();
-
-	setTimeout( function() { $jQ( dialog ).effect( 'fade', 1000 ); }, 2000 );
-
-	return false;
-	*/
-
 	$jQ( '#context-make-confirm-dialog' ).dialog(
 	{
 		title: "Simply Create Context?",
@@ -402,12 +388,19 @@ var makeContextConfirm = function( e, object )
 		modal: true,
 		buttons: 
 		{
-			"Create Context" : function() {
-				$jQ( this ).dialog( "close" );
+			"Create Context" : function() 
+			{
+				makeContext( object, false, function()
+				{
+					window.location = getContextPath() + '/contexts';
+				} );
 			},
 			"Create Context and copy Stackr": function() 
 			{
-				$jQ( this ).dialog( "close" );
+				makeContext( object, true, function()
+				{
+					window.location = getContextPath() + '/contexts';
+				} );
 			},
 			"Cancel": function()
 			{
@@ -417,14 +410,14 @@ var makeContextConfirm = function( e, object )
 	});
 };
 
-var makeContext = function( object, callback )
+var makeContext = function( object, copy, callback )
 {
 	var sid = $jQ( object ).attr('eid');
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/make',
 		type: 'post',
-		data: { sid: sid },
+		data: { sid: sid, dpl: copy },
 
 		success: function( data ) 
 		{

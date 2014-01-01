@@ -53,9 +53,13 @@ class ContextController extends BaseController {
 	public function make()
 	{
 		$sid = Input::get( 'sid' );
+		$duplicate = Input::get( 'dpl' );
 
 		if ( empty( $sid ) )
 			return;
+
+		if ( empty( $duplicate ) )
+			$duplicate = false;
 
 		$stackr = Auth::user()->stackr( $sid )->first();
 
@@ -66,7 +70,16 @@ class ContextController extends BaseController {
 		$context->name = $stackr->title;
 		$context->description = $stackr->description;
 		$context->user()->associate( Auth::user() );
+
 		$context->save();
+
+		if ( $duplicate == true )
+		{
+			// duplicate stackr 
+			$clonedStackr = $stackr->replicate();
+
+			$context->stackrs()->save( $clonedStackr );
+		}
 
 		$this->all();
 	}
