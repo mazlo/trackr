@@ -67,18 +67,19 @@ class ContextController extends BaseController {
 			return;
 
 		$context = new Context();
-		$context->name = $stackr->title;
-		$context->description = $stackr->description;
+		$context->name = trim( $stackr->title );
+		$context->description = trim( $stackr->description );
 		$context->user()->associate( Auth::user() );
 
+		// save Context, so it has a primary key
 		$context->save();
 
 		if ( $duplicate == true )
 		{
-			// duplicate stackr 
+			// duplicate stackr and associate with Context
 			$clonedStackr = $stackr->replicate();
-
-			$context->stackrs()->save( $clonedStackr );
+			$clonedStackr->context()->associate( $context );
+			$clonedStackr->save();
 		}
 
 		$this->all();
