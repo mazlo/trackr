@@ -358,13 +358,13 @@ var deleteEntry = function( object, closestClass, callback )
 {
 	$jQ( object ).hide();
 
-	var cnid = $jQ( '#entries' ).attr( 'cnid' );
+	var cname = $jQ( '#entries' ).attr( 'cname' );
 	var entryId = $jQ( object ).attr( 'eid' );
 
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cnid +'/stackrs/'+ entryId +'/delete',
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/delete',
 				type: 'post',
 
 				success: function( data ) 
