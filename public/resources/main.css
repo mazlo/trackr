@@ -308,33 +308,6 @@ div.comment_add_div {
 	margin: 8px 38px;
 }
 
-.entry_title_inactive,
-.comments_title_inactive {
-	border: 1px solid #fff; 
-	margin: 0;
-	padding: 6px;
-	font-size: 16px; 
-	font-weight: bold; 
-	font-family: Georgia;
-}
-
-.tags_textfield_inactive {
-	border: 1px solid #fff; 
-	margin: 0;
-	padding: 6px;
-	font-size: 15px; 
-	font-style: italic;
-	font-family: Georgia;
-	color: #aaa;
-}
-
-.entry_title,
-.comments_title,
-.tags_textfield {
-	border: 1px dotted orange;
-	width: 100%;
-}
-
 .entry_title_confirm,
 .comments_title_confirm {
 	display: none;
@@ -371,6 +344,35 @@ input.textfield {
 	width: 100%; 
 	max-width: 525px;
 	height: 32px;
+}
+
+input.entry_title_inactive,
+input.comments_title_inactive {
+	border: 1px solid #fff; 
+	margin: 0;
+	padding: 6px;
+	font-size: 16px; 
+	font-weight: bold; 
+	font-family: Georgia;
+}
+
+input.tags_textfield_inactive {
+	border: 1px solid #fff; 
+	
+	width: 525px;
+	margin: 0;
+	padding: 6px;
+	
+	font-size: 15px; 
+	font-style: italic;
+	font-family: Georgia;
+	color: #aaa;
+}
+
+input.entry_title,
+input.comments_title,
+input.tags_textfield {
+	border: 1px dotted orange;
 }
 
 input.form {
