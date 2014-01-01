@@ -39,8 +39,8 @@ class StackrController extends BaseController {
 		// TODO check if context exists
 
 		$stackr = new Stackr();
-		$stackr->title = $title;
-		$stackr->description = $desc;
+		$stackr->title = trim( $title );
+		$stackr->description = trim( $desc );
 		$stackr->user()->associate( Auth::user() );
 		$stackr->context()->associate( $context );
 		$stackr->save();
