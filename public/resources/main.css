@@ -505,6 +505,8 @@ textarea.form
 }
 
 .ui-state-active {
+	background: #eee;
+
 	font-weight: normal;
 	letter-spacing: 0pt;
 }
