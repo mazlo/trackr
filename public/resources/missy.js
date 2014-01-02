@@ -518,6 +518,22 @@ var deleteComment = function( object )
 	return false;
 };
 
+var seeMoreComments = function( object )
+{
+	// hide current wrapper element
+	$jQ( object ).parent().effect( 'fade', 100, function()
+	{
+		$jQ(this).hide();
+	});
+
+	// get element id and request comments
+	var sid = $jQ( object ).closest( '.wrapper_entry' ).attr( 'eid' );
+
+	getComments( sid );
+
+	return false;
+};
+
 // ----- keypress events -----
 
 var confirmChange = function( event, handler )

@@ -369,7 +369,7 @@
 	// handle blur on textfield 'comment title'
 	$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) { return updateCommentsTitle( e, this ); } );
 
-		// handle keypress on textfield entry title
+	// handle keypress on textfield entry title
 	$jQ( document ).on( 'keyup', '.comment_textarea', function( event ) 
 	{ 
 		confirmChange( event, 
@@ -381,5 +381,8 @@
 		});
 
 	} );
+
+	// handle 
+	$jQ( document ).on( 'click', '.seeMore', function() { return seeMoreComments( this ); } );
 
 </script>

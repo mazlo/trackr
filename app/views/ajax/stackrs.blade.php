@@ -73,9 +73,22 @@
 					</div>
 				</div>
 
+				<?php
+
+					// sort stackr comments by position
+					$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->get();
+				?>
+
 				<ul id='comments_{{ $stackr->id }}' class='comments'>
-					@include( 'ajax.comments' )
+					@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments ) )
 				</ul> 
+
+				@if( count( $comments ) >= 3 )
+					<p style='padding-left: 13px'>
+						<a class='dotted seeMore' href=''>See more</a>
+					</p>
+				@endif
+				
 			</div>
 
 		</div>

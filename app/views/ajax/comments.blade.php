@@ -2,9 +2,12 @@
 <?php
 
 	// sort stackr comments by position
-	$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->get();
+	if ( !isset( $comments ) )
+		$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->get();
 
 ?>
+
+<? $count = 0; ?>
 
 @foreach( $comments as $comment )
 	<li class='comment' cid='{{ $comment->id }}'>
@@ -14,4 +17,9 @@
 			<button class='operatorButton confirmationButton'>sure?</button>
 		</span>
 	</li>
+
+	@if( isset( $limit ) && ++$count >= 3 )
+		<? break; ?>
+	@endif
+
 @endforeach
