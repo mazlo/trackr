@@ -85,7 +85,7 @@
 
 				@if( count( $comments ) >= 3 )
 					<p style='padding-left: 13px'>
-						<a class='dotted seeMore' href=''>See more</a>
+						<a class='dotted seeMore' href=''>see more</a>
 					</p>
 				@endif
 				
