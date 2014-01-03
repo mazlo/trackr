@@ -12,4 +12,9 @@ class Context extends Eloquent
 	{
 		return $this->belongsTo( 'User', 'user_id' );
 	}
+
+	public function color()
+	{
+		return $this->belongsTo( 'Color', 'color_id' );
+	}
 }
