@@ -142,6 +142,14 @@ button.operatorButton {
 	color: #aaa;
 }
 
+button.operatorButton-narrow {
+	min-width: 32px;
+}
+
+button.operatorButton-vertical {
+	margin-bottom: 3px;
+}
+
 button.doneButton {
 	border: 1px solid green; 
 	width: 82px; 
@@ -412,6 +420,8 @@ div.context:hover {
 div.context_add_options {
 	display: table-cell; 
 	visibility: hidden;
+
+	width: 36px;
 
 	vertical-align: top;
 }

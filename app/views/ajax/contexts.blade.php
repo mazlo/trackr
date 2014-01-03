@@ -9,10 +9,14 @@
 		</div>
 
 		<div class='context_add_options'>
-			<button class='operatorButton context_delete_link' style='min-width: 32px'>x</button>
+			<button class='operatorButton operatorButton-narrow operatorButton-vertical context_delete_link'>x</button>
 			<span class='context_delete_confirmation'>
 				<button class='operatorButton confirmationButton' style='width: auto'>Sure?</button>
 			</span>
+
+			@foreach( $colors[ $context->name ] as $contextColors )
+				<button class='operatorButton operatorButton-narrow operatorButton-vertical' style='background: {{ $contextColors->color }}'></button>
+			@endforeach
 		</div>
 	</div>
 

@@ -13,8 +13,16 @@ class ContextController extends BaseController {
 	public function all()
 	{
 		$contexts = Auth::user()->contexts()->get();
+		$colors = array();
 
-		return View::make( 'ajax.contexts' )->with( 'contexts', $contexts );
+		foreach( $contexts as $context )
+		{
+			$colors[ $context->name ] = Color::skip( rand( 1,10 ) )->take(3)->get();
+		}
+
+		return View::make( 'ajax.contexts' )
+			->with( 'contexts', $contexts )
+			->with( 'colors', $colors );
 	}
 
 	/**
