@@ -284,11 +284,17 @@
 
 			// now decide if element should be disabled
 
-			if ( selectedTags.size() == 0 )
-				return;
-
 			var elementTags = $jQ(this).attr( 'tags' );
+
+			// no tags for element => hide current element
 			if ( elementTags.length == 0 )
+			{
+				$jQ(this).hide();
+				return;
+			}
+
+			// no tags selected => nothing happens
+			if ( selectedTags.size() == 0 )
 				return;
 
 			elementTags = elementTags.split(', ');
