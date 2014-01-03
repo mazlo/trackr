@@ -306,6 +306,20 @@ var deleteContext = function( object, closestClass )
 	return false;
 };
 
+var updateContextColor = function( object, closestClass )
+{
+	var cname = $jQ( object ).closest( closestClass ).attr( 'cname' );
+	var color = $jQ( object ).attr( 'color' );
+
+	$jQ( object ).closest( '.wrapper_context' ).find( '.context' ).css( 'background', color );
+
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/'+ cname +'/changeColor',
+		type: 'post',
+		data: { cl: color }
+	});
+};
+
 // ----- functions regarding entries -----
 
 var addEntryAction = function() 

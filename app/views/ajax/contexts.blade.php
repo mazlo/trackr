@@ -2,7 +2,7 @@
 @foreach( $contexts as $context )
 	
 	<div class='wrapper_context' cname='{{ $context->name }}'>
-		<div class='context'>
+		<div class='context' style='background: {{ $context->color }}'>
 			<a href='{{ url( "contexts/$context->name/stackrs" ) }}' style='border: 0'>
 				{{ $context->name }}
 			</a>
@@ -15,7 +15,7 @@
 			</span>
 
 			@foreach( $colors[ $context->name ] as $contextColors )
-				<button class='operatorButton operatorButton-narrow operatorButton-vertical' style='background: {{ $contextColors->color }}'></button>
+				<button class='operatorButton operatorButton-narrow operatorButton-vertical context_color_button' style='background: {{ $contextColors->color }}' color='{{ $contextColors->color }}'></button>
 			@endforeach
 		</div>
 	</div>

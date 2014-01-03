@@ -124,4 +124,18 @@ class ContextController extends BaseController {
 		return $this->all();
 	}
 
+	/**
+	*
+	*/
+	public function changeColor( $cname )
+	{
+		$color = Input::get( 'cl' );
+
+		$context = Auth::user()->context( $cname )->first();
+
+		// update color
+		$context->color = $color;
+		$context->save();
+	}
+
 }

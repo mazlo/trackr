@@ -169,6 +169,8 @@
 	// handle click on confirmation dialog for delete context button
 	$jQ( document ).on( 'click', '.context_delete_confirmation', function() { return deleteContext( this, '.wrapper_context' ); } );
 
+	$jQ( document ).on( 'click', '.context_color_button', function() { return updateContextColor( this, '.wrapper_context' ); } );
+
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
 	// shows the div to add a new entry
