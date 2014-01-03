@@ -17,6 +17,8 @@
 			@foreach( $colors[ $context->name ] as $contextColors )
 				<button class='operatorButton operatorButton-narrow operatorButton-vertical context_color_button' style='background: {{ $contextColors->color }}' color='{{ $contextColors->color }}'></button>
 			@endforeach
+
+			<button class='operatorButton operatorButton-narrow operatorButton-vertical context_color_button' style='background: #fff' color='#fff'>w/o</button>
 		</div>
 	</div>
 
