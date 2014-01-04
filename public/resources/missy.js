@@ -303,8 +303,8 @@ var deleteContext = function( object, closestClass )
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cname +'/delete',
-				type: 'post'
+				url: getContextPath() +'/contexts/'+ cname,
+				type: 'delete'
 			});
 		});
 
@@ -385,8 +385,8 @@ var deleteEntry = function( object, closestClass, callback )
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/delete',
-				type: 'post',
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+				type: 'delete',
 
 				success: function( data ) 
 				{
@@ -526,8 +526,8 @@ var deleteComment = function( object )
 	$jQ( object ).closest( '.comment' ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId +'/delete',
-				type: 'post',
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId,
+				type: 'delete',
 
 				success: function( data ) 
 				{

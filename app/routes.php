@@ -41,7 +41,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/make', 'ContextController@make' );
 
-	Route::post( '/contexts/{contextName}/delete', 'ContextController@delete' );
+	Route::delete( '/contexts/{contextName}', 'ContextController@delete' );
 
 	Route::post( '/contexts/{contextName}/changeColor', 'ContextController@changeColor' );
 
@@ -57,7 +57,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::get( '/contexts/{contextName}/stackrs/{eid}', 'StackrController@details' );
 
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/delete', 'StackrController@delete' );
+	Route::delete( '/contexts/{contextName}/stackrs/{eid}', 'StackrController@delete' );
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
 
@@ -74,7 +74,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/comments/add', 'CommentController@add' );
 
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/comments/{cid}/delete', 'CommentController@delete' );
+	Route::delete( '/contexts/{contextName}/stackrs/{eid}/comments/{cid}', 'CommentController@delete' );
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/comments/reorder', 'CommentController@reorder' );
 

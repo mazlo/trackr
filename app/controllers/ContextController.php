@@ -94,7 +94,7 @@ class ContextController extends BaseController {
 	}
 
 	/**
-	*	Delete a Context
+	*	Delete a Context. 
 	*/
 	public function delete( $cname )
 	{
