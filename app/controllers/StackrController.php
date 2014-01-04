@@ -31,7 +31,7 @@ class StackrController extends BaseController {
 		$title = Input::get( 'tl' );
 		$desc = Input::get( 'ds' );
 
-		if ( empty( $contextName ) || empty( $title ) || empty( $desc ))
+		if ( empty( $contextName ) || empty( $title ) )
 			return;
 
 		$context = Auth::user()->context( $contextName )->first();
