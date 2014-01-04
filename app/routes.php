@@ -33,8 +33,6 @@ Route::group( array( 'before' => 'auth' ), function()
 	*/
 	Route::get( '/contexts', 'ContextController@index' );
 
-	Route::get( '/contexts/{contextName}/distinctTagList', 'ContextController@distinctTagList' );
-
 	Route::post( '/contexts', 'ContextController@add' );
 
 	Route::post( '/contexts/make', 'ContextController@make' );
@@ -42,6 +40,8 @@ Route::group( array( 'before' => 'auth' ), function()
 	Route::delete( '/contexts/{contextName}', 'ContextController@delete' );
 
 	Route::put( '/contexts/{contextName}', 'ContextController@update' );
+
+	Route::get( '/contexts/{contextName}/tags', 'ContextController@tags' );
 
 	/*
 		Routes concerning stackrs

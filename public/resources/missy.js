@@ -66,8 +66,9 @@ var getDistinctEntriesTagList = function()
 	var cname = $jQ( '#entries' ).attr( 'cname' );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/distinctTagList',
+		url: getContextPath() +'/contexts/'+ cname +'/tags',
 		type: 'get',
+		data: { ds: 1 },
 
 		success: function( data )
 		{

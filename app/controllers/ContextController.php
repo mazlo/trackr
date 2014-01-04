@@ -28,11 +28,15 @@ class ContextController extends BaseController {
 	}
 
 	/**
-	*	
+	*	Loads a list of tags defined for that Context
 	*/
-	function distinctTagList( $contextName )
+	function tags( $contextName )
 	{
-		$tagList = Stackr::distinctTagList( $contextName );
+		$tagList = array();
+
+		// get distinct tag list if flag is given
+		if ( Input::has( 'ds' ) )
+			$tagList = Stackr::distinctTagList( $contextName );
 
 		return View::make( 'ajax.distinctTagList' )->with( 'tagList', $tagList );
 	}
