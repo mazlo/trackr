@@ -138,8 +138,8 @@ var updateEntryTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changeTitle',
-		type: 'post',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		type: 'put',
 		data: { tl: title },
 
 		success: function( data ) 
@@ -173,9 +173,9 @@ var updateCommentsTitle = function( e, object )
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changeListTitle',
-		type: 'post',
-		data: { tl: title },
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		type: 'put',
+		data: { ltl: title },
 
 		success: function( data ) 
 		{
@@ -204,9 +204,9 @@ var updateTags = function ( object )
 
 	// ajax call to change tags
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changeTags',
-		type: 'post',
-		data: { ts: tags },
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		type: 'put',
+		data: { tg: tags },
 
 		success: function( data ) 
 		{
@@ -231,8 +231,8 @@ var updateEntryFavored = function ( object )
 
 	// ajax call to change favored status
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/changePinStatus',
-		type: 'post',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		type: 'put',
 		data: { fv: inverseFavored(type) }
 	});			
 };

@@ -74,57 +74,30 @@ class StackrController extends BaseController {
         return $this->all( $contextName );
 	}
 
-	public function changeTitle( $contextName, $sid )
+	/**
+	*	Update Stackr
+	*/
+	public function update( $contextName, $sid )
 	{
-		$title = Input::get( 'tl' );
-
-		if ( empty( $sid ) || empty( $title ) )
-			return;
-
 		$stackr = Auth::user()->stackr( $sid )->first();
-		$stackr->title = $title;
+
+		// update Stackr title
+		if ( Input::has( 'tl') )
+			$stackr->title = Input::get( 'tl' );
+
+		// update Stackr listTitle
+		else if ( Input::has( 'ltl' ) )
+			$stackr->listTitle = Input::get( 'ltl' );
+
+		// update Stackr status favored 
+		else if ( Input::has( 'fv' ) )
+			$stackr->favored = Input::get( 'fv', 0 );
+
+		// update Stackr tags
+		else if ( Input::has( 'tg' ) )
+			$stackr->tags = Input::get( 'tg' );
+
 		$stackr->save();
-
-		// the reload is done by ajax.success()
-	}
-
-	public function changeListTitle( $contextName, $sid )
-	{
-		$title = Input::get( 'tl' );
-
-		if ( empty( $sid ) || empty( $title ) )
-			return;
-
-		$stackr = Auth::user()->stackr( $sid )->first();
-		$stackr->listTitle = $title;
-		$stackr->save();
-
-		// the reload is done by ajax.success()
-	}	
-
-	public function changePinStatus( $contextName, $sid )
-	{
-		$pinned = Input::get( 'fv', 0 );
-
-		$stackr = Auth::user()->stackr( $sid )->first();
-		$stackr->favored = $pinned;
-		$stackr->save();
-
-		// the reload is done by ajax.success()
-	}
-
-	public function changeTags( $contextName, $sid )
-	{
-		$tags = Input::get( 'ts' );
-
-		if ( empty( $tags ) )
-			return;
-
-		$stackr = Auth::user()->stackr( $sid )->first();
-		$stackr->tags = $tags;
-		$stackr->save();
-
-		// the reload is done by ajax.success()
 	}
 
 }

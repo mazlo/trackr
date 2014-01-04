@@ -59,13 +59,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::delete( '/contexts/{contextName}/stackrs/{eid}', 'StackrController@delete' );
 
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeTitle', 'StackrController@changeTitle' );
-
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeListTitle', 'StackrController@changeListTitle' );
-
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/changePinStatus', 'StackrController@changePinStatus' );
-
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/changeTags', 'StackrController@changeTags' );
+	Route::put( '/contexts/{contextName}/stackrs/{eid}', 'StackrController@update' );
 
 	/*
 		Routes concerning stackr comments
