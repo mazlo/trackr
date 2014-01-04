@@ -2,27 +2,29 @@
 
 class ContextController extends BaseController {
 
-	public function view()
-	{
-		return View::make( 'contexts' );
-	}
-
 	/**
 	*	Loads all contexts for current user
 	*/
-	public function all()
+	public function index()
 	{
-		$contexts = Auth::user()->contexts()->get();
-		$colors = array();
-
-		foreach( $contexts as $context )
+		// if ajax => return ajax view for all Stackrs
+		if ( Request::ajax() )
 		{
-			$colors[ $context->name ] = Color::skip( rand( 1,10 ) )->take(3)->get();
+			$contexts = Auth::user()->contexts()->get();
+			$colors = array();
+
+			foreach( $contexts as $context )
+			{
+				$colors[ $context->name ] = Color::skip( rand( 1,10 ) )->take(3)->get();
+			}
+
+			return View::make( 'ajax.contexts' )
+				->with( 'contexts', $contexts )
+				->with( 'colors', $colors );
 		}
 
-		return View::make( 'ajax.contexts' )
-			->with( 'contexts', $contexts )
-			->with( 'colors', $colors );
+		// return just the view
+		return View::make( 'contexts' );
 	}
 
 	/**
@@ -44,7 +46,7 @@ class ContextController extends BaseController {
 		if ( Input::has( 'tl' ) && Input::has( 'ds' ) )
 		{
 			$context = new Context();
-			
+
 			$context->name = trim( Input::get( 'tl' ) );
 			$context->description = trim( Input::get( 'ds' ) );
 			$context->user()->associate( Auth::user() );

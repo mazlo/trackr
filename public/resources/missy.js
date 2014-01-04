@@ -16,7 +16,7 @@ var getContextPath = function()
 var getContexts = function()
 {
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/all',
+		url: getContextPath() +'/contexts',
 		type: 'get',
 
 		success: function( data ) 

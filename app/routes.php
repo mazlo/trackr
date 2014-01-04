@@ -31,9 +31,7 @@ Route::group( array( 'before' => 'auth' ), function()
 	/*
 		Routes concerning contexts
 	*/
-	Route::get( '/contexts', 'ContextController@view' );
-
-	Route::get( '/contexts/all', 'ContextController@all' );
+	Route::get( '/contexts', 'ContextController@index' );
 
 	Route::get( '/contexts/{contextName}/distinctTagList', 'ContextController@distinctTagList' );
 
