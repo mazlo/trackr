@@ -13,20 +13,21 @@ class CommentController extends BaseController
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr );
 	}
 
+	/**
+	*	Add Comment
+	*/
 	public function add( $contextName, $sid )
 	{
-		$cmt = Input::get( 'cmt' );
+		if ( Input::has( 'cmt' ) )
+		{
+			$comment = new Comment();
+			$comment->comment = trim( Input::get( 'cmt' ) );
+			$comment->user()->associate( Auth::user() );
 
-		if ( empty( $sid ) || empty( $cmt ) )
-			return;
-
-		$comment = new Comment();
-		$comment->comment = $cmt;
-		$comment->user()->associate( Auth::user() );
-
-		// add new Comment to existing Stackr
-		$stackr = Auth::user()->stackr( $sid )->first();
-		$stackr->comments()->save( $comment );
+			// associate comment with Stackr
+			$stackr = Auth::user()->stackr( $sid )->first();
+			$stackr->comments()->save( $comment );
+		}
 
 		return $this->all( $contextName, $sid );
 	}
