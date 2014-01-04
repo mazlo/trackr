@@ -3,7 +3,10 @@
 class CommentController extends BaseController
 {
 	
-	public function all( $contextName, $sid )
+	/**
+	*	Loads appropriate Stackr for current User
+	*/
+	public function index( $contextName, $sid )
 	{
 		if ( empty( $sid ) )
 			return;
@@ -29,7 +32,7 @@ class CommentController extends BaseController
 			$stackr->comments()->save( $comment );
 		}
 
-		return $this->all( $contextName, $sid );
+		return $this->index( $contextName, $sid );
 	}
 
 	public function delete( $contextName, $sid, $cid )
@@ -40,7 +43,7 @@ class CommentController extends BaseController
 		// delete Comment
 		Auth::user()->comment( $cid )->delete();
 
-		return $this->all( $contextName, $sid );
+		return $this->index( $contextName, $sid );
 	}
 
 	/**

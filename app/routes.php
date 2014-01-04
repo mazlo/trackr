@@ -60,7 +60,7 @@ Route::group( array( 'before' => 'auth' ), function()
 	/*
 		Routes concerning stackr comments
 	*/
-	Route::get( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@all' );
+	Route::get( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@index' );
 
 	Route::post( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@add' );
 
