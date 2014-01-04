@@ -46,7 +46,7 @@ class StackrController extends BaseController {
 			$stackr->save();
 		}
 
-		return $this->all( $contextName );
+		return $this->index( $contextName );
 	}
 
 	public function details( $contextName, $sid )
@@ -72,7 +72,7 @@ class StackrController extends BaseController {
         // delete the Stackr
         $stackr->delete();
 
-        return $this->all( $contextName );
+        return $this->index( $contextName );
 	}
 
 	/**

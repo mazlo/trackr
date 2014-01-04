@@ -486,7 +486,7 @@ var addCommentAction = function( object )
 	var comment = $jQ( '#comment_new_content_'+ entryId ).val();
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/add',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments',
 		type: 'post',
 		data: { cmt: comment },
 

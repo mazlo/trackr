@@ -53,7 +53,7 @@ class ContextController extends BaseController {
 			$context->save();
 		}
 
-		return $this->all();
+		return $this->index();
 	}
 
 	/**
@@ -122,7 +122,7 @@ class ContextController extends BaseController {
 		// finally, delete Context
 		$context->delete();
 
-		return $this->all();
+		return $this->index();
 	}
 
 	/**
