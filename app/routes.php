@@ -37,7 +37,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::get( '/contexts/{contextName}/distinctTagList', 'ContextController@distinctTagList' );
 
-	Route::post( '/contexts/add', 'ContextController@add' );
+	Route::post( '/contexts', 'ContextController@add' );
 
 	Route::post( '/contexts/make', 'ContextController@make' );
 
@@ -53,7 +53,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::get( '/contexts/{contextName}/stackrs/all', 'StackrController@all' );
 
-	Route::post( 'contexts/{contextName}/stackrs/add', 'StackrController@add' );
+	Route::post( 'contexts/{contextName}/stackrs', 'StackrController@add' );
 
 	Route::get( '/contexts/{contextName}/stackrs/{eid}', 'StackrController@details' );
 

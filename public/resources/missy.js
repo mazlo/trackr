@@ -260,7 +260,7 @@ var addContextAction = function()
 	}
 
 	$jQ.ajax( {
-		url: getContextPath() + '/contexts/add',
+		url: getContextPath() + '/contexts',
 		type: 'post',
 		data: { tl: title, ds: description },
 
@@ -338,7 +338,7 @@ var addEntryAction = function()
 	var cname = $jQ( '#entries' ).attr( 'cname' );
 
 	$jQ.ajax( {
-		url: getContextPath() + '/contexts/'+ cname +'/stackrs/add',
+		url: getContextPath() + '/contexts/'+ cname +'/stackrs',
 		type: 'post',
 		data: { tl: title, ds: description },
 

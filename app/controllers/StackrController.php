@@ -28,22 +28,23 @@ class StackrController extends BaseController {
 
 	public function add( $contextName )
 	{
-		$title = Input::get( 'tl' );
-		$desc = Input::get( 'ds' );
-
-		if ( empty( $contextName ) || empty( $title ) )
-			return;
-
 		$context = Auth::user()->context( $contextName )->first();
 
 		// TODO check if context exists
 
-		$stackr = new Stackr();
-		$stackr->title = trim( $title );
-		$stackr->description = trim( $desc );
-		$stackr->user()->associate( Auth::user() );
-		$stackr->context()->associate( $context );
-		$stackr->save();
+		if ( Input::has( 'tl' ) )
+		{
+			$stackr = new Stackr();
+
+			// description
+			if ( Input::has( 'ds' ) )
+				$stackr->description = trim( Input::get( 'ds' ) );
+
+			$stackr->title = trim( Input::get( 'tl' ) );
+			$stackr->user()->associate( Auth::user() );
+			$stackr->context()->associate( $context );
+			$stackr->save();
+		}
 
 		return $this->all( $contextName );
 	}

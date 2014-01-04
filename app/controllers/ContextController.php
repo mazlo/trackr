@@ -40,17 +40,16 @@ class ContextController extends BaseController {
 	*/
 	public function add()
 	{
-		$title = Input::get( 'tl' );
-		$desc = Input::get( 'ds' );
 
-		if ( empty( $title ) || empty( $desc ) )
-			return;
-
-		$context = new Context();
-		$context->name = $title;
-		$context->description = $desc;
-		$context->user()->associate( Auth::user() );
-		$context->save();
+		if ( Input::has( 'tl' ) && Input::has( 'ds' ) )
+		{
+			$context = new Context();
+			
+			$context->name = trim( Input::get( 'tl' ) );
+			$context->description = trim( Input::get( 'ds' ) );
+			$context->user()->associate( Auth::user() );
+			$context->save();
+		}
 
 		return $this->all();
 	}
