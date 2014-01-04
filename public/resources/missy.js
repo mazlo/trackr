@@ -35,7 +35,7 @@ var getAllEntries = function( tags )
 	var cname = $jQ( '#entries' ).attr( 'cname' );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/all',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs',
 		type: 'get',
 		data: { ts: tags },
 

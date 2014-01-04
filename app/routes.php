@@ -47,9 +47,7 @@ Route::group( array( 'before' => 'auth' ), function()
 		Routes concerning stackrs
 	*/
 
-	Route::get( '/contexts/{contextName}/stackrs', 'StackrController@view' );
-
-	Route::get( '/contexts/{contextName}/stackrs/all', 'StackrController@all' );
+	Route::get( '/contexts/{contextName}/stackrs', 'StackrController@index' );
 
 	Route::post( 'contexts/{contextName}/stackrs', 'StackrController@add' );
 

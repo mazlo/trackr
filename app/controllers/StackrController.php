@@ -3,27 +3,27 @@
 class StackrController extends BaseController {
 
 	/**
-	*	Create the view and pass the given Context
+	*	Get all Stackrs for User for the given Context
 	*/
-	public function view( $contextName )
+	public function index( $contextName )
 	{
 		$context = Auth::user()->context( $contextName )->first();
+
+		// if ajax => return ajax view for all Stackrs
+		if ( Request::ajax() )
+		{
+			$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
+
+			return View::make( 'ajax.stackrs' )
+				->with( 'stackrs', $stackrs )
+				->with( 'cname', $contextName );	
+		}
 
 		if ( isset( $context ) )
 			return View::make( 'stackrs' )->with( 'context', $context );
 		else
 			// TODO create view with error
 			return View::make( 'stackrs' )->with( 'context', 'null' );
-	}
-
-	/**
-	*	Get all Stackrs for User for the given Context
-	*/
-	public function all( $contextName )
-	{
-		$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
-
-		return View::make( 'ajax.stackrs' )->with( 'stackrs', $stackrs )->with( 'cname', $contextName );
 	}
 
 	public function add( $contextName )

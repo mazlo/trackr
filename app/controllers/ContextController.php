@@ -7,7 +7,7 @@ class ContextController extends BaseController {
 	*/
 	public function index()
 	{
-		// if ajax => return ajax view for all Stackrs
+		// if ajax => return ajax view for all Contexts
 		if ( Request::ajax() )
 		{
 			$contexts = Auth::user()->contexts()->get();
