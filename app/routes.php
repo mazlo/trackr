@@ -70,7 +70,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::delete( '/contexts/{contextName}/stackrs/{eid}/comments/{cid}', 'CommentController@delete' );
 
-	Route::post( '/contexts/{contextName}/stackrs/{eid}/comments/reorder', 'CommentController@reorder' );
+	Route::put( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@update' );
 
     Route::any( '/logout', array(
         'as'   => 'user/logout',

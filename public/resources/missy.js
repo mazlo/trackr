@@ -112,8 +112,8 @@ var updateCommentPositions = function( object )
 	var entryId = getClosestEntryId( object );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/reorder',
-		type: 'post',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments',
+		type: 'put',
 		data: { cid: cid, pos: pos }
 	});
 };

@@ -42,25 +42,26 @@ class CommentController extends BaseController
 		return $this->all( $contextName, $sid );
 	}
 
-	public function reorder( $contextName, $sid )
+	/**
+	*	Update Comment
+	*/
+	public function update( $contextName, $sid )
 	{
-		$cids = Input::get( 'cid' );
-		$poss = Input::get( 'pos' );
-
-		if ( empty( $cids ) || empty( $poss) )
-			return;
-
-		for( $i = 0; $i < sizeof( $cids ); $i++ ) 
+		// update Comment positions
+		if ( Input::has( 'cid' ) && Input::has( 'pos' ) )
 		{
-			// get comment for user
-			$comment = Auth::user()->comment( $cids[$i] )->first();
-			
-			if ( !isset( $comment ) )
-				continue;
+			for( $i = 0; $i < sizeof( $cids ); $i++ ) 
+			{
+				// get comment for user
+				$comment = Auth::user()->comment( $cids[$i] )->first();
+				
+				if ( !isset( $comment ) )
+					continue;
 
-			// update position only
-			$comment->position = $poss[$i];
-			$comment->save();
+				// update position only
+				$comment->position = $poss[$i];
+				$comment->save();
+			}
 		}
 
 		// reloading is done by ajax.success
