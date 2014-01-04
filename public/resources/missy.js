@@ -319,8 +319,8 @@ var updateContextColor = function( object, closestClass )
 	$jQ( object ).closest( '.wrapper_context' ).find( '.context' ).css( 'background', color );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/changeColor',
-		type: 'post',
+		url: getContextPath() +'/contexts/'+ cname,
+		type: 'put',
 		data: { cl: color }
 	});
 };

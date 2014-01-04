@@ -43,7 +43,7 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::delete( '/contexts/{contextName}', 'ContextController@delete' );
 
-	Route::post( '/contexts/{contextName}/changeColor', 'ContextController@changeColor' );
+	Route::put( '/contexts/{contextName}', 'ContextController@update' );
 
 	/*
 		Routes concerning stackrs
