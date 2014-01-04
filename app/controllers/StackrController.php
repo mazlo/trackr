@@ -49,7 +49,7 @@ class StackrController extends BaseController {
 		return $this->index( $contextName );
 	}
 
-	public function details( $contextName, $sid )
+	public function show( $contextName, $sid )
 	{
 		$stackr = Auth::user()->stackr( $sid )->first();
 
