@@ -43,17 +43,22 @@ var getAllEntries = function( tags )
 		{
 			$jQ( '#entries' ).html( data );
 
-			$jQ( '.comments' ).sortable( 
-			{
-				update: function( event, ui ) 
-				{
-					return updateCommentPositions( this );
-				}
-			});
-
-			$jQ( '.comments' ).disableSelection();
+			makeCommentsSortable( this );
 		}
 	});
+};
+
+var makeCommentsSortable = function( object )
+{
+	$jQ( '.comments' ).sortable( 
+	{
+		update: function( event, ui ) 
+		{
+			return updateCommentPositions( object );
+		}
+	});
+
+	$jQ( '.comments' ).disableSelection();
 };
 
 var getDistinctEntriesTagList = function()
@@ -346,6 +351,8 @@ var addEntryAction = function()
 			entriesContainer.hide();
 			entriesContainer.html( data );
 			entriesContainer.fadeIn( 200 );
+
+			makeCommentsSortable( this );
 		}
 	});
 
