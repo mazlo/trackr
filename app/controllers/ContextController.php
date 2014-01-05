@@ -135,7 +135,7 @@ class ContextController extends BaseController {
 	public function updateAll()
 	{
 		// update positions
-		if ( Input::has( 'cid' ) && Input::has( 'pos' ) )
+		if ( Input::has( 'cid' ) )
 		{
 			$cids = Input::get( 'cid' );
 
