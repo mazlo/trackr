@@ -10,7 +10,7 @@ class ContextController extends BaseController {
 		// if ajax => return ajax view for all Contexts
 		if ( Request::ajax() )
 		{
-			$contexts = Auth::user()->contexts()->get();
+			$contexts = Auth::user()->contexts()->orderBy( 'position' )->get();
 			$colors = array();
 
 			foreach( $contexts as $context )
