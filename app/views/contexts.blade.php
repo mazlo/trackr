@@ -15,7 +15,7 @@
 		
 		<h4 class='italic'>Description</h4>
 		<span id='description_error' class='credentials_error'></span>
-		<textarea id='description' class='textarea form'></textarea>
+		<textarea id='description' class='textarea form'>Notes on the process</textarea>
 
 		<div style='padding: 8px 0;'>
 			<button class='context_add_button operatorButton'>Add</button>
