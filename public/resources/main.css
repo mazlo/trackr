@@ -217,6 +217,15 @@ h4.message_success {
 	color: #67ab2b;
 }
 
+/* LISTS */
+
+#contexts {
+	list-style-type: none;
+
+	margin: 0;
+	padding: 0;
+}
+
 ul.comments {
 	margin: 3px 0;
 	padding: 0;
@@ -231,6 +240,11 @@ li.comment {
 
 li.comment > span.searchable {
 	padding: 4px;
+}
+
+li.wrapper_context {
+	display: inline-block; 
+	margin: 23px 43px 13px 0;
 }
 
 /* entry_header > */
@@ -392,12 +406,6 @@ input.textfield_smaller {
 	padding: 2px; 
 	width: 320px; 
 	height: 23px;
-}
-
-div.wrapper_context 
-{
-	display: inline-block; 
-	margin: 23px 43px 13px 0;
 }
 
 div.context {

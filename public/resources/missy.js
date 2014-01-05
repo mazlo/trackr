@@ -26,6 +26,8 @@ var getContexts = function()
 			contextsContainer.hide();
 			contextsContainer.html( data );
 			contextsContainer.fadeIn( 200 );
+
+			makeContextsSortable();
 		}
 	});
 }
@@ -47,6 +49,19 @@ var getAllEntries = function( tags )
 		}
 	});
 };
+
+var makeContextsSortable = function() 
+{
+	$jQ( '#contexts' ).sortable( 
+	{
+		update: function( event, ui ) 
+		{
+			//return updateCommentPositions( object );
+		}
+	});
+
+	$jQ( '#contexts' ).disableSelection();
+}
 
 var makeCommentsSortable = function( object )
 {
