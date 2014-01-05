@@ -135,12 +135,10 @@ var updateCommentPositions = function( object )
 {
 	var counter = 0;
 	var cid = [];
-	var pos = [];
 
 	$jQ( object ).find( '.comment' ).each( function()
 	{
 		cid.push( $jQ(this).attr( 'cid' ) );
-		pos.push( ++counter );
 	});
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
@@ -149,7 +147,7 @@ var updateCommentPositions = function( object )
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments',
 		type: 'put',
-		data: { cid: cid, pos: pos }
+		data: { cid: cid }
 	});
 };
 

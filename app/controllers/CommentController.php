@@ -52,9 +52,9 @@ class CommentController extends BaseController
 	public function update( $contextName, $sid )
 	{
 		// update Comment positions
-		if ( Input::has( 'cid' ) && Input::has( 'pos' ) )
+		if ( Input::has( 'cid' ) )
 		{
-			for( $i = 0; $i < sizeof( $cids ); $i++ ) 
+			for( $i = 0; $i < sizeof( $cids ); ) 
 			{
 				// get comment for user
 				$comment = Auth::user()->comment( $cids[$i] )->first();
@@ -63,7 +63,7 @@ class CommentController extends BaseController
 					continue;
 
 				// update position only
-				$comment->position = $poss[$i];
+				$comment->position = ++$i;
 				$comment->save();
 			}
 		}
