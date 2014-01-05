@@ -56,7 +56,7 @@ var makeContextsSortable = function()
 	{
 		update: function( event, ui ) 
 		{
-			//return updateCommentPositions( object );
+			return updateContextPositions( this );
 		}
 	});
 
@@ -111,6 +111,27 @@ var getComments = function( eid )
 };
 
 // ----- update functions for entries and comments -----
+
+var updateContextPositions = function( object )
+{
+	var counter = 0;
+	var cid = [];
+	var pos = [];
+
+	// collect all ids and positions
+	$jQ( object ).find( '.context' ).each( function()
+	{
+		cid.push( $jQ(this).parent().attr( 'cname' ) );
+		pos.push( ++counter );
+	});
+
+	// send put request
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts',
+		type: 'put',
+		data: { cid: cid, pos: pos }
+	});
+};
 
 var updateCommentPositions = function( object )
 {

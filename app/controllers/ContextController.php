@@ -130,7 +130,32 @@ class ContextController extends BaseController {
 	}
 
 	/**
-	*
+	*	Updates all Contexts
+	*/
+	public function updateAll()
+	{
+		// update positions
+		if ( Input::has( 'cid' ) && Input::has( 'pos' ) )
+		{
+			$cids = Input::get( 'cid' );
+
+			for( $i = 0; $i < sizeof( $cids ); ) 
+			{
+				// get comment for user
+				$context = Auth::user()->context( $cids[$i] )->first();
+				
+				if ( !isset( $context ) )
+					continue;
+
+				// update position only
+				$context->position = ++$i;
+				$context->save();
+			}
+		}
+	}
+
+	/**
+	*	Updates a Context
 	*/
 	public function update( $cname )
 	{

@@ -35,6 +35,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::post( '/contexts', 'ContextController@add' );
 
+	Route::put( '/contexts', 'ContextController@updateAll' );
+
 	Route::post( '/contexts/make', 'ContextController@make' );
 
 	Route::delete( '/contexts/{contextName}', 'ContextController@delete' );
