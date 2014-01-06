@@ -33,3 +33,18 @@
     </form>
 
 @stop
+
+@section( 'footer' )
+
+    <div style='padding: 23px;'>
+        <h3>What's a <span style='font-size: 23px'>M</span>ind<span style='font-size: 23px'>S</span>tackr?</h3>
+
+        <p>MindStackr helps you organize your minds in terms of stacks, which basically is a list of items. Each item in the list we call a MindStack.
+            It is called a MindStack, because when an item of a specific topic is created you can comment on it and that way track a history of thoughts concerning your topic.</p>
+
+        <h3>MindStackr is laid-out with maximum usability in mind.</h3>
+
+        <p></p>
+    </div>
+
+@stop

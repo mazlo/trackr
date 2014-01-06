@@ -61,9 +61,11 @@
 				@yield( 'content' )
 			</div>
 
-			<div id='footer' style='margin-top: 48px'>
-				@yield( 'footer' )
-			</div>
+		</div>
+
+		<!-- footer -->
+		<div id='footer'>
+			@yield( 'footer' )
 		</div>
 	</body>
 

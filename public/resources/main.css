@@ -27,7 +27,7 @@
 
 body {
 	overflow-y: scroll;
-	background: #eee;
+	background: #f8f8f8;
 	margin: 0;
 	padding: 0;
 
@@ -35,16 +35,20 @@ body {
 
 }
 
-h2.applicationTitle {
+h2.applicationTitle,
+h3.applicationTitle {
 	display: inline; 
 	margin: 0px;
 
 	font-weight: normal;
+	font-family: AleoLight;
 }
 
 h3 {
 	margin: 0 0 13px;
+	
 	font-weight: normal;
+	font-family: Georgia;
 }
 
 a {
@@ -169,6 +173,13 @@ nav ul li ul li a {
 
 #content p {
 	margin: 8px 0;
+}
+
+#footer {
+	width: 1024px; 
+	margin: 13px auto 48px;
+
+	font-family: AleoLight;
 }
 
 /*
