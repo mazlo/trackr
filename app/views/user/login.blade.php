@@ -8,7 +8,7 @@
 
 @section( 'content' )
 
-    <h4 class='normal'>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/register") }}'>registered</a>?</h4>
+    <p>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/register") }}'>registered</a>?</p>
 
     @if( $error = $errors->first( 'password' ) )
         <div class='credentials_error'>
@@ -45,22 +45,45 @@
             The fundamental idea behind a Stack is that you can comment on it and that way track a history of thoughts 
             concerning your topic.
         </p>
+        <p>You can group several Stacks of the same topic, that's what is called a Context.</p>
 
         <h3>MindStackr is laid-out with maximum usability in mind.</h3>
 
-        <div style=''>
-            <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0;'>
-                <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 145px; height: 105px; padding: 13px; margin: 0 13px;'>
+        <div style='text-align: center'>
+            <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0 108px;'>
+                <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
                     Change the title of a Stackr or the Comments section and confirm by hitting enter.
                 </li>
 
-                <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 145px; height: 105px; padding: 13px; margin: 0 13px;'>
+                <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
                     Organize the order of Comments by dragging.
+                </li>
+
+                <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+                    Delete some Comments if you don't like them, or even the complete Stack right away.
+                </li>
+
+                <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+                    Convert a Comment into a Stack or even a Stack into a Context.
                 </li>
             </ul>
         </div>
 
         <div style='clear: both'><img src='{{ url("resources/mindstackr_screenshot.png") }}' /></div>
+
+        <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0;'>
+            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+                Assign meaningful tags to your Stack, so you can filter and find the quickly.
+            </li>
+
+            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+                If you feel a Stack is important for you, pin it, so it will be shown always at the top.
+            </li>
+
+            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+                Use the search field to find titles, descriptions and Comments.
+            </li>
+        </ul>
 
     </div>
 
