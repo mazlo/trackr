@@ -1,5 +1,19 @@
 @extends( 'layout' )
 
+@section( 'topNavigation' )
+	<nav>
+		<ul id='menu'>
+			<li>
+				<a href='#'>Contexts</a>
+				<ul>
+					<li><a href='#'>hello</a></li>
+					<li><a href='#'>hello2</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+@stop
+
 @section( 'beforeContent' )
 
 	<div style='float: left'>

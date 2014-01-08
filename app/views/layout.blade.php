@@ -22,14 +22,18 @@
 			<!-- header contains logo and login -->
 			<div id='header'>
 				
-				<div style='width: 30%'>
+				<div style='width: 25%'>
 					<a href='{{ URL::to( "contexts" ) }}'>
 						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
 						<h2 class='applicationTitle'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr</h2>
 					</a>
 				</div>
 
-				<div style='width: 70%; text-align: right'>
+				<div style='width: 20%; text-align: center'>
+					@yield( 'topNavigation' )
+				</div>
+
+				<div style='width: 50%; text-align: right'>
 	 				@if ( Auth::check() )
 	 					<!-- print search field -->
 		 				<span id='searchResults' class='infotext'></span>
@@ -54,15 +58,11 @@
 
 			<!-- content contains list of entries -->
 			<div id='content'>
-
 				@yield( 'content' )
-
 			</div>
 
 			<div id='footer' style='margin-top: 48px'>
-				
 				@yield( 'footer' )
-
 			</div>
 		</div>
 	</body>
@@ -78,6 +78,20 @@
 	});
 
 // GLOBAL EVENTS
+
+	// menu
+	$jQ( 'nav li ul' ).hide();
+
+	$jQ( 'nav li').hover( 
+		function(e) 
+		{
+			$jQ( 'ul', this ).stop().slideDown( 100 );
+		}, 
+		function(e)
+		{
+			$jQ( 'ul', this ).stop().slideUp( 100 );
+		}
+	);
 
 	// css manipulations on hover
 	$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()

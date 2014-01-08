@@ -74,6 +74,44 @@ input {
 	font-weight: normal;
 }
 
+nav { 
+	background: #fff; 
+}
+nav ul { 
+	margin: 0; 
+	padding: 0; 
+
+	list-style-type: none;
+}
+nav ul li { 
+	width: 50px;
+	padding: 4px 13px 4px;
+}
+nav ul li:hover {
+	background: #f1f1f1;
+}
+nav ul li a { 
+	display: block; 
+	border: none;
+}
+nav ul li ul { 
+	position: absolute; 
+	background: #fff;
+	border: 1px #bbb solid; 
+	width: 260px; 
+	margin-top: 4px;
+	margin-left: -13px;
+}
+nav ul li ul li { 
+	width: 234px;
+	padding: 8px 13px;
+	text-align: left;
+}
+nav ul li ul li a { 
+	display: block; 
+	border: none;
+}
+
 /*
 	global html elements identified by id
 */
