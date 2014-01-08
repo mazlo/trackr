@@ -76,17 +76,17 @@
 
         <div style='clear: both'><img src='{{ url("resources/mindstackr_screenshot.png") }}' /></div>
 
-        <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0;'>
+        <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0 200px;'>
             <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
-                Assign meaningful tags to your Stack, so you can filter and find the quickly.
+                Assign meaningful tags to your Stack, so you can filter and find them quickly.
             </li>
 
             <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
-                If you feel a Stack is important for you, pin it, so it will be shown always at the top.
+                If you think one Stack is important for you, pin it, so it will be shown always at the top.
             </li>
 
             <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
-                Use the search field to find titles, descriptions and Comments.
+                Use the search field to find Stack titles, descriptions or Comments.
             </li>
         </ul>
 
