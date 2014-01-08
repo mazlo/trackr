@@ -49,9 +49,9 @@
         <h3>MindStackr is laid-out with maximum usability in mind.</h3>
 
         <div style=''>
-            <ul style='overflow: auto; list-style-type: none; padding: 8px 0 0;'>
+            <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0;'>
                 <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 145px; height: 105px; padding: 13px; margin: 0 13px;'>
-                    Change the title of a Stackr or the Comments section and confirm by clicking enter.
+                    Change the title of a Stackr or the Comments section and confirm by hitting enter.
                 </li>
 
                 <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 145px; height: 105px; padding: 13px; margin: 0 13px;'>
