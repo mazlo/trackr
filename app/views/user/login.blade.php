@@ -39,13 +39,18 @@
 
         <h3>What the heck is <span style='font-size: 23px'>M</span>ind<span style='font-size: 23px'>S</span>tackr?</h3>
 
-        <p>MindStackr helps you organize your minds in terms of stacks, which basically is a list of items. 
-            Each item in the list we call a Stack, which usuablly covers a specific topic and it consists of no more or less 
+        <p>
+            MindStackr helps you organize your minds in terms of stacks, which actually is a list of items of your interest.
+            Each item in the list we call a Stack, which usuablly covers a specific topic and it consists of no more, no less 
             a title and a description.
-            The fundamental idea behind a Stack is that you can comment on it and that way track a history of thoughts 
-            concerning your topic.
         </p>
-        <p>You can group several Stacks of the same topic, that's what is called a Context.</p>
+        <p>
+            The fundamental idea behind a Stack is that you can comment on it and that way track a history of thoughts 
+            concerning your topic, just like you would manage your own blog.
+        </p>
+        <p>
+            You can group several Stacks of the same topic, that's what is called a Context.
+        </p>
 
         <h3>MindStackr is laid-out with maximum usability in mind.</h3>
 
