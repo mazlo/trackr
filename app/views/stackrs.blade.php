@@ -4,7 +4,7 @@
 	<nav>
 		<ul id='menu'>
 			<li>
-				<a href='#'>Contexts</a>
+				<a href='#'>Contexts</a><img src='{{ url("resources/arrow_down.png") }}' style='width: 13px; margin-left: 3px' />
 				<ul>
 					<li><a href='#'>hello</a></li>
 					<li><a href='#'>hello2</a></li>
