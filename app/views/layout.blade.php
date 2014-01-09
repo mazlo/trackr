@@ -29,7 +29,7 @@
 					</a>
 				</div>
 
-				<div style='width: 20%; text-align: center'>
+				<div style='width: 23%; text-align: center'>
 					@yield( 'topNavigation' )
 				</div>
 

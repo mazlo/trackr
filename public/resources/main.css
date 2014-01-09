@@ -75,7 +75,9 @@ input {
 }
 
 nav { 
+	float: right;
 	background: #fff; 
+	text-align: center;
 }
 nav ul { 
 	margin: 0; 
@@ -83,13 +85,14 @@ nav ul {
 
 	list-style-type: none;
 }
-nav ul li { 
-	width: 84px;
-	padding: 4px 13px 4px;
+nav > ul > li { 
+	border: 1px #fff solid;
+	padding: 2px 13px 3px;
 	vertical-align: bottom;
 }
-nav ul li:hover {
+nav > ul > li:hover {
 	background: #f1f1f1;
+	border: 1px #bbb solid;
 }
 nav ul li a { 
 	border: none;
@@ -101,7 +104,7 @@ nav ul li ul {
 	border: 1px #bbb solid; 
 	width: 260px; 
 	margin-top: 4px;
-	margin-left: -13px;
+	margin-left: -14px;
 }
 nav ul li ul li { 
 	width: 234px;
@@ -529,6 +532,7 @@ textarea.form
 .infotext {
 	margin: 0 13px; 
 	color: #ddd;
+	font-size: 14px;
 }
 
 .favoredIcon {
