@@ -15,8 +15,7 @@ class StackrController extends BaseController {
 			$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'id', 'desc' )->get();
 
 			return View::make( 'ajax.stackrs' )
-				->with( 'stackrs', $stackrs )
-				->with( 'cname', $contextName );	
+				->with( 'stackrs', $stackrs );
 		}
 
 		if ( isset( $context ) )

@@ -7,8 +7,8 @@
 				<a href='#'>Contexts</a><img src='{{ url("resources/arrow_down.png") }}' style='width: 13px; margin-left: 3px' />
 				<ul>
 
-				@foreach( $contexts as $context )
-					<li><a href='#'>{{ $context->name }}</a></li>
+				@foreach( $contexts as $contextItem )
+					<li><a href='{{ url("/contexts/$contextItem->name/stackrs") }}'>{{ $contextItem->name }}</a></li>
 				@endforeach
 
 				</ul>
