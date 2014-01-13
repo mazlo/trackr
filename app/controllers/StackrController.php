@@ -24,7 +24,7 @@ class StackrController extends BaseController {
 			// add all Contexts
 			return View::make( 'stackrs' )
 				->with( 'context', $context )
-				->with( 'contexts', Context::orderBy( 'position' )->get() );
+				->with( 'contexts', Auth::user()->contexts()->orderBy( 'position' )->get() );
 		}
 		else
 			// TODO create view with error
