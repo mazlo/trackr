@@ -20,7 +20,12 @@ class StackrController extends BaseController {
 		}
 
 		if ( isset( $context ) )
-			return View::make( 'stackrs' )->with( 'context', $context );
+		{
+			// add all Contexts
+			return View::make( 'stackrs' )
+				->with( 'context', $context )
+				->with( 'contexts', Context::orderBy( 'position' )->get() );
+		}
 		else
 			// TODO create view with error
 			return View::make( 'stackrs' )->with( 'context', 'null' );

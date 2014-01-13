@@ -105,8 +105,9 @@ nav ul li ul {
 	width: 260px; 
 	margin-top: 4px;
 	margin-left: -14px;
+	padding: 4px 0 8px;
 }
-nav ul li ul li { 
+nav > ul > li > ul > li { 
 	width: 234px;
 	padding: 8px 13px;
 	text-align: left;
