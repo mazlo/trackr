@@ -52,7 +52,11 @@
             You can group several Stacks of the same topic, that's what is called a Context.
         </p>
 
-        <h3>MindStackr is laid-out with maximum usability in mind.</h3>
+        <h3>Usability in MindStackr</h3>
+
+        <p>
+            MindStackr is laid-out with maximum usability in mind: all changes on your Stacks should be just on click away. 
+        </p>
 
         <div style='text-align: center'>
             <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0 108px;'>
