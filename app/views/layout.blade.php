@@ -17,6 +17,8 @@
 
 </head>
 	<body>
+
+		<!-- content -->
 		<div id='container'>
 
 			<!-- header contains logo and login -->
@@ -67,6 +69,11 @@
 		<div id='footer'>
 			@yield( 'footer' )
 		</div>
+
+		<div id='impressum'>
+
+		</div>
+
 	</body>
 
 <script type='text/javascript'>
