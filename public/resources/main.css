@@ -206,6 +206,7 @@ button.operatorButton-narrow {
 }
 
 button.operatorButton-vertical {
+	margin-left: 3px;
 	margin-bottom: 3px;
 }
 
