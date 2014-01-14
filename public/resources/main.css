@@ -193,9 +193,10 @@ p {
 button.operatorButton {
 	background: #fff;
 	/*box-shadow: 0px 0px 1px #ccc; */
-	border: 1px solid #ccc;
+	border: 1px solid #bbb;
 	min-width: 68px;
 	height: 23px; 
+	margin: 0;
 	cursor: hand;
 	color: #aaa;
 }
