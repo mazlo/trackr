@@ -19,13 +19,13 @@
 			<div class='entry_description'>
 				<input class='textfield entry_title_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->title }}' disabled='disabled' />
 				<span class='entry_title_confirm'>
-					<button class='operatorButton doneButton'>Done</button>
+					<button class='operator-button doneButton'>Done</button>
 				</span>
 				<h4 class='entry_description searchable'>{{ $stackr->description }}</h4>
 			</div>
 
 			<div class='entry_operations'>
-				<button class='comment_add_link operatorButton' eid='{{ $stackr->id }}'>add
+				<button class='comment_add_link operator-button' eid='{{ $stackr->id }}'>add
 					<span id='comment_add_button_text_{{ $stackr->id }}'>
 						@if( substr( $stackr->listTitle, -1 ) == 's' ) 
 							{{ substr( $stackr->listTitle, 0, -1 ) }} 
@@ -34,9 +34,9 @@
 						@endif
 					</span>
 				</button>
-				<button class='entry_delete_link operatorButton' eid='{{ $stackr->id }}'>delete Stackr</button>
+				<button class='operator-button entry_delete_link' eid='{{ $stackr->id }}'>delete Stackr</button>
 				<span class='entry_delete_confirmation' eid='{{ $stackr->id }}'>
-					<button class='operatorButton confirmationButton'>Sure?</button>
+					<button class='operator-button operator-button-confirm'>Sure?</button>
 				</span>
 			</div>
 
@@ -54,7 +54,7 @@
 			<div class='wrapper_comments'>
 				<input class='textfield comments_title_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<span class='comments_title_confirm'>
-					<button class='operatorButton doneButton'>Done</button>
+					<button class='operator-button doneButton'>Done</button>
 				</span>
 					
 				<div class='comment_add_div' id='comment_add_link_{{ $stackr->id }}' style='display: none;'>
@@ -62,8 +62,8 @@
 					<textarea id='comment_new_content_{{ $stackr->id }}' class='comment_textarea'></textarea>
 
 					<div style='padding: 8px 0;'>
-						<button class='comment_add_button operatorButton' eid='{{ $stackr->id }}'>add</button>
-						<button class='comment_add_cancel operatorButton' eid='{{ $stackr->id }}'>cancel</button>
+						<button class='operator-button comment_add_button' eid='{{ $stackr->id }}'>add</button>
+						<button class='operator-button comment_add_cancel' eid='{{ $stackr->id }}'>cancel</button>
 					</div>
 				</div>
 

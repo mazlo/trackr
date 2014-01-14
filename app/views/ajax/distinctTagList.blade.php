@@ -23,6 +23,6 @@
 <?	} ?>
 
 	@if ( $tagsAvailable )
-		<button class='operatorButton' id='clearTags'>clear selection</button>
+		<button class='operator-button' id='clearTags'>clear selection</button>
 	@endif
  

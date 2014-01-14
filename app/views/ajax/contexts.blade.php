@@ -25,16 +25,16 @@
 		</div>
 
 		<div class='context-options-box'>
-			<button class='operatorButton operatorButton-narrow operatorButton-vertical context_delete_link'>x</button>
+			<button class='operator-button operator-button-narrow operator-button-vertical context_delete_link'>x</button>
 			<span class='context_delete_confirmation'>
-				<button class='operatorButton confirmationButton' style='width: auto'>Sure?</button>
+				<button class='operator-button operator-button-confirm' style='width: auto'>Sure?</button>
 			</span>
 
 			@foreach( $colors[ $context->name ] as $contextColors )
-				<button class='operatorButton operatorButton-narrow operatorButton-vertical context_color_button' style='background: {{ $contextColors->color }}' color='{{ $contextColors->color }}'></button>
+				<button class='operator-button operator-button-narrow operator-button-vertical context_color_button' style='background: {{ $contextColors->color }}' color='{{ $contextColors->color }}'></button>
 			@endforeach
 
-			<button class='operatorButton operatorButton-narrow operatorButton-vertical context_color_button' style='background: #fff' color='#fff'></button>
+			<button class='operator-button operator-button-narrow operator-button-vertical context_color_button' style='background: #fff' color='#fff'></button>
 		</div>
 	</li>
 

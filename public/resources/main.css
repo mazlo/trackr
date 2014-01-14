@@ -239,7 +239,7 @@ ul.list-contexts-stackrs li a {
 	global individual classes to specific html elements
 */
 
-button.operatorButton {
+button.operator-button {
 	background: #fff;
 	/*box-shadow: 0px 0px 1px #ccc; */
 	border: 1px solid #bbb;
@@ -250,11 +250,11 @@ button.operatorButton {
 	color: #aaa;
 }
 
-button.operatorButton-narrow {
+button.operator-button-narrow {
 	min-width: 32px;
 }
 
-button.operatorButton-vertical {
+button.operator-button-vertical {
 	margin-left: 3px;
 	margin-bottom: 3px;
 }
@@ -265,7 +265,7 @@ button.doneButton {
 	color: #000;
 }
 
-button.confirmationButton {
+button.operator-button-confirm {
 	border: 1px solid red; 
 	width: 82px; 
 	color: #000;

@@ -18,8 +18,8 @@
 		<textarea id='description' class='textarea form'>Notes on the process</textarea>
 
 		<div style='padding: 8px 0;'>
-			<button class='context_add_button operatorButton'>Add</button>
-			<button class='context_add_cancel operatorButton'>Cancel</button>
+			<button class='operator-button context_add_button'>Add</button>
+			<button class='operator-button context_add_cancel'>Cancel</button>
 		</div>
 
 	</div>

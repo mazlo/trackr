@@ -48,8 +48,8 @@
 		<textarea id='description' class='textarea form'></textarea>
 
 		<div style='padding: 8px 0;'>
-			<button class='entry_add_button operatorButton'>Add</button>
-			<button class='entry_add_cancel operatorButton'>Cancel</button>
+			<button class='operator-button entry_add_button'>Add</button>
+			<button class='operator-button entry_add_cancel'>Cancel</button>
 		</div>
 
 	</div>
