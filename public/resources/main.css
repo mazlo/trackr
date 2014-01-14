@@ -556,7 +556,7 @@ div.context > a {
 	padding: 23px 23px 13px; 
 }
 
-div.context_add_options {
+div.context-options-box {
 	display: table-cell; 
 	visibility: hidden;
 
@@ -565,7 +565,7 @@ div.context_add_options {
 	vertical-align: top;
 }
 
-div.context_add_options_active {
+div.context-options-box-active {
 	visibility: visible;
 }
 

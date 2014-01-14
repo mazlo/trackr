@@ -24,7 +24,7 @@
 
 		</div>
 
-		<div class='context_add_options'>
+		<div class='context-options-box'>
 			<button class='operatorButton operatorButton-narrow operatorButton-vertical context_delete_link'>x</button>
 			<span class='context_delete_confirmation'>
 				<button class='operatorButton confirmationButton' style='width: auto'>Sure?</button>
