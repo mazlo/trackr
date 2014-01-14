@@ -28,7 +28,7 @@
         <h4>Password</h4>
         <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form'>
 
-        <input type='submit' value='sign in' id='login_button' class='button' style='display: block; margin: 23px 0 0'>
+        <input type='submit' value='sign in' id='login_button' class='button login-button'>
 
     </form>
 

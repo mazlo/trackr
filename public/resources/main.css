@@ -519,14 +519,9 @@ div.context_add_options_active {
 	color: red;
 }
 
-.login_button {
+.login-button {
 	display: block; 
-	border: 1px solid #bbb; 
-	-webkit-box-shadow: 1px 1px 1px #000; 
-	background-color: #fff; 
-	margin-top: 23px; 
-	width: 80px; 
-	height: 27px
+	margin: 23px 0 0
 }
 
 textarea.textarea,

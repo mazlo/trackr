@@ -39,7 +39,7 @@
         <h4>Confirm Password</h4>
         
         <input placeholder='●●●●●●●●' name='password_confirmation' type='password' value='' id='password_confirmation' class='textfield form'>
-        <input type='submit' value='create account' id='login_button' class='button' style='display: block; width: auto; margin: 23px 0 0'>
+        <input type='submit' value='create account' id='login_button' class='button login-button' style='width: 110px;'>
 
     </form>
 
