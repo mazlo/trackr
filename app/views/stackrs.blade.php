@@ -4,7 +4,7 @@
 	<nav>
 		<ul id='menu'>
 			<li>
-				<a href='#'>Contexts</a><img src='{{ url("resources/arrow_down.png") }}' style='width: 13px; margin-left: 3px' />
+				<a href='{{ url("/contexts") }}'>Contexts</a><img src='{{ url("resources/arrow_down.png") }}' style='width: 13px; margin-left: 3px' />
 				<ul>
 
 				@foreach( $contexts as $contextItem )
