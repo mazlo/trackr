@@ -13,9 +13,10 @@ class ContextController extends BaseController {
 			$contexts = Auth::user()->contexts()->orderBy( 'position' )->get();
 			$colors = array();
 
+			$i=0;
 			foreach( $contexts as $context )
 			{
-				$colors[ $context->name ] = Color::skip( rand( 1,10 ) )->take(3)->get();
+				$colors[ $context->name ] = Color::skip( $i++ )->take(4)->get();
 			}
 
 			return View::make( 'ajax.contexts' )
