@@ -2,8 +2,7 @@
 @foreach( $contexts as $context )
 	
 	<li class='wrapper_context' cname='{{ $context->name }}'>
-		<div class='context' style='background: {{ $context->color }};'>
-			
+		<div class='context element-shadow' style='background: {{ $context->color }}'>	
 			<a href='{{ url( "contexts/$context->name/stackrs" ) }}'>
 				{{ $context->name }}
 			</a>

@@ -416,7 +416,6 @@ div.div_context_add {
 }
 
 .button {
-	box-shadow: 0px 2px 6px #bbb; 
 	background-image: url('bg_button_add.png'); 
 	background-repeat: repeat-x; 
 	border: 0;
@@ -584,8 +583,8 @@ div.context-options-box-active {
 	border: 1px dotted orange;
 }
 
-.box_shadow {
-	box-shadow: 0px 2px 2px #ccc;
+.element-shadow {
+	box-shadow: 0px 1px 4px #ccc;
 }
 
 .credentials_error {

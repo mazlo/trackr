@@ -20,7 +20,7 @@
 @section( 'beforeContent' )
 
 	<div style='float: left'>
-		<button class='entry_add_link button'>+ Stackr</button>
+		<button class='element-shadow entry_add_link button'>+ Stackr</button>
 	</div>
 
 	<div style='float: right; text-align: right; width: 700px'>

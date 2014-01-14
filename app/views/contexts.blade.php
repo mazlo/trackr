@@ -31,7 +31,7 @@
 
 	<hr style='background: #bbb; border: 0; height: 1px; margin: 23px 0 32px' />
 
-	<div class='context'>
+	<div class='context element-shadow'>
 		<a href='' class='context_add_link' style='border: 0'>
 			New Context
 		</a>
