@@ -69,6 +69,11 @@ a.comment_add_link {
 	cursor: hand;
 }
 
+a.terms {
+	border: none;
+	padding: 0 13px;
+}
+
 input {
 	letter-spacing: 0.2pt;
 	font-weight: normal;
@@ -182,12 +187,12 @@ p {
 	font-family: AleoLight;
 }
 
-#terms {
+#terms-content {
 	background: #bbb; 
 	box-shadow: 0px 0px 12px #1f1f1f; 
-	padding: 23px;
 	padding-bottom: 96px;
 }
+
 
 /*
 	global individual classes to specific html elements
@@ -278,6 +283,15 @@ h4.message_success {
 	padding: 13px 0 3px; 
 	font-weight: normal;
 	color: #67ab2b;
+}
+
+p.terms-wrapper {
+	width: 1024px;
+	margin: auto;
+	padding: 23px;
+
+	font-size: 13px;
+	text-align: center;
 }
 
 /* LISTS */
