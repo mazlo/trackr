@@ -99,3 +99,7 @@
     </div>
 
 @stop
+
+@section( 'terms' )
+    hello
+@stop

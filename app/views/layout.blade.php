@@ -70,8 +70,8 @@
 			@yield( 'footer' )
 		</div>
 
-		<div id='impressum'>
-
+		<div id='terms'>
+			@yield( 'terms' )
 		</div>
 
 	</body>
