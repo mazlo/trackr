@@ -39,6 +39,15 @@
         <h4>Confirm Password</h4>
         
         <input placeholder='●●●●●●●●' name='password_confirmation' type='password' value='' id='password_confirmation' class='textfield form'>
+
+        <p style='font-size: 14px'>
+            @if( $errors->has( 'terms' ) )
+                <span class='credentials_error'>{{ $errors->get( 'terms' )[0] }}</span>
+            @endif
+
+            <input type='checkbox' name='terms' value='accept'>I accept the <a class='dotted' href='{{ url("terms-and-conditions") }}'>terms and conditions</a> of MindStackr.com.
+        </p>
+
         <input type='submit' value='create account' id='login_button' class='button login-button' style='width: 110px;'>
 
     </form>
