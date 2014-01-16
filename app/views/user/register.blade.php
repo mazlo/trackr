@@ -45,7 +45,7 @@
                 <span class='credentials_error'>{{ $errors->get( 'terms' )[0] }}</span>
             @endif
 
-            <input type='checkbox' name='terms' value='accept'>I accept the <a class='dotted' href='{{ url("terms-and-conditions") }}'>terms and conditions</a> of MindStackr.com.
+            <input type='checkbox' name='terms' value='checked'>I accept the <a class='dotted' href='{{ url("terms-and-conditions") }}'>terms and conditions</a> of MindStackr.com.
         </p>
 
         <input type='submit' value='create account' id='login_button' class='button login-button' style='width: 110px;'>

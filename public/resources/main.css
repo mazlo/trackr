@@ -538,7 +538,8 @@ div.context_add_options_active {
 }
 
 .credentials_error {
-	padding: 13px 0 8px;
+	display: block;
+	padding: 3px 0;
 	font-size: 13px;
 	color: red;
 }

@@ -15,7 +15,8 @@ class UserController extends Controller
             $rules = array(
                 'username' => 'required|unique:users',
                 'email' => 'required|email|min:8|unique:users',
-                'password' => 'required|min:6|confirmed'
+                'password' => 'required|min:6|confirmed',
+                'terms' => 'required'
             );
             
             // messages for validation errors
@@ -23,7 +24,8 @@ class UserController extends Controller
                 'required' => 'You forgot to fill this in!',
                 'min' => 'Please give at least 6 characters!',
                 'email.unique' => 'This email address has already been registered!',
-                'password.confirmed' => 'The passwords given do not match!'
+                'password.confirmed' => 'The passwords given do not match!',
+                'terms.required' => 'Please check that you have read the terms and conditions'
             );
 
             $validator = Validator::make( Input::all(), $rules, $messages );
