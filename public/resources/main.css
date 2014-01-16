@@ -195,6 +195,7 @@ p {
 #terms-content {
 	background: #fff; 
 	border-top: 1px #bbb solid;
+	border-bottom: 1px #bbb solid;
 }
 
 #terms-wrapper h4 {
