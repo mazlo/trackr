@@ -23,4 +23,12 @@ class BaseController extends Controller {
         return View::make( 'terms' );
     }
 
+    /**
+    *	Returns the view for feedback
+    */
+    public function feedback()
+    {
+    	return View::make( 'feedback' );
+    }
+
 }

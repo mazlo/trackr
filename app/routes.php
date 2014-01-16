@@ -25,6 +25,8 @@ Route::any( '/login', 'UserController@loginAction' );
 
 Route::any( '/terms-and-conditions', 'BaseController@terms' );
 
+Route::any( '/feedback', 'BaseController@feedback' );
+
 /*
 	Authentication neccessary
 */
