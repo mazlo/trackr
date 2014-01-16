@@ -212,7 +212,7 @@
 	</p>
 
 	<p>
-		MindStackr.com was programmed by Matthäus Zloch, matthaeus@mazlo.de
+		MindStackr.com was programmed by Matthäus Zloch, matthaeus@mazlo.de, http://github.com/mazlo
 	</p>
 
 	<p>
