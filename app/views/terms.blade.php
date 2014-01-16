@@ -212,11 +212,11 @@
 	</p>
 
 	<p>
-		MindStackr.com was programmed by Matthäus Zloch, matthaeus@mazlo.de, http://github.com/mazlo
+		MindStackr.com was programmed by Matthäus Zloch, <a class='dotted' href='mailto:matthaeus@mazlo.de'>matthaeus@mazlo.de</a>, <a class='dotted' href='http://github.com/mazlo'>github.com/mazlo</a>.
 	</p>
 
 	<p>
-		You can contact MindStackr.com by email to info@mindstackr.com.
+		You can contact MindStackr.com by email to <a class='dotted' href='mailto:info@mindstackr.com'>info@mindstackr.com</a>.
 	</p>
 
 </div>
