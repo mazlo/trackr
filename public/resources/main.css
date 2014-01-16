@@ -187,10 +187,13 @@ p {
 	font-family: AleoLight;
 }
 
+#terms {
+	padding-top: 48px;
+}
+
 #terms-content {
-	background: #bbb; 
-	box-shadow: 0px 0px 12px #1f1f1f; 
-	padding-bottom: 96px;
+	background: #fff; 
+	border-top: 1px #bbb solid;
 }
 
 
@@ -288,7 +291,7 @@ h4.message_success {
 p.terms-wrapper {
 	width: 1024px;
 	margin: auto;
-	padding: 23px;
+	padding: 32px;
 
 	font-size: 13px;
 	text-align: center;
