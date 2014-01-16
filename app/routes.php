@@ -23,6 +23,8 @@ Route::any( '/users/register', array(
 
 Route::any( '/login', 'UserController@loginAction' );
 
+Route::any( '/terms-and-conditions', 'BaseController@terms' );
+
 /*
 	Authentication neccessary
 */

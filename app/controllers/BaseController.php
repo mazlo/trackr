@@ -15,4 +15,12 @@ class BaseController extends Controller {
 		}
 	}
 
+	/**
+	*	Returns the view for terms and conditions
+	*/
+	public function terms()
+    {
+        return View::make( 'terms' );
+    }
+
 }

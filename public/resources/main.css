@@ -196,6 +196,12 @@ p {
 	border-top: 1px #bbb solid;
 }
 
+#terms-wrapper h4 {
+	padding: 13px 0 0;
+	font-weight: bold;
+	font-family: Georgia;
+}
+
 
 /*
 	global individual classes to specific html elements
