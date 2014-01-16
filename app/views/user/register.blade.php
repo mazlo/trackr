@@ -55,10 +55,5 @@
 @stop
 
 @section( 'terms' )
-    <div id='terms-content'>
-        <p class='terms-wrapper'>
-            <span>Copyright by MindStackr.com</span>
-            <a class='terms' href='terms-and-conditions'>Terms and Conditions</a>
-        </p>
-    </div>
+    @include( 'terms-footer' )
 @stop
