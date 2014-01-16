@@ -58,6 +58,7 @@ a:visited {
 }
 
 a.dotted {
+	border: none;
 	border-bottom: 1px dotted #ba0000;
 }
 
