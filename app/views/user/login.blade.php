@@ -18,7 +18,7 @@
         <h4 class='message_success'>{{ Session::get( 'registration_successfull' ) }}</h4>
     @endif
 
-    <form method='POST' action='{{ url() }}/' accept-charset='UTF-8' autocomplete='off' class='login'>
+    <form method='POST' action='{{ url() }}/' accept-charset='UTF-8' autocomplete='off' class='form-default form-login'>
 
         <input name='_token' type='hidden' value='TbVUNXU82jmVLLrSGHT360dEYlhRmX5ca0E1iPxv'>
 

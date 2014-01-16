@@ -428,14 +428,17 @@ div.comment_add_div {
 	form elements
 */
 
-form.register,
-form.login {
+form.form-default {
 	background: #f8f8f8; 
-	border: 1px #bbb solid;
+	border: 1px #bbb solid; 
 	
+	width: 360px;
+	padding: 23px;
+}
+
+form.form-register,
+form.form-login {
 	margin-top: 23px; 
-	padding: 23px; 
-	width: 320px;
 }
 
 input.textfield {
