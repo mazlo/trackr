@@ -224,6 +224,6 @@
 @stop
 
 @section( 'terms' )
-    @include( 'terms-footer' )
+    @include( 'terms-section' )
 @stop
 
