@@ -448,7 +448,8 @@ form.form-default {
 }
 
 form.form-register,
-form.form-login {
+form.form-login,
+form.form-feedback {
 	margin-top: 23px; 
 }
 
