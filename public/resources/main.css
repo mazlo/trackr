@@ -62,17 +62,16 @@ a.dotted {
 	border-bottom: 1px dotted #ba0000;
 }
 
+a.link-left-margin {
+	margin-left: 23px;
+}
+
 a.comment_add_link {
 	display: block; 
 	margin: 6px 0;
 	padding: 3px 13px; 
 	text-align: right; 
 	cursor: hand;
-}
-
-a.terms {
-	border: none;
-	padding: 0 13px;
 }
 
 input {
