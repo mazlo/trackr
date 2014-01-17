@@ -25,7 +25,13 @@ Route::any( '/login', 'UserController@loginAction' );
 
 Route::any( '/terms-and-conditions', 'BaseController@terms' );
 
-Route::any( '/feedback', 'BaseController@feedback' );
+/*
+	Routes concerning feedback
+*/
+
+Route::get( '/feedback', 'FeedbackController@index' );
+
+Route::post( '/feedback', 'FeedbackController@add' );
 
 /*
 	Authentication neccessary
