@@ -41,12 +41,12 @@
 
         <p>
             MindStackr helps you organize your minds in terms of stacks, which actually is a list of items of your interest.
-            Each item in the list we call a Stack, which usuablly covers a specific topic and it consists of no more, no less 
+            Each item in the list we call a Stack, which usually covers a specific topic and it consists of no more, no less 
             a title and a description.
         </p>
         <p>
             The fundamental idea behind a Stack is that you can comment on it and that way track a history of thoughts 
-            concerning your topic, just like you would manage your own blog.
+            concerning your topic, just like you would manage a blog post of yours and would comment on that on your own.
         </p>
         <p>
             You can group several Stacks of the same topic, that's what is called a Context.
