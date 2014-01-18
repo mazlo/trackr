@@ -131,12 +131,16 @@ p {
 }
 
 ul.list-contexts-stackrs {
-	display: none;
+	visibility: hidden;
 	margin: 0; 
 	padding: 0; 
 
 	list-style-type: none;
 	text-align: left;
+}
+
+ul.list-contexts-stackrs-active {
+	visibility: visible;
 }
 
 ul.list-contexts-stackrs li {
