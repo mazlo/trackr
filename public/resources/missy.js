@@ -58,9 +58,12 @@ var scrollToDesiredElement = function()
 	if ( anchorId.length == 1 )
 		return;
 
+	var element = $jQ( '#'+ anchorId[1] );
 	$jQ( 'html, body' ).animate({ 
-		scrollTop: $jQ( '#'+ anchorId[1] ).offset().top - 64
+		scrollTop: element.offset().top - 64
 	}, 100 );
+
+	element.effect( 'highlight', { }, 800 );
 };
 
 var makeContextsSortable = function() 

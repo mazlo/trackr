@@ -492,15 +492,19 @@ input.textfield {
 
 input.entry_title_inactive,
 input.comments_title_inactive {
+	background: transparent;
 	border: 1px solid #fff; 
+
 	margin: 0;
 	padding: 6px;
+	
 	font-size: 16px; 
 	font-weight: bold; 
 	font-family: Georgia;
 }
 
 input.tags_textfield_inactive {
+	background: transparent;
 	border: 1px solid #fff; 
 	
 	width: 525px;
