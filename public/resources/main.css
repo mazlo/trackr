@@ -156,6 +156,26 @@ ul.list-contexts-stackrs li a {
 	text-align: center;
 }
 
+ul.list-box {
+	overflow: hidden; 
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none; 
+	text-align: center
+}
+
+ul.list-box > li.list-box-feature {
+	display: inline-block;
+	background: #fcfcfc; 
+	border: 1px #bbb solid; 
+	
+	width: 140px; 
+	height: 105px; 
+	margin: 0 13px;
+	padding: 13px; 
+}
+
 
 /*
 	global html elements identified by id
@@ -221,6 +241,7 @@ ul.list-contexts-stackrs li a {
 #terms {
 	background: #fff; 
 	box-shadow: 0px 1px 4px 2px #bbb;
+	margin-top: 48px;
 }
 
 #terms-wrapper h4 {

@@ -35,7 +35,7 @@
 @stop
 
 @section( 'footer' )
-    <div style='padding: 0 23px;'>
+    <div style='padding: 0 23px 48px;'>
 
         <h3>What the heck is <span style='font-size: 23px'>M</span>ind<span style='font-size: 23px'>S</span>tackr?</h3>
 
@@ -58,40 +58,40 @@
             MindStackr is laid-out with maximum usability in mind: all changes on your Stacks should be just on click away. 
         </p>
 
-        <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0 108px; text-align: center'>
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+        <ul class='list-box'>
+            <li class='list-box-feature'>
                 Click on the title, description or title of comment section of a MindStack to change it.
             </li>
 
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
-                Organize the order of Comments by dragging.
+            <li class='list-box-feature'>
+                Organize the order and position of Comments inside a MindStack by dragging them.
             </li>
 
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+            <li class='list-box-feature'>
                 Delete some Comments or even the complete MindStack if you don't like them.
             </li>
 
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+            <li class='list-box-feature'>
                 Convert a Comment into a MindStack or even a MindStack into a Context.
             </li>
         </ul>
 
         <div><img src='{{ url("resources/mindstackr_screenshot.png") }}' /></div>
 
-        <ul style='overflow: hidden; list-style-type: none; padding: 8px 0 0 108px; text-align: center'>
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+        <ul class='list-box'>
+            <li class='list-box-feature'>
                 Assign meaningful tags to your MindStack, so you can filter and find them quickly.
             </li>
 
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+            <li class='list-box-feature'>
                 If you think one Stack is important for you, pin it, so it will be shown always at the top.
             </li>
 
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
-                Use the search field to find Stack titles, descriptions or Comments.
+            <li class='list-box-feature'>
+                Use the search field at the top to find Stack titles, descriptions or Comments.
             </li>
 
-            <li style='float: left; background: #fcfcfc; border: 1px #bbb solid; width: 140px; height: 105px; padding: 13px; margin: 0 13px;'>
+            <li class='list-box-feature'>
                 Confirm or abort your input in textfields by hitting enter or escape.
             </li>
         </ul>
