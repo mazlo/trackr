@@ -20,7 +20,7 @@ class BaseController extends Controller {
 	*/
 	public function terms()
     {
-        return View::make( 'terms' );
+        return View::make( 'terms-and-conditions' );
     }
 
 }

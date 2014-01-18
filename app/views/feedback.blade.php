@@ -47,6 +47,6 @@
 
 @stop
 
-@section( 'terms' )
-	@include( 'terms-section' )
+@section( 'footer' )
+	@include( 'terms' )
 @stop

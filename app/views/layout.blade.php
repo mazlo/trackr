@@ -71,10 +71,6 @@
 			@yield( 'footer' )
 		</div>
 
-		<div id='terms'>
-			@yield( 'terms' )
-		</div>
-
 	</body>
 
 <script type='text/javascript'>

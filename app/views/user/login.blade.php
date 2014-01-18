@@ -98,5 +98,5 @@
 
     </div>
 
-    @include( 'terms-section' )
+    @include( 'terms' )
 @stop
