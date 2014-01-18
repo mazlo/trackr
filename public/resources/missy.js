@@ -59,8 +59,9 @@ var scrollToDesiredElement = function()
 		return;
 
 	var element = $jQ( '#'+ anchorId[1] );
+	
 	$jQ( 'html, body' ).animate({ 
-		scrollTop: element.offset().top - 64
+		scrollTop: element.offset().top - 72
 	}, 100 );
 
 	element.effect( 'highlight', { }, 800 );
