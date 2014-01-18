@@ -35,7 +35,7 @@
 @stop
 
 @section( 'footer' )
-    <div style='padding: 23px;'>
+    <div style='padding: 0 23px;'>
 
         <h3>What the heck is <span style='font-size: 23px'>M</span>ind<span style='font-size: 23px'>S</span>tackr?</h3>
 
@@ -98,8 +98,5 @@
 
     </div>
 
-@stop
-
-@section( 'terms' )
     @include( 'terms-section' )
 @stop
