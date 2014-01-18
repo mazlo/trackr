@@ -2,10 +2,20 @@
 @foreach( $contexts as $context )
 	
 	<li class='wrapper_context' cname='{{ $context->name }}'>
-		<div class='context' style='background: {{ $context->color }}'>
-			<a href='{{ url( "contexts/$context->name/stackrs" ) }}' style='border: 0'>
+		<div class='context' style='background: {{ $context->color }};'>
+			
+			<a href='{{ url( "contexts/$context->name/stackrs" ) }}'>
 				{{ $context->name }}
 			</a>
+			
+			<ul class='list-contexts-stackrs'>
+				@foreach( $context->stackrs as $stackr )
+				<li>
+					<a href='{{ url("contexts/$context->name/stackrs") }}'>#{{ $stackr->id }}</a>
+				</li>
+				@endforeach
+			</ul>
+
 		</div>
 
 		<div class='context_add_options'>
