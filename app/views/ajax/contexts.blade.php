@@ -11,7 +11,7 @@
 			<ul class='list-contexts-stackrs'>
 				@foreach( $context->stackrs as $stackr )
 				<li>
-					<a href='{{ url("contexts/$context->name/stackrs") }}'>#{{ $stackr->id }}</a>
+					<a href='{{ url("contexts/$context->name/stackrs") }}#{{ $stackr->id }}'>#{{ $stackr->id }}</a>
 				</li>
 				@endforeach
 			</ul>

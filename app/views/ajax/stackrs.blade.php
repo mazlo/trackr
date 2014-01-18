@@ -6,7 +6,7 @@
 @endif
 
 @foreach( $stackrs as $stackr )
-	<div class='wrapper_entry filterableByTag' tags='{{ $stackr->tags }}' eid='{{ $stackr->id }}'>
+	<div id='{{ $stackr->id }}' class='wrapper_entry filterableByTag' tags='{{ $stackr->tags }}' eid='{{ $stackr->id }}'>
 
 		<div class='entry_header'>
 			

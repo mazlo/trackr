@@ -45,9 +45,22 @@ var getAllEntries = function( tags )
 		{
 			$jQ( '#entries' ).html( data );
 
+			scrollToDesiredElement();
 			makeCommentsSortable( this );
 		}
 	});
+};
+
+var scrollToDesiredElement = function()
+{
+	var anchorId = window.location.toString().split( '#' );
+
+	if ( anchorId.length == 1 )
+		return;
+
+	$jQ( 'html, body' ).animate({ 
+		scrollTop: $jQ( '#'+ anchorId[1] ).offset().top - 64
+	}, 100 );
 };
 
 var makeContextsSortable = function() 
