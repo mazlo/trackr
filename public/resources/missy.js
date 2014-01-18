@@ -59,7 +59,7 @@ var scrollToDesiredElement = function()
 		return;
 
 	var element = $jQ( '#'+ anchorId[1] );
-	
+
 	$jQ( 'html, body' ).animate({ 
 		scrollTop: element.offset().top - 72
 	}, 100 );
@@ -332,7 +332,7 @@ var addContextAction = function()
 var deleteContextConfirm = function( e, object )
 {
 	var x = e.target.offsetLeft - 2;
-	var y = e.target.offsetTop + 42;
+	var y = e.target.offsetTop - 32;
 
 	var dialog = $jQ( object ).next( '.context_delete_confirmation' );
 	dialog.css( 'left', x );
