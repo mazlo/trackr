@@ -9,9 +9,15 @@
 			</a>
 			
 			<ul class='list-contexts-stackrs'>
-				@foreach( $context->stackrs as $stackr )
+
+				{{-- not the default query because we limit the size of children to 6 --}}
+				@foreach( $context->stackrs()->getQuery()->limit(6)->get() as $key => $stackr )
 				<li>
-					<a href='{{ url("contexts/$context->name/stackrs") }}#{{ $stackr->id }}'>#{{ $stackr->id }}</a>
+					@if ( $key == 5 )	{{-- means that the 6th element willl not be display --}}
+						<a href='{{ url("contexts/$context->name/stackrs") }}'>...</a>
+					@else
+						<a href='{{ url("contexts/$context->name/stackrs") }}#{{ $stackr->id }}'>#{{ $stackr->id }}</a>
+					@endif
 				</li>
 				@endforeach
 			</ul>
