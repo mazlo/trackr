@@ -492,7 +492,7 @@ var makeContext = function( object, copy, callback )
 
 		success: function( data ) 
 		{
-			//callback();
+			callback();
 		}
 	});
 
