@@ -96,7 +96,7 @@ class ContextController extends BaseController {
 			$clonedStackr->save();
 		}
 
-		$this->all();
+		return $this->index();
 	}
 
 	/**
