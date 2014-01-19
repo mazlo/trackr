@@ -378,7 +378,7 @@ li.comment > span.searchable {
 
 li.wrapper_context {
 	display: inline-block; 
-	margin: 23px 23px 13px 0;
+	padding: 23px 23px 13px 0;
 }
 
 /* entry_header > */
