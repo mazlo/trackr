@@ -73,7 +73,7 @@ class ContextController extends BaseController {
 			return;
 
 		if ( empty( $duplicate ) )
-			$duplicate = false;
+			$duplicate = 'false';
 
 		$stackr = Auth::user()->stackr( $sid )->first();
 
@@ -88,7 +88,7 @@ class ContextController extends BaseController {
 		// save Context, so it has a primary key
 		$context->save();
 
-		if ( $duplicate == true )
+		if ( $duplicate == 'true' )
 		{
 			// duplicate stackr and associate with Context
 			$clonedStackr = $stackr->replicate();
