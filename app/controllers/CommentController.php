@@ -54,10 +54,12 @@ class CommentController extends BaseController
 		// update Comment positions
 		if ( Input::has( 'cid' ) )
 		{
-			for( $i = 0; $i < sizeof( $cids ); ) 
+			$cid = Input::get( 'cid' );
+			
+			for( $i = 0; $i < sizeof( $cid ); ) 
 			{
 				// get comment for user
-				$comment = Auth::user()->comment( $cids[$i] )->first();
+				$comment = Auth::user()->comment( $cid[$i] )->first();
 				
 				if ( !isset( $comment ) )
 					continue;

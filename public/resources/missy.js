@@ -46,7 +46,7 @@ var getAllEntries = function( tags )
 			$jQ( '#entries' ).html( data );
 
 			scrollToDesiredElement();
-			makeCommentsSortable( this );
+			makeCommentsSortable( null );
 		}
 	});
 };
@@ -86,7 +86,10 @@ var makeCommentsSortable = function( object )
 	{
 		update: function( event, ui ) 
 		{
-			return updateCommentPositions( object );
+			if ( object )
+				return updateCommentPositions( object );
+			else 
+				return updateCommentPositions( this );
 		}
 	});
 
