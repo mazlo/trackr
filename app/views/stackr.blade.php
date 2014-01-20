@@ -19,7 +19,7 @@
 			<div class='entry_description'>
 				<input class='textfield entry_title_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->title }}' disabled='disabled' />
 				<span class='entry_title_confirm'>
-					<button class='operator-button doneButton'>Done</button>
+					<button class='operator-button operator-button-done'>done</button>
 				</span>
 				<h4 class='entry_description searchable'>{{ $stackr->description }}</h4>
 			</div>
@@ -54,7 +54,7 @@
 			<div class='wrapper_comments'>
 				<input class='textfield comments_title_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<span class='comments_title_confirm'>
-					<button class='operator-button doneButton'>Done</button>
+					<button class='operator-button operator-button-done'>done</button>
 				</span>
 					
 				<div class='comment_add_div' id='comment_add_link_{{ $stackr->id }}' style='display: none;'>

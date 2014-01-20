@@ -275,17 +275,19 @@ button.operator-button-vertical {
 	margin-bottom: 3px;
 }
 
-button.doneButton {
+button.operator-button-done {
 	border: 1px solid green; 
 	width: 82px; 
+	
 	color: #000;
+	font-family: AleoLight;
 }
 
 button.operator-button-confirm {
 	border: 1px solid red; 
 	width: 82px; 
+	
 	color: #000;
-
 	font-family: AleoLight;
 }
 
