@@ -285,7 +285,7 @@ button.operator-button-confirm {
 	border: 1px solid red; 
 	width: 82px; 
 	color: #000;
-	
+
 	font-family: AleoLight;
 }
 
@@ -474,8 +474,7 @@ div.comment_add_div {
 
 .context_delete_confirmation,
 .entry_delete_confirmation,
-.comment_delete_confirmation,
-.entry_make_context_confirmation {
+.comment_delete_confirmation {
 	display: none; 
 	z-index: 1000; 
 	position: absolute; 

@@ -40,9 +40,6 @@
 				</span>
 
 				<button class='operator-button entry_make_context_link' eid='{{ $stackr->id }}'>make Context</button>
-				<span class='entry_make_context_confirmation' eid='{{ $stackr->id }}'>
-					<button class='operator-button operator-button-confirm'>Sure?</button>
-				</span>
 
 			</div>
 

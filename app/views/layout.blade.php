@@ -261,14 +261,6 @@
 
 	$jQ( document ).on( 'click', '.entry_make_context_link', function(e) { return makeContextConfirm( e, this ); } );
 
-	$jQ( document ).on( 'click', '.entry_make_context_confirmation', function()
-	{
-		return makeContext( this, function()
-		{
-			window.location = getContextPath() + '/contexts';
-		} );
-	} );
-
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
 
 // TITLE
