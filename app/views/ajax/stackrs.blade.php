@@ -80,7 +80,7 @@
 					@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments ) )
 				</ul> 
 
-				@if( count( $comments ) >= 3 )
+				@if( count( $comments ) > 3 )
 					<p style='padding-left: 13px'>
 						<a class='dotted seeMore' href=''>see more</a>
 					</p>
