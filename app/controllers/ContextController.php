@@ -90,10 +90,17 @@ class ContextController extends BaseController {
 
 		if ( $duplicate == 'true' )
 		{
-			// duplicate stackr and associate with Context
+			// duplicate Stackr and associate with Context
 			$clonedStackr = $stackr->replicate();
 			$clonedStackr->context()->associate( $context );
 			$clonedStackr->save();
+
+			// duplicate all Comments on that Stackr
+			foreach ( $stackr->comments as $comment ) 
+			{
+				$clonedComment = $comment->replicate();
+				$clonedStackr->comments()->save( $clonedComment );
+			}
 		}
 
 		return $this->index();
