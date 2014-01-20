@@ -403,6 +403,15 @@
 
 	} );
 
+	// handle click on textfield 'entry title'
+	$jQ( document ).on( 'dblclick', '.comment', function() 
+	{
+		var textElement = $jQ(this).find( '.searchable' );
+		oldComment = textElement.text();
+
+		textElement.html( '<textarea class="comment_textarea">'+ oldComment +'</textarea>' );
+	});
+
 	// handle 
 	$jQ( document ).on( 'click', '.seeMore', function() { return seeMoreComments( this ); } );
 
