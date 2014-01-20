@@ -36,7 +36,7 @@
 				</button>
 				<button class='operator-button entry_delete_link' eid='{{ $stackr->id }}'>delete Stackr</button>
 				<span class='entry_delete_confirmation' eid='{{ $stackr->id }}'>
-					<button class='operator-button operator-button-confirm'>Sure?</button>
+					<button class='operator-button operator-button-confirm'>delete</button>
 				</span>
 			</div>
 

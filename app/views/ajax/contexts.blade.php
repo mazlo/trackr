@@ -26,7 +26,7 @@
 		<div class='context-options-box'>
 			<button class='operator-button operator-button-narrow operator-button-vertical context_delete_link'>x</button>
 			<span class='context_delete_confirmation'>
-				<button class='operator-button operator-button-confirm' style='width: auto'>Sure?</button>
+				<button class='operator-button operator-button-confirm' style='width: auto'>delete</button>
 			</span>
 
 			@foreach( $colors[ $context->name ] as $contextColors )
