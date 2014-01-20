@@ -214,6 +214,7 @@ ul.list-box > li.list-box-feature {
 }
 
 #beforeContent {
+	overflow: hidden;
 	margin: 0 32px;
 	padding: 90px 0 0;
 	height: 32px;

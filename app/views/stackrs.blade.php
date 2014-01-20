@@ -32,8 +32,6 @@
 		
 	</div>
 
-	<div style='clear: both; height: 1px;'></div>
-
 @stop
 
 @section( 'content' )
