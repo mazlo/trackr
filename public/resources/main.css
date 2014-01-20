@@ -374,6 +374,7 @@ ul.comments {
 
 li.comment {
 	margin: 0; 
+	padding: 4px 0;
 	cursor: hand;
 }
 
@@ -623,7 +624,7 @@ textarea.textarea,
 textarea.comment_textarea
  {
 	border: 1px #bbb solid;
-	width: 100%; 
+	width: 90%; 
 	height: 105px; 
 	padding: 6px;
 
