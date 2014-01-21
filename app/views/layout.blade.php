@@ -403,13 +403,38 @@
 
 	} );
 
-	// handle click on textfield 'entry title'
+	// handle double click on a comment
 	$jQ( document ).on( 'dblclick', '.comment', function() 
 	{
 		var textElement = $jQ(this).find( '.searchable' );
 		oldComment = textElement.text();
 
-		textElement.html( '<textarea class="comment_textarea">'+ oldComment +'</textarea>' );
+		textElement.html( '<textarea class="comment_textarea">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 4px 0 0 42px">edit</button>' );
+	});
+
+	// handle click on comment edit button
+	$jQ( document ).on( 'click', '.comment-edit-button', function()
+	{
+		// forget old comment that was saved before
+		oldComment = null;
+
+		var newComment = $jQ(this).parent().find( 'textarea' ).val();
+		alert(newComment);
+
+		// get element ids
+		var cname = $jQ( '#entries' ).attr( 'cname' );
+		var entryId = $jQ( this ).closest( '.wrapper_entry' ).attr( 'eid' );
+		var commentId = $jQ( this ).closest( 'li' ).attr( 'cid' );
+
+		// put request
+		$jQ.ajax( {
+			url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId,
+			type: 'put',
+			data: { cmt: newComment }
+		});
+
+		// turn textarea back to simple span
+		var textElement = $jQ(this).parent().html( newComment );
 	});
 
 	// handle 

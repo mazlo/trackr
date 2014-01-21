@@ -78,6 +78,9 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::delete( '/contexts/{contextName}/stackrs/{eid}/comments/{cid}', 'CommentController@delete' );
 
+	Route::put( '/contexts/{contextName}/stackrs/{eid}/comments/{cid}', 'CommentController@update' );
+
+	// needed to updpate comment positions
 	Route::put( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@update' );
 
     Route::any( '/logout', array(

@@ -49,7 +49,7 @@ class CommentController extends BaseController
 	/**
 	*	Update Comment
 	*/
-	public function update( $contextName, $sid )
+	public function update( $contextName, $sid, $cid = '-1' )
 	{
 		// update Comment positions
 		if ( Input::has( 'cid' ) )
@@ -68,6 +68,20 @@ class CommentController extends BaseController
 				$comment->position = ++$i;
 				$comment->save();
 			}
+		}
+
+		// update Comment itself
+		else if ( Input::has( 'cmt') )
+		{
+			$cmt = Input::get( 'cmt' );
+
+			$comment = Auth::user()->comment( $cid )->first();
+
+			if ( !isset( $comment ) )
+				return;
+
+			$comment->comment = $cmt;
+			$comment->save();
 		}
 
 		// reloading is done by ajax.success
