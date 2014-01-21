@@ -413,29 +413,7 @@
 	});
 
 	// handle click on comment edit button
-	$jQ( document ).on( 'click', '.comment-edit-button', function()
-	{
-		// forget old comment that was saved before
-		oldComment = null;
-
-		var newComment = $jQ(this).parent().find( 'textarea' ).val();
-		alert(newComment);
-
-		// get element ids
-		var cname = $jQ( '#entries' ).attr( 'cname' );
-		var entryId = $jQ( this ).closest( '.wrapper_entry' ).attr( 'eid' );
-		var commentId = $jQ( this ).closest( 'li' ).attr( 'cid' );
-
-		// put request
-		$jQ.ajax( {
-			url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId,
-			type: 'put',
-			data: { cmt: newComment }
-		});
-
-		// turn textarea back to simple span
-		var textElement = $jQ(this).parent().html( newComment );
-	});
+	$jQ( document ).on( 'click', '.comment-edit-button', function() { return updateComment( this ); });
 
 	// handle 
 	$jQ( document ).on( 'click', '.seeMore', function() { return seeMoreComments( this ); } );

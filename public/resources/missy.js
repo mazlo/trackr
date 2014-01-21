@@ -151,6 +151,29 @@ var updateContextPositions = function( object )
 	});
 };
 
+var updateComment = function( object )
+{
+	// forget old comment that was saved before
+	oldComment = null;
+
+	var newComment = $jQ( object ).parent().find( 'textarea' ).val();
+
+	// get element ids
+	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var entryId = $jQ( object ).closest( '.wrapper_entry' ).attr( 'eid' );
+	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
+
+	// compose put request
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId,
+		type: 'put',
+		data: { cmt: newComment }
+	});
+
+	// turn textarea back to simple span
+	var textElement = $jQ( object ).parent().html( newComment );
+};
+
 var updateCommentPositions = function( object )
 {
 	var counter = 0;
