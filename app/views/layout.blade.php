@@ -401,6 +401,7 @@
 			{
 				if ( element.hasClass( 'textarea-edit' ) ) 
 				{
+					// turn textarea back to simple span
 					element.parent().html( oldComment );
 					oldComment = null;
 				}
