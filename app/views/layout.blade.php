@@ -392,12 +392,20 @@
 
 	// handle keypress on textfield entry title
 	$jQ( document ).on( 'keyup', '.comment_textarea', function( event ) 
-	{ 
+	{
+		var element = $jQ(this);
+
 		confirmChange( event, 
 		{
 			onEscape : function()
 			{
-				$jQ( '.comment_add_cancel' ).click();
+				if ( element.hasClass( 'textarea-edit' ) ) 
+				{
+					element.parent().html( oldComment );
+					oldComment = null;
+				}
+				else 
+					$jQ( '.comment_add_cancel' ).click();
 			}
 		});
 
@@ -409,7 +417,7 @@
 		var textElement = $jQ(this).find( '.searchable' );
 		oldComment = textElement.text();
 
-		textElement.html( '<textarea class="comment_textarea">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 4px 0 0 42px">edit</button>' );
+		textElement.html( '<textarea class="comment_textarea textarea-edit">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 4px 0 0 42px">edit</button>' );
 	});
 
 	// handle click on comment edit button

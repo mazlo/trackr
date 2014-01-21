@@ -171,7 +171,7 @@ var updateComment = function( object )
 	});
 
 	// turn textarea back to simple span
-	var textElement = $jQ( object ).parent().html( newComment );
+	$jQ( object ).parent().html( newComment );
 };
 
 var updateCommentPositions = function( object )
