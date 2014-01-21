@@ -581,7 +581,7 @@ var deleteCommentConfirm = function( e, object )
 	var x = e.target.offsetLeft - 188;
 	var y = e.target.offsetTop + 1;
 
-	var cdialog = $jQ( object ).parent().nextAll( '.comment_delete_confirmation' );
+	var cdialog = $jQ( object ).parent().nextAll( '.comment-delete-confirm' );
 	cdialog.css( 'left', x );
 	cdialog.css( 'top', y );
 	cdialog.show();

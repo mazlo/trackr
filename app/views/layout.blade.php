@@ -371,7 +371,7 @@
 	$jQ( document ).on( 'click', '.comment_delete_link', function(e) { return deleteCommentConfirm( e, this ); } );
 
 	// handle click on confirmation dialog for comment delete button
-	$jQ( document ).on( 'click', '.comment_delete_confirmation', function() { return deleteComment( this ); } );
+	$jQ( document ).on( 'click', '.comment-delete-confirm', function() { return deleteComment( this ); } );
 
 // EVENTS REGARDING CHANGES TO COMMENT PROPERTIES
 
