@@ -11,8 +11,8 @@
 
 @foreach( $comments as $comment )
 	<li class='comment' cid='{{ $comment->id }}'>
-		<span><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
-		<span class='searchable'>{{ $comment->comment }}</span>
+		<span class='comment-icon'><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
+		<span class='comment-text searchable'>{{ $comment->comment }}</span>
 		<span class='comment_delete_confirmation' eid='{{ $stackr->id }}' cid='{{ $comment->id }}'>
 			<button class='operator-button operator-button-confirm'>delete</button>
 		</span>

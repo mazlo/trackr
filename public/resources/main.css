@@ -373,9 +373,20 @@ ul.comments {
 }
 
 li.comment {
+	display: table; 
+	width: 100%;
 	margin: 0; 
-	padding: 4px 0;
+
 	cursor: hand;
+}
+
+li.comment > span.comment-icon {
+	display: table-cell; 
+	width: 32px;
+}
+
+li.comment > span.comment-text { 
+	display: table-cell
 }
 
 li.comment > span.searchable {
@@ -630,6 +641,10 @@ textarea.comment_textarea
 
 	font-family: AleoLight;
 	font-size: 15px;
+}
+
+textarea.textarea-edit {
+	display: block;
 }
 
 textarea.form
