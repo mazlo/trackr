@@ -419,6 +419,7 @@
 		oldComment = textElement.text();
 
 		textElement.html( '<textarea class="comment_textarea textarea-edit">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 8px 0 4px">edit</button>' );
+		textElement.find( '.textarea-edit' ).focus();
 	});
 
 	// handle click on comment edit button
