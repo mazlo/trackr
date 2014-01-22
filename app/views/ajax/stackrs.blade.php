@@ -1,20 +1,20 @@
 @if ( count( $stackrs ) == 0 )
-	<div class='wrapper_entry' style='padding: 13px 0;'>
+	<div class='stackr-wrapper' style='padding: 13px 0;'>
 		<p>Looks like you have no stackrs created yet.</p>
 		<p>Click on the button above to create your first stackr!</p>
 	</div>
 @endif
 
 @foreach( $stackrs as $stackr )
-	<div id='{{ $stackr->id }}' class='wrapper_entry filterableByTag' tags='{{ $stackr->tags }}' eid='{{ $stackr->id }}'>
+	<div id='{{ $stackr->id }}' class='stackr-wrapper filterableByTag' tags='{{ $stackr->tags }}' eid='{{ $stackr->id }}'>
 
-		<div class='entry_header'>
+		<div class='stackr-header'>
 			
-			<div class='entry_icon'>
+			<div class='stackr-icon'>
 				<span style='font-weight: bold'>#{{ $stackr->id }}</span>
 			</div>
 
-			<div class='entry_description'>
+			<div class='stackr-description'>
 				<input class='textfield entry_title_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->title }}' disabled='disabled' />
 				<span class='entry_title_confirm'>
 					<button class='operator-button operator-button-done'>done</button>
@@ -22,7 +22,7 @@
 				<h4 class='italic more_padding searchable'>{{ $stackr->description }}</h4>
 			</div>
 
-			<div class='entry_operations'>
+			<div class='stackr-operations'>
 				
 				<button class='operator-button comment_add_link' eid='{{ $stackr->id }}'>add
 					<span id='comment_add_button_text_{{ $stackr->id }}'>
@@ -43,15 +43,13 @@
 
 			</div>
 
-			<div class='entry_buttons'>
+			<div class='stackr-buttons'>
 				<img src='{{ url( "resources/pinIt_$stackr->favored.png" ) }}' class='favoredIcon' alt='{{ $stackr->favored }}' width='28px' eid='{{ $stackr->id }}' />
 			</div>
 
-			<div style='clear: both; height: 0px'></div>
-
 		</div>
 
-		<div class='entry_content'>
+		<div class='stackr-content'>
 
 			<!-- wrapper for all comments -->
 			<div class='wrapper_comments'>
@@ -90,7 +88,7 @@
 
 		</div>
 
-		<div class='entry_footer'>
+		<div class='stackr-footer'>
 
 			<div style='float: left'>
 				<span style='color: #aaa;'>Tags:</span> 

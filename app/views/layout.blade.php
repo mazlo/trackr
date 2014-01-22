@@ -250,7 +250,7 @@
 	// handle click on confirmation dialog for delete entry button
 	$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
 	{ 
-		return deleteEntry( this, '.wrapper_entry', function()
+		return deleteEntry( this, '.stackr-wrapper', function()
 		{
 			getAllEntries();
 			getDistinctEntriesTagList();

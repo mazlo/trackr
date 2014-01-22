@@ -398,9 +398,22 @@ li.wrapper_context {
 	padding: 23px 23px 13px 0;
 }
 
-/* entry_header > */
+/* STACKR */
 
-div.entry_icon {
+div.stackr-wrapper {
+	border-bottom: 1px solid #ccc;
+	padding: 23px 0;
+}
+
+div.stackr {
+
+}
+
+div.stackr-header {
+	overflow: hidden;
+}
+
+div.stackr-icon {
 	float: left;
 	width: 46px;
 	padding: 6px 0;
@@ -408,7 +421,7 @@ div.entry_icon {
 	font-family: AleoLight;
 }
 
-div.entry_description {
+div.stackr-description {
 	float: left;
 	width: 527px;
 	padding-right: 23px;
@@ -416,13 +429,13 @@ div.entry_description {
 	font-family: AleoLight;
 }
 
-div.entry_operations {
+div.stackr-operations {
 	float: left; 
 	width: 310px; 
 	padding: 6px 0;
 }
 
-div.entry_buttons {
+div.stackr-buttons {
 	float: right;
 	padding: 6px 4px;
 }
@@ -456,20 +469,6 @@ div.div_context_add {
 	height: 32px;
 	cursor: hand;
 	color: #fff;
-}
-
-div.wrapper_entry {
-	border-bottom: 1px solid #ccc;
-	padding: 23px 0;
-}
-
-div.entry {
-
-}
-
-div.entry_details {
-	margin-bottom: 13px; 
-	padding: 3px 13px 23px;
 }
 
 div.wrapper_comments { 

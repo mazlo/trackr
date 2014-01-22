@@ -160,7 +160,7 @@ var updateComment = function( object )
 
 	// get element ids
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).closest( '.wrapper_entry' ).attr( 'eid' );
+	var entryId = $jQ( object ).closest( '.stackr-wrapper' ).attr( 'eid' );
 	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
 
 	// compose put request
@@ -286,8 +286,8 @@ var updateTags = function ( object )
 
 		success: function( data ) 
 		{
-			// update tags attribute on wrapper_entry
-			$jQ( object ).closest( '.wrapper_entry' ).attr( 'tags', tags );
+			// update tags attribute on stackr-wrapper
+			$jQ( object ).closest( '.stackr-wrapper' ).attr( 'tags', tags );
 
 			// compute distinct tag list anew
 			getDistinctEntriesTagList();
@@ -624,7 +624,7 @@ var seeMoreComments = function( object )
 	});
 
 	// get element id and request comments
-	var sid = $jQ( object ).closest( '.wrapper_entry' ).attr( 'eid' );
+	var sid = $jQ( object ).closest( '.stackr-wrapper' ).attr( 'eid' );
 
 	getComments( sid );
 
@@ -735,6 +735,6 @@ var inverseFavored = function( key )
 
 var getClosestEntryId = function( object )
 {
-	return $jQ( object ).closest( '.wrapper_entry' ).attr( 'eid' );
+	return $jQ( object ).closest( '.stackr-wrapper' ).attr( 'eid' );
 };
 
