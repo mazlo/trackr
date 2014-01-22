@@ -440,6 +440,10 @@ div.stackr-buttons {
 	padding: 6px 4px;
 }
 
+div.stackr-footer {
+	padding-left: 52px;
+}
+
 div.div_entry_add,
 div.div_context_add {
 	background: #f8f8f8;

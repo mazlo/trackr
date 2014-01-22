@@ -89,21 +89,8 @@
 		</div>
 
 		<div class='stackr-footer'>
-
-			<div style='float: left'>
-				<span style='color: #aaa;'>Tags:</span> 
-				<input type='type' class='textfield tags_textfield_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->tags }}' disabled='disabled' /> 
-			</div>
-
-			{{-- 
-			<div style='float: right; text-align: right'>
-				<a href='{{ URL::to( "/contexts/$cname/stackrs/$stackr->id" ) }}' target='_self'>
-					<button class='operator-button entry_details_link'>details</button>
-				</a>
-			</div>
-			--}}
-
-			<div style='clear: both;'></div>
+			<span style='color: #aaa;'>Tags:</span> 
+			<input type='type' class='textfield tags_textfield_inactive' eid='{{ $stackr->id }}' value='{{ $stackr->tags }}' disabled='disabled' /> 
 		</div>
 
 	</div> {{-- end of wrapper entry --}}
