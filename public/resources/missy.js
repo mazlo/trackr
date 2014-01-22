@@ -160,7 +160,7 @@ var updateComment = function( object )
 
 	// get element ids
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).closest( '.stackr-wrapper' ).attr( 'eid' );
+	var entryId = getIdFromClosestStackr();
 	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
 
 	// compose put request
@@ -185,10 +185,10 @@ var updateCommentPositions = function( object )
 	});
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = getClosestEntryId( object );
+	var sid = getIdFromClosestStackr( object );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'put',
 		data: { cid: cid }
 	});
@@ -624,7 +624,7 @@ var seeMoreComments = function( object )
 	});
 
 	// get element id and request comments
-	var sid = $jQ( object ).closest( '.stackr-wrapper' ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
 	getComments( sid );
 
@@ -733,8 +733,8 @@ var inverseFavored = function( key )
 		return 0;
 };
 
-var getClosestEntryId = function( object )
+var getIdFromClosestStackr = function ( object )
 {
-	return $jQ( object ).closest( '.stackr-wrapper' ).attr( 'eid' );
-};
+	return $jQ( object ).closest( '.stackr-wrapper' ).attr( 'id' );
+}
 
