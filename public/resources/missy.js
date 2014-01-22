@@ -115,17 +115,17 @@ var getDistinctEntriesTagList = function()
 	});
 }
 
-var getComments = function( eid )
+var getComments = function( sid )
 {
 	var cname = $jQ( '#entries' ).attr( 'cname' );
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ eid +'/comments',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'get',
 
 		success: function( data ) 
 		{
-			$jQ( '#comments_'+ eid ).html( data );
+			$jQ( '#comments_'+ sid ).html( data );
 		}
 	});
 };
@@ -160,12 +160,12 @@ var updateComment = function( object )
 
 	// get element ids
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = getIdFromClosestStackr();
+	var sid = getIdFromClosestStackr();
 	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
 
 	// compose put request
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId,
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments/'+ commentId,
 		type: 'put',
 		data: { cmt: newComment }
 	});
@@ -210,11 +210,11 @@ var updateEntryTitle = function( e, object )
 	dialog.css( 'top', y );
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
 		type: 'put',
 		data: { tl: title },
 
@@ -245,11 +245,11 @@ var updateCommentsTitle = function( e, object )
 	dialog.css( 'top', y );
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
 	// ajax call to change title
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
 		type: 'put',
 		data: { ltl: title },
 
@@ -259,7 +259,7 @@ var updateCommentsTitle = function( e, object )
 			if ( title.charAt( title.length-1 ) == 's' ) 
   				title = title.slice( 0, -1 );
 
-			$jQ( '#comment_add_button_text_'+ entryId ).text( title );
+			$jQ( '#comment_add_button_text_'+ sid ).text( title );
 
 			// show confirmation dialog
 			dialog.show();
@@ -274,13 +274,13 @@ var updateCommentsTitle = function( e, object )
 var updateTags = function ( object )
 {
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
 	var tags = $jQ( object ).val();
 
 	// ajax call to change tags
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
 		type: 'put',
 		data: { tg: tags },
 
@@ -303,11 +303,11 @@ var updateEntryFavored = function ( object )
 	$jQ( object ).attr( 'alt', inverseFavored(type) );
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
 	// ajax call to change favored status
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
 		type: 'put',
 		data: { fv: inverseFavored(type) }
 	});			
@@ -456,12 +456,12 @@ var deleteEntry = function( object, closestClass, callback )
 	$jQ( object ).hide();
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId,
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
 				type: 'delete',
 
 				success: function( data ) 
@@ -509,7 +509,7 @@ var makeContextConfirm = function( e, object )
 
 var makeContext = function( object, copy, callback )
 {
-	var sid = $jQ( object ).attr('eid');
+	var sid = getIdFromClosestStackr( object );
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/make',
@@ -529,12 +529,12 @@ var makeContext = function( object, copy, callback )
 
 var showAddCommentDiv = function( object )
 {
-	var entryId = $jQ( object ).attr('eid');
+	var sid = getIdFromClosestStackr( object );
 
-	$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 200, function()
+	$jQ( '#comment_add_link_'+ sid ).effect( 'fade', 200, function()
 		{
-			$jQ( '#comment_add_link_'+ entryId ).show();
-			$jQ( '#comment_new_content_'+ entryId ).focus();
+			$jQ( '#comment_add_link_'+ sid ).show();
+			$jQ( '#comment_new_content_'+ sid ).focus();
 		});
 
 	return false;
@@ -542,10 +542,11 @@ var showAddCommentDiv = function( object )
 
 var hideAddCommentDiv = function( object ) 
 {
-	var entryId = $jQ( object ).attr('eid');
-	$jQ( '#comment_add_link_'+ entryId ).effect( 'fade', 100, function()
+	var sid = getIdFromClosestStackr( object );
+
+	$jQ( '#comment_add_link_'+ sid ).effect( 'fade', 100, function()
 		{
-			$jQ( '#comment_add_link_'+ entryId ).hide();
+			$jQ( '#comment_add_link_'+ sid ).hide();
 		} );
 
 	return false;
@@ -554,22 +555,22 @@ var hideAddCommentDiv = function( object )
 var addCommentAction = function( object )
 {
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 
-	if ( $jQ( '#comment_new_content_'+ entryId ).val() == '' )
+	if ( $jQ( '#comment_new_content_'+ sid ).val() == '' )
 		return;
 
-	var comment = $jQ( '#comment_new_content_'+ entryId ).val();
+	var comment = $jQ( '#comment_new_content_'+ sid ).val();
 
 	$jQ.ajax( {
-		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments',
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'post',
 		data: { cmt: comment },
 
 		success: function( data ) 
 		{
-			$jQ( '#comment_add_link_'+ entryId ).hide();
-			$jQ( '#comments_'+ entryId ).html( data );
+			$jQ( '#comment_add_link_'+ sid ).hide();
+			$jQ( '#comments_'+ sid ).html( data );
 		}
 	});
 
@@ -596,18 +597,18 @@ var deleteComment = function( object )
 	$jQ( object ).hide();
 
 	var cname = $jQ( '#entries' ).attr( 'cname' );
-	var entryId = $jQ( object ).attr( 'eid' );
+	var sid = getIdFromClosestStackr( object );
 	var commentId = $jQ( object ).attr( 'cid' );
 
 	$jQ( object ).closest( '.comment' ).effect( 'fade', 300, function()
 		{
 			$jQ.ajax( {
-				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ entryId +'/comments/'+ commentId,
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments/'+ commentId,
 				type: 'delete',
 
 				success: function( data ) 
 				{
-					$jQ( '#comments_'+ entryId ).html( data );
+					$jQ( '#comments_'+ sid ).html( data );
 				}
 			});
 		});
