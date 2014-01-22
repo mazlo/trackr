@@ -15,7 +15,7 @@
 			</div>
 
 			<div class='stackr-description'>
-				<input class='textfield entry_title_inactive' value='{{ $stackr->title }}' disabled='disabled' />
+				<input class='textfield textfield-title' value='{{ $stackr->title }}' disabled='disabled' />
 				<span class='entry_title_confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>

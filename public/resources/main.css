@@ -524,7 +524,19 @@ input.textfield {
 	height: 32px;
 }
 
-input.entry_title_inactive,
+input.textfield-title {
+	background: transparent;
+	border: 1px solid #fff; 
+	
+	font-size: 16px; 
+	font-weight: bold; 
+	font-family: Georgia;
+}
+
+input.textfield-title-active {
+	border: 1px dotted orange;
+}
+
 input.comments_title_inactive {
 	background: transparent;
 	border: 1px solid #fff; 

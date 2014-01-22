@@ -265,19 +265,19 @@
 
 // TITLE
 	// handle hover on textfield 'entry title'
-	$jQ( document ).on( 'hover', '.entry_title_inactive', function() { return toggleDisabledElement( this, 'entry_title' ); } );
+	$jQ( document ).on( 'hover', '.textfield-title', function() { return toggleDisabledElement( this, 'textfield-title-active' ); } );
 
 	// handle click on textfield 'entry title'
-	$jQ( document ).on( 'click', '.entry_title_inactive', function() 
+	$jQ( document ).on( 'click', '.textfield-title', function() 
 	{
 		oldTitle = $jQ(this).val();
 	});
 
 	// handle keypress on textfield 'entry title'
-	$jQ( document ).on( 'keypress', '.entry_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+	$jQ( document ).on( 'keypress', '.textfield-title', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 	// handle blur on textfield 'entry title'
-	$jQ( document ).on( 'blur', '.entry_title_inactive', function(e) { return updateEntryTitle( e, this ); } );
+	$jQ( document ).on( 'blur', '.textfield-title', function(e) { return updateEntryTitle( e, this ); } );
 
 // TAG BUTTONS
 	// handle click on tag button
