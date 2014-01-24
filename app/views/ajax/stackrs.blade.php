@@ -53,7 +53,7 @@
 
 			<!-- wrapper for all comments -->
 			<div class='comments-wrapper'>
-				<input class='textfield comments_title_inactive' value='{{ $stackr->listTitle }}' disabled='disabled' />
+				<input class='textfield textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<span class='comments_title_confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>

@@ -475,7 +475,7 @@ div.div_context_add {
 	color: #fff;
 }
 
-div.comments_wrapper { 
+div.comments-wrapper { 
 	padding: 13px 46px;
 }
 
@@ -524,7 +524,8 @@ input.textfield {
 	height: 32px;
 }
 
-input.textfield-title {
+input.textfield-title,
+input.textfield-comments-title {
 	background: transparent;
 	border: 1px solid #fff; 
 	
@@ -533,20 +534,9 @@ input.textfield-title {
 	font-family: Georgia;
 }
 
-input.textfield-title-active {
+input.textfield-title-active,
+input.textfield-comments-title-active {
 	border: 1px dotted orange;
-}
-
-input.comments_title_inactive {
-	background: transparent;
-	border: 1px solid #fff; 
-
-	margin: 0;
-	padding: 6px;
-	
-	font-size: 16px; 
-	font-weight: bold; 
-	font-family: Georgia;
 }
 
 input.tags_textfield_inactive {
@@ -563,8 +553,6 @@ input.tags_textfield_inactive {
 	color: #aaa;
 }
 
-input.entry_title,
-input.comments_title,
 input.tags_textfield {
 	border: 1px dotted orange;
 }

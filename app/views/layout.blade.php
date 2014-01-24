@@ -376,19 +376,19 @@
 // EVENTS REGARDING CHANGES TO COMMENT PROPERTIES
 
 	// handle hover on textfield 'comments title'
-	$jQ( document ).on( 'hover', '.comments_title_inactive', function() { return toggleDisabledElement( this, 'comments_title' ); } );
+	$jQ( document ).on( 'hover', '.textfield-comments-title', function() { return toggleDisabledElement( this, 'textfield-comments-title-active' ); } );
 
 	// handle click on textfield 'comments title'
-	$jQ( document ).on( 'click', '.comments_title_inactive', function() 
+	$jQ( document ).on( 'click', '.textfield-comments-title', function() 
 	{
 		commentsOldTitle = $jQ(this).val();
 	});
 
 	// handle keypress on textfield 'comment title'
-	$jQ( document ).on( 'keypress', '.comments_title_inactive', function(e) { return confirmChangeWithEnter( e, this ); } );
+	$jQ( document ).on( 'keypress', '.textfield-comments-title', function(e) { return confirmChangeWithEnter( e, this ); } );
 
 	// handle blur on textfield 'comment title'
-	$jQ( document ).on( 'blur', '.comments_title_inactive', function(e) { return updateCommentsTitle( e, this ); } );
+	$jQ( document ).on( 'blur', '.textfield-comments-title', function(e) { return updateCommentsTitle( e, this ); } );
 
 	// handle keypress on textfield entry title
 	$jQ( document ).on( 'keyup', '.comment_textarea', function( event ) 
