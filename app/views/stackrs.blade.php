@@ -20,7 +20,7 @@
 @section( 'beforeContent' )
 
 	<div style='float: left'>
-		<button class='element-shadow entry_add_link button'>+ Stackr</button>
+		<button class='button element-shadow stackr-add'>+ Stackr</button>
 	</div>
 
 	<div style='float: right; text-align: right; width: 700px'>
@@ -46,8 +46,8 @@
 		<textarea id='description' class='textarea form'></textarea>
 
 		<div style='padding: 8px 0;'>
-			<button class='operator-button entry_add_button'>Add</button>
-			<button class='operator-button entry_add_cancel'>Cancel</button>
+			<button class='operator-button stackr-add-action'>Add</button>
+			<button class='operator-button stackr-add-cancel-action'>Cancel</button>
 		</div>
 
 	</div>

@@ -195,13 +195,13 @@
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
 	// shows the div to add a new entry
-	$jQ( document ).on( 'click', '.entry_add_link', function() { return showDiv( '#div_entry_add' ); } );
+	$jQ( document ).on( 'click', '.stackr-add', function() { return showDiv( '#div_entry_add' ); } );
 
 	// hides the div to add a new entry
-	$jQ( document ).on( 'click', '.entry_add_cancel', function() { return hideDiv( '#div_entry_add' ); } );
+	$jQ( document ).on( 'click', '.stackr-add-cancel-action', function() { return hideDiv( '#div_entry_add' ); } );
 
 	// handle click on add entry button
-	$jQ( document ).on( 'click', '.entry_add_button', function() { return addEntryAction(); } );
+	$jQ( document ).on( 'click', '.stackr-add-action', function() { return addEntryAction(); } );
 
 	// handle keypress on textfield entry title
 	$jQ( document ).on( 'keyup', '#title', function( event ) 
