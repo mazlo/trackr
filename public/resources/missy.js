@@ -43,7 +43,7 @@ var getAllEntries = function( tags )
 
 		success: function( data ) 
 		{
-			$jQ( '#entries' ).html( data );
+			$jQ( '#stackrs' ).html( data );
 
 			scrollToDesiredElement();
 			makeCommentsSortable( null );
@@ -422,11 +422,11 @@ var addEntryAction = function()
 		{
 			$jQ( '#div_entry_add' ).hide();
 
-			var entriesContainer = $jQ( '#entries' );
+			var container = $jQ( '#stackrs' );
 			
-			entriesContainer.hide();
-			entriesContainer.html( data );
-			entriesContainer.fadeIn( 200 );
+			container.hide();
+			container.html( data );
+			container.fadeIn( 200 );
 
 			makeCommentsSortable( this );
 		}
