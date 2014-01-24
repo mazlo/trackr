@@ -34,7 +34,7 @@ var getContexts = function()
 
 var getAllEntries = function( tags )
 {
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs',
@@ -98,7 +98,7 @@ var makeCommentsSortable = function( object )
 
 var getDistinctEntriesTagList = function()
 {
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/tags',
@@ -117,7 +117,7 @@ var getDistinctEntriesTagList = function()
 
 var getComments = function( sid )
 {
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
@@ -130,7 +130,7 @@ var getComments = function( sid )
 	});
 };
 
-// ----- update functions for entries and comments -----
+// ----- update functions for contexts, stackrs, comments -----
 
 var updateContextPositions = function( object )
 {
@@ -159,7 +159,7 @@ var updateComment = function( object )
 	var newComment = $jQ( object ).parent().find( 'textarea' ).val();
 
 	// get element ids
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr();
 	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
 
@@ -184,7 +184,7 @@ var updateCommentPositions = function( object )
 		cid.push( $jQ(this).attr( 'cid' ) );
 	});
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	$jQ.ajax( {
@@ -209,7 +209,7 @@ var updateEntryTitle = function( e, object )
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	// ajax call to change title
@@ -244,7 +244,7 @@ var updateCommentsTitle = function( e, object )
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	// ajax call to change title
@@ -273,7 +273,7 @@ var updateCommentsTitle = function( e, object )
 
 var updateTags = function ( object )
 {
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	var tags = $jQ( object ).val();
@@ -302,7 +302,7 @@ var updateEntryFavored = function ( object )
 	$jQ( object ).attr( 'src', getContextPath() + '/resources/pinIt_'+ inverseFavored(type) +'.png' );
 	$jQ( object ).attr( 'alt', inverseFavored(type) );
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	// ajax call to change favored status
@@ -411,7 +411,7 @@ var addEntryAction = function()
 
 	var description = $jQ( '#description' ).val();
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 
 	$jQ.ajax( {
 		url: getContextPath() + '/contexts/'+ cname +'/stackrs',
@@ -455,7 +455,7 @@ var deleteEntry = function( object, closestClass, callback )
 {
 	$jQ( object ).hide();
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	$jQ( object ).closest( closestClass ).effect( 'fade', 300, function()
@@ -554,7 +554,7 @@ var hideAddCommentDiv = function( object )
 
 var addCommentAction = function( object )
 {
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 
 	if ( $jQ( '#comment_new_content_'+ sid ).val() == '' )
@@ -596,7 +596,7 @@ var deleteComment = function( object )
 {
 	$jQ( object ).hide();
 
-	var cname = $jQ( '#entries' ).attr( 'cname' );
+	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
 	var commentId = $jQ( object ).attr( 'cid' );
 
@@ -737,5 +737,10 @@ var inverseFavored = function( key )
 var getIdFromClosestStackr = function ( object )
 {
 	return $jQ( object ).closest( '.stackr-wrapper' ).attr( 'id' );
+}
+
+var getContextName = function()
+{
+	return $jQ( '#stackrs' ).attr( 'cname' );
 }
 

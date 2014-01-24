@@ -52,8 +52,8 @@
 
 	</div>
 
-	<!-- list of entries -->
-	<div id='entries' cname='{{ $context->name }}'>
+	<!-- list of stackrs -->
+	<div id='stackrs' cname='{{ $context->name }}'>
 		<!-- ajax response here -->
 		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>
