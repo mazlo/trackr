@@ -60,7 +60,7 @@
 					
 				<div class='comment_add_div' id='comment_add_link_{{ $stackr->id }}' style='display: none;'>
 					<!-- div comment add: is hidden first -->
-					<textarea id='comment_new_content_{{ $stackr->id }}' class='comment_textarea'></textarea>
+					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment'></textarea>
 
 					<div style='padding: 8px 0;'>
 						<button class='operator-button comment_add_button'>add</button>

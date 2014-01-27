@@ -391,7 +391,7 @@
 	$jQ( document ).on( 'blur', '.textfield-comments-title', function(e) { return updateCommentsTitle( e, this ); } );
 
 	// handle keypress on textfield entry title
-	$jQ( document ).on( 'keyup', '.comment_textarea', function( event ) 
+	$jQ( document ).on( 'keyup', '.textarea-comment', function( event ) 
 	{
 		var element = $jQ(this);
 
@@ -413,7 +413,7 @@
 	} );
 
 	// handle keypress on textfield entry title
-	$jQ( document ).on( 'blur', '.comment_textarea', function( event ) 
+	$jQ( document ).on( 'blur', '.textarea-comment', function( event ) 
 	{
 		// turn textarea back to simple span
 		$jQ( this ).parent().html( oldComment );
@@ -425,7 +425,7 @@
 		var textElement = $jQ(this).find( '.searchable' ).find( 'span:first' );
 		oldComment = textElement.text().trim();
 
-		textElement.html( '<textarea class="comment_textarea textarea-edit">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 8px 0 4px">edit</button>' );
+		textElement.html( '<textarea class="textarea textarea-comment textarea-edit">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 8px 0 4px">edit</button>' );
 		textElement.find( '.textarea-edit' ).focus();
 	});
 

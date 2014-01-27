@@ -644,8 +644,7 @@ div.context-options-box-active {
 	margin: 23px 0 0
 }
 
-textarea.textarea,
-textarea.comment_textarea
+textarea.textarea
  {
 	border: 1px #bbb solid;
 	width: 90%; 
