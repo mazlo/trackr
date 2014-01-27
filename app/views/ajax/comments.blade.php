@@ -11,11 +11,17 @@
 
 @foreach( $comments as $comment )
 	<li class='comment' cid='{{ $comment->id }}'>
+
 		<span class='comment-icon'><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
-		<span class='comment-text searchable'>{{ $comment->comment }}</span>
+		<div class='comment-text searchable'>
+			<span>{{ $comment->comment }}</span>
+			<span class='comment-date'>{{ $comment->created_at }}</span>
+		</div>
+
 		<span class='comment-delete-confirm' cid='{{ $comment->id }}'>
 			<button class='operator-button operator-button-confirm'>delete</button>
 		</span>
+
 	</li>
 
 	@if( isset( $limit ) && ++$count >= 3 )

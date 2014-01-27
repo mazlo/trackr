@@ -412,11 +412,18 @@
 
 	} );
 
+	// handle keypress on textfield entry title
+	$jQ( document ).on( 'blur', '.comment_textarea', function( event ) 
+	{
+		// turn textarea back to simple span
+		$jQ( this ).parent().html( oldComment );
+	});
+
 	// handle double click on a comment
 	$jQ( document ).on( 'dblclick', '.comment', function() 
 	{
-		var textElement = $jQ(this).find( '.searchable' );
-		oldComment = textElement.text();
+		var textElement = $jQ(this).find( '.searchable' ).find( 'span:first' );
+		oldComment = textElement.text().trim();
 
 		textElement.html( '<textarea class="comment_textarea textarea-edit">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 8px 0 4px">edit</button>' );
 		textElement.find( '.textarea-edit' ).focus();

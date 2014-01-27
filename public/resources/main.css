@@ -366,30 +366,40 @@ p.terms-wrapper {
 }
 
 ul.comments {
-	margin: 3px 0;
+	margin: 0;
 	padding: 0;
 
 	list-style-type: none;
 }
 
 li.comment {
-	display: table; 
+	display: table;
 	width: 100%;
 	margin: 0; 
+	padding: 4px 0;
 
 	cursor: hand;
 }
 
-li.comment > span.comment-icon {
+li.comment .comment-icon {
 	display: table-cell; 
 	width: 32px;
 }
 
-li.comment > span.comment-text { 
-	display: table-cell
+li.comment .comment-text { 
+	display: table-cell;
+	width: 100%
 }
 
-li.comment > span.searchable {
+li.comment .comment-date {
+	margin-left: 13px; 
+	
+	font-size: 13px; 
+	letter-spacing: 0.3pt; 
+	color: #ccc;
+}
+
+li.comment span.searchable {
 	padding: 4px;
 }
 
