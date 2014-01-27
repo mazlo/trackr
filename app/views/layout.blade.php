@@ -412,13 +412,6 @@
 
 	} );
 
-	// handle keypress on textfield entry title
-	$jQ( document ).on( 'blur', '.textarea-comment', function( event ) 
-	{
-		// turn textarea back to simple span
-		$jQ( this ).parent().html( oldComment );
-	});
-
 	// handle double click on a comment
 	$jQ( document ).on( 'dblclick', '.comment', function() 
 	{
