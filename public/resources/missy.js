@@ -420,7 +420,7 @@ var addEntryAction = function()
 
 		success: function( data ) 
 		{
-			$jQ( '#div_entry_add' ).hide();
+			$jQ( '#section-stackr-add' ).hide();
 
 			var container = $jQ( '#stackrs' );
 			

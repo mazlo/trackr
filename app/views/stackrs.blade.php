@@ -37,7 +37,7 @@
 @section( 'content' )
 
 	<!-- div entry add: is hidden after page load -->
-	<div id='div_entry_add' class='div_entry_add' style='display: none;'>
+	<div id='section-stackr-add' class='section section-hidden section-stackr-add'>
 
 		<h4 class='georgia'>Title</h4>
 		<input type='text' id='title' value='' class='textfield form' />

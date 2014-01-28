@@ -195,10 +195,10 @@
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
 	// shows the div to add a new entry
-	$jQ( document ).on( 'click', '.stackr-add', function() { return showDiv( '#div_entry_add' ); } );
+	$jQ( document ).on( 'click', '.stackr-add', function() { return showDiv( '#section-stackr-add' ); } );
 
 	// hides the div to add a new entry
-	$jQ( document ).on( 'click', '.stackr-add-cancel-action', function() { return hideDiv( '#div_entry_add' ); } );
+	$jQ( document ).on( 'click', '.stackr-add-cancel-action', function() { return hideDiv( '#section-stackr-add' ); } );
 
 	// handle click on add entry button
 	$jQ( document ).on( 'click', '.stackr-add-action', function() { return addEntryAction(); } );
@@ -220,7 +220,7 @@
 				if ( $jQ( '#div_context_add' ).length > 0 )
 					$jQ( '.context_add_cancel' ).click();
 
-				else if ( $jQ( '#div_entry_add' ).length > 0 )
+				else if ( $jQ( '#section-stackr-add' ).length > 0 )
 					$jQ( '.entry_add_cancel' ).click();
 			}
 		});
