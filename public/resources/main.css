@@ -392,6 +392,11 @@ li.comment .comment-text {
 }
 
 li.comment .comment-date {
+	visibility: hidden;
+}
+
+li.comment .comment-date-active {
+	visibility: visible;
 	margin-left: 13px; 
 	
 	font-size: 13px; 

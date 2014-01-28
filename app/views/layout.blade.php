@@ -412,6 +412,11 @@
 
 	} );
 
+	$jQ( document ).on( 'hover', '.comments', function()
+	{
+		$jQ(this).find( '.comment-date' ).toggleClass( 'comment-date-active' );
+	});
+
 	// handle double click on a comment
 	$jQ( document ).on( 'dblclick', '.comment', function() 
 	{
