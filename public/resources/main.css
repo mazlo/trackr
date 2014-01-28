@@ -70,14 +70,6 @@ a.link-no-border {
 	border: none;
 }
 
-a.comment_add_link {
-	display: block; 
-	margin: 6px 0;
-	padding: 3px 13px; 
-	text-align: right; 
-	cursor: hand;
-}
-
 input {
 	letter-spacing: 0.2pt;
 	font-weight: normal;
@@ -506,12 +498,14 @@ div.div_context_add {
 	color: #fff;
 }
 
+/* COMMENTS */
+
 div.comments-wrapper { 
 	padding: 13px 46px;
 }
 
-div.comment_add_div {
-	margin: 8px 38px;
+div.section-comment-add {
+	margin: 8px 35px;
 }
 
 .entry_title_confirm,

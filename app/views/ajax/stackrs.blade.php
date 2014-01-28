@@ -24,7 +24,7 @@
 
 			<div class='stackr-operations'>
 				
-				<button class='operator-button comment_add_link'>add
+				<button class='operator-button comment-add'>add
 					<span id='comment_add_button_text_{{ $stackr->id }}'>
 						@if( substr( $stackr->listTitle, -1 ) == 's' ) 
 							{{ substr( $stackr->listTitle, 0, -1 ) }} 
@@ -53,18 +53,19 @@
 
 			<!-- wrapper for all comments -->
 			<div class='comments-wrapper'>
+
 				<input class='textfield textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<span class='comments_title_confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>
 					
-				<div class='comment_add_div' id='comment_add_link_{{ $stackr->id }}' style='display: none;'>
+				<div class='section-comment-add section-hidden' id='comment-add-{{ $stackr->id }}'>
 					<!-- div comment add: is hidden first -->
 					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment'></textarea>
 
 					<div style='padding: 8px 0;'>
-						<button class='operator-button comment_add_button'>add</button>
-						<button class='operator-button comment_add_cancel'>cancel</button>
+						<button class='operator-button comment-add-action'>add</button>
+						<button class='operator-button comment-add-cancel-action'>cancel</button>
 					</div>
 				</div>
 

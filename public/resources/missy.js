@@ -531,9 +531,9 @@ var showAddCommentDiv = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
-	$jQ( '#comment_add_link_'+ sid ).effect( 'fade', 200, function()
+	$jQ( '#comment-add-'+ sid ).effect( 'fade', 200, function()
 		{
-			$jQ( '#comment_add_link_'+ sid ).show();
+			$jQ( '#comment-add-'+ sid ).show();
 			$jQ( '#comment_new_content_'+ sid ).focus();
 		});
 
@@ -544,9 +544,9 @@ var hideAddCommentDiv = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
-	$jQ( '#comment_add_link_'+ sid ).effect( 'fade', 100, function()
+	$jQ( '#comment-add-'+ sid ).effect( 'fade', 100, function()
 		{
-			$jQ( '#comment_add_link_'+ sid ).hide();
+			$jQ( '#comment-add-'+ sid ).hide();
 		} );
 
 	return false;
@@ -569,7 +569,7 @@ var addCommentAction = function( object )
 
 		success: function( data ) 
 		{
-			$jQ( '#comment_add_link_'+ sid ).hide();
+			$jQ( '#comment-add-'+ sid ).hide();
 			$jQ( '#comments_'+ sid ).html( data );
 		}
 	});

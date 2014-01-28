@@ -100,7 +100,7 @@
 	);
 
 	// css manipulations on hover
-	$jQ( document ).on( 'hover', '.entry_add_link, .entry_delete_link, .comment_add_link, .comment_delete_link', function()
+	$jQ( document ).on( 'hover', '.entry_delete_link, .comment_delete_link', function()
 	{
 		$jQ(this).toggleClass( 'hover' );
 	});
@@ -359,13 +359,13 @@
 // EVENTS REGARDING ADDING OR DELETING COMMENTS
 
 	// show div to add a new comment
-	$jQ( document ).on( 'click', '.comment_add_link', function() { return showAddCommentDiv( this ); } );
+	$jQ( document ).on( 'click', '.comment-add', function() { return showAddCommentDiv( this ); } );
 
 	// hide div to add a new comment
-	$jQ( document ).on( 'click', '.comment_add_cancel', function() { return hideAddCommentDiv( this ); } );
+	$jQ( document ).on( 'click', '.comment-add-cancel-action', function() { return hideAddCommentDiv( this ); } );
 
 	// handle click on comment add button
-	$jQ( document ).on( 'click', '.comment_add_button', function() { return addCommentAction( this ); } );
+	$jQ( document ).on( 'click', '.comment-add-action', function() { return addCommentAction( this ); } );
 
 	// handle click on comment delete button
 	$jQ( document ).on( 'click', '.comment_delete_link', function(e) { return deleteCommentConfirm( e, this ); } );
@@ -406,7 +406,7 @@
 					oldComment = null;
 				}
 				else 
-					$jQ( '.comment_add_cancel' ).click();
+					$jQ( '.comment-add-cancel-action' ).click();
 			}
 		});
 
