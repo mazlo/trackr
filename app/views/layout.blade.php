@@ -197,6 +197,21 @@
 	{
 		// toggles class to show all stackrs
 		$jQ( document ).find( '.list-contexts-stackrs' ).toggleClass( 'list-contexts-stackrs-alive' );
+
+		// checked
+		if ( $jQ( this ).attr( 'checked' ) == 'checked' )
+		{
+			// prevent context-options-box from being shown by hover event
+			$jQ( document ).find( '.context-options-box' ).toggleClass( 'element-hidden' );
+			// disable sorting function for Contexts
+			$jQ( '#contexts' ).sortable( 'disable' );
+			// enable sorting function for Stackrs
+			makeContextStackrsSortable();
+		}
+		// unchecked
+		else {
+			getContexts();
+		}
 	} );
 
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY

@@ -67,6 +67,15 @@ var scrollToDesiredElement = function()
 	element.effect( 'highlight', { }, 800 );
 };
 
+var makeContextStackrsSortable = function()
+{
+	$jQ( '.list-contexts-stackrs' ).sortable(
+	{
+		disabled: false,
+		connectWith: '.list-contexts-stackrs'
+	});
+};
+
 var makeContextsSortable = function() 
 {
 	$jQ( '#contexts' ).sortable( 
