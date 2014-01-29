@@ -221,7 +221,7 @@
 					$jQ( '.context-add-cancel-action' ).click();
 
 				else if ( $jQ( '#section-stackr-add' ).length > 0 )
-					$jQ( '.entry_add_cancel' ).click();
+					$jQ( '.stackr-add-cancel-action' ).click();
 			}
 		});
 
