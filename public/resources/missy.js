@@ -72,7 +72,11 @@ var makeContextStackrsSortable = function()
 	$jQ( '.list-contexts-stackrs' ).sortable(
 	{
 		disabled: false,
-		connectWith: '.list-contexts-stackrs'
+		connectWith: '.list-contexts-stackrs',
+		receive: function( event, ui )
+		{
+			updateStackrContext( this, ui.item );
+		}
 	});
 };
 
@@ -158,6 +162,19 @@ var updateContextPositions = function( object )
 		url: getContextPath() +'/contexts',
 		type: 'put',
 		data: { cid: cid }
+	});
+};
+
+var updateStackrContext = function( container, stackr )
+{
+	var cname = $jQ(container).closest( '[cname]' ).attr( 'cname' );
+	var sid = $jQ(stackr).text().trim().split( '#' )[1];
+
+	// send put request
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/'+ cname + '/stackrs/'+ sid,
+		type: 'put',
+		data: { cname: cname }
 	});
 };
 

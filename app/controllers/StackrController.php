@@ -102,6 +102,14 @@ class StackrController extends BaseController {
 		else if ( Input::has( 'tg' ) )
 			$stackr->tags = Input::get( 'tg' );
 
+		// update parent Context
+		else if ( Input::has( 'cname' ) )
+		{
+			$context = Auth::user()->context( $contextName )->first();
+			// assign
+			$stackr->context()->associate( $context );
+		}
+
 		$stackr->save();
 	}
 
