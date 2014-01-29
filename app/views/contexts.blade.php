@@ -31,11 +31,24 @@
 
 	<hr style='background: #bbb; border: 0; height: 1px; margin: 23px 0 32px' />
 
-	<div class='context element-shadow'>
-		<a href='' class='context-add' style='border: 0'>
-			New Context
-		</a>
-	</div>
+	<ul id='options' style='margin: 0; padding: 0; list-style-type: none;'>
+		
+		<li style='display: inline-block; padding-right: 62px'>
+			<div class='context element-shadow'>
+				<a href='' class='context-add' style='border: 0'>
+					New Context
+				</a>
+			</div>
+		</li>
+
+		<li style='display: inline-block; vertical-align: top'>
+			<div style='border: none;'>
+				<h4 class='georgia'>You may want to</h4>
+				<input type='checkbox' id='' />
+				<span>organize Stackrs</span>
+			</div>
+		</li>
+	</ul>
 
 @stop
 
