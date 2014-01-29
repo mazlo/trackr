@@ -192,8 +192,10 @@
 
 	$jQ( document ).on( 'click', '.context_color_button', function() { return updateContextColor( this, '.wrapper_context' ); } );
 
+	// handle click on checkbox 
 	$jQ( document ).on( 'change', '#stackrs-organize', function() 
-	{  
+	{
+		// toggles class to show all stackrs
 		$jQ( document ).find( '.list-contexts-stackrs' ).toggleClass( 'list-contexts-stackrs-alive' );
 	} );
 
