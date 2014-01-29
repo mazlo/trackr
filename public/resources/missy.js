@@ -71,6 +71,7 @@ var makeContextsSortable = function()
 {
 	$jQ( '#contexts' ).sortable( 
 	{
+		disabled: false,
 		update: function( event, ui ) 
 		{
 			return updateContextPositions( this );
