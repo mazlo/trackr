@@ -7,7 +7,7 @@
 @section( 'content' )
 
 	<!-- div entry add: is hidden after page load -->
-	<div id='div_context_add' class='div_context_add' style='display: none;'>
+	<div id='section-context-add' class='section-context-add' style='display: none;'>
 
 		<h4 class='georgia'>Name</h4>
 		<span id='title_error' class='credentials_error'></span>
@@ -18,8 +18,8 @@
 		<textarea id='description' class='textarea form'>Notes on the process</textarea>
 
 		<div style='padding: 8px 0;'>
-			<button class='operator-button context_add_button'>Add</button>
-			<button class='operator-button context_add_cancel'>Cancel</button>
+			<button class='operator-button context-add-action'>Add</button>
+			<button class='operator-button context-add-cancel-action'>Cancel</button>
 		</div>
 
 	</div>

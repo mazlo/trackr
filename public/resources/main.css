@@ -422,6 +422,20 @@ div.section-hidden {
 	display: none;
 }
 
+/* CONTEXTS */
+
+div.section-context-add {
+	background: #f8f8f8;
+	border: 1px #bbb solid;
+	/* -webkit-box-shadow: 0px 0px 2px #032946;
+	box-shadow: 0px 0px 2px #032946; */
+
+	margin: 23px 0 8px;
+	padding: 23px;
+	width: 640px;
+}
+
+
 /* STACKR */
 
 div.stackr-wrapper {
@@ -466,17 +480,6 @@ div.stackr-buttons {
 
 div.stackr-footer {
 	padding-left: 52px;
-}
-
-div.div_context_add {
-	background: #f8f8f8;
-	border: 1px #bbb solid;
-	/* -webkit-box-shadow: 0px 0px 2px #032946;
-	box-shadow: 0px 0px 2px #032946; */
-
-	margin: 23px 0 8px;
-	padding: 23px;
-	width: 640px;
 }
 
 .stackr-add,

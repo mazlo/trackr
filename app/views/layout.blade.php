@@ -176,13 +176,13 @@
 	} );
 
 	// shows the div to add a context
-	$jQ( document ).on( 'click', '.context_add_link', function() { return showDiv( '#div_context_add' ); } );
+	$jQ( document ).on( 'click', '.context_add_link', function() { return showDiv( '#section-context-add' ); } );
 
 	// hides the div to add a context
-	$jQ( document ).on( 'click', '.context_add_cancel', function() { return hideDiv( '#div_context_add' ); } );
+	$jQ( document ).on( 'click', '.context-add-cancel-action', function() { return hideDiv( '#section-context-add' ); } );
 
 	// handle click on add context button
-	$jQ( document ).on( 'click', '.context_add_button', function() { return addContextAction(); } );
+	$jQ( document ).on( 'click', '.context-add-action', function() { return addContextAction(); } );
 
 	// handle click on delete context button
 	$jQ( document ).on( 'click', '.context_delete_link', function(e) { return deleteContextConfirm( e, this ); } );
@@ -217,8 +217,8 @@
 			},
 			onEscape : function()
 			{
-				if ( $jQ( '#div_context_add' ).length > 0 )
-					$jQ( '.context_add_cancel' ).click();
+				if ( $jQ( '#section-context-add' ).length > 0 )
+					$jQ( '.context-add-cancel-action' ).click();
 
 				else if ( $jQ( '#section-stackr-add' ).length > 0 )
 					$jQ( '.entry_add_cancel' ).click();
