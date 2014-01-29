@@ -135,6 +135,10 @@ ul.list-contexts-stackrs-active {
 	visibility: visible;
 }
 
+ul.list-contexts-stackrs-alive {
+	visibility: visible;	
+}
+
 ul.list-contexts-stackrs li {
 	display: inline-block;
 }

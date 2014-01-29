@@ -192,6 +192,11 @@
 
 	$jQ( document ).on( 'click', '.context_color_button', function() { return updateContextColor( this, '.wrapper_context' ); } );
 
+	$jQ( document ).on( 'change', '#stackrs-organize', function() 
+	{  
+		$jQ( document ).find( '.list-contexts-stackrs' ).toggleClass( 'list-contexts-stackrs-alive' );
+	} );
+
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
 	// shows the div to add a new entry
