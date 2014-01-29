@@ -176,7 +176,7 @@
 	} );
 
 	// shows the div to add a context
-	$jQ( document ).on( 'click', '.context_add_link', function() { return showDiv( '#section-context-add' ); } );
+	$jQ( document ).on( 'click', '.context-add', function() { return showDiv( '#section-context-add' ); } );
 
 	// hides the div to add a context
 	$jQ( document ).on( 'click', '.context-add-cancel-action', function() { return hideDiv( '#section-context-add' ); } );
