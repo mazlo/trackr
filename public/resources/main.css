@@ -428,6 +428,10 @@ div.section {
 	width: 640px;
 }
 
+div.section-hidden {
+	display: none;
+}
+
 /* CONTEXTS */
 
 div.section-context-add {
