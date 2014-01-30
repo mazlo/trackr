@@ -369,7 +369,7 @@ var addContextAction = function()
 
 		success: function( data ) 
 		{
-			$jQ( '#div_context_add' ).hide();
+			$jQ( '#section-context-add' ).hide();
 
 			var contextsContainer = $jQ( '#contexts' );
 			
