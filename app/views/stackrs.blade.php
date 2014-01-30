@@ -25,7 +25,7 @@
 
 	<div style='float: right; text-align: right; width: 700px'>
 
-		<div id='distinctEntriesTagList' style='display: inline;'>
+		<div id='stackrs-tag-list' style='display: inline;'>
 			<!-- ajax response here -->
 			<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px' />
 		</div>

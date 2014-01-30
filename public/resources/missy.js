@@ -121,7 +121,7 @@ var getDistinctEntriesTagList = function()
 
 		success: function( data )
 		{
-			$jQ( '#distinctEntriesTagList' ).html( data );
+			$jQ( '#stackrs-tag-list' ).html( data );
 
 			// transform to jquery button
 			$jQ( '.stackr-tag' ).button();
