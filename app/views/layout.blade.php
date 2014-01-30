@@ -314,7 +314,7 @@
 		});
 
 		// for each element that is filterable by tag
-		$jQ( '.filterableByTag' ).each( function()
+		$jQ( '.stackr-filterable-by-tag' ).each( function()
 		{
 			// show element first
 			$jQ(this).show();
@@ -359,7 +359,7 @@
 			$jQ(this).toggleClass('ui-state-active');
 		});
 
-		$jQ( '.filterableByTag' ).each( function()
+		$jQ( '.stackr-filterable-by-tag' ).each( function()
 		{
 			$jQ(this).show();
 		});
