@@ -16,9 +16,9 @@ Route::any( '/', array(
     'uses' => 'UserController@loginAction'
 ));
 
-Route::any( '/users/register', array(
-	'as' => 'users/register',
-	'uses' => 'UserController@registerAction'
+Route::any( '/users/signup', array(
+	'as' => 'users/signup',
+	'uses' => 'UserController@signupAction'
 ));
 
 Route::any( '/login', 'UserController@loginAction' );

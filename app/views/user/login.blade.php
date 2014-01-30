@@ -2,20 +2,20 @@
 
 @section( 'beforeContent' )
 
-    <h3>Sign In</h3>
+    <h3>Sign in</h3>
 
 @stop
 
 @section( 'content' )
 
-    <p>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/register") }}'>registered</a>?</p>
+    <p>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/signup") }}'>signed up</a>?</p>
 
     @if( $error = $errors->first( 'password' ) )
         <div class='credentials-error'>
             {{ $error }}
         </div>
-    @elseif ( Session::has( 'registration_successfull' ) )
-        <h4 class='message_success'>{{ Session::get( 'registration_successfull' ) }}</h4>
+    @elseif ( Session::has( 'signup_successfull' ) )
+        <h4 class='message_success'>{{ Session::get( 'signup_successfull' ) }}</h4>
     @endif
 
     <form method='POST' action='{{ url() }}/' accept-charset='UTF-8' autocomplete='off' class='form-default form-login'>

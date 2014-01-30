@@ -4,7 +4,7 @@ use Illuminate\Support\MessageBag;
 
 class UserController extends Controller
 {
-    public function registerAction()
+    public function signupAction()
     {
         $data = array();
 
@@ -32,7 +32,7 @@ class UserController extends Controller
 
             if ( $validator->fails() )
             {
-                return Redirect::route( 'users/register' )->withErrors( $validator )->withInput( Input::all() );
+                return Redirect::route( 'users/signup' )->withErrors( $validator )->withInput( Input::all() );
             }
 
             $user = new User();
@@ -41,11 +41,11 @@ class UserController extends Controller
             $user->password = Hash::make( Input::get( 'password' ) );
             $user->save();
 
-            return Redirect::route( 'user/login' )->with( 'registration_successfull', 'Yeah! Thank\'s for registering! You can now sign in.' );
+            return Redirect::route( 'user/login' )->with( 'signup_successfull', 'Yeah! Thank\'s for signing up! You can now log in with your username and password.' );
         }
 
         // someone wants to register
-        return View::make( 'user.register' );
+        return View::make( 'user.signup' );
     }
 
 	public function loginAction()
