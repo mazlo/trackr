@@ -511,6 +511,11 @@ div.stackr-footer {
 	color: #fff;
 }
 
+.button-login {
+	display: block; 
+	margin: 23px 0 0
+}
+
 /* COMMENTS */
 
 div.comments-wrapper { 
@@ -669,11 +674,6 @@ div.element-hidden {
 	padding: 3px 0;
 	font-size: 13px;
 	color: red;
-}
-
-.login-button {
-	display: block; 
-	margin: 23px 0 0
 }
 
 textarea.textarea

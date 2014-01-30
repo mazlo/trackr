@@ -41,7 +41,7 @@
 
 		<input placeholder='john.smith@email.com' name='emailTo' type='text' id='emailTo' class='textfield form'>
 
-        <input type='submit' value='send feedback' id='login_button' class='button login-button' style='width: 110px;'>
+        <input type='submit' value='send feedback' id='login_button' class='button button-login' style='width: 110px;'>
 
 	</form>
 
