@@ -226,7 +226,7 @@
 	$jQ( document ).on( 'click', '.stackr-add-action', function() { return addEntryAction(); } );
 
 	// handle keypress on textfield entry title
-	$jQ( document ).on( 'keyup', '#title', function( event ) 
+	$jQ( document ).on( 'keyup', '#stackr-title', function( event ) 
 	{ 
 		var value = $jQ(this).val();
 
@@ -235,7 +235,7 @@
 			onEnter : function() 
 			{
 				if ( value != '' )
-					$jQ( '#description' ).focus();
+					$jQ( '#stackr-description' ).focus();
 			},
 			onEscape : function()
 			{
@@ -250,7 +250,7 @@
 	} );
 
 	// handle keypress on textfield entry description
-	$jQ( document ).on( 'keyup', '#description', function( event )
+	$jQ( document ).on( 'keyup', '#stackr-description', function( event )
 	{
 		confirmChange( event, 
 		{

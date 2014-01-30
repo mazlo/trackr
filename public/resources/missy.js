@@ -344,7 +344,7 @@ var updateEntryFavored = function ( object )
 
 var addContextAction = function()
 {
-	var title = $jQ( '#title' ).val();
+	var title = $jQ( '#context-title' ).val();
 	if ( title == '' )
 	{
 		$jQ( '#title_error' ).text( 'You forgot to fill this in!' );
@@ -355,7 +355,7 @@ var addContextAction = function()
 	// 2. replace all subsequent not allowed characters with min-length 2
 	title = title.replace( /[^a-zA-z0-9]+/g, '-' ).replace( /([^a-zA-Z0-9]){2}/g, '' )
 
-	var description = $jQ( '#description' ).val();
+	var description = $jQ( '#context-description' ).val();
 	if ( description == '' )
 	{
 		$jQ( '#description_error' ).text( 'You forgot to fill this in!' );
@@ -432,11 +432,11 @@ var updateContextColor = function( object, closestClass )
 
 var addEntryAction = function() 
 {
-	var title = $jQ( '#title' ).val();
+	var title = $jQ( '#stackr-title' ).val();
 	if ( title == '' )
 		return false;
 
-	var description = $jQ( '#description' ).val();
+	var description = $jQ( '#stackr-description' ).val();
 
 	var cname = getContextName();
 
@@ -737,7 +737,7 @@ var showDiv = function( element )
 	$jQ( element ).effect( 'fade', 200, function() 
 	{
 		$jQ( element ).show();
-		$jQ( '#title' ).focus();
+		$jQ( this ).find( '.textfield' ).focus();
 	} );
 
 	return false;

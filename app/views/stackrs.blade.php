@@ -40,10 +40,10 @@
 	<div id='section-stackr-add' class='section section-hidden section-stackr-add'>
 
 		<h4 class='georgia'>Title</h4>
-		<input type='text' id='title' value='' class='textfield form' />
+		<input type='text' id='stackr-title' value='' class='textfield form' />
 		
 		<h4 class='italic'>Description</h4>
-		<textarea id='description' class='textarea form'></textarea>
+		<textarea id='stackr-description' class='textarea form'></textarea>
 
 		<div style='padding: 8px 0;'>
 			<button class='operator-button stackr-add-action'>Add</button>
