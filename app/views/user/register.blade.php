@@ -17,21 +17,21 @@
 
         <h4>Username</h4>
         @if( $errors->has( 'username' ) )
-        	<span class='credentials_error'>{{ $errors->get( 'username' )[0] }}</span>
+        	<span class='credentials-error'>{{ $errors->get( 'username' )[0] }}</span>
         @endif
 
         <input placeholder='john.smith' name='username' type='text' id='username' class='textfield form' value='{{ Input::old( "username" ) }}'>
         
         <h4>E-Mail Address</h4>
         @if( $errors->has( 'email' ) )
-        	<span class='credentials_error'>{{ $errors->get( 'email' )[0] }}</span>
+        	<span class='credentials-error'>{{ $errors->get( 'email' )[0] }}</span>
         @endif
 
         <input placeholder='john.smith@email.com' name='email' type='text' id='email' class='textfield form' value='{{ Input::old( "email" ) }}'>
 
 		<h4>Password</h4>
 		@if( $errors->has( 'password' ) )
-	    	<span class='credentials_error'>{{ $errors->get( 'password' )[0] }}</span>
+	    	<span class='credentials-error'>{{ $errors->get( 'password' )[0] }}</span>
         @endif
 
         <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form' >
@@ -42,7 +42,7 @@
 
         <p style='font-size: 14px'>
             @if( $errors->has( 'terms' ) )
-                <span class='credentials_error'>{{ $errors->get( 'terms' )[0] }}</span>
+                <span class='credentials-error'>{{ $errors->get( 'terms' )[0] }}</span>
             @endif
 
             <input type='checkbox' name='terms' value='checked'>I accept the <a class='dotted' href='{{ url("terms-and-conditions") }}'>terms and conditions</a> of MindStackr.com.

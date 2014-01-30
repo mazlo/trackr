@@ -347,7 +347,7 @@ var addContextAction = function()
 	var title = $jQ( '#context-title' ).val();
 	if ( title == '' )
 	{
-		$jQ( '#title_error' ).text( 'You forgot to fill this in!' );
+		$jQ( '.title-error' ).text( 'You forgot to fill this in!' );
 		return false;
 	}
 
@@ -358,7 +358,7 @@ var addContextAction = function()
 	var description = $jQ( '#context-description' ).val();
 	if ( description == '' )
 	{
-		$jQ( '#description_error' ).text( 'You forgot to fill this in!' );
+		$jQ( '.description-error' ).text( 'You forgot to fill this in!' );
 		return false;
 	}
 
@@ -731,8 +731,8 @@ var toggleDisabledElement = function( object, classToBeToggled )
 
 var showDiv = function( element ) 
 {
-	$jQ( '#title_error' ).text( '' );
-	$jQ( '#description_error' ).text( '' );
+	$jQ( '.title-error' ).text( '' );
+	$jQ( '.description-error' ).text( '' );
 
 	$jQ( element ).effect( 'fade', 200, function() 
 	{

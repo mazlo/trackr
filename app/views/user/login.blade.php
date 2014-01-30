@@ -11,7 +11,7 @@
     <p>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/register") }}'>registered</a>?</p>
 
     @if( $error = $errors->first( 'password' ) )
-        <div class='credentials_error'>
+        <div class='credentials-error'>
             {{ $error }}
         </div>
     @elseif ( Session::has( 'registration_successfull' ) )

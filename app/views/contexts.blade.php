@@ -10,11 +10,11 @@
 	<div id='section-context-add' class='section-context-add' style='display: none;'>
 
 		<h4 class='georgia'>Name</h4>
-		<span id='title_error' class='credentials_error'></span>
+		<span class='title-error credentials-error'></span>
 		<input type='text' id='context-title' value='' class='textfield form' />
 		
 		<h4 class='italic'>Description</h4>
-		<span id='description_error' class='credentials_error'></span>
+		<span class='description-error credentials-error'></span>
 		<textarea id='context-description' class='textarea form'>Notes on the process</textarea>
 
 		<div style='padding: 8px 0;'>

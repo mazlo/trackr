@@ -664,7 +664,7 @@ div.element-hidden {
 	visibility: hidden;
 }
 
-.credentials_error {
+.credentials-error {
 	display: block;
 	padding: 3px 0;
 	font-size: 13px;
