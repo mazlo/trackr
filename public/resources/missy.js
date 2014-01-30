@@ -124,7 +124,7 @@ var getDistinctEntriesTagList = function()
 			$jQ( '#distinctEntriesTagList' ).html( data );
 
 			// transform to jquery button
-			$jQ( '.entry_tag' ).button();
+			$jQ( '.stackr-tag' ).button();
 		}
 	});
 }

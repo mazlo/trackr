@@ -19,7 +19,7 @@
 			continue;
 		
 		$tagsAvailable = true; ?>
-		<input type='checkbox' class='entry_tag' id='tag_{{ $i }}'><label for='tag_{{ $i }}'>{{ $tagsDistinct[$i] }}</label>
+		<input type='checkbox' class='stackr-tag' id='tag_{{ $i }}'><label for='tag_{{ $i }}'>{{ $tagsDistinct[$i] }}</label>
 <?	} ?>
 
 	@if ( $tagsAvailable )

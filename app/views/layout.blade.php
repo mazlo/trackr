@@ -303,7 +303,7 @@
 
 // TAG BUTTONS
 	// handle click on tag button
-	$jQ( document ).on( 'click', '.entry_tag', function()
+	$jQ( document ).on( 'click', '.stackr-tag', function()
 	{
 		var selectedTags = [];
 
