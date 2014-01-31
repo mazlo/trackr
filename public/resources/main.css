@@ -424,23 +424,6 @@ li.wrapper_context {
 	padding: 23px 23px 13px 0;
 }
 
-/* SECTIONS */
-
-div.section {
-	background: #f8f8f8;
-	border: 1px #bbb solid;
-	/* -webkit-box-shadow: 0px 0px 2px #032946;
-	box-shadow: 0px 0px 2px #032946; */
-
-	margin: 23px 0 8px;
-	padding: 23px;
-	width: 640px;
-}
-
-div.section-hidden {
-	display: none;
-}
-
 /* CONTEXTS */
 
 /* STACKR */
@@ -542,15 +525,30 @@ div.section-comment-add {
 }
 
 /* 
-	form elements
+	SECTIONS and FORM elements
 */
 
+div.section,
 form.form-default {
-	background: #f8f8f8; 
-	border: 1px #bbb solid; 
-	
-	width: 360px;
+	background: #f8f8f8;
+	border: 1px #bbb solid;
+	/* -webkit-box-shadow: 0px 0px 2px #032946;
+	box-shadow: 0px 0px 2px #032946; */
+
+	margin: 23px 0 8px;
 	padding: 23px;
+}
+
+div.section-hidden {
+	display: none;
+}
+
+div.section-narrow {
+	width: 640px;
+}
+
+form.form-narrower {
+	width: 360px;
 }
 
 form.form-signup,
