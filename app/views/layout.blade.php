@@ -47,7 +47,7 @@
 							sign out
 						</a>
 					@else
-						<a class='dotted link-left-margin' href='{{ URL::route( 'user/login' ) }}'>Login</a>
+						<a class='dotted link-left-margin' href='{{ URL::route( 'user/login' ) }}'>Sign in</a>
 						<a class='dotted link-left-margin' href='{{ URL::route( 'users/signup' ) }}'>Sign up</a>
 					@endif
 				</div>

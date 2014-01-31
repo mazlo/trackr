@@ -21,7 +21,7 @@ Route::any( '/users/signup', array(
 	'uses' => 'UserController@signupAction'
 ));
 
-Route::any( '/login', 'UserController@loginAction' );
+Route::any( '/signin', 'UserController@loginAction' );
 
 Route::any( '/terms-and-conditions', 'BaseController@terms' );
 
