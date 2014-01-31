@@ -83,7 +83,7 @@ Route::group( array( 'before' => 'auth' ), function()
 	// needed to updpate comment positions
 	Route::put( '/contexts/{contextName}/stackrs/{eid}/comments', 'CommentController@update' );
 
-    Route::any( '/logout', array(
+    Route::any( '/signout', array(
         'as'   => 'user/logout',
         'uses' => 'UserController@logoutAction'
     ));
