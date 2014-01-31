@@ -8,7 +8,7 @@
 
 @section( 'content' )
 
-    <p>Please sign in to gain access. Have you already <a class='dotted' href='{{ URL::route("users/signup") }}'>signed up</a>?</p>
+    <p>Please sign in to gain access. Have you already <a class='dotted link-with-background element-shadow' href='{{ URL::route("users/signup") }}'>signed up?</a></p>
 
     @if( $error = $errors->first( 'password' ) )
         <div class='credentials-error'>

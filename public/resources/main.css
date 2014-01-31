@@ -70,6 +70,15 @@ a.link-no-border {
 	border: none;
 }
 
+a.link-with-background {
+	background: green;
+	border-bottom: none;
+	color: #fff;
+
+	border-radius: 3px;
+	padding: 3px 8px 5px;
+}
+
 input {
 	letter-spacing: 0.2pt;
 	font-weight: normal;
