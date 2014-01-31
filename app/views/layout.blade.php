@@ -453,6 +453,6 @@
 	$jQ( document ).on( 'click', '.comment-edit-button', function() { return updateComment( this ); });
 
 	// handle 
-	$jQ( document ).on( 'click', '.seeMore', function() { return seeMoreComments( this ); } );
+	$jQ( document ).on( 'click', '.link-see-more', function() { return seeMoreComments( this ); } );
 
 </script>
