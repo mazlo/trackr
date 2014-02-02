@@ -14,9 +14,12 @@
 
 		<span class='comment-icon'><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
 		<div class='comment-text searchable'>
-			<span>{{ $comment->comment }}</span>
+			<span style='padding-right: 13px;'>{{ $comment->comment }}</span>
 			<span class='comment-date'>{{ $comment->created_at }}</span>
 		</div>
+		<span style='display: table-cell; width: 40px; padding: 0 3px'>
+			<img src='{{ url( "resources/rating.png" ) }}' />
+		</span>
 
 		<span class='comment-delete-confirm' cid='{{ $comment->id }}'>
 			<button class='operator-button operator-button-confirm'>delete</button>

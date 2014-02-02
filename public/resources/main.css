@@ -403,12 +403,11 @@ li.comment .comment-text {
 }
 
 li.comment .comment-date {
-	visibility: hidden;
+	display: none;
 }
 
 li.comment .comment-date-active {
-	visibility: visible;
-	margin-left: 13px; 
+	display: inline-block;
 	
 	font-size: 13px; 
 	letter-spacing: 0.3pt; 
@@ -422,6 +421,10 @@ li.comment span.searchable {
 li.wrapper_context {
 	display: inline-block; 
 	padding: 23px 23px 13px 0;
+}
+
+span.span-padding-left-right {
+	padding: 0 13px;
 }
 
 /* CONTEXTS */
