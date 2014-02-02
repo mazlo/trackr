@@ -17,9 +17,13 @@
 			<span style='padding-right: 13px;'>{{ $comment->comment }}</span>
 			<span class='comment-date'>{{ $comment->created_at }}</span>
 		</div>
-		<span style='display: table-cell; width: 40px; padding: 0 3px'>
-			<img src='{{ url( "resources/rating.png" ) }}' />
-		</span>
+		<div style='display: table-cell;'>
+			<div style='margin: 0 3px; width: 65px'>
+				<img src='{{ url( "resources/rating_none.png" ) }}' />
+				<img src='{{ url( "resources/rating_none.png" ) }}' />
+				<img src='{{ url( "resources/rating_none.png" ) }}' />
+			</div>
+		</div>
 
 		<span class='comment-delete-confirm' cid='{{ $comment->id }}'>
 			<button class='operator-button operator-button-confirm'>delete</button>
