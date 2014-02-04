@@ -450,6 +450,17 @@
 		textElement.find( '.textarea-edit' ).focus();
 	});
 
+	// handle hover event on a comment rating star
+	$jQ( document ).on( 'hover', '.comment-rating-star', function()
+	{
+		$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
+		
+		$jQ(this).prevAll().each( function()
+		{
+			$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
+		});
+	});
+
 	// handle click on comment edit button
 	$jQ( document ).on( 'click', '.comment-edit-button', function() { return updateComment( this ); });
 

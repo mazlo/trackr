@@ -21,9 +21,9 @@
 
 		<div style='display: table-cell;'>
 			<div class='comment-rating-stars'>
-				<img src='{{ url( "resources/rating_none.png" ) }}' />
-				<img src='{{ url( "resources/rating_none.png" ) }}' />
-				<img src='{{ url( "resources/rating_none.png" ) }}' />
+				<img class='comment-rating-star' src='{{ url( "resources/rating_none.png" ) }}' />
+				<img class='comment-rating-star' src='{{ url( "resources/rating_none.png" ) }}' />
+				<img class='comment-rating-star' src='{{ url( "resources/rating_none.png" ) }}' />
 			</div>
 		</div>
 
