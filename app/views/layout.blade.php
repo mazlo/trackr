@@ -453,6 +453,12 @@
 	// handle hover event on a comment rating star
 	$jQ( document ).on( 'click', '.comment-rating-star', function()
 	{
+		// reset following ratings first
+		$jQ(this).nextAll().each( function()
+		{
+			$jQ(this).attr( 'src', '{{ url( "resources/rating_none.png" ) }}' );
+		});
+
 		var counter = 1;
 
 		// mark myself; counter already 1
@@ -468,7 +474,7 @@
 		// send ajax request
 
 		var cname = getContextName();
-		var sid = getIdFromClosestStackr();
+		var sid = getIdFromClosestStackr( this );
 		var commentId = $jQ(this).closest( 'li' ).attr( 'cid' );
 
 		$jQ.ajax( {
