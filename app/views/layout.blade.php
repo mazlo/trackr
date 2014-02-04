@@ -453,11 +453,28 @@
 	// handle hover event on a comment rating star
 	$jQ( document ).on( 'click', '.comment-rating-star', function()
 	{
+		var counter = 1;
+
+		// mark myself; counter already 1
 		$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
 		
+		// mark previous siblings
 		$jQ(this).prevAll().each( function()
 		{
 			$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
+			counter++;
+		});
+
+		// send ajax request
+
+		var cname = getContextName();
+		var sid = getIdFromClosestStackr();
+		var commentId = $jQ(this).closest( 'li' ).attr( 'cid' );
+
+		$jQ.ajax( {
+			url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments/'+ commentId,
+			type: 'put',
+			data: { rt: counter }
 		});
 	});
 
