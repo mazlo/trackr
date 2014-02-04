@@ -187,7 +187,7 @@ var updateComment = function( object )
 
 	// get element ids
 	var cname = getContextName();
-	var sid = getIdFromClosestStackr();
+	var sid = getIdFromClosestStackr( object );
 	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
 
 	// compose put request
