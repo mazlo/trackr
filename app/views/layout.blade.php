@@ -451,7 +451,7 @@
 	});
 
 	// handle hover event on a comment rating star
-	$jQ( document ).on( 'hover', '.comment-rating-star', function()
+	$jQ( document ).on( 'click', '.comment-rating-star', function()
 	{
 		$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
 		
