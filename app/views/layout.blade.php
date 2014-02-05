@@ -434,10 +434,18 @@
 
 	} );
 
-	$jQ( document ).on( 'hover', '.comments', function()
+	// handle mouseover on list of comments
+	$jQ( document ).on( 'mouseover', '.comments', function() 
 	{
-		$jQ(this).find( '.comment-date' ).toggleClass( 'comment-date-active' );
-		$jQ(this).find( '.comment-rating-stars' ).toggleClass( 'comment-rating-stars-active' );
+	    $jQ(this).find( '.comment-date' ).toggleClass( 'comment-date-active' );
+	    $jQ(this).find( '.comment-rating-stars' ).toggleClass( 'comment-rating-stars-active' );
+	});
+
+	// handle mouseout on list of comments
+	$jQ( document ).on( 'mouseout', '.comments', function() 
+	{
+	    $jQ(this).find( '.comment-date' ).toggleClass( 'comment-date-active' );
+	    $jQ(this).find( '.comment-rating-stars' ).toggleClass( 'comment-rating-stars-active' );
 	});
 
 	// handle double click on a comment

@@ -197,6 +197,10 @@ var updateComment = function( object )
 		data: { cmt: newComment }
 	});
 
+	// workaround: after submitting with click on button the mouseover-event get's inverted.
+	// this call brings it back to the normal state
+	$jQ( object ).closest( '.comments' ).mouseout();
+
 	// turn textarea back to simple span
 	$jQ( object ).parent().html( newComment );
 };
