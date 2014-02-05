@@ -68,19 +68,32 @@ class CommentController extends BaseController
 				$comment->position = ++$i;
 				$comment->save();
 			}
+
+			// finished
+			return;
 		}
 
+		// prepare Comment
+		$comment = Auth::user()->comment( $cid )->first();
+
+		if ( !isset( $comment ) )
+			return;
+
 		// update Comment itself
-		else if ( Input::has( 'cmt') )
+		if ( Input::has( 'cmt') )
 		{
 			$cmt = Input::get( 'cmt' );
 
-			$comment = Auth::user()->comment( $cid )->first();
-
-			if ( !isset( $comment ) )
-				return;
-
 			$comment->comment = $cmt;
+			$comment->save();
+		}
+
+		// update Comment rating
+		else if ( Input::has( 'rt') )
+		{
+			$rating = Input::get( 'rt' );
+
+			$comment->rating = $rating;
 			$comment->save();
 		}
 
