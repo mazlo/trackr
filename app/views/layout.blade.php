@@ -453,35 +453,52 @@
 	// handle hover event on a comment rating star
 	$jQ( document ).on( 'click', '.comment-rating-star', function()
 	{
-		// reset following ratings first
-		$jQ(this).nextAll().each( function()
+		// get position (starts at 0 -> + 1)
+		var position = $jQ(this).index() + 1;
+
+		// case: image was clicked second time
+		if ( $jQ(this).attr( 'src' ).search( 'rating.png' ) != -1 )
 		{
+			// case: image has following ratings -> reset following ratings and decrease rating
+			if ( position != 3 && $jQ(this).next().attr( 'src' ).search( 'rating.png' ) != -1 )
+			{
+				// case: image was clicked first time -> reset following ratings first
+				$jQ(this).nextAll().each( function()
+				{
+					$jQ(this).attr( 'src', '{{ url( "resources/rating_none.png" ) }}' );
+				});
+
+				return updateCommentRating( this, position );
+			}
+
+			// case: image has no following ratings -> reset rating
+
+			// reset my rating
 			$jQ(this).attr( 'src', '{{ url( "resources/rating_none.png" ) }}' );
-		});
 
-		var counter = 1;
+			// reset previous ratings
+			$jQ(this).prevAll().each( function()
+			{
+				$jQ(this).attr( 'src', '{{ url( "resources/rating_none.png" ) }}' );
+			});
 
-		// mark myself; counter already 1
+			return updateCommentRating( this, 0 );
+		}
+
+		// case: image was clicked first time
+
+		// mark myself
 		$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
 		
 		// mark previous siblings
 		$jQ(this).prevAll().each( function()
 		{
 			$jQ(this).attr( 'src', '{{ url( "resources/rating.png" ) }}' );
-			counter++;
 		});
 
 		// send ajax request
 
-		var cname = getContextName();
-		var sid = getIdFromClosestStackr( this );
-		var commentId = $jQ(this).closest( 'li' ).attr( 'cid' );
-
-		$jQ.ajax( {
-			url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments/'+ commentId,
-			type: 'put',
-			data: { rt: counter }
-		});
+		return updateCommentRating( this, position );
 	});
 
 	// handle click on comment edit button

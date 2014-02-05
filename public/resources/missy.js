@@ -221,6 +221,19 @@ var updateCommentPositions = function( object )
 	});
 };
 
+var updateCommentRating = function( object, counter )
+{
+	var cname = getContextName();
+	var sid = getIdFromClosestStackr( object );
+	var commentId = $jQ( object ).closest( 'li' ).attr( 'cid' );
+
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments/'+ commentId,
+		type: 'put',
+		data: { rt: counter }
+	});	
+};
+
 var updateEntryTitle = function( e, object )
 {
 	var title = $jQ( object ).val();
