@@ -285,6 +285,11 @@
 
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
 
+	$jQ( document ).on( 'hover', '.stackr-wrapper', function()
+	{
+		$jQ(this).find( '.section-hoverable' ).toggleClass( 'section-active' );
+	});
+
 // TITLE
 	// handle hover on textfield 'entry title'
 	$jQ( document ).on( 'hover', '.textfield-title', function() { return toggleDisabledElement( this, 'textfield-title-active' ); } );

@@ -22,7 +22,7 @@
 				<h4 class='italic more_padding searchable'>{{ $stackr->description }}</h4>
 			</div>
 
-			<div class='stackr-operations'>
+			<div class='stackr-operations section-hoverable'>
 				
 				<button class='operator-button comment-add'>add
 					<span id='comment_add_button_text_{{ $stackr->id }}'>
@@ -43,7 +43,7 @@
 
 			</div>
 
-			<div class='stackr-buttons'>
+			<div class='stackr-buttons section-hoverable'>
 				<img src='{{ url( "resources/pinIt_$stackr->favored.png" ) }}' class='favoredIcon' alt='{{ $stackr->favored }}' width='28px' />
 			</div>
 
@@ -89,7 +89,7 @@
 
 		</div>
 
-		<div class='stackr-footer'>
+		<div class='stackr-footer section-hoverable'>
 			<span style='color: #aaa;'>Tags:</span> 
 			<input type='type' class='textfield tags_textfield_inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
 		</div>

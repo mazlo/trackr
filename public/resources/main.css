@@ -553,8 +553,13 @@ form.form-default {
 	padding: 23px;
 }
 
-div.section-hidden {
+div.section-hidden,
+div.section-hoverable {
 	display: none;
+}
+
+div.section-active {
+	display: block;
 }
 
 div.section-narrow {
