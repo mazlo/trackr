@@ -376,7 +376,7 @@ li.comment {
 	display: table;
 	width: 100%;
 	margin: 0; 
-	padding: 4px 0;
+	padding: 0;
 
 	cursor: hand;
 }
@@ -388,7 +388,8 @@ li.comment .comment-icon {
 
 li.comment .comment-text { 
 	display: table-cell;
-	width: 100%
+	width: 100%;
+	padding: 6px;
 }
 
 li.comment .comment-date {
