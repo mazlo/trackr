@@ -284,6 +284,7 @@
 	$jQ( document ).on( 'hover', '.stackr-wrapper', function()
 	{
 		$jQ(this).find( '.section-hoverable' ).toggleClass( 'section-hoverable-active' );
+		$jQ(this).children( '.section-hidden' ).toggleClass( 'section-hidden-active' );
 	});
 
 // TITLE

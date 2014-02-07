@@ -89,7 +89,7 @@
 
 		</div>
 
-		<div class='stackr-footer section-hoverable'>
+		<div class='stackr-footer section-hidden'>
 			<span style='color: #aaa;'>Tags:</span> 
 			<input type='type' class='textfield tags_textfield_inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
 		</div>
