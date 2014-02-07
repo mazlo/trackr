@@ -513,7 +513,7 @@ div.section-comment-add {
 	z-index: 1000;
 }
 
-.context_delete_confirmation,
+.context-delete-confirm,
 .entry_delete_confirmation,
 .comment-delete-confirm {
 	display: none; 
