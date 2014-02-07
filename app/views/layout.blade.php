@@ -171,8 +171,7 @@
 	// toggled options for contexts
 	$jQ( document ).on( 'hover', '.wrapper_context', function() 
 	{ 
-		$jQ( this ).children( '.context-options-box' ).toggleClass( 'context-options-box-active' );
-		$jQ( this ).find( '.list-contexts-stackrs' ).toggleClass( 'list-contexts-stackrs-active' );
+		$jQ( this ).find( '.element-hoverable' ).toggleClass( 'element-hoverable-active' );
 	} );
 
 	// shows the div to add a context

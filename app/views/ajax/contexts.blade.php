@@ -7,7 +7,7 @@
 				{{ $context->name }}
 			</a>
 			
-			<ul class='list-contexts-stackrs'>
+			<ul class='list-contexts-stackrs element-hoverable'>
 
 				{{-- not the default query because we limit the size of children to 6 --}}
 				@foreach( $context->stackrs()->getQuery()->limit(6)->get() as $key => $stackr )
@@ -23,7 +23,7 @@
 
 		</div>
 
-		<div class='context-options-box'>
+		<div class='context-options-box element-hoverable'>
 			<button class='operator-button operator-button-narrow operator-button-vertical context_delete_link'>x</button>
 			<span class='context_delete_confirmation'>
 				<button class='operator-button operator-button-confirm' style='width: auto'>delete</button>
