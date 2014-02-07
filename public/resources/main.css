@@ -514,7 +514,7 @@ div.section-comment-add {
 }
 
 .context-delete-confirm,
-.entry_delete_confirmation,
+.stackr-delete-confirm,
 .comment-delete-confirm {
 	display: none; 
 	z-index: 1000; 

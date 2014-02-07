@@ -404,7 +404,7 @@ var deleteContextConfirm = function( e, object )
 	var x = e.target.offsetLeft - 2;
 	var y = e.target.offsetTop - 32;
 
-	var dialog = $jQ( object ).next( '.context_delete_confirmation' );
+	var dialog = $jQ( object ).next( '.context-delete-confirm' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 	dialog.show();
@@ -485,7 +485,7 @@ var deleteEntryConfirm = function( e, object )
 	var x = e.target.offsetLeft + 1;
 	var y = e.target.offsetTop + 42;
 
-	var dialog = $jQ( object ).next( '.entry_delete_confirmation' );
+	var dialog = $jQ( object ).next( '.stackr-delete-confirm' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 	dialog.show();

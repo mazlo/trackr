@@ -269,7 +269,7 @@
 	$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
 
 	// handle click on confirmation dialog for delete entry button
-	$jQ( document ).on( 'click', '.entry_delete_confirmation', function() 
+	$jQ( document ).on( 'click', '.stackr-delete-confirm', function() 
 	{ 
 		return deleteEntry( this, '.stackr-wrapper', function()
 		{
