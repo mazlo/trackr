@@ -673,7 +673,7 @@ div.context-options-box {
 	visibility: visible;
 }
 
-div.element-hidden {
+.element-hidden {
 	visibility: hidden;
 }
 
