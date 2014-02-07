@@ -16,11 +16,11 @@
 		
 		<div class='comment-text searchable'>
 			<span style='padding-right: 13px;'>{{ $comment->comment }}</span>
-			<span class='comment-date'>{{ $comment->created_at }}</span>
+			<span class='comment-date element-hoverable'>{{ $comment->created_at }}</span>
 		</div>
 
 		<div style='display: table-cell;'>
-			<div class='comment-rating-stars'>
+			<div class='comment-rating-stars element-hoverable'>
 				
 				{{-- first display correct number of comment ratings --}}
 				@for( $i=0; $i< $comment->rating; $i++ )

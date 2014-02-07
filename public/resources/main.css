@@ -404,14 +404,8 @@ li.comment .comment-text {
 }
 
 li.comment .comment-date {
-	display: none;
-}
-
-li.comment .comment-date-active {
-	display: inline-block;
-	
 	font-size: 13px; 
-	letter-spacing: 0.3pt; 
+	letter-spacing: 0.4pt; 
 	color: #ccc;
 }
 
@@ -420,13 +414,8 @@ li.comment span.searchable {
 }
 
 li.comment div.comment-rating-stars {
-	visibility: hidden; 
 	margin: 0 3px; 
 	width: 65px;
-}
-
-li.comment div.comment-rating-stars-active {
-	visibility: visible; 
 }
 
 li.wrapper_context {
@@ -680,6 +669,14 @@ div.context-options-box-active {
 
 .element-shadow {
 	box-shadow: 0px 1px 4px #ccc;
+}
+
+.element-hoverable {
+	visibility: hidden;
+}
+
+.element-hoverable-active {
+	visibility: visible;
 }
 
 div.element-hidden {
