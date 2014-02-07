@@ -18,10 +18,9 @@
 </head>
 	<body>
 
-		<!-- content -->
+		<!-- content container -->
 		<div id='container'>
 
-			<!-- header contains logo and login -->
 			<div id='header'>
 				
 				<div style='width: 25%'>
@@ -54,12 +53,10 @@
 
 			</div>
 
-			<!-- navigation contains tag list -->
 			<div id='beforeContent'>
 				@yield( 'beforeContent' )
 			</div>
 
-			<!-- content contains list of entries -->
 			<div id='content'>
 				@yield( 'content' )
 			</div>
