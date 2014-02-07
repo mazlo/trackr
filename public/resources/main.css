@@ -547,12 +547,15 @@ div.section-hidden {
 	display: none;
 }
 
+div.section-hidden-active {
+	display: block;
+}
+
 div.section-hoverable {
 	visibility: hidden;
 }
 
-div.section-active {
-	display: block;
+div.section-hoverable-active {
 	visibility: visible;
 }
 
