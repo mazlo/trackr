@@ -184,7 +184,7 @@
 	$jQ( document ).on( 'click', '.context-add-action', function() { return addContextAction(); } );
 
 	// handle click on delete context button
-	$jQ( document ).on( 'click', '.context_delete_link', function(e) { return deleteContextConfirm( e, this ); } );
+	$jQ( document ).on( 'click', '.context-delete-link', function(e) { return deleteContextConfirm( e, this ); } );
 
 	// handle click on confirmation dialog for delete context button
 	$jQ( document ).on( 'click', '.context-delete-confirm', function() { return deleteContext( this, '.wrapper_context' ); } );
