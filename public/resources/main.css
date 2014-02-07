@@ -364,13 +364,6 @@ p.terms-wrapper {
 
 /* LISTS */
 
-#contexts {
-	list-style-type: none;
-
-	margin: 0;
-	padding: 0;
-}
-
 ul.comments {
 	margin: 0;
 	margin-top: 2px;
@@ -413,16 +406,23 @@ li.comment div.comment-rating-stars {
 	width: 65px;
 }
 
-li.context-wrapper {
-	display: inline-block; 
-	padding: 23px 23px 13px 0;
-}
-
 span.span-padding-left-right {
 	padding: 0 13px;
 }
 
 /* CONTEXTS */
+
+#contexts {
+	list-style-type: none;
+
+	margin: 0;
+	padding: 0;
+}
+
+li.context-wrapper {
+	display: inline-block; 
+	padding: 23px 23px 13px 0;
+}
 
 /* STACKR */
 
