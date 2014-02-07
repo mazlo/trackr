@@ -12,7 +12,7 @@
 @foreach( $comments as $comment )
 	<li class='comment' cid='{{ $comment->id }}'>
 
-		<span class='comment-icon'><a href='#' class='comment_delete_link' cid='{{ $comment->id }}'>-</a></span>
+		<span class='comment-icon'><a href='#' class='comment-delete-link' cid='{{ $comment->id }}'>-</a></span>
 		
 		<div class='comment-text searchable'>
 			<span style='padding-right: 13px;'>{{ $comment->comment }}</span>

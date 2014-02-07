@@ -34,7 +34,7 @@
 					</span>
 				</button>
 
-				<button class='operator-button entry_delete_link'>delete Stackr</button>
+				<button class='operator-button stackr-delete-link'>delete Stackr</button>
 				<span class='stackr-delete-confirm'>
 					<button class='operator-button operator-button-confirm'>delete</button>
 				</span>

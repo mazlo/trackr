@@ -100,7 +100,7 @@
 	);
 
 	// css manipulations on hover
-	$jQ( document ).on( 'hover', '.entry_delete_link, .comment_delete_link', function()
+	$jQ( document ).on( 'hover', '.stackr-delete-link, .comment-delete-link', function()
 	{
 		$jQ(this).toggleClass( 'hover' );
 	});
@@ -266,7 +266,7 @@
 	});
 
 	// handle click on delete entry button
-	$jQ( document ).on( 'click', '.entry_delete_link', function(e) { return deleteEntryConfirm( e, this ); } );
+	$jQ( document ).on( 'click', '.stackr-delete-link', function(e) { return deleteEntryConfirm( e, this ); } );
 
 	// handle click on confirmation dialog for delete entry button
 	$jQ( document ).on( 'click', '.stackr-delete-confirm', function() 
@@ -394,7 +394,7 @@
 	$jQ( document ).on( 'click', '.comment-add-action', function() { return addCommentAction( this ); } );
 
 	// handle click on comment delete button
-	$jQ( document ).on( 'click', '.comment_delete_link', function(e) { return deleteCommentConfirm( e, this ); } );
+	$jQ( document ).on( 'click', '.comment-delete-link', function(e) { return deleteCommentConfirm( e, this ); } );
 
 	// handle click on confirmation dialog for comment delete button
 	$jQ( document ).on( 'click', '.comment-delete-confirm', function() { return deleteComment( this ); } );

@@ -522,6 +522,10 @@ div.section-comment-add {
 	font-family: Georgia;
 }
 
+.comment-delete-link {
+	padding: 3px 13px;
+}
+
 /* 
 	SECTIONS and FORM elements
 */
@@ -647,13 +651,6 @@ div.context-options-box {
 	width: 36px;
 
 	vertical-align: top;
-}
-
-.entry_delete_link {
-}
-
-.comment_delete_link {
-	padding: 3px 13px;
 }
 
 /*
