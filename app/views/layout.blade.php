@@ -169,7 +169,7 @@
 // EVENTS REGARDING ADDING OR DELETING A CONTEXT
 
 	// toggled options for contexts
-	$jQ( document ).on( 'hover', '.wrapper_context', function() 
+	$jQ( document ).on( 'hover', '.context-wrapper', function() 
 	{ 
 		$jQ( this ).find( '.element-hoverable' ).toggleClass( 'element-hoverable-active' );
 	} );
