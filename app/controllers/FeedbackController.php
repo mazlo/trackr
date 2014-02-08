@@ -31,6 +31,14 @@ class FeedbackController extends BaseController
 
 		$feedback->save();
 
+		$data = array( 'feedback' => $feedback );
+
+		Mail::send( 'emails.feedback', $data, function( $message )
+		{
+		    $message->to( 'matthaeus.zloch@gmail.com', 'Me' );
+		    $message->subject( 'New Feedback' );
+		});
+
 		return View::make( 'feedback' )->with( 'submitted', true );
 	}
 }
