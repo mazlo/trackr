@@ -72,7 +72,7 @@ a.link-no-border {
 
 a.link-with-background {
 	background: green;
-	border-bottom: none;
+	border: none;
 	color: #fff;
 
 	border-radius: 3px;
