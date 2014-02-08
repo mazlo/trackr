@@ -9,8 +9,8 @@
 @section( 'content' )
 
 	@if ( isset( $submitted ) && $submitted )
-		<h4 style='color: #ba0000'>Thank you for your feedback! We're doing our best.</h4>
-		<h4>You might want to say something else?</h4>
+		<h4 class='message_success'>Thank you for your feedback! We're doing our best.</h4>
+		<h4 class='message_success'>You might want to say something else?</h4>
 	@else
 		<h4>Thank you for using MindStackr.com. We appreciate your feedback!</h4>
 	@endif
