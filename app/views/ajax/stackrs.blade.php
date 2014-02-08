@@ -80,7 +80,7 @@
 				</ul> 
 
 				@if( count( $comments ) > 3 )
-					<p style='padding-left: 13px'>
+					<p style='padding-left: 8px'>
 						<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
 					</p>
 				@endif
