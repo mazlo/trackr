@@ -216,7 +216,7 @@
 	</p>
 
 	<p>
-		You can contact MindStackr.com by email to <a class='dotted' href='mailto:info@mindstackr.com'>info@mindstackr.com</a>.
+		You can contact MindStackr.com by email via <a class='dotted' href='mailto:info@mindstackr.com'>info@mindstackr.com</a>.
 	</p>
 
 </div>
