@@ -5,12 +5,12 @@ var getContextPath = function()
 	
 	if ( contextPathArr == undefined )
 		return '';
-	
+
 	if ( contextPathArr.length > 2 )
-		return '/' + contextPathArr[1] + '/' + contextPathArr[2];
+		return '/' + contextPathArr[1];
 
 	if ( contextPathArr.length > 1 )
-		return '/' + contextPathArr[1];
+		return '/';
 };
 
 var getContexts = function()
