@@ -438,7 +438,7 @@ var updateContextColor = function( object, closestClass )
 	var cname = $jQ( object ).closest( closestClass ).attr( 'cname' );
 	var color = $jQ( object ).attr( 'color' );
 
-	$jQ( object ).closest( '.wrapper_context' ).find( '.context' ).css( 'background', color );
+	$jQ( object ).closest( closestClass ).find( '.context' ).css( 'background', color );
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname,
