@@ -2,15 +2,17 @@
 var getContextPath = function()
 {
 	var contextPathArr = window.location.pathname.split( '/' );
-	
+
 	if ( contextPathArr == undefined )
 		return '';
 
-	if ( contextPathArr.length > 2 )
-		return '/' + contextPathArr[1];
-
+	// testing environment
 	if ( contextPathArr.length > 1 )
-		return '/';
+		if ( contextPathArr[1] == 'public' )
+			return '/' + contextPathArr[1];
+
+	// production
+	return '';
 };
 
 var getContexts = function()
