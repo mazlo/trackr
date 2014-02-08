@@ -20,11 +20,11 @@ class Stackr extends Eloquent
 
 	public static function distinctTagList( $cname )
 	{
-		return DB::table( 'Stackrs' )
+		return DB::table( 'stackrs' )
 			->select( DB::raw( 'group_concat( distinct tags separator ", " ) as tags' ))
-			->join( 'Contexts', 'Stackrs.context_id', '=', 'Contexts.id' )
-			->where( 'Stackrs.user_id', Auth::user()->id )
-			->where( 'Contexts.name', $cname )
+			->join( 'contexts', 'stackrs.context_id', '=', 'contexts.id' )
+			->where( 'stackrs.user_id', Auth::user()->id )
+			->where( 'contexts.name', $cname )
 			->get();
 	}
 }
