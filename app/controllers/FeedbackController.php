@@ -33,7 +33,7 @@ class FeedbackController extends BaseController
 
 		$data = array( 'feedback' => $feedback );
 
-		Mail::send( 'emails.feedback', $data, function( $message )
+		Mail::queue( 'emails.feedback', $data, function( $message )
 		{
 		    $message->to( 'matthaeus.zloch@gmail.com', 'Me' );
 		    $message->subject( 'New Feedback' );

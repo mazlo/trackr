@@ -44,7 +44,7 @@ class UserController extends Controller
             // notify my master
             $data = array( 'user' => $user );
 
-            Mail::send( 'emails.user', $data, function( $message )
+            Mail::queue( 'emails.user', $data, function( $message )
             {
                 $message->to( 'matthaeus.zloch@gmail.com', 'Me' );
                 $message->subject( 'New User' );
