@@ -41,6 +41,15 @@ class UserController extends Controller
             $user->password = Hash::make( Input::get( 'password' ) );
             $user->save();
 
+            // notify my master
+            $data = array( 'user' => $user );
+
+            Mail::send( 'emails.user', $data, function( $message )
+            {
+                $message->to( 'matthaeus.zloch@gmail.com', 'Me' );
+                $message->subject( 'New User' );
+            });
+
             return Redirect::route( 'user/login' )->with( 'signup_successfull', 'Yeah! Thank\'s for signing up! You can now log in with your username and password.' );
         }
 
