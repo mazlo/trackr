@@ -45,3 +45,13 @@
 	@endif
 
 @endforeach
+
+@if ( count( $comments ) == 0 )
+	{{-- there are no comments -> show section to add a comment --}}
+	<script type='text/javascript'>
+		$jQ( function()
+		{
+			return showDiv( '#section-comment-add-{{ $stackr->id }}' );
+		});
+	</script>
+@endif

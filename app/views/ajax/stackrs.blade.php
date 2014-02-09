@@ -84,24 +84,12 @@
 
 				<ul id='comments_{{ $stackr->id }}' class='comments'>
 			
-				@if ( count( $comments ) == 0 )
-					{{-- there are no comments --}}
-					<script type='text/javascript'>
-						$jQ( function()
-						{
-							return showDiv( '#section-comment-add-{{ $stackr->id }}' );
-						});
-					</script>
+				@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments, 'stackr' => $stackr ) )
 
-				@else
-					{{-- there are some comments --}}
-						@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments ) )
-
-					@if( count( $comments ) > 3 )
-						<p style='padding-left: 8px'>
-							<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
-						</p>
-					@endif
+				@if( count( $comments ) > 3 )
+					<p style='padding-left: 8px'>
+						<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
+					</p>
 				@endif
 			
 				</ul> 

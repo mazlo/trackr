@@ -757,6 +757,9 @@ var showDiv = function( element )
 	$jQ( '.title-error' ).text( '' );
 	$jQ( '.description-error' ).text( '' );
 
+	// clean textarea
+	$jQ( element ).children( '.textarea' ).val( '' );
+
 	// show element with effect
 	$jQ( element ).effect( 'fade', 200, function() 
 	{
@@ -764,9 +767,6 @@ var showDiv = function( element )
 		var textfield = $jQ( this ).children( '.textfield' );
 		textfield.select();
 		textfield.focus();
-
-		// clean textarea
-		$jQ( this ).children( '.textarea' ).val( '' );
 
 		$jQ( element ).show();
 	} );
