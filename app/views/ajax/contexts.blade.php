@@ -2,7 +2,7 @@
 	<li class='context-wrapper' style='padding: 13px 0;'>
 		<p>No contexts here yet, dude.</p>
 		<p>You may want to create one with this big button below!</p>
-	</div>
+	</li>
 @endif
 
 @foreach( $contexts as $context )
