@@ -100,7 +100,14 @@ class StackrController extends BaseController {
 
 		// update Stackr tags
 		else if ( Input::has( 'tg' ) )
-			$stackr->tags = Input::get( 'tg' );
+		{
+			// '-' means they are empty
+			$tags = Input::get( 'tg' );
+			if ( $tags == '-' )
+				$tags = '';
+
+			$stackr->tags = $tags;
+		}
 
 		// update parent Context
 		else if ( Input::has( 'cname' ) )

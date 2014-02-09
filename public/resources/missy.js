@@ -324,6 +324,9 @@ var updateTags = function ( object )
 
 	var tags = $jQ( object ).val();
 
+	if ( tags == '' )
+		tags = '-';
+
 	// ajax call to change tags
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
