@@ -66,7 +66,7 @@
 					<button class='operator-button operator-button-done'>done</button>
 				</span>
 					
-				<div class='section-comment-add section-hidden' id='comment-add-{{ $stackr->id }}'>
+				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 					<!-- div comment add: is hidden first -->
 					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment'></textarea>
 

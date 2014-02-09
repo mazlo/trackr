@@ -576,10 +576,11 @@ var makeContext = function( object, copy, callback )
 var showAddCommentDiv = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
+	var elementId = '#section-comment-add-'+ sid;
 
-	$jQ( '#comment-add-'+ sid ).effect( 'fade', 200, function()
+	$jQ( elementId ).effect( 'fade', 200, function()
 		{
-			$jQ( '#comment-add-'+ sid ).show();
+			$jQ( elementId ).show();
 			$jQ( '#comment_new_content_'+ sid ).focus();
 		});
 
@@ -589,10 +590,11 @@ var showAddCommentDiv = function( object )
 var hideAddCommentDiv = function( object ) 
 {
 	var sid = getIdFromClosestStackr( object );
+	var elementId = '#section-comment-add-'+ sid;
 
-	$jQ( '#comment-add-'+ sid ).effect( 'fade', 100, function()
+	$jQ( elementId ).effect( 'fade', 100, function()
 		{
-			$jQ( '#comment-add-'+ sid ).hide();
+			$jQ( elementId ).hide();
 		} );
 
 	return false;
@@ -615,7 +617,7 @@ var addCommentAction = function( object )
 
 		success: function( data ) 
 		{
-			$jQ( '#comment-add-'+ sid ).hide();
+			$jQ( '#section-comment-add-'+ sid ).hide();
 			$jQ( '#comments_'+ sid ).html( data );
 		}
 	});
