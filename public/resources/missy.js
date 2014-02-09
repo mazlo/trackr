@@ -374,17 +374,16 @@ var addContextAction = function()
 	// 2. replace all subsequent not allowed characters with min-length 2
 	title = title.replace( /[^a-zA-z0-9]+/g, '-' ).replace( /([^a-zA-Z0-9]){2}/g, '' )
 
-	var description = $jQ( '#context-description' ).val();
-	if ( description == '' )
-	{
-		$jQ( '.description-error' ).text( 'You forgot to fill this in!' );
-		return false;
-	}
+	var description = $jQ( '#context-description' );
+
+	// when empty -> replace value with default text from placeholder attribute
+	if ( description.val() == '' )
+		description.val( description.attr( 'placeholder') );
 
 	$jQ.ajax( {
 		url: getContextPath() + '/contexts',
 		type: 'post',
-		data: { tl: title, ds: description },
+		data: { tl: title, ds: description.val() },
 
 		success: function( data ) 
 		{
