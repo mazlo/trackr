@@ -372,13 +372,13 @@
 
 // TAGS TEXTFIELD
 	// handle hover on textfield 'tags'
-	$jQ( document ).on( 'hover', '.tags_textfield_inactive', function() { return toggleDisabledElement( this, 'tags_textfield' ); } );
+	$jQ( document ).on( 'hover', '.textfield-tags-inactive', function() { return toggleDisabledElement( this, 'textfield-tags' ); } );
 
 	// handle keypress on textfield 'tags'
-	$jQ( document ).on( 'keyup', '.tags_textfield_inactive', function(e) { return confirmChangeOfTags( e, this ); } );
+	$jQ( document ).on( 'keyup', '.textfield-tags-inactive', function(e) { return confirmChangeOfTags( e, this ); } );
 
 	// handle blur on textfield 'tags'
-	$jQ( document ).on( 'blur', '.tags_textfield_inactive', function() { return updateTags( this ); } );
+	$jQ( document ).on( 'blur', '.textfield-tags-inactive', function() { return updateTags( this ); } );
 
 // EVENTS REGARDING ADDING OR DELETING COMMENTS
 

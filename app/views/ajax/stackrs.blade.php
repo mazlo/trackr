@@ -61,7 +61,7 @@
 			<!-- wrapper for all comments -->
 			<div class='comments-wrapper'>
 
-				<input class='textfield textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
+				<input class='textfield textfield-limited textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<span class='comments_title_confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>
@@ -110,9 +110,9 @@
 
 		</div>
 
-		<div class='stackr-footer section-hidden'>
+		<div class='stackr-footer'>
 			<span style='color: #aaa;'>Tags:</span> 
-			<input type='type' class='textfield textfield-form-like textfield-limited tags_textfield_inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
+			<input type='type' class='textfield textfield-form-like textfield-limited textfield-tags-inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
 		</div>
 
 	</div> {{-- end of wrapper entry --}}

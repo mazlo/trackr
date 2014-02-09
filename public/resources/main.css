@@ -611,21 +611,16 @@ input.textfield-comments-title-active {
 	border: 1px dotted orange;
 }
 
-input.tags_textfield_inactive {
+input.textfield-tags-inactive {
 	background: transparent;
 	border: 1px solid #fff; 
 	
-	width: 525px;
-	margin: 0;
-	padding: 6px;
-	
 	font-size: 15px; 
 	font-style: italic;
-	font-family: Georgia;
 	color: #aaa;
 }
 
-input.tags_textfield {
+input.textfield-tags {
 	border: 1px dotted orange;
 }
 
