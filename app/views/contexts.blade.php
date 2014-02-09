@@ -9,6 +9,8 @@
 	<!-- div entry add: is hidden after page load -->
 	<div id='section-context-add' class='section section-narrow section-hidden section-context-add'>
 
+		<h3>New Context</h3>
+
 		<h4 class='georgia'>Name</h4>
 		<span class='title-error credentials-error'></span>
 		<input type='text' id='context-title' value='' class='textfield form' />
