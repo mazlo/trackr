@@ -1,8 +1,15 @@
 @if ( count( $stackrs ) == 0 )
 	<div class='stackr-wrapper' style='padding: 13px 0;'>
+		<p>A list of Stackrs will be shown here.</p>
 		<p>Looks like you have no stackrs created yet.</p>
-		<p>Click on the button above to create your first stackr!</p>
 	</div>
+
+	<script type='text/javascript'>
+		$jQ( function()
+		{
+			return showDiv( '#section-stackr-add' );
+		});
+	</script>
 @endif
 
 @foreach( $stackrs as $stackr )
