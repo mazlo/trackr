@@ -754,10 +754,18 @@ var showDiv = function( element )
 	$jQ( '.title-error' ).text( '' );
 	$jQ( '.description-error' ).text( '' );
 
+	// show element with effect
 	$jQ( element ).effect( 'fade', 200, function() 
 	{
+		// select text in textfield to be ready to be overwritten
+		var textfield = $jQ( this ).children( '.textfield' );
+		textfield.select();
+		textfield.focus();
+
+		// clean textarea
+		$jQ( this ).children( '.textarea' ).val( '' );
+
 		$jQ( element ).show();
-		$jQ( this ).find( '.textfield' ).focus();
 	} );
 
 	return false;
