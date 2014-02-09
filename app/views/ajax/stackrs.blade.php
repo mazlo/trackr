@@ -112,7 +112,7 @@
 
 		<div class='stackr-footer section-hidden'>
 			<span style='color: #aaa;'>Tags:</span> 
-			<input type='type' class='textfield tags_textfield_inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
+			<input type='type' class='textfield textfield-form-like textfield-limited tags_textfield_inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
 		</div>
 
 	</div> {{-- end of wrapper entry --}}
