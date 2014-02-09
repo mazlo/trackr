@@ -1,8 +1,15 @@
 @if ( count( $stackrs ) == 0 )
 	<div class='stackr-wrapper' style='padding: 13px 0;'>
+		<p>A list of Stackrs will be shown here.</p>
 		<p>Looks like you have no stackrs created yet.</p>
-		<p>Click on the button above to create your first stackr!</p>
 	</div>
+
+	<script type='text/javascript'>
+		$jQ( function()
+		{
+			return showDiv( '#section-stackr-add' );
+		});
+	</script>
 @endif
 
 @foreach( $stackrs as $stackr )
@@ -54,14 +61,14 @@
 			<!-- wrapper for all comments -->
 			<div class='comments-wrapper'>
 
-				<input class='textfield textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
+				<input class='textfield textfield-limited textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<span class='comments_title_confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>
 					
-				<div class='section-comment-add section-hidden' id='comment-add-{{ $stackr->id }}'>
+				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 					<!-- div comment add: is hidden first -->
-					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment'></textarea>
+					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
 
 					<div style='padding: 8px 0;'>
 						<button class='operator-button comment-add-action'>add</button>
@@ -76,22 +83,36 @@
 				?>
 
 				<ul id='comments_{{ $stackr->id }}' class='comments'>
-					@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments ) )
-				</ul> 
+			
+				@if ( count( $comments ) == 0 )
+					{{-- there are no comments --}}
+					<script type='text/javascript'>
+						$jQ( function()
+						{
+							return showDiv( '#section-comment-add-{{ $stackr->id }}' );
+						});
+					</script>
 
-				@if( count( $comments ) > 3 )
-					<p style='padding-left: 8px'>
-						<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
-					</p>
+				@else
+					{{-- there are some comments --}}
+						@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments ) )
+
+					@if( count( $comments ) > 3 )
+						<p style='padding-left: 8px'>
+							<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
+						</p>
+					@endif
 				@endif
+			
+				</ul> 
 				
 			</div>
 
 		</div>
 
-		<div class='stackr-footer section-hidden'>
+		<div class='stackr-footer'>
 			<span style='color: #aaa;'>Tags:</span> 
-			<input type='type' class='textfield tags_textfield_inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
+			<input type='type' class='textfield textfield-form-like textfield-limited textfield-tags-inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
 		</div>
 
 	</div> {{-- end of wrapper entry --}}

@@ -38,11 +38,10 @@
 
 	<div id='section-stackr-add' class='section section-narrow section-hidden section-stackr-add'>
 
-		<h4 class='georgia'>Title</h4>
-		<input type='text' id='stackr-title' value='' class='textfield form' />
-		
-		<h4 class='italic'>Description</h4>
-		<textarea id='stackr-description' class='textarea form'></textarea>
+		<h3>New Stackr</h3>
+
+		<input type='text' id='stackr-title' value='' class='textfield textfield-form-like form-element' placeholder='Title' />
+		<textarea id='stackr-description' class='textarea form-element' placeholder='Description (optional), e.g. Notes on the process'></textarea>
 
 		<div style='padding: 8px 0;'>
 			<button class='operator-button stackr-add-action'>Add</button>

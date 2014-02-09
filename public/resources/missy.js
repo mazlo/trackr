@@ -374,17 +374,16 @@ var addContextAction = function()
 	// 2. replace all subsequent not allowed characters with min-length 2
 	title = title.replace( /[^a-zA-z0-9]+/g, '-' ).replace( /([^a-zA-Z0-9]){2}/g, '' )
 
-	var description = $jQ( '#context-description' ).val();
-	if ( description == '' )
-	{
-		$jQ( '.description-error' ).text( 'You forgot to fill this in!' );
-		return false;
-	}
+	var description = $jQ( '#context-description' );
+
+	// when empty -> replace value with default text from placeholder attribute
+	if ( description.val() == '' )
+		description.val( description.attr( 'placeholder') );
 
 	$jQ.ajax( {
 		url: getContextPath() + '/contexts',
 		type: 'post',
-		data: { tl: title, ds: description },
+		data: { tl: title, ds: description.val() },
 
 		success: function( data ) 
 		{
@@ -576,10 +575,11 @@ var makeContext = function( object, copy, callback )
 var showAddCommentDiv = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
+	var elementId = '#section-comment-add-'+ sid;
 
-	$jQ( '#comment-add-'+ sid ).effect( 'fade', 200, function()
+	$jQ( elementId ).effect( 'fade', 200, function()
 		{
-			$jQ( '#comment-add-'+ sid ).show();
+			$jQ( elementId ).show();
 			$jQ( '#comment_new_content_'+ sid ).focus();
 		});
 
@@ -589,10 +589,11 @@ var showAddCommentDiv = function( object )
 var hideAddCommentDiv = function( object ) 
 {
 	var sid = getIdFromClosestStackr( object );
+	var elementId = '#section-comment-add-'+ sid;
 
-	$jQ( '#comment-add-'+ sid ).effect( 'fade', 100, function()
+	$jQ( elementId ).effect( 'fade', 100, function()
 		{
-			$jQ( '#comment-add-'+ sid ).hide();
+			$jQ( elementId ).hide();
 		} );
 
 	return false;
@@ -615,7 +616,7 @@ var addCommentAction = function( object )
 
 		success: function( data ) 
 		{
-			$jQ( '#comment-add-'+ sid ).hide();
+			$jQ( '#section-comment-add-'+ sid ).hide();
 			$jQ( '#comments_'+ sid ).html( data );
 		}
 	});
@@ -753,10 +754,18 @@ var showDiv = function( element )
 	$jQ( '.title-error' ).text( '' );
 	$jQ( '.description-error' ).text( '' );
 
+	// show element with effect
 	$jQ( element ).effect( 'fade', 200, function() 
 	{
+		// select text in textfield to be ready to be overwritten
+		var textfield = $jQ( this ).children( '.textfield' );
+		textfield.select();
+		textfield.focus();
+
+		// clean textarea
+		$jQ( this ).children( '.textarea' ).val( '' );
+
 		$jQ( element ).show();
-		$jQ( this ).find( '.textfield' ).focus();
 	} );
 
 	return false;

@@ -9,13 +9,13 @@
 	<!-- div entry add: is hidden after page load -->
 	<div id='section-context-add' class='section section-narrow section-hidden section-context-add'>
 
-		<h4 class='georgia'>Name</h4>
+		<h3>New Context</h3>
+
 		<span class='title-error credentials-error'></span>
-		<input type='text' id='context-title' value='' class='textfield form' />
+		<input type='text' id='context-title' value='' class='textfield textfield-form-like form-element' placeholder='Name'/>
 		
-		<h4 class='italic'>Description</h4>
 		<span class='description-error credentials-error'></span>
-		<textarea id='context-description' class='textarea form'>Notes on the process</textarea>
+		<textarea id='context-description' class='textarea form-element' placeholder='Description, e.g. Notes on the process'></textarea>
 
 		<div style='padding: 8px 0;'>
 			<button class='operator-button context-add-action'>Add</button>
