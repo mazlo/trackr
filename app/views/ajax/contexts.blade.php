@@ -1,7 +1,14 @@
 @if ( count( $contexts ) == 0 )
 	<li class='context-wrapper' style='padding: 13px 0;'>
-		<p>No contexts here yet, dude.</p>
-		<p>You may want to create one with this big button below!</p>
+		<p>No contexts here, dude.</p>
+		<p>You may want to create one now!</p>
+
+		<script type='text/javascript'>
+			$jQ( function()
+			{
+				return showDiv( '#section-context-add' );
+			});
+		</script>
 	</li>
 @endif
 
