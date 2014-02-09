@@ -38,6 +38,8 @@
 
 	<div id='section-stackr-add' class='section section-narrow section-hidden section-stackr-add'>
 
+		<h3>New Stackr</h3>
+
 		<h4 class='georgia'>Title</h4>
 		<input type='text' id='stackr-title' value='' class='textfield form' />
 		
