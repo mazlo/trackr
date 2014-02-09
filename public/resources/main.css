@@ -80,6 +80,7 @@ a.link-with-background {
 }
 
 input {
+	padding: 3px 6px;
 	letter-spacing: 0.2pt;
 	font-weight: normal;
 }
@@ -563,6 +564,13 @@ div.section-narrow {
 	width: 640px;
 }
 
+/* FORMS */
+
+.form-element {
+	margin: 6px 0 3px;
+	width: 100%;
+}
+
 form.form-narrower {
 	width: 360px;
 }
@@ -574,10 +582,18 @@ form.form-feedback {
 }
 
 input.textfield {
-	padding: 6px; 
 	width: 100%; 
-	max-width: 525px;
 	height: 32px;
+}
+
+input.textfield-form-like {
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Georgia;
+}
+
+input.textfield-limited {
+	max-width: 525px;
 }
 
 input.textfield-title,
@@ -622,6 +638,25 @@ input.textfield_smaller {
 	padding: 2px; 
 	width: 320px; 
 	height: 23px;
+}
+
+textarea.textarea
+{
+	border: 1px #bbb solid;
+	height: 105px; 
+	padding: 6px;
+
+	font-family: AleoLight;
+	font-size: 15px;
+	letter-spacing: 0.2pt;
+}
+
+textarea.textarea-comment {
+	width: 90%;
+}
+
+textarea.textarea-edit {
+	display: block;
 }
 
 div.context {
@@ -683,27 +718,6 @@ div.context-options-box {
 	padding: 3px 0;
 	font-size: 13px;
 	color: red;
-}
-
-textarea.textarea
- {
-	border: 1px #bbb solid;
-	width: 90%; 
-	height: 105px; 
-	padding: 6px;
-
-	font-family: AleoLight;
-	font-size: 15px;
-}
-
-textarea.textarea-edit {
-	display: block;
-}
-
-textarea.form
-{
-	margin: 3px 0;
-	width: 100%;
 }
 
 .infotext {
