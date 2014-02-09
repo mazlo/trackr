@@ -68,7 +68,7 @@
 					
 				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 					<!-- div comment add: is hidden first -->
-					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment'></textarea>
+					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
 
 					<div style='padding: 8px 0;'>
 						<button class='operator-button comment-add-action'>add</button>
