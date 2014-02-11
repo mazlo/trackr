@@ -5,14 +5,9 @@
 */
 @font-face {
     font-family: 'AleoLight';
-    src: url( 'Aleo-Light.otf' );
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'SignikaLight';
-    src: url( 'Signika-Light.ttf' );
+    src: url( 'Aleo-Light-autohinted.ttf' );
+	src: url( 'Aleo-Light-autohinted.eot?#iefix') format('embedded-opentype'), 
+		 url( 'Aleo-Light-autohinted.ttf') format( 'truetype' );
     font-style: normal;
     font-weight: normal;
 }
@@ -27,7 +22,7 @@ body {
 	margin: 0;
 	padding: 0;
 
-	font-family: Georgia;
+	font-family: AleoLight, Georgia;
 
 }
 
@@ -37,7 +32,7 @@ h3.applicationTitle {
 	margin: 0px;
 
 	font-weight: normal;
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 h3 {
@@ -205,7 +200,7 @@ ul.list-box > li.list-box-feature {
 	padding: 13px 32px;
 	height: 39px;
 
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 #header > div {
@@ -227,7 +222,7 @@ ul.list-box > li.list-box-feature {
 	margin: 8px 32px 0;
 	padding-bottom: 32px;
 
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 #content p {
@@ -238,7 +233,7 @@ ul.list-box > li.list-box-feature {
 	width: 1024px; 
 	margin: 48px auto;
 
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 #terms {
@@ -284,7 +279,7 @@ button.operator-button-done {
 	width: 82px; 
 	
 	color: #000;
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 button.operator-button-confirm {
@@ -292,7 +287,7 @@ button.operator-button-confirm {
 	width: 82px; 
 	
 	color: #000;
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 h4.entry_description {
@@ -445,7 +440,7 @@ div.stackr-icon {
 	width: 46px;
 	padding: 6px 0;
 
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 div.stackr-description {
@@ -453,7 +448,7 @@ div.stackr-description {
 	width: 527px;
 	padding-right: 23px;
 
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 }
 
 div.stackr-operations {
@@ -640,7 +635,7 @@ textarea.textarea
 	height: 105px; 
 	padding: 6px;
 
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 	font-size: 15px;
 	letter-spacing: 0.2pt;
 }
@@ -735,7 +730,7 @@ div.context-options-box {
 .ui-button-text,
 .ui-button-text-only {
 	padding: 0;
-	font-family: AleoLight;
+	font-family: AleoLight, Georgia;
 	font-size: 13px;
 	letter-spacing: 0.1pt;
 	color: #000;
