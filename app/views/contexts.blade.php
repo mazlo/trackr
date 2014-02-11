@@ -43,9 +43,8 @@
 
 		<li style='display: inline-block; vertical-align: top'>
 			<div style='border: none;'>
-				<h4 class='georgia'>You may want to</h4>
 				<input type='checkbox' id='stackrs-organize' />
-				<span>organize Stackrs</span>
+				<span>Organize Stackrs mode</span>
 			</div>
 		</li>
 	</ul>
