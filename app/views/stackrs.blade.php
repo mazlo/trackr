@@ -44,8 +44,8 @@
 		<textarea id='stackr-description' class='textarea form-element' placeholder='Description (optional), e.g. Notes on the process'></textarea>
 
 		<div style='padding: 8px 0;'>
-			<button class='operator-button stackr-add-action'>Create</button>
-			<button class='operator-button stackr-add-next-action'>Create and create next</button>
+			<button class='operator-button stackr-add-action'>Add</button>
+			<button class='operator-button stackr-add-next-action'>Add and add next</button>
 			<button class='operator-button stackr-add-cancel-action'>Cancel</button>
 		</div>
 
