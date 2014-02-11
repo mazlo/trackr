@@ -451,7 +451,7 @@ var updateContextColor = function( object, closestClass )
 
 // ----- functions regarding entries -----
 
-var addEntryAction = function() 
+var addEntryAction = function( addNext ) 
 {
 	var title = $jQ( '#stackr-title' ).val();
 	if ( title == '' )
@@ -477,6 +477,9 @@ var addEntryAction = function()
 			container.fadeIn( 200 );
 
 			makeCommentsSortable( this );
+
+			if( addNext )
+				showDiv( '#section-stackr-add' );
 		}
 	});
 

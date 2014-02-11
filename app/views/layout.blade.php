@@ -219,7 +219,10 @@
 	$jQ( document ).on( 'click', '.stackr-add-cancel-action', function() { return hideDiv( '#section-stackr-add' ); } );
 
 	// handle click on add entry button
-	$jQ( document ).on( 'click', '.stackr-add-action', function() { return addEntryAction(); } );
+	$jQ( document ).on( 'click', '.stackr-add-action', function() { return addEntryAction( false ); } );
+
+	// handle click on add-next entry button
+	$jQ( document ).on( 'click', '.stackr-add-next-action', function() { return addEntryAction( true ); } );
 
 	// handle keypress on textfield entry title
 	$jQ( document ).on( 'keyup', '#stackr-title', function( event ) 
