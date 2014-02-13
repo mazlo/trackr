@@ -578,7 +578,7 @@ var makeContext = function( object, copy, callback )
 
 // ----- functions regarding comments -----
 
-var showAddCommentDiv = function( object )
+var showCommentAddDiv = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 	var elementId = '#section-comment-add-'+ sid;

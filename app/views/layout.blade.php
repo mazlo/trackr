@@ -386,7 +386,7 @@
 // EVENTS REGARDING ADDING OR DELETING COMMENTS
 
 	// show div to add a new comment
-	$jQ( document ).on( 'click', '.comment-add', function() { return showAddCommentDiv( this ); } );
+	$jQ( document ).on( 'click', '.comment-add', function() { return showCommentAddDiv( this ); } );
 
 	// hide div to add a new comment
 	$jQ( document ).on( 'click', '.comment-add-cancel-action', function() { return hideAddCommentDiv( this ); } );
