@@ -275,6 +275,10 @@ button.operator-button-vertical {
 }
 
 button.operator-button-done {
+	display: none;
+	position: absolute;
+	z-index: 1000;
+
 	border: 1px solid green; 
 	width: 82px; 
 	
@@ -502,7 +506,6 @@ div.section-comment-add {
 	margin: 8px 35px 0;
 }
 
-.stackr-title-change-confirm,
 .comments-title-change-confirm {
 	display: none;
 	position: absolute;

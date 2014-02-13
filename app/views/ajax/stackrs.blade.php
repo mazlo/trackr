@@ -23,9 +23,7 @@
 
 			<div class='stackr-description'>
 				<input class='textfield textfield-title' value='{{ $stackr->title }}' disabled='disabled' />
-				<span class='stackr-title-change-confirm'>
-					<button class='operator-button operator-button-done'>done</button>
-				</span>
+				<button class='operator-button operator-button-done'>done</button>
 				<h4 class='italic more_padding searchable'>{{ $stackr->description }}</h4>
 			</div>
 

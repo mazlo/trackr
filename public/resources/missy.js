@@ -251,7 +251,7 @@ var updateEntryTitle = function( e, object )
 	var x = e.target.offsetLeft - 187;
 	var y = e.target.offsetTop + 1;
 
-	var dialog = $jQ( object ).next( '.stackr-title-change-confirm' );
+	var dialog = $jQ( object ).next( '.operator-button-done' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
