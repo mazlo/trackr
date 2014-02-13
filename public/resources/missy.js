@@ -605,7 +605,7 @@ var hideAddCommentDiv = function( object )
 	return false;
 };
 
-var addCommentAction = function( object )
+var addCommentAction = function( object, addNext )
 {
 	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
@@ -622,8 +622,13 @@ var addCommentAction = function( object )
 
 		success: function( data ) 
 		{
-			$jQ( '#section-comment-add-'+ sid ).hide();
 			$jQ( '#comments_'+ sid ).html( data );
+
+			if ( !addNext )
+				$jQ( '#section-comment-add-'+ sid ).hide();
+
+			$jQ( textareaId ).select();
+			$jQ( textareaId ).focus();
 		}
 	});
 

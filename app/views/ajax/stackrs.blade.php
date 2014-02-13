@@ -71,8 +71,9 @@
 					<textarea id='comment_new_content_{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
 
 					<div style='padding: 8px 0;'>
-						<button class='operator-button comment-add-action'>add</button>
-						<button class='operator-button comment-add-cancel-action'>cancel</button>
+						<button class='operator-button comment-add-action'>Add</button>
+						<button class='operator-button comment-add-next-action'>Add and add next</button>
+						<button class='operator-button comment-add-cancel-action'>Cancel</button>
 					</div>
 				</div>
 

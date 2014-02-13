@@ -392,7 +392,10 @@
 	$jQ( document ).on( 'click', '.comment-add-cancel-action', function() { return hideAddCommentDiv( this ); } );
 
 	// handle click on comment add button
-	$jQ( document ).on( 'click', '.comment-add-action', function() { return addCommentAction( this ); } );
+	$jQ( document ).on( 'click', '.comment-add-action', function() { return addCommentAction( this, false ); } );
+
+	// handle click on comment add-next button
+	$jQ( document ).on( 'click', '.comment-add-next-action', function() { return addCommentAction( this, true ); } );
 
 	// handle click on comment delete button
 	$jQ( document ).on( 'click', '.comment-delete-link', function(e) { return deleteCommentConfirm( e, this ); } );
