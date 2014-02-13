@@ -586,7 +586,7 @@ var showAddCommentDiv = function( object )
 	$jQ( elementId ).effect( 'fade', 200, function()
 		{
 			$jQ( elementId ).show();
-			$jQ( '#comment_new_content_'+ sid ).focus();
+			$jQ( '#comment-add-'+ sid ).focus();
 		});
 
 	return false;
@@ -609,7 +609,7 @@ var addCommentAction = function( object, addNext )
 {
 	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
-	var textareaId = '#comment_new_content_'+ sid;
+	var textareaId = '#comment-add-'+ sid;
 
 	if ( $jQ( textareaId ).val() == '' )
 		return;
