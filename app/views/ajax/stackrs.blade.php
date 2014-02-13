@@ -23,7 +23,7 @@
 
 			<div class='stackr-description'>
 				<input class='textfield textfield-title' value='{{ $stackr->title }}' disabled='disabled' />
-				<span class='entry_title_confirm'>
+				<span class='stackr-title-change-confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>
 				<h4 class='italic more_padding searchable'>{{ $stackr->description }}</h4>
@@ -62,7 +62,7 @@
 			<div class='comments-wrapper'>
 
 				<input class='textfield textfield-limited textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
-				<span class='comments_title_confirm'>
+				<span class='comments-title-change-confirm'>
 					<button class='operator-button operator-button-done'>done</button>
 				</span>
 					

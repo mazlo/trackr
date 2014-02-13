@@ -251,7 +251,7 @@ var updateEntryTitle = function( e, object )
 	var x = e.target.offsetLeft - 187;
 	var y = e.target.offsetTop + 1;
 
-	var dialog = $jQ( object ).next( '.entry_title_confirm' );
+	var dialog = $jQ( object ).next( '.stackr-title-change-confirm' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 
@@ -286,7 +286,7 @@ var updateCommentsTitle = function( e, object )
 	var x = e.target.offsetLeft - 187;
 	var y = e.target.offsetTop + 1;
 
-	var dialog = $jQ( object ).next( '.comments_title_confirm' );
+	var dialog = $jQ( object ).next( '.comments-title-change-confirm' );
 	dialog.css( 'left', x );
 	dialog.css( 'top', y );
 

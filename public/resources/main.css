@@ -502,8 +502,8 @@ div.section-comment-add {
 	margin: 8px 35px 0;
 }
 
-.entry_title_confirm,
-.comments_title_confirm {
+.stackr-title-change-confirm,
+.comments-title-change-confirm {
 	display: none;
 	position: absolute;
 	z-index: 1000;
