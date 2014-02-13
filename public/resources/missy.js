@@ -141,7 +141,7 @@ var getComments = function( sid )
 
 		success: function( data ) 
 		{
-			$jQ( '#comments_'+ sid ).html( data );
+			$jQ( '#comments-'+ sid ).html( data );
 		}
 	});
 };
@@ -623,7 +623,7 @@ var addCommentAction = function( object, addNext )
 
 		success: function( data ) 
 		{
-			$jQ( '#comments_'+ sid ).html( data );
+			$jQ( '#comments-'+ sid ).html( data );
 
 			if ( !addNext )
 				$jQ( '#section-comment-add-'+ sid ).hide();
@@ -666,7 +666,7 @@ var deleteComment = function( object )
 
 				success: function( data ) 
 				{
-					$jQ( '#comments_'+ sid ).html( data );
+					$jQ( '#comments-'+ sid ).html( data );
 				}
 			});
 		});

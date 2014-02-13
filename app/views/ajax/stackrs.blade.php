@@ -83,7 +83,7 @@
 					$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->orderBy( 'created_at' )->get();
 				?>
 
-				<ul id='comments_{{ $stackr->id }}' class='comments'>
+				<ul id='comments-{{ $stackr->id }}' class='comments'>
 			
 				@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments, 'stackr' => $stackr ) )
 
