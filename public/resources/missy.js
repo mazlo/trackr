@@ -628,8 +628,7 @@ var addCommentAction = function( object, addNext )
 			if ( !addNext )
 				$jQ( '#section-comment-add-'+ sid ).hide();
 
-			$jQ( textareaId ).select();
-			$jQ( textareaId ).focus();
+			$jQ( textareaId ).select().focus();
 		}
 	});
 
@@ -761,7 +760,7 @@ var toggleDisabledElement = function( object, classToBeToggled )
 
 // ----- global functions -----
 
-var showDiv = function( element ) 
+var showDiv = function( element, elementToFocus ) 
 {
 	$jQ( '.title-error' ).text( '' );
 	$jQ( '.description-error' ).text( '' );
@@ -772,10 +771,12 @@ var showDiv = function( element )
 	// show element with effect
 	$jQ( element ).effect( 'fade', 200, function() 
 	{
-		// select text in textfield to be ready to be overwritten
-		var textfield = $jQ( this ).children( '.textfield' );
-		textfield.select();
-		textfield.focus();
+		if ( elementToFocus )
+		{
+			// select text in element to be ready to be overwritten
+			var focusableElement = $jQ( this ).children( elementToFocus );
+			focusableElement.select().focus();
+		}
 
 		$jQ( element ).show();
 	} );

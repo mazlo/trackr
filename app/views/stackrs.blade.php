@@ -76,6 +76,4 @@
 @section( 'onDocumentLoad' )
 	getAllEntries();
 	getDistinctEntriesTagList();
-
-	$jQ( '#search' ).focus();
 @stop

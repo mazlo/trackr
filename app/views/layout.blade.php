@@ -172,7 +172,7 @@
 	} );
 
 	// shows the div to add a context
-	$jQ( document ).on( 'click', '.context-add', function() { return showDiv( '#section-context-add' ); } );
+	$jQ( document ).on( 'click', '.context-add', function() { return showDiv( '#section-context-add', '.textfield' ); } );
 
 	// hides the div to add a context
 	$jQ( document ).on( 'click', '.context-add-cancel-action', function() { return hideDiv( '#section-context-add' ); } );
@@ -213,7 +213,7 @@
 // EVENTS REGARDING ADDING OR DELETING AN ENTRY
 
 	// shows the div to add a new entry
-	$jQ( document ).on( 'click', '.stackr-add', function() { return showDiv( '#section-stackr-add' ); } );
+	$jQ( document ).on( 'click', '.stackr-add', function() { return showDiv( '#section-stackr-add', '.textfield' ); } );
 
 	// hides the div to add a new entry
 	$jQ( document ).on( 'click', '.stackr-add-cancel-action', function() { return hideDiv( '#section-stackr-add' ); } );
