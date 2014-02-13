@@ -609,11 +609,12 @@ var addCommentAction = function( object, addNext )
 {
 	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
+	var textareaId = '#comment_new_content_'+ sid;
 
-	if ( $jQ( '#comment_new_content_'+ sid ).val() == '' )
+	if ( $jQ( textareaId ).val() == '' )
 		return;
 
-	var comment = $jQ( '#comment_new_content_'+ sid ).val();
+	var comment = $jQ( textareaId ).val();
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
