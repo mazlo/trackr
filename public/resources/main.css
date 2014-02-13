@@ -506,12 +506,6 @@ div.section-comment-add {
 	margin: 8px 35px 0;
 }
 
-.comments-title-change-confirm {
-	display: none;
-	position: absolute;
-	z-index: 1000;
-}
-
 .context-delete-confirm,
 .stackr-delete-confirm,
 .comment-delete-confirm {

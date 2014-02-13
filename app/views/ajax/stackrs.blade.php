@@ -60,9 +60,7 @@
 			<div class='comments-wrapper'>
 
 				<input class='textfield textfield-limited textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
-				<span class='comments-title-change-confirm'>
-					<button class='operator-button operator-button-done'>done</button>
-				</span>
+				<button class='operator-button operator-button-done'>done</button>
 					
 				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 					<!-- div comment add: is hidden first -->
