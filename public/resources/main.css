@@ -636,7 +636,10 @@ div.context {
 	width: 256px; 
 	height: 144px; 
 	
-	font-size: 14px;
+	font-size: 15px;
+	font-family: Georgia;
+	font-weight: lighter;
+	
 	letter-spacing: 0.2pt;
 	text-align: center;
 }
