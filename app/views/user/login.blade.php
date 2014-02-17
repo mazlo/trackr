@@ -60,7 +60,7 @@
 
         <ul class='list-box'>
             <li class='list-box-feature'>
-                Click on the title, description or title of comment section of a MindStack to change it.
+                Click on the title, description or the title of the comment section of a MindStack to change it.
             </li>
 
             <li class='list-box-feature'>
@@ -72,7 +72,7 @@
             </li>
 
             <li class='list-box-feature'>
-                Convert a Comment into a MindStack or even a MindStack into a Context.
+                In case a MindStack gets more complex, convert it into a Context and add more MindStacks to it.
             </li>
         </ul>
 

@@ -143,20 +143,21 @@ ul.list-contexts-stackrs li a {
 }
 
 ul.list-box {
-	overflow: hidden; 
 	margin: 0;
 	padding: 0;
 
 	list-style-type: none; 
-	text-align: center
+	text-align: center;
+	font-size: 14px;
 }
 
 ul.list-box > li.list-box-feature {
 	display: inline-block;
+	overflow: hidden; 
 	background: #fcfcfc; 
 	border: 1px #bbb solid; 
 	
-	width: 140px; 
+	width: 150px; 
 	height: 105px; 
 	margin: 0 13px;
 	padding: 13px; 
