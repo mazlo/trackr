@@ -37,7 +37,7 @@
 		</div>
 
 		<div class='context-options-box element-hoverable'>
-			<button class='operator-button operator-button-narrow operator-button-vertical context-delete-link'>x</button>
+			<button class='operator-button operator-button-narrow operator-button-vertical context-delete-link' style='margin-left: -16px; margin-top: -10px'>x</button>
 			<span class='context-delete-confirm'>
 				<button class='operator-button operator-button-confirm' style='width: auto'>delete</button>
 			</span>
