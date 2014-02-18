@@ -652,6 +652,11 @@ div.context > a {
 	padding: 18px 23px 8px; 
 }
 
+div.context-header-box {
+	display: table-row; 
+	text-align: right;
+}
+
 div.context-options-box {
 	display: table-cell; 
 
