@@ -616,9 +616,7 @@ textarea.textarea
 	height: 105px; 
 	padding: 6px;
 
-	font-family: Georgia;
-	font-size: 15px;
-	letter-spacing: 0.2pt;
+	font: inherit;
 }
 
 textarea.textarea-comment {
@@ -639,7 +637,7 @@ div.context {
 	font-size: 15px;
 	font-family: Georgia;
 	font-weight: lighter;
-	
+
 	letter-spacing: 0.2pt;
 	text-align: center;
 }
