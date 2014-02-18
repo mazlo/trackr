@@ -410,6 +410,44 @@ li.context-wrapper {
 	padding: 23px 23px 13px 0;
 }
 
+div.context {
+	display: table-cell;
+	border: 1px #bbb solid; 
+	
+	width: 256px; 
+	height: 144px; 
+	
+	font-size: 15px;
+	font-family: Georgia;
+	font-weight: lighter;
+
+	letter-spacing: 0.2pt;
+	text-align: center;
+}
+
+div.context:hover {
+	background: #eee;
+}
+
+div.context > a {
+	display: block;
+	border: none;
+	padding: 18px 23px 8px; 
+}
+
+div.context-header-box {
+	display: table-row; 
+	text-align: right;
+}
+
+div.context-options-box {
+	display: table-cell; 
+
+	width: 36px;
+
+	vertical-align: top;
+}
+
 /* STACKR */
 
 div.stackr-wrapper {
@@ -625,44 +663,6 @@ textarea.textarea-comment {
 
 textarea.textarea-edit {
 	display: block;
-}
-
-div.context {
-	display: table-cell;
-	border: 1px #bbb solid; 
-	
-	width: 256px; 
-	height: 144px; 
-	
-	font-size: 15px;
-	font-family: Georgia;
-	font-weight: lighter;
-
-	letter-spacing: 0.2pt;
-	text-align: center;
-}
-
-div.context:hover {
-	background: #eee;
-}
-
-div.context > a {
-	display: block;
-	border: none;
-	padding: 18px 23px 8px; 
-}
-
-div.context-header-box {
-	display: table-row; 
-	text-align: right;
-}
-
-div.context-options-box {
-	display: table-cell; 
-
-	width: 36px;
-
-	vertical-align: top;
 }
 
 /*
