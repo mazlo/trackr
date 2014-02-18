@@ -6,7 +6,7 @@
 		<script type='text/javascript'>
 			$jQ( function()
 			{
-				return showDiv( '#section-context-add' );
+				return showDiv( '#section-context-add', '.textfield' );
 			});
 		</script>
 	</li>

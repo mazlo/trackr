@@ -7,7 +7,7 @@
 	<script type='text/javascript'>
 		$jQ( function()
 		{
-			return showDiv( '#section-stackr-add' );
+			return showDiv( '#section-stackr-add', '.textfield' );
 		});
 	</script>
 @endif
