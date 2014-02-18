@@ -378,7 +378,7 @@ var addContextAction = function()
 
 	// 1. replace all characters that are not allowed
 	// 2. replace all subsequent not allowed characters with min-length 2
-	title = title.replace( /[^a-zA-z0-9]+/g, '-' ).replace( /([^a-zA-Z0-9]){2}/g, '' )
+	title = title.replace( /[^a-zA-z0-9äöü]+/g, '-' ).replace( /([^a-zA-Z0-9äöü]){2}/g, '' )
 
 	var description = $jQ( '#context-description' );
 
