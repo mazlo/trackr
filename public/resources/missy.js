@@ -131,7 +131,7 @@ var getDistinctEntriesTagList = function()
 	});
 }
 
-var getComments = function( sid )
+var getComments = function( sid, callback )
 {
 	var cname = getContextName();
 
@@ -142,6 +142,9 @@ var getComments = function( sid )
 		success: function( data ) 
 		{
 			$jQ( '#comments-'+ sid ).html( data );
+
+			if ( callback )
+				callback();
 		}
 	});
 };
@@ -685,7 +688,12 @@ var seeMoreComments = function( object )
 	// get element id and request comments
 	var sid = getIdFromClosestStackr( object );
 
-	getComments( sid );
+	getComments( sid, function() 
+	{
+		// workaround: after submitting with click on button the mouseover-event get's inverted.
+		// this call brings it back to the normal state
+		$jQ( '#'+ sid ).find( '.section-hoverable' ).toggleClass( 'section-hoverable-active' ); 
+	} );
 
 	return false;
 };
