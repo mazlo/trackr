@@ -617,12 +617,14 @@ var addCommentAction = function( object, addNext )
 	if ( $jQ( textareaId ).val() == '' )
 		return;
 
+	// get comment and task flag
 	var comment = $jQ( textareaId ).val();
+	var isTask = $jQ( textareaId ).prevAll( 'input' ).attr( 'checked' ) == 'checked';
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'post',
-		data: { cmt: comment },
+		data: { cmt: comment, tsk: isTask },
 
 		success: function( data ) 
 		{

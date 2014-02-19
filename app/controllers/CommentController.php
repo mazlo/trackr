@@ -25,6 +25,10 @@ class CommentController extends BaseController
 		{
 			$comment = new Comment();
 			$comment->comment = trim( Input::get( 'cmt' ) );
+
+			if ( Input::get( 'tsk' ) == 'true' )
+				$comment->isTask = 1;
+
 			$comment->user()->associate( Auth::user() );
 
 			// associate comment with Stackr
