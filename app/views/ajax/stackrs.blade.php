@@ -64,7 +64,10 @@
 					
 				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 					<!-- div comment add: is hidden first -->
-					<textarea id='comment-add-{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
+					<input type='checkbox' value='task' id='comment-task-{{ $stackr->id }}' />
+					<label for='comment-task-{{ $stackr->id }}'>is task</label>
+
+					<textarea style='display: block' id='comment-add-{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
 
 					<div style='padding: 8px 0;'>
 						<button class='operator-button comment-add-action'>Add</button>
