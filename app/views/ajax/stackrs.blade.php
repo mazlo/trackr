@@ -46,6 +46,8 @@
 
 				<button class='operator-button entry_make_context_link'>make Context</button>
 
+				<button class='operator-button'>filter tasks</button>
+
 			</div>
 
 			<div class='stackr-buttons section-hoverable'>
