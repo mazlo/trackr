@@ -429,15 +429,15 @@
 		{
 			onEscape : function()
 			{
+				// workaround: after submitting with click on button the mouseover-event get's inverted.
+				// this call brings it back to the normal state
+				$jQ( element ).closest( '.comments' ).mouseout();
+				
 				if ( element.hasClass( 'textarea-edit' ) ) 
 				{
 					// turn textarea back to simple span
 					element.parent().html( oldComment );
 					oldComment = null;
-
-					// workaround: after submitting with click on button the mouseover-event get's inverted.
-					// this call brings it back to the normal state
-					$jQ( element ).closest( '.comments' ).mouseout();
 				}
 				else 
 					$jQ( '.comment-add-cancel-action' ).click();
