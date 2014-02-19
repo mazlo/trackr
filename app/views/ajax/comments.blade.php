@@ -3,7 +3,7 @@
 
 	// sort stackr comments by position
 	if ( !isset( $comments ) )
-		$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->orderby( 'updated_at', 'desc' )->get();
+		$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
 
 ?>
 

@@ -76,7 +76,7 @@
 				<?php
 
 					// sort stackr comments by position
-					$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->orderBy( 'updated_at', 'desc' )->get();
+					$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->orderBy( 'created_at', 'desc' )->get();
 				?>
 
 				<ul id='comments-{{ $stackr->id }}' class='comments'>
