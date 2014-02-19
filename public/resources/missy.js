@@ -679,15 +679,13 @@ var deleteComment = function( object )
 
 var seeMoreComments = function( object )
 {
-	// hide current wrapper element
-	$jQ( object ).parent().effect( 'fade', 100, function()
-	{
-		$jQ(this).hide();
-	});
-
-	// get element id and request comments
 	var sid = getIdFromClosestStackr( object );
 
+	// remove link and show loading image
+	$jQ( object ).remove();
+	$jQ( '#comments-loader-img-'+ sid ).show();
+
+	// load comments
 	getComments( sid, function() 
 	{
 		// workaround: after submitting with click on button the mouseover-event get's inverted.
