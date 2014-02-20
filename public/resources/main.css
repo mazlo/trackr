@@ -281,6 +281,11 @@ button.operator-button-confirm {
 	font-family: Georgia;
 }
 
+button.operator-button-state-active {
+	background: #eee;
+
+}
+
 h4.entry_description {
 	clear: both;
 	margin: 0; 

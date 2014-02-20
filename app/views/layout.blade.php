@@ -282,6 +282,12 @@
 
 	$jQ( document ).on( 'click', '.entry_make_context_link', function(e) { return makeContextConfirm( e, this ); } );
 
+	$jQ( document ).on( 'click', '.operator-button-toggable', function() 
+	{
+		$jQ(this).toggleClass( 'operator-button-state-active' );
+		$jQ(this).blur();
+	} );
+
 	$jQ( document ).on( 'click', '.stackr-filter-tasks', function() { return stackrFilterTasks( this ); } );
 
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
