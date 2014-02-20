@@ -541,7 +541,8 @@ div.comments-wrapper {
 }
 
 div.section-comment-add {
-	margin: 8px 35px 0;
+	margin-top: 8px;
+	margin-left: 38px;
 }
 
 .context-delete-confirm,
@@ -674,7 +675,7 @@ textarea.textarea
 }
 
 textarea.textarea-comment {
-	width: 90%;
+	width: 88%;
 }
 
 textarea.textarea-edit {
