@@ -63,14 +63,13 @@
 				<input class='textfield textfield-limited textfield-comments-title' value='{{ $stackr->listTitle }}' disabled='disabled' />
 				<button class='operator-button operator-button-done'>done</button>
 					
+				<!-- div comment add: is hidden first -->
 				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
-					<!-- div comment add: is hidden first -->
-					<input type='checkbox' value='task' id='comment-task-{{ $stackr->id }}' />
-					<label for='comment-task-{{ $stackr->id }}'>is task</label>
 
-					<textarea style='display: block' id='comment-add-{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
+					<textarea style='float: left' id='comment-add-{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
+					<button style='float: right' class='operator-button operator-button-toggable'>is task</button>
 
-					<div style='padding: 8px 0;'>
+					<div style='clear: both; padding: 8px 0;'>
 						<button class='operator-button comment-add-action'>Add</button>
 						<button class='operator-button comment-add-next-action'>Add and add next</button>
 						<button class='operator-button comment-add-cancel-action'>Cancel</button>
