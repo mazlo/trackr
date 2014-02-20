@@ -584,7 +584,10 @@ var stackrFilterTasks = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
-	return getComments( sid, 1 );
+	// get the label element and check for state active
+	var activeButton = $jQ( object ).next().hasClass( 'ui-state-active' );
+
+	return getComments( sid, activeButton ? 1 : 0 );
 };
 
 // ----- functions regarding comments -----

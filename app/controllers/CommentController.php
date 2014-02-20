@@ -13,7 +13,7 @@ class CommentController extends BaseController
 
 		$stackr = Auth::user()->stackr( $sid )->first();
 
-		if ( Input::has( 'tko' ) )
+		if ( Input::get( 'tko' ) == 1 )
 			$comments = $stackr->comments()->where( 'isTask', 1 )->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
 		else
 			$comments = $stackr->comments()->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
