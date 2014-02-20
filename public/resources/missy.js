@@ -580,7 +580,7 @@ var makeContext = function( object, copy, callback )
 	return false;
 };
 
-var stackrFilterTasks = function( object )
+var filterCommentsByTask = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 

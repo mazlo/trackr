@@ -288,7 +288,7 @@
 		$jQ(this).blur();
 	} );
 
-	$jQ( document ).on( 'click', '.stackr-filter-tasks', function() { return stackrFilterTasks( this ); } );
+	$jQ( document ).on( 'click', '.stackr-filter-tasks', function() { return filterCommentsByTask( this ); } );
 
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
 
