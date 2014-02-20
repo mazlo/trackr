@@ -11,12 +11,11 @@ class CommentController extends BaseController
 		if ( empty( $sid ) )
 			return;
 
+		// get Stackr
 		$stackr = Auth::user()->stackr( $sid )->first();
 
-		if ( Input::get( 'tko' ) == 1 )
-			$comments = $stackr->comments()->where( 'isTask', 1 )->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
-		else
-			$comments = $stackr->comments()->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
+		// get Comments from Stackr
+		$comments = $stackr->comments()->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
 
 		return View::make( 'ajax.comments' )->with( 'stackr', $stackr )->with( 'comments', $comments );
 	}

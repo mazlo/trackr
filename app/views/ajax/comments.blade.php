@@ -2,7 +2,7 @@
 <? $count = 0; ?>
 
 @foreach( $comments as $comment )
-	<li class='comment' cid='{{ $comment->id }}'>
+	<li class='comment' cid='{{ $comment->id }}' @if( $comment->isTask == 1 ) isTask @endif>
 
 		<span class='comment-icon'><a href='#' class='comment-delete-link' cid='{{ $comment->id }}'>-</a></span>
 		

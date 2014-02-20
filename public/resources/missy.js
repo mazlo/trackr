@@ -131,14 +131,13 @@ var getDistinctEntriesTagList = function()
 	});
 }
 
-var getComments = function( sid, tasksOnly, callback )
+var getComments = function( sid, callback )
 {
 	var cname = getContextName();
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'get',
-		data: { tko: tasksOnly },
 
 		success: function( data ) 
 		{
@@ -587,7 +586,19 @@ var filterCommentsByTask = function( object )
 	// get the label element and check for state active
 	var activeButton = $jQ( object ).hasClass( 'operator-button-state-active' );
 
-	return getComments( sid, activeButton ? 1 : 0 );
+	$jQ( '#comments-'+ sid +' > .comment' ).each( function()
+	{
+		$jQ( this ).show();
+
+		if ( !activeButton )
+			return;
+
+		var taskAttr = $jQ( this ).attr( 'istask' );
+		var hasTaskAttr = ( typeof taskAttr !== 'undefined' && taskAttr !== false );
+
+		if ( !hasTaskAttr )
+			$jQ( this ).hide();
+	});
 };
 
 // ----- functions regarding comments -----
@@ -699,7 +710,7 @@ var seeMoreComments = function( object )
 	$jQ( '#comments-loader-img-'+ sid ).show();
 
 	// load comments
-	getComments( sid, 0, function() 
+	getComments( sid, function() 
 	{
 		// workaround: after submitting with click on button the mouseover-event get's inverted.
 		// this call brings it back to the normal state
