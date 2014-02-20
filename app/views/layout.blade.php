@@ -282,6 +282,8 @@
 
 	$jQ( document ).on( 'click', '.entry_make_context_link', function(e) { return makeContextConfirm( e, this ); } );
 
+	$jQ( document ).on( 'click', '.stackr-filter-tasks', function() { return stackrFilterTasks( this ); } );
+
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES
 
 	$jQ( document ).on( 'hover', '.stackr-wrapper', function()

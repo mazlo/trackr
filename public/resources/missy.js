@@ -580,6 +580,13 @@ var makeContext = function( object, copy, callback )
 	return false;
 };
 
+var stackrFilterTasks = function( object )
+{
+	var sid = getIdFromClosestStackr( object );
+
+	return getComments( sid, 1 );
+};
+
 // ----- functions regarding comments -----
 
 var showCommentAddDiv = function( object )
