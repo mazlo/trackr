@@ -398,6 +398,15 @@ li.comment div.comment-rating-stars {
 	width: 65px;
 }
 
+li.comment-see-more {
+	display: table;
+	width: 100%;
+	margin: 0; 
+	padding: 8px 0 0 8px;
+
+	cursor: hand;
+}
+
 span.span-padding-left-right {
 	padding: 0 13px;
 }

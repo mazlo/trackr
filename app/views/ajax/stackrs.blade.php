@@ -88,7 +88,7 @@
 				@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments, 'stackr' => $stackr ) )
 
 				@if( count( $comments ) > 3 )
-					<li class='comment' style='padding: 8px 0 0 8px'>
+					<li class='comment-see-more'>
 						<img id='comments-loader-img-{{ $stackr->id }}' src='{{ url( "resources/loader.gif" ) }}' style='display: none; width: 35px' />
 						<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
 					</li>
