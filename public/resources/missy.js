@@ -131,13 +131,14 @@ var getDistinctEntriesTagList = function()
 	});
 }
 
-var getComments = function( sid, callback )
+var getComments = function( sid, tasksOnly, callback )
 {
 	var cname = getContextName();
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'get',
+		data: { tko: tasksOnly },
 
 		success: function( data ) 
 		{
@@ -688,7 +689,7 @@ var seeMoreComments = function( object )
 	$jQ( '#comments-loader-img-'+ sid ).show();
 
 	// load comments
-	getComments( sid, function() 
+	getComments( sid, 0, function() 
 	{
 		// workaround: after submitting with click on button the mouseover-event get's inverted.
 		// this call brings it back to the normal state
