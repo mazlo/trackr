@@ -1,12 +1,4 @@
 
-<?php
-
-	// sort stackr comments by position
-	if ( !isset( $comments ) )
-		$comments = $stackr->comments()->getQuery()->orderBy( 'position' )->orderby( 'created_at', 'desc' )->get();
-
-?>
-
 <? $count = 0; ?>
 
 @foreach( $comments as $comment )
