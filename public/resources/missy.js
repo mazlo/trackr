@@ -608,11 +608,14 @@ var showCommentAddDiv = function( object )
 	var sid = getIdFromClosestStackr( object );
 	var elementId = '#section-comment-add-'+ sid;
 
+	// reset toggable buttons
+	$jQ( elementId ).find( '.operator-button-state-active' ).click();
+
 	$jQ( elementId ).effect( 'fade', 200, function()
-		{
-			$jQ( elementId ).show();
-			$jQ( '#comment-add-'+ sid ).focus();
-		});
+	{
+		$jQ( elementId ).show();
+		$jQ( '#comment-add-'+ sid ).select().focus();
+	});
 
 	return false;
 };
@@ -639,18 +642,25 @@ var addCommentAction = function( object, addNext )
 	if ( $jQ( textareaId ).val() == '' )
 		return;
 
-	// get comment and task flag
+	// get comment
 	var comment = $jQ( textareaId ).val();
-	var isTask = $jQ( textareaId ).prevAll( 'input' ).attr( 'checked' ) == 'checked';
+
+	// and task flag
+	var taskButton = $jQ( object ).parent().prev();
+	var taskButtonActive = taskButton.hasClass( 'operator-button-state-active' );
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
 		type: 'post',
-		data: { cmt: comment, tsk: isTask },
+		data: { cmt: comment, tsk: taskButtonActive },
 
 		success: function( data ) 
 		{
 			$jQ( '#comments-'+ sid ).html( data );
+
+			// deactivate button when active
+			if ( taskButtonActive )
+				taskButton.click();
 
 			if ( !addNext )
 				$jQ( '#section-comment-add-'+ sid ).hide();
