@@ -46,7 +46,8 @@
 
 				<button class='operator-button entry_make_context_link'>make Context</button>
 
-				<button class='operator-button'>filter tasks</button>
+				<input type='checkbox' class='stackr-filter-tasks' id='stackr-filter-tasks-button-{{ $stackr->id }}' />
+				<label for='stackr-filter-tasks-button-{{ $stackr->id }}'>filter tasks</label>
 
 			</div>
 
@@ -108,3 +109,10 @@
 
 	</div> {{-- end of wrapper entry --}}
 @endforeach
+
+<script type='text/javascript'>
+
+	// transform to jquery button
+	$jQ( '.stackr-filter-tasks' ).button();
+
+</script>
