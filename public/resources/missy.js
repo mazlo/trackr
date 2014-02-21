@@ -724,7 +724,15 @@ var seeMoreComments = function( object )
 	{
 		// workaround: after submitting with click on button the mouseover-event get's inverted.
 		// this call brings it back to the normal state
-		$jQ( '#'+ sid ).find( '.section-hoverable' ).toggleClass( 'section-hoverable-active' ); 
+		$jQ( '#'+ sid ).find( '.section-hoverable' ).toggleClass( 'section-hoverable-active' );
+
+		// find filter tasks button 
+		var filterButton = $jQ( '#'+ sid ).find( '.stackr-filter-tasks' );
+		var filterButtonActive = filterButton.hasClass( 'operator-button-state-active' );
+
+		// filter Comments by task when active
+		if ( filterButtonActive )
+			filterCommentsByTask( filterButton );
 	} );
 
 	return false;
