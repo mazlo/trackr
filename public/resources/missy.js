@@ -662,6 +662,9 @@ var addCommentAction = function( object, addNext )
 			if ( taskButtonActive )
 				taskButton.click();
 
+			// deactivate filter task-button after adding Comment
+			$jQ( '#'+ sid ).find( '.stackr-filter-tasks' ).toggleClass( 'operator-button-state-active' ); 
+
 			if ( !addNext )
 				$jQ( '#section-comment-add-'+ sid ).hide();
 
