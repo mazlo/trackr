@@ -286,6 +286,11 @@ button.operator-button-state-active {
 
 }
 
+img.operator-image {
+	width: 23px;
+	padding: 0 6px;
+}
+
 h4.entry_description {
 	clear: both;
 	margin: 0; 

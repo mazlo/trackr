@@ -583,14 +583,14 @@ var filterCommentsByTask = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
-	// get the label element and check for state active
-	var activeButton = $jQ( object ).hasClass( 'operator-button-state-active' );
+	// toggle own state -> state is the new state
+	var state = toggleOperatorImage( object );
 
 	$jQ( '#comments-'+ sid +' > .comment' ).each( function()
 	{
 		$jQ( this ).show();
 
-		if ( !activeButton )
+		if ( state == 0 )
 			return;
 
 		var taskAttr = $jQ( this ).attr( 'istask' );
@@ -757,7 +757,11 @@ var toggleCommentDates = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
+	// toggle comment date element
 	$jQ( '#'+ sid ).find( '.comment-date' ).toggleClass( 'element-hidden-active' ); 
+
+	// toggle own state
+	toggleOperatorImage( object );
 };
 
 // ----- keypress events -----
@@ -870,6 +874,23 @@ var inverseFavored = function( key )
 		return 1;
 	if ( key == 1 )
 		return 0;
+};
+
+/**
+* Changes the source of the image depending on the current state. 
+* The state is either 0 or 1 and is stored in an attribute of the img-element.
+*
+* Returns the new state.
+*/
+var toggleOperatorImage = function ( image )
+{
+	var state = $jQ( image ).attr( 'state' );
+	var name = $jQ( image ).attr( 'imgName' );
+
+	$jQ( image ).attr( 'src', getContextPath() + '/resources/'+ name +'_'+ inverseFavored( state ) +'.png' );
+	$jQ( image ).attr( 'state', inverseFavored( state ) );
+
+	return inverseFavored( state );
 };
 
 var getIdFromClosestStackr = function ( object )
