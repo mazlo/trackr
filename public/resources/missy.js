@@ -349,10 +349,8 @@ var updateTags = function ( object )
 
 var updateEntryFavored = function ( object )
 {
-	var type = $jQ( object ).attr( 'alt' );
-
-	$jQ( object ).attr( 'src', getContextPath() + '/resources/pinIt_'+ inverseFavored(type) +'.png' );
-	$jQ( object ).attr( 'alt', inverseFavored(type) );
+	// toggle own state
+	var state = toggleOperatorImage( object );
 
 	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
@@ -361,7 +359,7 @@ var updateEntryFavored = function ( object )
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
 		type: 'put',
-		data: { fv: inverseFavored(type) }
+		data: { fv: state }
 	});			
 };
 
