@@ -47,6 +47,8 @@
 				<button class='operator-button entry_make_context_link'>make Context</button>
 
 				<button class='operator-button stackr-filter-tasks operator-button-toggable operator-button-state-default'>filter tasks</button>
+
+				<button class='operator-button stackr-show-dates operator-button-toggable operator-button-state-default'>show dates</button>
 			</div>
 
 			<div class='stackr-buttons section-hoverable'>

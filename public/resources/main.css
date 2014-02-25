@@ -701,6 +701,14 @@ textarea.textarea-edit {
 	visibility: visible;
 }
 
+.element-hidden {
+	display: none;
+}
+
+.element-hidden-active {
+	display: inline;
+}
+
 .element-invisible {
 	visibility: hidden;
 }

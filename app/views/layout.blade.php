@@ -298,6 +298,14 @@
 		$jQ(this).children( '.section-hidden' ).toggleClass( 'section-hidden-active' );
 	});
 
+	// handle click on show date-button
+	$jQ( document ).on( 'click', '.stackr-show-dates', function() 
+	{ 
+		var sid = getIdFromClosestStackr( this );
+
+		$jQ( '#'+ sid ).find( '.comment-date' ).toggleClass( 'element-hidden-active' ); 
+	} );
+
 // TITLE
 	// handle hover on textfield 'entry title'
 	$jQ( document ).on( 'hover', '.textfield-title', function() { return toggleDisabledElement( this, 'textfield-title-active' ); } );

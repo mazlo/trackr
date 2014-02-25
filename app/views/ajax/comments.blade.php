@@ -7,8 +7,8 @@
 		<span class='comment-icon'><a href='#' class='comment-delete-link' cid='{{ $comment->id }}'>-</a></span>
 		
 		<div class='comment-text searchable'>
-			<span style='padding-right: 13px;'>{{ $comment->comment }}</span>
-			<span class='comment-date element-hoverable'>{{ $comment->created_at }}</span>
+			<span class='comment-date element-hidden'>{{ $comment->created_at }}</span>
+			<span style='display: block; padding-right: 13px;'>{{ $comment->comment }}</span>
 		</div>
 
 		<div style='display: table-cell;'>
