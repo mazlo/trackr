@@ -3,7 +3,10 @@
 	<!-- external -->
 	<!-- simplifies javascript programming -->
 	<link rel='stylesheet' type='text/css' href='{{ url( "resources/jquery-ui.css" ) }}' />
-	<link rel='stylesheet' type='text/css' href='{{ url( "resources/main.css" ) }}'></link>
+	<link rel='stylesheet' type='text/css' href='{{ url( "resources/main.css" ) }}' />
+
+	<!-- browser icon -->
+	<link rel="shortcut icon" href='{{ url( "resources/stackr_icon.ico" ) }}' />
 
 	<script src='{{ url( "resources/prototype.js" ) }}'></script>
 	<script src='{{ url( "resources/jquery-1.8.2.js" ) }}'></script>
