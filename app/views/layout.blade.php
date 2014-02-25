@@ -198,7 +198,7 @@
 		if ( $jQ( this ).attr( 'checked' ) == 'checked' )
 		{
 			// prevent context-options-box from being shown by hover event
-			$jQ( document ).find( '.context-options-box' ).toggleClass( 'element-hidden' );
+			$jQ( document ).find( '.context-options-box' ).toggleClass( 'element-invisible' );
 			// disable sorting function for Contexts
 			$jQ( '#contexts' ).sortable( 'disable' );
 			// enable sorting function for Stackrs
