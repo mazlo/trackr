@@ -493,19 +493,17 @@ div.stackr-icon {
 
 div.stackr-description {
 	float: left;
-	width: 527px;
+	width: 607px;
 	padding: 0 13px;
 }
 
 div.stackr-operations {
-	float: left; 
-	width: 310px; 
-	padding: 6px 0 0;
+	float: right; 
+	padding: 4px 0 0;
 }
 
-div.stackr-buttons {
-	float: right;
-	padding: 6px 4px;
+div.stackr-operations > div {
+	text-align: right;
 }
 
 div.stackr-footer {

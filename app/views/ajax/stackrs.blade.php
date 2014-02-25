@@ -28,30 +28,32 @@
 			</div>
 
 			<div class='stackr-operations section-hoverable'>
-				
-				<button class='operator-button comment-add'>add
-					<span id='comment_add_button_text_{{ $stackr->id }}'>
-						@if( substr( $stackr->listTitle, -1 ) == 's' ) 
-							{{ substr( $stackr->listTitle, 0, -1 ) }} 
-						@else 
-							{{ $stackr->listTitle }}
-						@endif
+
+				<div>				
+					<button class='operator-button comment-add'>add
+						<span id='comment_add_button_text_{{ $stackr->id }}'>
+							@if( substr( $stackr->listTitle, -1 ) == 's' ) 
+								{{ substr( $stackr->listTitle, 0, -1 ) }} 
+							@else 
+								{{ $stackr->listTitle }}
+							@endif
+						</span>
+					</button>
+
+					<button class='operator-button stackr-delete-link'>delete Stackr</button>
+					<span class='stackr-delete-confirm'>
+						<button class='operator-button operator-button-confirm'>delete</button>
 					</span>
-				</button>
 
-				<button class='operator-button stackr-delete-link'>delete Stackr</button>
-				<span class='stackr-delete-confirm'>
-					<button class='operator-button operator-button-confirm'>delete</button>
-				</span>
+					<button class='operator-button entry_make_context_link'>make Context</button>
+				</div>
 
-				<button class='operator-button entry_make_context_link'>make Context</button>
-			</div>
+				<div>
+					<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
+					<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' />
 
-			<div class='stackr-buttons section-hoverable'>
-				<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
-				<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' />
-
-				<img src='{{ url( "resources/pinIt_$stackr->favored.png" ) }}' class='favoredIcon' alt='{{ $stackr->favored }}' width='28px' />
+					<img src='{{ url( "resources/pinIt_$stackr->favored.png" ) }}' class='favoredIcon' alt='{{ $stackr->favored }}' width='28px' />
+				</div>
 			</div>
 
 		</div>
