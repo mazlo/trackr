@@ -311,9 +311,9 @@ h4.bold {
 	font-weight: bold;
 }
 
-h4.more_padding {
+h4.more-padding {
 	margin: 0; 
-	padding: 2px 6px;
+	padding: 2px 7px;
 }
 
 h4.subheadline {
@@ -536,7 +536,7 @@ div.stackr-footer {
 /* COMMENTS */
 
 div.comments-wrapper { 
-	padding: 0px 46px 13px;
+	padding: 0px 50px 13px;
 }
 
 div.section-comment-add {
