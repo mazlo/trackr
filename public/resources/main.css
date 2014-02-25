@@ -288,7 +288,10 @@ button.operator-button-state-active {
 
 img.operator-image {
 	width: 23px;
-	padding: 0 6px;
+	padding-top: 2px;
+	padding-left: 6px;
+
+	cursor: hand;
 }
 
 h4.entry_description {
