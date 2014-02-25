@@ -45,13 +45,12 @@
 				</span>
 
 				<button class='operator-button entry_make_context_link'>make Context</button>
-
-				<button class='operator-button stackr-filter-tasks operator-button-toggable operator-button-state-default'>filter tasks</button>
-
-				<button class='operator-button stackr-show-dates operator-button-toggable operator-button-state-default'>show dates</button>
 			</div>
 
 			<div class='stackr-buttons section-hoverable'>
+				<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
+				<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' />
+
 				<img src='{{ url( "resources/pinIt_$stackr->favored.png" ) }}' class='favoredIcon' alt='{{ $stackr->favored }}' width='28px' />
 			</div>
 
