@@ -740,9 +740,24 @@ var seeMoreComments = function( object )
 		// filter Comments by task when active
 		if ( filterButtonActive )
 			filterCommentsByTask( filterButton );
+
+		// find show dates button
+		var datesButton = $jQ( '#'+ sid ).find( '.stackr-show-dates' );
+		var datesButtonActive = datesButton.hasClass( 'operator-button-state-active' );
+
+		// show Comment dates when active
+		if ( datesButtonActive )
+			toggleCommentDates( datesButton );
 	} );
 
 	return false;
+};
+
+var toggleCommentDates = function( object )
+{
+	var sid = getIdFromClosestStackr( object );
+
+	$jQ( '#'+ sid ).find( '.comment-date' ).toggleClass( 'element-hidden-active' ); 
 };
 
 // ----- keypress events -----

@@ -302,12 +302,7 @@
 	});
 
 	// handle click on show date-button
-	$jQ( document ).on( 'click', '.stackr-show-dates', function() 
-	{ 
-		var sid = getIdFromClosestStackr( this );
-
-		$jQ( '#'+ sid ).find( '.comment-date' ).toggleClass( 'element-hidden-active' ); 
-	} );
+	$jQ( document ).on( 'click', '.stackr-show-dates', function() { return toggleCommentDates( this ); } );
 
 // TITLE
 	// handle hover on textfield 'entry title'
