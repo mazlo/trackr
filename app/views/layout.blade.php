@@ -385,7 +385,7 @@
 	});
 
 	// handle click on favored icon
-	$jQ( document ).on( 'click', '.stackr-bookmark', function() { return updateEntryFavored( this ); } );
+	$jQ( document ).on( 'click', '.stackr-bookmark', function() { return toggleStackrBookmark( this ); } );
 
 // TAGS TEXTFIELD
 	// handle hover on textfield 'tags'

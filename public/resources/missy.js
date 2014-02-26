@@ -347,7 +347,7 @@ var updateTags = function ( object )
 	});
 };
 
-var updateEntryFavored = function ( object )
+var toggleStackrBookmark = function ( object )
 {
 	// toggle own state
 	var state = toggleOperatorImage( object );
@@ -760,6 +760,8 @@ var toggleCommentDates = function( object )
 
 	// toggle own state
 	toggleOperatorImage( object );
+
+
 };
 
 // ----- keypress events -----
