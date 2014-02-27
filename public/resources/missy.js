@@ -599,14 +599,31 @@ var filterCommentsByTask = function( object )
 	});
 };
 
-var emailStackr = function ( object ) 
+var emailStackr = function ( e, object ) 
 {
+	// prepare confirmation dialog
+	var x = e.target.offsetLeft + 116;
+	var y = e.target.offsetTop + 1;
+
+	var confirmMessage = $jQ( object ).next( '.operator-button-done' );
+	confirmMessage.css( 'left', x );
+	confirmMessage.css( 'top', y );
+
 	var cname = getContextName();
 	var sid = getIdFromClosestStackr( object );
-	
+
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/email',
-		type: 'post'
+		type: 'post',
+
+		success: function( data ) 
+		{
+			confirmMessage.show();
+			confirmMessage.effect( 'fade', 2000, function() 
+			{
+				$jQ(this).hide();
+			} );
+		}
 	} );
 };
 

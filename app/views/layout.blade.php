@@ -388,7 +388,7 @@
 	$jQ( document ).on( 'click', '.stackr-bookmark', function() { return toggleStackrBookmark( this ); } );
 
 	// handle click on email
-	$jQ( document ).on( 'click', '.stackr-email', function() { return emailStackr( this ); } );
+	$jQ( document ).on( 'click', '.stackr-email', function( e ) { return emailStackr( e, this ); } );
 
 // TAGS TEXTFIELD
 	// handle hover on textfield 'tags'
