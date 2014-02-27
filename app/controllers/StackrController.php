@@ -120,4 +120,24 @@ class StackrController extends BaseController {
 		$stackr->save();
 	}
 
+	/**
+	*	Email a Stackr
+	*/
+	public function email( $contextName, $sid )
+	{
+		// prepare objects
+		$user = Auth::user();
+		$stackr = $user->stackr( $sid )->first();
+
+		// construct data to be passed to view
+		$data = array( 'stackr' => $stackr );
+
+		// send the email
+		Mail::queue( 'emails.stackr', $data, function( $message ) use ( $user, $stackr )
+        {
+            $message->to( $user->email, $user->username );
+            $message->subject( $stackr->title );
+        });	
+	}
+
 }

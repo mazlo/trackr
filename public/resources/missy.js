@@ -599,6 +599,17 @@ var filterCommentsByTask = function( object )
 	});
 };
 
+var emailStackr = function ( object ) 
+{
+	var cname = getContextName();
+	var sid = getIdFromClosestStackr( object );
+	
+	$jQ.ajax( {
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/email',
+		type: 'post'
+	} );
+};
+
 // ----- functions regarding comments -----
 
 var showCommentAddDiv = function( object )

@@ -69,6 +69,8 @@ Route::group( array( 'before' => 'auth' ), function()
 
 	Route::put( '/contexts/{contextName}/stackrs/{eid}', 'StackrController@update' );
 
+	Route::post( '/contexts/{contextName}/stackrs/{eid}/email', 'StackrController@email' );
+
 	/*
 		Routes concerning stackr comments
 	*/
