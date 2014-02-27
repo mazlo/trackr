@@ -601,6 +601,9 @@ var filterCommentsByTask = function( object )
 
 var emailStackr = function ( e, object ) 
 {
+	// toggle image to indicate email sending process begins
+	toggleOperatorImage( object );
+
 	// prepare confirmation dialog
 	var x = e.target.offsetLeft + 116;
 	var y = e.target.offsetTop + 1;
@@ -622,6 +625,9 @@ var emailStackr = function ( e, object )
 			confirmMessage.effect( 'fade', 2000, function() 
 			{
 				$jQ(this).hide();
+
+				// toggle image to indicate email sending process over
+				toggleOperatorImage( object );
 			} );
 		}
 	} );
