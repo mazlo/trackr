@@ -387,6 +387,9 @@
 	// handle click on favored icon
 	$jQ( document ).on( 'click', '.stackr-bookmark', function() { return toggleStackrBookmark( this ); } );
 
+	// handle click on email
+	$jQ( document ).on( 'click', '.stackr-email', function() { return emailStackr( this ); } );
+
 // TAGS TEXTFIELD
 	// handle hover on textfield 'tags'
 	$jQ( document ).on( 'hover', '.textfield-tags-inactive', function() { return toggleDisabledElement( this, 'textfield-tags' ); } );

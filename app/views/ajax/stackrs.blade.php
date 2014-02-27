@@ -51,6 +51,7 @@
 				<div>
 					<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
 					<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' />
+					<img class='stackr-email operator-image operator-image-toggable' src='{{ url( "resources/mail_0.png" ) }}' imgName='mail' state='0' />
 					<img class='stackr-bookmark operator-image operator-image-toggable' src='{{ url( "resources/bookmark_$stackr->favored.png" ) }}' imgName='bookmark' state='{{ $stackr->favored }}' />
 				</div>
 			</div>
