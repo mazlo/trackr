@@ -45,7 +45,7 @@
 						<button class='operator-button operator-button-confirm'>delete</button>
 					</span>
 
-					<button class='operator-button entry_make_context_link'>make Context</button>
+					<button class='operator-button stackr-make-context-link'>make Context</button>
 				</div>
 
 				<div>

@@ -283,7 +283,7 @@
 
 // EVENTS REGARDING CONVERTING AN ENTRY TO CONTEXT
 
-	$jQ( document ).on( 'click', '.entry_make_context_link', function(e) { return makeContextConfirm( e, this ); } );
+	$jQ( document ).on( 'click', '.stackr-make-context-link', function(e) { return makeContextConfirm( e, this ); } );
 
 	$jQ( document ).on( 'click', '.operator-button-toggable', function() 
 	{
