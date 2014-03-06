@@ -906,7 +906,7 @@ var hideDiv = function( element )
 	return false;	
 }
 
-var inverseFavored = function( key )
+var inverseBooleanValue = function( key )
 {
 	if ( key == 0 )
 		return 1;
@@ -925,10 +925,10 @@ var toggleOperatorImage = function ( image )
 	var state = $jQ( image ).attr( 'state' );
 	var name = $jQ( image ).attr( 'imgName' );
 
-	$jQ( image ).attr( 'src', getContextPath() + '/resources/'+ name +'_'+ inverseFavored( state ) +'.png' );
-	$jQ( image ).attr( 'state', inverseFavored( state ) );
+	$jQ( image ).attr( 'src', getContextPath() + '/resources/'+ name +'_'+ inverseBooleanValue( state ) +'.png' );
+	$jQ( image ).attr( 'state', inverseBooleanValue( state ) );
 
-	return inverseFavored( state );
+	return inverseBooleanValue( state );
 };
 
 var getIdFromClosestStackr = function ( object )
