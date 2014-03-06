@@ -601,12 +601,15 @@ var filterCommentsByTask = function( object )
 
 var emailStackr = function ( e, object ) 
 {
-	// toggle image to indicate email sending process begins
-	toggleOperatorImage( object );
-
-	// prepare confirmation dialog
+	// prepare confirmation dialog (must be done before object is hidden)
 	var x = e.target.offsetLeft + 116;
 	var y = e.target.offsetTop + 1;
+
+	// toggle image visibility
+	$jQ( object ).hide();
+	// show loading image
+	var loadingImage = $jQ( object ).nextAll( '.operator-loading-image' );
+	loadingImage.show();
 
 	var confirmMessage = $jQ( object ).next( '.operator-button-done' );
 	confirmMessage.css( 'left', x );
@@ -626,8 +629,9 @@ var emailStackr = function ( e, object )
 			{
 				$jQ(this).hide();
 
-				// toggle image to indicate email sending process over
-				toggleOperatorImage( object );
+				// toggle image visibility to indicate email sending process is over
+				$jQ( object ).show();
+				loadingImage.hide();
 			} );
 		}
 	} );

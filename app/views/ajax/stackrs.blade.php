@@ -54,6 +54,7 @@
 					
 					<img class='stackr-email operator-image operator-image-toggable' src='{{ url( "resources/mail_0.png" ) }}' imgName='mail' state='0' />
 					<button class='operator-button operator-button-done'>email sent</button>
+					<img class='operator-image operator-loading-image element-hidden' src='{{ url( "resources/loader.gif" ) }}' style='width: 23px' />
 
 					<img class='stackr-bookmark operator-image operator-image-toggable' src='{{ url( "resources/bookmark_$stackr->favored.png" ) }}' imgName='bookmark' state='{{ $stackr->favored }}' />
 				</div>
