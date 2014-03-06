@@ -258,11 +258,11 @@
 		{
 			onEnter : function() 
 			{
-				$jQ( '.entry_add_button' ).click();
+				$jQ( '.stackr-add-action' ).click();
 			},
 			onEscape : function()
 			{
-				$jQ( '.entry_add_cancel' ).click();
+				$jQ( '.stackr-add-cancel-action' ).click();
 			}
 		});
 
