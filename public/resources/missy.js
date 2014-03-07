@@ -581,13 +581,11 @@ var filterCommentsByTask = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
-	// toggle own state -> state is the new state
-	var state = toggleOperatorImage( object );
-
 	$jQ( '#comments-'+ sid +' > .comment' ).each( function()
 	{
 		$jQ( this ).show();
 
+		// access global variable to check the state of toggled image
 		if ( state == 0 )
 			return;
 
@@ -793,13 +791,8 @@ var toggleCommentDates = function( object )
 {
 	var sid = getIdFromClosestStackr( object );
 
-	// toggle comment date element
+	// toggle comment date element for all .comment-date
 	$jQ( '#'+ sid ).find( '.comment-date' ).toggleClass( 'element-hidden-active' ); 
-
-	// toggle own state
-	toggleOperatorImage( object );
-
-
 };
 
 // ----- keypress events -----

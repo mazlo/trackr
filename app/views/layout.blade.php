@@ -166,6 +166,10 @@
 			$jQ( "#searchResults").html( '&nbsp;' );
 	});
 
+// GLOBALY VALID EVENTS
+
+	$jQ( document ).on( 'click', '.operator-image-toggable', function() { return toggleOperatorImage( this ); } )
+
 // EVENTS REGARDING ADDING OR DELETING A CONTEXT
 
 	// toggled options for contexts
