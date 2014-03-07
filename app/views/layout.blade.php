@@ -482,7 +482,8 @@
 	// handle double click on a comment
 	$jQ( document ).on( 'dblclick', '.comment', function() 
 	{
-		var textElement = $jQ(this).find( '.searchable' ).find( 'span:first' );
+		// this element must have a comment-text div as a child
+		var textElement = $jQ(this).children( '.comment-text' ).children( 'span:last' );
 		oldComment = textElement.text().trim();
 
 		textElement.html( '<textarea class="textarea textarea-comment textarea-edit">'+ oldComment +'</textarea><button class="operator-button comment-edit-button" style="margin: 8px 0 4px">edit</button>' );
