@@ -922,13 +922,14 @@ var inverseBooleanValue = function( key )
 */
 var toggleOperatorImage = function ( image )
 {
-	var state = $jQ( image ).attr( 'state' );
+	// state is the inverted state
+	state = inverseBooleanValue( $jQ( image ).attr( 'state' ) );
 	var name = $jQ( image ).attr( 'imgName' );
 
-	$jQ( image ).attr( 'src', getContextPath() + '/resources/'+ name +'_'+ inverseBooleanValue( state ) +'.png' );
-	$jQ( image ).attr( 'state', inverseBooleanValue( state ) );
+	$jQ( image ).attr( 'src', getContextPath() + '/resources/'+ name +'_'+ state +'.png' );
+	$jQ( image ).attr( 'state', state );
 
-	return inverseBooleanValue( state );
+	return state;
 };
 
 var getIdFromClosestStackr = function ( object )
