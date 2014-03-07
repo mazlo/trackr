@@ -74,7 +74,7 @@
 				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 
 					<textarea style='float: left' id='comment-add-{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
-					<button style='float: right' class='operator-button operator-button-toggable'>is task</button>
+					<img class='operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' style='float: left' />
 
 					<div style='clear: both; padding: 8px 0;'>
 						<button class='operator-button comment-add-action'>Add</button>

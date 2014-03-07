@@ -681,7 +681,7 @@ var addCommentAction = function( object, addNext )
 
 	// and task flag
 	var taskButton = $jQ( object ).parent().prev();
-	var taskButtonActive = taskButton.hasClass( 'operator-button-state-active' );
+	var taskButtonActive = taskButton.attr( 'state' ) == 1;
 
 	$jQ.ajax( {
 		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/comments',
@@ -699,8 +699,8 @@ var addCommentAction = function( object, addNext )
 			// deactivate filter task-button after adding Comment
 			var filterTaskButton = $jQ( '#'+ sid ).find( '.stackr-filter-tasks' );
 
-			if ( filterTaskButton.hasClass( 'operator-button-state-active' ) ) 
-				filterTaskButton.toggleClass( 'operator-button-state-active' );
+			if ( filterTaskButton.attr( 'state' ) == 1 ) 
+				toggleOperatorImage( filterTaskButton );
 
 			// hide section when no other Comment should be added
 			if ( !addNext )
