@@ -295,6 +295,8 @@
 		$jQ(this).blur();
 	} );
 
+	$jQ( document ).on( 'click', '.stackr-link-stackr', function() { return makeStackrLinkDialog( this ); } );
+
 	$jQ( document ).on( 'click', '.stackr-filter-tasks', function() { return filterCommentsByTask( this ); } );
 
 // EVENTS REGARDING CHANGES TO ENTRY PROPERTIES

@@ -526,6 +526,34 @@ var deleteEntry = function( object, closestClass, callback )
 	return false;
 };
 
+var makeStackrLinkDialog = function ( object ) 
+{
+	// toggle button back to normal state
+	toggleOperatorImage( object );
+
+	// TODO do ajax call to retrieve list of contexts and stackrs as tree
+
+	$jQ( '#stackr-make-link-dialog' ).dialog(
+	{
+		title: "Which Stackr you want to link to?",
+		resizable: false,
+		height: 320,
+		width: 480,
+		modal: true,
+		buttons: 
+		{
+			"Link" : function()
+			{
+
+			},
+			"Cancel" : function() 
+			{
+				$jQ( this ).dialog( 'close' );
+			}
+		}
+	});
+};
+
 var makeContextConfirm = function( e, object )
 {
 	$jQ( '#context-make-confirm-dialog' ).dialog(
@@ -553,7 +581,7 @@ var makeContextConfirm = function( e, object )
 			},
 			"Cancel": function()
 			{
-				$jQ( this ).dialog( "close" );	
+				$jQ( this ).dialog( 'close' );
 			}
 		}
 	});

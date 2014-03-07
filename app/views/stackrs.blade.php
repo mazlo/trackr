@@ -58,7 +58,7 @@
 	</div>
 
 	<!-- dialog box -->
-	<div id='context-make-confirm-dialog' style='display: none; font-family: AleoLight'>
+	<div id='context-make-confirm-dialog' style='display: none;'>
 
 		<h4>At this point you might want to</h4>
 
@@ -69,6 +69,12 @@
 				which will also <i>copy</i> the selected Stackr to the new Context.</li>
 		</ul>
 		
+	</div>
+
+	<!-- dialog box to link two Stackrs -->
+	<div id='stackr-make-link-dialog' style='display: none;'>
+
+		<h4>Hello</h4>
 	</div>
 
 @stop
