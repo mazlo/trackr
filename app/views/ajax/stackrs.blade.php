@@ -104,9 +104,9 @@
 						</div>
 
 						<div style='float: right'>
-							@if( isset( $stackr->linksTo ) )
-								<a class='dotted' href=''>links to {{ $stackr->linksTo }}</a>
-							@endif
+						@if( isset( $stackr->linksTo ) )
+							<a class='dotted' href=''>related to {{ $stackr->linksTo }}</a>
+						@endif
 						</div>
 
 					</li>
