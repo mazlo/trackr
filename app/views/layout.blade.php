@@ -99,6 +99,13 @@
 		}
 	);
 
+	// tooltips for all elements
+	$jQ( document ).tooltip( 
+	{ 
+		show: false,
+		hide: { duration: 200 }
+	} );
+
 	// css manipulations on hover
 	$jQ( document ).on( 'hover', '.stackr-delete-link, .comment-delete-link', function()
 	{
