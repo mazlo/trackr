@@ -14,8 +14,22 @@ class StackrController extends BaseController {
 		{
 			$stackrs = Auth::user()->stackrs( $contextName )->orderBy( 'favored', 'desc' )->orderBy( 'created_at', 'desc' )->get();
 
+			// prepare relations
+			$stackrRelation = array();
+
+			// run through all Stackrs and check if one relates to an other
+			foreach ( $stackrs as $stackr ) 
+			{
+				if ( !isset( $stackr->linksTo ) )
+					continue;
+
+				// e.g. "relation-for-145" = $stackr#132
+				$stackrRelation[ "for-" . $stackr->id ] = Auth::user()->stackr( $stackr->linksTo )->first();
+			}
+
 			return View::make( 'ajax.stackrs' )
-				->with( 'stackrs', $stackrs );
+				->with( 'stackrs', $stackrs )
+				->with( 'stackrRelation', $stackrRelation );
 		}
 
 		if ( isset( $context ) )

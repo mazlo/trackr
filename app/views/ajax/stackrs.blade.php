@@ -105,7 +105,7 @@
 
 						<div style='float: right'>
 						@if( isset( $stackr->linksTo ) )
-							<a class='dotted element-tooltip' href='' title='{{ $stackr->title }}'>related to {{ $stackr->linksTo }}</a>
+							<a class='dotted element-tooltip' href='' title='{{ $stackrRelation[ "for-" . $stackr->id ]->title }}'>related to {{ $stackr->linksTo }}</a>
 						@endif
 						</div>
 
