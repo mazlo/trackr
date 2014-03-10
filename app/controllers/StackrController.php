@@ -109,6 +109,10 @@ class StackrController extends BaseController {
 			$stackr->tags = $tags;
 		}
 
+		// update link to other Stackr
+		else if ( Input::has( 'lto' ) )
+			$stackr->linksTo = Input::get( 'lto' );
+
 		// update parent Context
 		else if ( Input::has( 'cname' ) )
 		{
