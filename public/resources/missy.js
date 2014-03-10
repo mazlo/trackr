@@ -539,12 +539,25 @@ var makeStackrLinkDialog = function ( object )
 		title: "Which Stackr you want to link to?",
 		resizable: false,
 		height: 320,
-		width: 480,
+		width: 540,
 		buttons: 
 		{
 			"Link" : function()
 			{
+				var cname = getContextName();
+				var sid = getIdFromClosestStackr( object );
+				var lid = $jQ( 'input:radio[name="stackr-link"]:checked' ).attr( 'value' );
 
+				$jQ.ajax({
+					url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
+					type: 'put',
+					data: { lto: lid },
+
+					success: function( data )
+					{
+						// TODO ZL update section where link is shown
+					}
+				});
 			},
 			"Cancel" : function() 
 			{
