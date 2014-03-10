@@ -95,7 +95,7 @@
 			
 				@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments, 'stackr' => $stackr ) )
 
-				@if( count( $comments ) > 3 || isset( $stackr->linksTo ) )
+				@if( count( $comments ) > 3 || isset( $stackr->relatedTo ) )
 					<li class='comment-see-more'>
 						
 						<div style='float: left'>
@@ -104,8 +104,8 @@
 						</div>
 
 						<div style='float: right'>
-						@if( isset( $stackr->linksTo ) )
-							<a class='dotted element-tooltip' href='' title='{{ $stackrRelation[ "for-" . $stackr->id ]->title }}'>related to {{ $stackr->linksTo }}</a>
+						@if( isset( $stackr->relatedTo ) )
+							<a class='dotted element-tooltip' href='' title='{{ $stackrRelation[ "for-" . $stackr->id ]->title }}'>related to {{ $stackr->relatedTo }}</a>
 						@endif
 						</div>
 

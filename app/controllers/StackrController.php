@@ -20,11 +20,11 @@ class StackrController extends BaseController {
 			// run through all Stackrs and check if one relates to an other
 			foreach ( $stackrs as $stackr ) 
 			{
-				if ( !isset( $stackr->linksTo ) )
+				if ( !isset( $stackr->relatedTo ) )
 					continue;
 
 				// e.g. "relation-for-145" = $stackr#132
-				$stackrRelation[ "for-" . $stackr->id ] = Auth::user()->stackr( $stackr->linksTo )->first();
+				$stackrRelation[ "for-" . $stackr->id ] = Auth::user()->stackr( $stackr->relatedTo )->first();
 			}
 
 			return View::make( 'ajax.stackrs' )
@@ -125,7 +125,7 @@ class StackrController extends BaseController {
 
 		// update link to other Stackr
 		else if ( Input::has( 'lto' ) )
-			$stackr->linksTo = Input::get( 'lto' );
+			$stackr->relatedTo = Input::get( 'lto' );
 
 		// update parent Context
 		else if ( Input::has( 'cname' ) )
