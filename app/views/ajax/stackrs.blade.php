@@ -95,10 +95,20 @@
 			
 				@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments, 'stackr' => $stackr ) )
 
-				@if( count( $comments ) > 3 )
+				@if( count( $comments ) > 3 || isset( $stackr->linksTo ) )
 					<li class='comment-see-more'>
-						<img id='comments-loader-img-{{ $stackr->id }}' src='{{ url( "resources/loader.gif" ) }}' style='display: none; width: 35px' />
-						<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
+						
+						<div style='float: left'>
+							<img id='comments-loader-img-{{ $stackr->id }}' src='{{ url( "resources/loader.gif" ) }}' style='display: none; width: 35px' />
+							<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
+						</div>
+
+						<div style='float: right'>
+							@if( isset( $stackr->linksTo ) )
+								<a class='dotted' href=''>links to {{ $stackr->linksTo }}</a>
+							@endif
+						</div>
+
 					</li>
 				@endif
 			
