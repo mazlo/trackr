@@ -74,7 +74,10 @@
 	<!-- dialog box to link two Stackrs -->
 	<div id='stackr-make-link-dialog' style='display: none;'>
 
-		<h4>Hello</h4>
+		<div id='stackr-make-link-dialog-content'>
+			<!-- ajax response here -->
+			<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
+		</div>
 	</div>
 
 @stop

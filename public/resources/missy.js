@@ -531,7 +531,8 @@ var makeStackrLinkDialog = function ( object )
 	// toggle button back to normal state
 	toggleOperatorImage( object );
 
-	// TODO do ajax call to retrieve list of contexts and stackrs as tree
+	// do ajax call to retrieve list of contexts and stackrs as tree
+	makeStackrLinkDialogContent( object );
 
 	$jQ( '#stackr-make-link-dialog' ).dialog(
 	{
@@ -539,7 +540,6 @@ var makeStackrLinkDialog = function ( object )
 		resizable: false,
 		height: 320,
 		width: 480,
-		modal: true,
 		buttons: 
 		{
 			"Link" : function()
@@ -552,6 +552,20 @@ var makeStackrLinkDialog = function ( object )
 			}
 		}
 	});
+};
+
+var makeStackrLinkDialogContent = function ( object ) 
+{
+	$jQ.ajax({
+		url: getContextPath() +'/contexts',
+		type: 'get',
+		data: { link: 'true' },
+
+		success: function( data )
+		{
+			$jQ( '#stackr-make-link-dialog' ).html( data );
+		}
+	})
 };
 
 var makeContextConfirm = function( e, object )

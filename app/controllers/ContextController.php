@@ -19,9 +19,15 @@ class ContextController extends BaseController {
 				$colors[ $context->name ] = Color::skip( $i++ )->take(4)->get();
 			}
 
-			return View::make( 'ajax.contexts' )
-				->with( 'contexts', $contexts )
-				->with( 'colors', $colors );
+			if ( Input::has( 'link' ) )
+			{
+				return View::make( 'ajax.stackr-link' )
+					->with( 'contexts', $contexts );
+			}
+			else
+				return View::make( 'ajax.contexts' )
+					->with( 'contexts', $contexts )
+					->with( 'colors', $colors );
 		}
 
 		// return just the view
