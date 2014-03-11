@@ -481,6 +481,7 @@ div.stackr-header {
 
 div.stackr-icon {
 	float: left;
+	width: 36px;
 	padding: 6px 0;
 
 	font-family: Georgia;
