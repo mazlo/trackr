@@ -528,9 +528,6 @@ var deleteEntry = function( object, closestClass, callback )
 
 var makeStackrLinkDialog = function ( object ) 
 {
-	// toggle button back to normal state
-	toggleOperatorImage( object );
-
 	// do ajax call to retrieve list of contexts and stackrs as tree
 	makeStackrLinkDialogContent( object );
 
