@@ -56,8 +56,6 @@
 					<button class='operator-button operator-button-done'>email sent</button>
 					<img class='operator-image operator-loading-image element-hidden' src='{{ url( "resources/loader.gif" ) }}' style='width: 23px' />
 
-					<img class='stackr-link-stackr operator-image operator-image-toggable' src='{{ url( "resources/related_0.png" ) }}' imgName='edit' state='0' />
-					
 					<img class='stackr-bookmark operator-image operator-image-toggable' src='{{ url( "resources/bookmark_$stackr->favored.png" ) }}' imgName='bookmark' state='{{ $stackr->favored }}' />
 				</div>
 			</div>
@@ -127,7 +125,10 @@
 					$relatedStackrUrl = url( '/contexts/' . $relatedStackr->context->name . '/stackrs#' . $relatedStackr->id ); 
 				?>
 				<a class='dotted element-tooltip' href='{{ $relatedStackrUrl }}' title='{{ $relatedStackr->title }}'>related to #{{ $stackr->relatedTo }}</a>
+
 			@endif
+				<img class='stackr-link-stackr operator-image' src='{{ url( "resources/related_0.png" ) }}' />
+			
 			</div>
 
 		</div>
