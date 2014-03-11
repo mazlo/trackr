@@ -49,8 +49,6 @@
 				</div>
 
 				<div>
-					<img class='stackr-link-stackr operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
-					
 					<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
 					<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' />
 					
@@ -58,6 +56,8 @@
 					<button class='operator-button operator-button-done'>email sent</button>
 					<img class='operator-image operator-loading-image element-hidden' src='{{ url( "resources/loader.gif" ) }}' style='width: 23px' />
 
+					<img class='stackr-link-stackr operator-image operator-image-toggable' src='{{ url( "resources/related_0.png" ) }}' imgName='edit' state='0' />
+					
 					<img class='stackr-bookmark operator-image operator-image-toggable' src='{{ url( "resources/bookmark_$stackr->favored.png" ) }}' imgName='bookmark' state='{{ $stackr->favored }}' />
 				</div>
 			</div>
