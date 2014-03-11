@@ -121,7 +121,12 @@
 
 			<div class='stackr-footer-relation'>
 			@if( isset( $stackr->relatedTo ) )
-				<a class='dotted element-tooltip' href='' title='{{ $stackrRelation[ "for-" . $stackr->id ]->title }}'>related to {{ $stackr->relatedTo }}</a>
+				<? 
+					// retrieve the related Stackr and compose url
+					$relatedStackr = $stackrRelation[ 'for-' . $stackr->id ];
+					$relatedStackrUrl = url( '/contexts/' . $relatedStackr->context->name . '/stackrs#' . $relatedStackr->id ); 
+				?>
+				<a class='dotted element-tooltip' href='{{ $relatedStackrUrl }}' title='{{ $relatedStackr->title }}'>related to #{{ $stackr->relatedTo }}</a>
 			@endif
 			</div>
 
