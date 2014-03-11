@@ -95,18 +95,12 @@
 			
 				@include( 'ajax.comments', array( 'limit' => 'true', 'comments' => $comments, 'stackr' => $stackr ) )
 
-				@if( count( $comments ) > 3 || isset( $stackr->relatedTo ) )
+				@if( count( $comments ) > 3 )
 					<li class='comment-see-more'>
 						
-						<div style='float: left'>
+						<div>
 							<img id='comments-loader-img-{{ $stackr->id }}' src='{{ url( "resources/loader.gif" ) }}' style='display: none; width: 35px' />
 							<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
-						</div>
-
-						<div style='float: right'>
-						@if( isset( $stackr->relatedTo ) )
-							<a class='dotted element-tooltip' href='' title='{{ $stackrRelation[ "for-" . $stackr->id ]->title }}'>related to {{ $stackr->relatedTo }}</a>
-						@endif
 						</div>
 
 					</li>
@@ -119,8 +113,18 @@
 		</div>
 
 		<div class='stackr-footer'>
-			<span style='color: #aaa;'>Tags:</span> 
-			<input type='type' class='textfield textfield-form-like textfield-limited textfield-tags-inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
+			
+			<div class='stackr-footer-tags'>
+				<span style='color: #aaa;'>Tags:</span> 
+				<input type='type' class='textfield textfield-form-like textfield-limited textfield-tags-inactive' value='{{ $stackr->tags }}' disabled='disabled' /> 
+			</div>
+
+			<div class='stackr-footer-relation'>
+			@if( isset( $stackr->relatedTo ) )
+				<a class='dotted element-tooltip' href='' title='{{ $stackrRelation[ "for-" . $stackr->id ]->title }}'>related to {{ $stackr->relatedTo }}</a>
+			@endif
+			</div>
+
 		</div>
 
 	</div> {{-- end of wrapper entry --}}

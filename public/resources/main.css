@@ -502,7 +502,20 @@ div.stackr-operations > div {
 }
 
 div.stackr-footer {
-	padding-left: 54px;
+	overflow: hidden;
+	padding-left: 56px;
+}
+
+div.stackr-footer .stackr-footer-tags {
+	float: left; 
+	width: 626px;
+}
+
+div.stackr-footer .stackr-footer-relation {
+	float: right; 
+	width: 200px; 
+	padding-top: 8px; 
+	text-align: right;
 }
 
 .stackr-add,
