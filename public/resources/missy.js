@@ -63,7 +63,7 @@ var loadRelatedObjects = function()
 
 		success: function( data )
 		{
-			$jQ( '#stackrs-list-related' ).html( data );
+			$jQ( '#section-stackrs-related' ).html( data );
 		}
 	})
 };
@@ -543,7 +543,7 @@ var deleteEntry = function( object, closestClass, callback )
 
 var openRelatedStackrsList = function ( object, e ) 
 {
-	var box = $jQ( '#stackrs-list-related' );
+	var box = $jQ( '#section-stackrs-related' );
 
 	var x = e.target.offsetLeft - 400 - 23;
 	var y = e.target.offsetTop - 200;

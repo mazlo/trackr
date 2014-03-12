@@ -72,7 +72,7 @@
 	</div>
 
 	<!-- list of Stackrs to show -->
-	<div id='stackrs-list-related' class='stackrs-list-related'>
+	<div id='section-stackrs-related' class='section-stackrs-related'>
 		<!-- ajax response here -->
 		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>
