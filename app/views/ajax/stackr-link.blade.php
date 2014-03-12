@@ -12,8 +12,8 @@
 			
 			<li>
 				<div>
-					<input id='stackr-link-{{ $stackr->id }}' type='radio' name='stackr-link' value='{{ $stackr->id }}' style='display: table-cell' />
-					<label for='stackr-link-{{ $stackr->id }}' style='display: table-cell; padding-left: 8px;'>{{ $stackr->title }}</label>
+					<input id='stackr-relatedTo-{{ $stackr->id }}' type='radio' name='stackr-relatedTo' value='{{ $stackr->id }}' style='display: table-cell' />
+					<label for='stackr-relatedTo-{{ $stackr->id }}' style='display: table-cell; padding-left: 8px;'>{{ $stackr->title }}</label>
 				</div>
 			</li>
 		
