@@ -127,7 +127,7 @@
 				<a class='dotted element-tooltip' href='{{ $relatedStackrUrl }}' title='{{ $relatedStackr->title }}'>related to #{{ $stackr->relatedTo }}</a>
 
 			@endif
-				<img class='stackr-link-stackr operator-image' src='{{ url( "resources/related_0.png" ) }}' />
+				<img class='stackr-link-stackr operator-image' src='{{ url( "resources/related_0.png" ) }}' relatedTo='{{ $stackr->relatedTo }}' />
 			
 			</div>
 

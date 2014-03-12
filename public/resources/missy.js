@@ -545,6 +545,27 @@ var openRelatedStackrsList = function ( object, e )
 {
 	var box = $jQ( '#section-stackrs-related' );
 
+	// hide if already visible and return
+
+	if ( box.is( ':visible' ) )
+	{
+		box.hide();
+		return;
+	}
+
+	// select the related Stackr
+
+	// reset checked radio first
+	box.find( 'input:radio[name="stackr-relatedTo"]:checked' ).removeAttr( 'checked' );
+
+	// get id of related stackr
+	var rsid = $jQ( object ).attr( 'relatedTo' );
+
+	if ( rsid != undefined && rsid != '' )
+		box.find( '#stackr-relatedTo-'+ rsid ).attr( 'checked', 'checked' );
+
+	// show box
+
 	var x = e.target.offsetLeft - 400 - 23;
 	var y = e.target.offsetTop - 200;
 
