@@ -597,12 +597,16 @@ var toggleStackrsRelationship = function( object )
 
 		success: function( data )
 		{
+			// after submitting the relationship, get up-to-date snippet about the relationship
+
 			$jQ.ajax({
 				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/related',
 				type: 'get',
 
 				success: function( data )
 				{
+					// paste the snippet
+
 					$jQ( '#stackr-related-to-snippet-'+ sid ).html( data );
 				}
 			});
