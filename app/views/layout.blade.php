@@ -302,7 +302,7 @@
 		$jQ(this).blur();
 	} );
 
-	$jQ( document ).on( 'click', '.stackr-link-stackr', function(e) { return openRelatedStackrsList( this, e ); } );
+	$jQ( document ).on( 'click', '.stackr-related-stackrs', function(e) { return openRelatedStackrsList( this, e ); } );
 
 	$jQ( document ).on( 'click', '.stackr-filter-tasks', function() { return filterCommentsByTask( this ); } );
 
