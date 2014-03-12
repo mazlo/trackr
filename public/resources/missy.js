@@ -562,7 +562,7 @@ var openRelatedStackrsList = function ( object, e )
 	});
 
 	// get id of related stackr
-	var rsid = $jQ( object ).attr( 'relatedTo' );
+	var rsid = getClosestStackr( object ).attr( 'relatedTo' );
 
 	if ( rsid != undefined && rsid != '' )
 		toggleOperatorImage( '#stackr-relatedTo-'+ rsid );
@@ -597,6 +597,10 @@ var toggleStackrsRelationship = function( object )
 
 		success: function( data )
 		{
+			// updates attributes
+
+			$jQ( '#'+ sid ).attr( 'relatedTo', lnk == 1 ? lid : '' );
+
 			// after submitting the relationship, get up-to-date snippet about the relationship
 
 			$jQ.ajax({
@@ -1018,6 +1022,11 @@ var toggleOperatorImage = function ( image )
 var getIdFromClosestStackr = function ( object )
 {
 	return $jQ( object ).closest( '.stackr-wrapper' ).attr( 'id' );
+}
+
+var getClosestStackr = function( object )
+{
+	return $jQ( object ).closest( '.stackr-wrapper' );
 }
 
 var getContextName = function()
