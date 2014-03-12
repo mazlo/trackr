@@ -12,7 +12,7 @@
 			
 			<li>
 				<div>
-					<input id='stackr-relatedTo-{{ $stackr->id }}' type='radio' name='stackr-relatedTo' value='{{ $stackr->id }}' style='display: table-cell' />
+					<img id='stackr-relatedTo-{{ $stackr->id }}' class='operator-image operator-image-toggable' src='{{ url( "resources/link_0.png" ) }}' imgName='link' state='0' style='display: table-cell; width: 23px' />
 					<label for='stackr-relatedTo-{{ $stackr->id }}' style='display: table-cell; padding-left: 8px;'>{{ $stackr->title }}</label>
 				</div>
 			</li>

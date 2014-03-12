@@ -555,14 +555,17 @@ var openRelatedStackrsList = function ( object, e )
 
 	// select the related Stackr
 
-	// reset checked radio first
-	box.find( 'input:radio[name="stackr-relatedTo"]:checked' ).removeAttr( 'checked' );
+	// reset highlighted image first
+	box.find( '.operator-image-toggable-active' ).each( function()
+	{
+		toggleOperatorImage( $jQ( this ) );
+	});
 
 	// get id of related stackr
 	var rsid = $jQ( object ).attr( 'relatedTo' );
 
 	if ( rsid != undefined && rsid != '' )
-		box.find( '#stackr-relatedTo-'+ rsid ).attr( 'checked', 'checked' );
+		toggleOperatorImage( '#stackr-relatedTo-'+ rsid );
 
 	// show box
 
@@ -1004,6 +1007,8 @@ var toggleOperatorImage = function ( image )
 
 	$jQ( image ).attr( 'src', getContextPath() + '/resources/'+ name +'_'+ state +'.png' );
 	$jQ( image ).attr( 'state', state );
+
+	$jQ( image ).toggleClass( 'operator-image-toggable-active' );
 
 	return state;
 };
