@@ -423,7 +423,7 @@ ul.stackrs-related-list li > div {
 }
 ul.stackrs-related-list > li {
 	border-bottom: 1px solid #eee;
-	padding: 6px 8px;
+	padding: 8px 8px 4px;
 }
 ul.stackrs-related-list > li > span {
 	font-weight: bolder;
@@ -436,6 +436,9 @@ ul.stackrs-related-list > li > ul {
 }
 ul.stackrs-related-list > li > ul {
 	padding: 1px 0;
+}
+ul.stackrs-related-list > li > ul > li {
+	padding: 2px 0;
 }
 
 /* CONTEXTS */
