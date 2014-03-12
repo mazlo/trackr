@@ -585,9 +585,17 @@ var openRelatedStackrsList = function ( object, e )
 
 var toggleStackrsRelationship = function( object )
 {
-	var cname = getContextName();
-	var sid = $jQ( object ).closest( '#section-stackrs-related' ).attr( 'sourceStackr' );
+	var box = $jQ( object ).closest( '#section-stackrs-related' );
 	var lid = $jQ( object ).attr( 'targetStackr' );
+
+	// reset highlighted image first
+	box.find( '.operator-image-toggable-active[targetStackr!="'+ lid +'"]' ).each( function()
+	{
+		toggleOperatorImage( $jQ( this ) );
+	});
+
+	var cname = getContextName();
+	var sid = box.attr( 'sourceStackr' );
 	var lnk = $jQ( object ).attr( 'state' );
 
 	$jQ.ajax({
