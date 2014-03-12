@@ -411,6 +411,33 @@ span.span-padding-left-right {
 	padding: 0 13px;
 }
 
+ul.stackrs-related-list {
+	list-style-type: none; 
+	margin: 0;
+	padding: 0; 
+	font-size: 13px;
+}
+ul.stackrs-related-list li > div {
+	display: table-row; 
+	vertical-align: middle;
+}
+ul.stackrs-related-list > li {
+	border-bottom: 1px solid #eee;
+	padding: 6px 8px;
+}
+ul.stackrs-related-list > li > span {
+	font-weight: bolder;
+}
+ul.stackrs-related-list > li > ul {
+	display: table; 
+	list-style-type: none; 
+	margin: 2px 8px; 
+	padding: 0;
+}
+ul.stackrs-related-list > li > ul {
+	padding: 1px 0;
+}
+
 /* CONTEXTS */
 
 #contexts {
@@ -517,6 +544,17 @@ div.stackr-footer .stackr-footer-relation {
 	width: 200px; 
 	padding-top: 8px; 
 	text-align: right;
+}
+
+div.stackrs-list-related {
+	position: absolute; 
+	display: none; 
+
+	background-color: #fff; 
+	box-shadow: 0px 1px 6px #ccc; 
+	border: 1px solid #ccc; 
+
+	width: 400px;
 }
 
 .stackr-add,
