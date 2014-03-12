@@ -49,8 +49,23 @@ var getAllEntries = function( tags )
 
 			scrollToDesiredElement();
 			makeCommentsSortable( null );
+			loadRelatedObjects();
 		}
 	});
+};
+
+var loadRelatedObjects = function()
+{
+	$jQ.ajax({
+		url: getContextPath() +'/contexts',
+		type: 'get',
+		data: { link: 'true' },
+
+		success: function( data )
+		{
+			$jQ( '#stackrs-list-related' ).html( data );
+		}
+	})
 };
 
 var scrollToDesiredElement = function()
@@ -526,12 +541,21 @@ var deleteEntry = function( object, closestClass, callback )
 	return false;
 };
 
-var makeStackrLinkDialog = function ( object ) 
+var openRelatedStackrsList = function ( object, e ) 
 {
-	// do ajax call to retrieve list of contexts and stackrs as tree
-	makeStackrLinkDialogContent( object );
+	var box = $jQ( '#stackrs-list-related' );
 
-	$jQ( '#stackr-make-link-dialog' ).dialog(
+	var x = e.target.offsetLeft - 400 - 23;
+	var y = e.target.offsetTop - 200;
+
+	box.css( 'top', y );
+	box.css( 'left', x );
+
+	box.show();
+
+	return;
+
+	$jQ( '#stackrs-list-related' ).dialog(
 	{
 		title: "Which Stackr you want to link to?",
 		resizable: false,
@@ -562,20 +586,6 @@ var makeStackrLinkDialog = function ( object )
 			}
 		}
 	});
-};
-
-var makeStackrLinkDialogContent = function ( object ) 
-{
-	$jQ.ajax({
-		url: getContextPath() +'/contexts',
-		type: 'get',
-		data: { link: 'true' },
-
-		success: function( data )
-		{
-			$jQ( '#stackr-make-link-dialog' ).html( data );
-		}
-	})
 };
 
 var makeContextConfirm = function( e, object )

@@ -71,13 +71,10 @@
 		
 	</div>
 
-	<!-- dialog box to link two Stackrs -->
-	<div id='stackr-make-link-dialog' style='display: none;'>
-
-		<div id='stackr-make-link-dialog-content'>
-			<!-- ajax response here -->
-			<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
-		</div>
+	<!-- list of Stackrs to show -->
+	<div id='stackrs-list-related' style='position: absolute; display: none; background-color: #fff; box-shadow: 0px 0px 2px #ccc; width: 400px;'>
+		<!-- ajax response here -->
+		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
 	</div>
 
 @stop
