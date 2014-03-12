@@ -118,7 +118,7 @@
 			</div>
 
 			<div class='stackr-footer-relation'>
-			@if( isset( $stackr->relatedTo ) )
+			@if( isset( $stackr->relatedTo ) && $stackr->relatedTo != 0 )
 				<? 
 					// retrieve the related Stackr and compose url
 					$relatedStackr = $stackrRelation[ 'for-' . $stackr->id ];
