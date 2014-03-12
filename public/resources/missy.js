@@ -597,7 +597,15 @@ var toggleStackrsRelationship = function( object )
 
 		success: function( data )
 		{
-			// TODO ZL update section where link is shown
+			$jQ.ajax({
+				url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid +'/related',
+				type: 'get',
+
+				success: function( data )
+				{
+					$jQ( '#stackr-related-to-snippet-'+ sid ).html( data );
+				}
+			});
 		}
 	});
 };

@@ -164,4 +164,24 @@ class StackrController extends BaseController {
         });	
 	}
 
+	/**
+	*	Retrieves the related Stackrs from a Stackr
+	*/
+	public function related( $contextName, $sid )
+	{
+		$stackr = Auth::user()->stackr( $sid )->first();
+
+		if ( !isset( $stackr ) )
+			return;
+
+		if ( !isset( $stackr->relatedTo ) )
+			return;
+
+		$relatedStackr = Auth::user()->stackr( $stackr->relatedTo )->first();
+
+		return View::make( 'ajax.snippets.relatedTo' )
+			->with( 'stackr', $stackr )
+			->with( 'relatedStackr', $relatedStackr );
+	}
+
 }

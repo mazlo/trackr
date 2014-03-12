@@ -118,15 +118,18 @@
 			</div>
 
 			<div class='stackr-footer-relation'>
-			@if( isset( $stackr->relatedTo ) && $stackr->relatedTo != 0 )
-				<? 
-					// retrieve the related Stackr and compose url
-					$relatedStackr = $stackrRelation[ 'for-' . $stackr->id ];
-					$relatedStackrUrl = url( '/contexts/' . $relatedStackr->context->name . '/stackrs#' . $relatedStackr->id ); 
-				?>
-				<a class='dotted element-tooltip' href='{{ $relatedStackrUrl }}' title='{{ $relatedStackr->title }}'>related to #{{ $stackr->relatedTo }}</a>
+				<span id='stackr-related-to-snippet-{{ $stackr->id }}'>
+				@if( isset( $stackr->relatedTo ) && $stackr->relatedTo != 0 )
+					<? 
+						// retrieve the related Stackr
+						$relatedStackr = $stackrRelation[ 'for-' . $stackr->id ];
+					?>
 
-			@endif
+					@include( 'ajax.snippets.relatedTo', array( 'stackr' => $stackr, 'relatedStackr' => $relatedStackr ) )
+
+				@endif
+				</span>
+
 				<img class='stackr-related-stackrs operator-image operator-image-toggable' src='{{ url( "resources/related_0.png" ) }}' relatedTo='{{ $stackr->relatedTo }}' imgName='related' state='0' />
 			
 			</div>
