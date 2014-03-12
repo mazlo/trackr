@@ -12,7 +12,7 @@
 			
 			<li>
 				<div>
-					<img id='stackr-relatedTo-{{ $stackr->id }}' class='operator-image operator-image-toggable' src='{{ url( "resources/link_0.png" ) }}' imgName='link' state='0' style='display: table-cell; width: 23px' />
+					<img id='stackr-relatedTo-{{ $stackr->id }}' targetStackr='{{ $stackr->id }}' class='stackr-link-stackr operator-image operator-image-toggable' src='{{ url( "resources/link_0.png" ) }}' imgName='link' state='0' style='display: table-cell; width: 23px' />
 					<label for='stackr-relatedTo-{{ $stackr->id }}' style='display: table-cell; padding-left: 8px;'>{{ $stackr->title }}</label>
 				</div>
 			</li>

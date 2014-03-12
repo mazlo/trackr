@@ -100,6 +100,9 @@ class StackrController extends BaseController {
 	{
 		$stackr = Auth::user()->stackr( $sid )->first();
 
+		if ( !isset( $stackr ) )
+			return 'could not find stackr of id '. $sid .' in context '. $contextName;
+
 		// update Stackr title
 		if ( Input::has( 'tl') )
 			$stackr->title = Input::get( 'tl' );
@@ -125,7 +128,10 @@ class StackrController extends BaseController {
 
 		// update link to other Stackr
 		else if ( Input::has( 'lto' ) )
-			$stackr->relatedTo = Input::get( 'lto' );
+			if ( Input::get( 'lnk') == 1 )
+				$stackr->relatedTo = Input::get( 'lto' );
+			else
+				$stackr->relatedTo = null;
 
 		// update parent Context
 		else if ( Input::has( 'cname' ) )

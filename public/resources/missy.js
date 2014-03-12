@@ -577,37 +577,27 @@ var openRelatedStackrsList = function ( object, e )
 
 	box.show();
 
-	return;
+	// set id of current stackr
 
-	$jQ( '#stackrs-list-related' ).dialog(
-	{
-		title: "Which Stackr you want to link to?",
-		resizable: false,
-		height: 320,
-		width: 540,
-		buttons: 
+	var sid = getIdFromClosestStackr( object );
+	box.attr( 'sourceStackr', sid );
+};
+
+var toggleStackrsRelationship = function( object )
+{
+	var cname = getContextName();
+	var sid = $jQ( object ).closest( '#section-stackrs-related' ).attr( 'sourceStackr' );
+	var lid = $jQ( object ).attr( 'targetStackr' );
+	var lnk = $jQ( object ).attr( 'state' );
+
+	$jQ.ajax({
+		url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
+		type: 'put',
+		data: { lto: lid, lnk: lnk },
+
+		success: function( data )
 		{
-			"Link" : function()
-			{
-				var cname = getContextName();
-				var sid = getIdFromClosestStackr( object );
-				var lid = $jQ( 'input:radio[name="stackr-link"]:checked' ).attr( 'value' );
-
-				$jQ.ajax({
-					url: getContextPath() +'/contexts/'+ cname +'/stackrs/'+ sid,
-					type: 'put',
-					data: { lto: lid },
-
-					success: function( data )
-					{
-						// TODO ZL update section where link is shown
-					}
-				});
-			},
-			"Cancel" : function() 
-			{
-				$jQ( this ).dialog( 'close' );
-			}
+			// TODO ZL update section where link is shown
 		}
 	});
 };
