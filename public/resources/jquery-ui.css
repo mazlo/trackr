@@ -822,10 +822,6 @@ button.ui-button::-moz-focus-inner {
 	background: #fff;
 
 }
-body .ui-tooltip {
-	border-width: 2px;
-	border-radius: 0;
-}
 
 /* Component containers
 ----------------------------------*/

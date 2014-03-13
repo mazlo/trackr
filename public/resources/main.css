@@ -816,8 +816,9 @@ textarea.textarea-edit {
 }
 
 .ui-tooltip {
-	box-shadow: 0 0 4px #ccc;
+	box-shadow: 0 0 2px #ccc;
 	border: 1px solid #ccc;
+	background: #fbfbfb;
 	
 	width: auto;
 	max-width: 260px;
