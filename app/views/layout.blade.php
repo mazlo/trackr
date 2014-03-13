@@ -1,5 +1,24 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang='en'>
 <head>
+	<title>MindStackr</title>
+
+	<meta name='keywords' content='MindStackr, MindStacker, thought, thoughts, blog, comments, minutes, dairy, history, private, documentation, todo, productivity, gtd, open source, opensource, mind, minds, organize, organization' />
+	<meta name='description' content='Organize your thoughts. MindStackr helps you organize your thoughts in a way where you can keep track a history of comments on topics you care about.' />
+
+	<meta name='title' content='MindStackr.com' />
+	<meta name='author' content='Matthäus Zloch' />
+
+	<meta name='publisher' content='MindStackr.com' />
+	<meta name='copyright' content='MindStackr.com' />
+	<meta http-equiv='content-language' content='en' />
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8' />
+	<meta name='robots' content='index,follow' />
+	<meta name='revisit-after' content='2 days' />
+	<meta name='revisit' content='after 2 days' />
+	<meta name='DC.Language' content='de' />
+
 	<!-- external -->
 	<!-- simplifies javascript programming -->
 	<link rel='stylesheet' type='text/css' href='{{ url( "resources/jquery-ui.css" ) }}' />
