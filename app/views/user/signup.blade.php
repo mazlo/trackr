@@ -11,7 +11,7 @@
 	<h4 class='normal'>Create a new user account here.</h4>
 	<h4 class='normal'>All it takes is a username, an email, and a password. Then you can <a class='dotted' href='{{ URL::route( "user/login" ) }}'>start right away</a>!</h4>
 
-	<form method='POST' action='{{ URL::route("users/signup") }}' accept-charset='UTF-8' autocomplete='off' class='form-default form-narrower form-signup'>
+	<form method='post' action='{{ URL::route("users/signup") }}' accept-charset='UTF-8' autocomplete='off' class='form-default form-narrower form-signup'>
 
         <input name='_token' type='hidden' value='TbVUNXU82jmVLLrSGHT360dEYlhRmX5ca0E1iPxv'>
 
