@@ -711,10 +711,10 @@ input.form {
 	width: 95%;
 }
 
-input.textfield_smaller {
+input.textfield-smaller {
 	padding: 2px; 
 	width: 320px; 
-	height: 23px;
+	height: 18px;
 }
 
 textarea.textarea

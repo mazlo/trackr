@@ -60,7 +60,7 @@
 	 				@if ( Auth::check() )
 	 					<!-- print search field -->
 		 				<span id='searchResults' class='infotext'></span>
-						<input type='text' id='search' class='textfield_smaller' style='width: 200px; margin-right: 26px;' />
+						<input type='text' id='search' class='textfield-smaller' style='width: 200px; margin-right: 26px;' />
 
 						<!-- print user specific information -->
 	 					<span>{{ Auth::user()->username }}</span>
