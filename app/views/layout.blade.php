@@ -27,10 +27,10 @@
 	<!-- browser icon -->
 	<link rel="shortcut icon" href='{{ url( "resources/stackr_icon.ico" ) }}' />
 
-	<script src='{{ url( "resources/prototype.js" ) }}'></script>
-	<script src='{{ url( "resources/jquery-1.8.2.js" ) }}'></script>
-	<script src='{{ url( "resources/jquery-ui-1.9.2.custom.js" ) }}'></script>
-	<script src='{{ url( "resources/missy.js" ) }}'></script>
+	<script src='{{ url( "resources/prototype.js" ) }}' type='text/javascript'></script>
+	<script src='{{ url( "resources/jquery-1.8.2.js" ) }}' type='text/javascript'></script>
+	<script src='{{ url( "resources/jquery-ui-1.9.2.custom.js" ) }}' type='text/javascript'></script>
+	<script src='{{ url( "resources/missy.js" ) }}' type='text/javascript'></script>
 
 	<script type='text/javascript'>
 		<!-- this is to prevent conflicts with prototype and jquerytools -->
