@@ -16,12 +16,12 @@
 				
 				{{-- first display correct number of comment ratings --}}
 				@for( $i=0; $i< $comment->rating; $i++ )
-					<img class='comment-rating-star' src='{{ url( "resources/rating.png" ) }}' />
+					<img class='comment-rating-star' src='{{ url( "resources/rating.png" ) }}' alt='X' />
 				@endfor
 
 				{{-- then display missing comment ratings --}}
 				@for( $i=$comment->rating; $i<3; $i++ )
-					<img class='comment-rating-star' src='{{ url( "resources/rating_none.png" ) }}' />
+					<img class='comment-rating-star' src='{{ url( "resources/rating_none.png" ) }}' alt='O' />
 				@endfor
 			</div>
 		</div>

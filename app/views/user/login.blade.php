@@ -76,7 +76,7 @@
             </li>
         </ul>
 
-        <div><img src='{{ url("resources/mindstackr_screenshot.png") }}' /></div>
+        <div><img src='{{ url("resources/mindstackr_screenshot.png") }}' alt='mindstackr screenshot' /></div>
 
         <ul class='list-box'>
             <li class='list-box-feature'>

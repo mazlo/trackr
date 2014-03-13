@@ -49,14 +49,14 @@
 				</div>
 
 				<div>
-					<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' />
-					<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' />
+					<img class='stackr-filter-tasks operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' alt='edit' />
+					<img class='stackr-show-dates operator-image operator-image-toggable' src='{{ url( "resources/calendar_0.png" ) }}' imgName='calendar' state='0' alt='cal' />
 					
-					<img class='stackr-email operator-image operator-image-toggable' src='{{ url( "resources/mail_0.png" ) }}' imgName='mail' state='0' />
+					<img class='stackr-email operator-image operator-image-toggable' src='{{ url( "resources/mail_0.png" ) }}' imgName='mail' state='0' alt='mail' />
 					<button class='operator-button operator-button-done'>email sent</button>
-					<img class='operator-image operator-loading-image element-hidden' src='{{ url( "resources/loader.gif" ) }}' style='width: 23px' />
+					<img class='operator-image operator-loading-image element-hidden' src='{{ url( "resources/loader.gif" ) }}' style='width: 23px' alt='loading' />
 
-					<img class='stackr-bookmark operator-image operator-image-toggable' src='{{ url( "resources/bookmark_$stackr->favored.png" ) }}' imgName='bookmark' state='{{ $stackr->favored }}' />
+					<img class='stackr-bookmark operator-image operator-image-toggable' src='{{ url( "resources/bookmark_$stackr->favored.png" ) }}' imgName='bookmark' state='{{ $stackr->favored }}' alt='mark' />
 				</div>
 			</div>
 
@@ -74,7 +74,7 @@
 				<div class='section-comment-add section-hidden' id='section-comment-add-{{ $stackr->id }}'>
 
 					<textarea style='float: left' id='comment-add-{{ $stackr->id }}' class='textarea textarea-comment' placeholder='This is the place where you may state anything about "{{ $stackr->title }}"'></textarea>
-					<img class='operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' style='float: left' />
+					<img class='operator-image operator-image-toggable' src='{{ url( "resources/edit_0.png" ) }}' imgName='edit' state='0' style='float: left' alt='edit' />
 
 					<div style='clear: both; padding: 8px 0;'>
 						<button class='operator-button comment-add-action'>Add</button>
@@ -97,7 +97,7 @@
 					<li class='comment-see-more'>
 						
 						<div>
-							<img id='comments-loader-img-{{ $stackr->id }}' src='{{ url( "resources/loader.gif" ) }}' style='display: none; width: 35px' />
+							<img id='comments-loader-img-{{ $stackr->id }}' src='{{ url( "resources/loader.gif" ) }}' style='display: none; width: 35px' alt='loading' />
 							<a class='dotted link-see-more' href=''>see more ({{ count( $comments ) }} in total)</a>
 						</div>
 
@@ -130,7 +130,7 @@
 				@endif
 				</span>
 
-				<img class='stackr-related-stackrs operator-image operator-image-toggable' src='{{ url( "resources/related_0.png" ) }}' relatedTo='{{ $stackr->relatedTo }}' imgName='related' state='0' />
+				<img class='stackr-related-stackrs operator-image operator-image-toggable' src='{{ url( "resources/related_0.png" ) }}' relatedTo='{{ $stackr->relatedTo }}' imgName='related' state='0' alt='rel' />
 			
 			</div>
 

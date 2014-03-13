@@ -47,7 +47,7 @@
 				
 				<div style='width: 25%'>
 					<a href='{{ URL::to( "contexts" ) }}'>
-						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' />
+						<img src='{{ url( "resources/stack.png" ) }}' style='width: 32px; margin-bottom: -4px;' alt='logo' />
 						<span class='applicationTitle'><span style='font-size: 32px'>M</span>ind<span style='font-size: 32px'>S</span>tackr<span style='position: absolute; top: 22px; border-radius: 3px; background-color: pink; margin-left: 13px; padding: 4px 8px; font-size: 14px;'>beta</span></span>
 					</a>
 				</div>

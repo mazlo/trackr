@@ -4,7 +4,7 @@
 	<nav>
 		<ul id='menu'>
 			<li>
-				<a href='{{ url("/contexts") }}'>Contexts</a><img src='{{ url("resources/arrow_down.png") }}' style='width: 13px; margin-left: 3px' />
+				<a href='{{ url("/contexts") }}'>Contexts</a><img src='{{ url("resources/arrow_down.png") }}' style='width: 13px; margin-left: 3px' alt='' />
 				<ul>
 
 				@foreach( $contexts as $contextItem )
@@ -27,7 +27,7 @@
 
 		<div id='stackrs-tag-list' style='display: inline;'>
 			<!-- ajax response here -->
-			<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px' />
+			<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px' alt='loading' />
 		</div>
 		
 	</div>
@@ -74,7 +74,7 @@
 	<!-- list of Stackrs to show -->
 	<div id='section-stackrs-related' class='section-stackrs-related' sourceStackr=''>
 		<!-- ajax response here -->
-		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
+		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' alt='loading' />
 	</div>
 
 @stop

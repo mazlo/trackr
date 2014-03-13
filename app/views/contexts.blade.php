@@ -26,7 +26,7 @@
 
 	<ul id='contexts'>
 		<!-- ajax response here -->
-		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' />
+		<img src='{{ url( "resources/loader.gif" ) }}' style='width: 35px; padding-top: 13px;' alt='loading' />
 	</ul>
 
 	<hr style='background: #bbb; border: 0; height: 1px; margin: 23px 0 32px' />
