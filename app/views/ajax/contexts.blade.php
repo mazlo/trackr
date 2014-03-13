@@ -33,7 +33,7 @@
 				{{-- not the default query because we limit the size of children to 6 --}}
 				@foreach( $context->stackrs()->getQuery()->limit(6)->get() as $key => $stackr )
 				<li>
-					@if ( $key == 5 )	{{-- means that the 6th element willl not be display --}}
+					@if ( $key == 5 )	{{-- means that the 6th element willl not be displayed --}}
 						<a href='{{ url("contexts/$context->name/stackrs") }}'>...</a>
 					@else
 						<a href='{{ url("contexts/$context->name/stackrs") }}#{{ $stackr->id }}'>#{{ $stackr->id }}</a>
