@@ -102,7 +102,7 @@
 	// tooltips for all elements
 	$jQ( document ).tooltip( 
 	{ 
-		show: false,
+		show: { delay: 500, duration: 100 },
 		hide: { duration: 200 }
 	} );
 

@@ -822,20 +822,24 @@ textarea.textarea-edit {
 	
 	width: auto;
 
-	padding: 4px 6px 6px;
+	padding: 4px 6px;
 
 	max-width: 260px;
 	font-size: 13px;
 }
 
 .ui-tooltip h3 {
-	margin: 0 0 4px;
+	margin: 0;
 	padding: 0;
 
 	font-size: 14px;
 }
 
-.ui-tooltip span {
+.ui-tooltip p {
+	margin: 0;
+	padding: 0;
+	padding-top: 2px;
+	font-size: inherit;
 	font-style: italic;
 }
 
