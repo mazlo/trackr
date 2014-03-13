@@ -20,15 +20,15 @@
 
     <form method='post' action='{{ url() }}/' accept-charset='UTF-8' autocomplete='off' class='form-default form-narrower form-login'>
 
-        <input name='_token' type='hidden' value='TbVUNXU82jmVLLrSGHT360dEYlhRmX5ca0E1iPxv'>
-
         <h4>Username</h4>
-        <input placeholder='john.smith' name='username' type='text' id='username' class='textfield form'>
+        <input placeholder='john.smith' name='username' type='text' id='username' class='textfield form' />
         
         <h4>Password</h4>
-        <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form'>
+        <input placeholder='●●●●●●●●' name='password' type='password' value='' id='password' class='textfield form' />
 
-        <input type='submit' value='sign in' id='login_button' class='button button-login element-shadow'>
+        <input type='submit' value='sign in' id='login_button' class='button button-login element-shadow' />
+
+        <input name='_token' type='hidden' value='TbVUNXU82jmVLLrSGHT360dEYlhRmX5ca0E1iPxv' />
 
     </form>
 
