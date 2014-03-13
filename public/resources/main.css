@@ -15,15 +15,6 @@ body {
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-h2.applicationTitle,
-h3.applicationTitle {
-	display: inline; 
-	margin: 0px;
-
-	font-weight: normal;
-	font-family: Georgia;
-}
-
 h3 {
 	margin: 0 0 13px;
 	
@@ -163,6 +154,15 @@ ul.list-box > li.list-box-feature {
 	padding: 13px; 
 }
 
+.applicationTitle,
+.applicationTitle {
+	display: inline; 
+	margin: 0px;
+
+	font-size: 21px;
+	font-weight: normal;
+	font-family: Georgia;
+}
 
 /*
 	global html elements identified by id
