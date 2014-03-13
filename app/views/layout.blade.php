@@ -90,8 +90,6 @@
 			@yield( 'footer' )
 		</div>
 
-	</body>
-
 <script type='text/javascript'>
 
 	// on document ready load all entries
@@ -578,3 +576,6 @@
 	$jQ( document ).on( 'click', '.link-see-more', function() { return seeMoreComments( this ); } );
 
 </script>
+
+	</body>
+</html>
