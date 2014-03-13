@@ -36,7 +36,7 @@
 					@if ( $key == 5 )	{{-- means that the 6th element willl not be displayed --}}
 						<a href='{{ url("contexts/$context->name/stackrs") }}'>...</a>
 					@else
-						<a href='{{ url("contexts/$context->name/stackrs") }}#{{ $stackr->id }}'>#{{ $stackr->id }}</a>
+						<a href='{{ url("contexts/$context->name/stackrs") }}#{{ $stackr->id }}' title='<h3>{{ e( $stackr->title ) }}</h3><span>{{ e( $stackr->description ) }}</span>'>#{{ $stackr->id }}</a>
 					@endif
 				</li>
 				@endforeach

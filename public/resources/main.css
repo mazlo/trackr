@@ -815,6 +815,27 @@ textarea.textarea-edit {
 	letter-spacing: 0pt;
 }
 
+.ui-tooltip {
+	box-shadow: 0 0 4px #ccc;
+	border: 1px solid #ccc;
+	
+	width: auto;
+	max-width: 260px;
+	font-size: 13px;
+}
+
+.ui-tooltip h3 {
+	margin: 0;
+	padding: 0;
+
+	font-size: 14px;
+}
+
+.ui-corner-all {
+	border: none;
+	border-radius: 0;
+}
+
 .buttonSubmit-dialog {
 	
 }
